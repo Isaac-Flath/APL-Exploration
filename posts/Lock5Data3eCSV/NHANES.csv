@@ -1,0 +1,4717 @@
+Case,Organic,Health,HealthBinary,Income
+1,No,Good,Poor / Fair / Good,3324.5
+2,No,Fair,Poor / Fair / Good,1024
+3,Yes,Good,Poor / Fair / Good,2500
+4,No,Excellent,Very good / Excellent,1450
+5,No,Good,Poor / Fair / Good,1450
+6,No,Good,Poor / Fair / Good,5824
+7,Yes,Poor,Poor / Fair / Good,3324.5
+8,No,Very good,Very good / Excellent,5000
+9,No,Fair,Poor / Fair / Good,600
+10,Yes,Poor,Poor / Fair / Good,1450
+11,Yes,Very good,Very good / Excellent,1874.5
+12,Yes,Very good,Very good / Excellent,8400
+13,No,Fair,Poor / Fair / Good,3324.5
+14,Yes,Good,Poor / Fair / Good,3324.5
+15,No,Fair,Poor / Fair / Good,1450
+16,No,Poor,Poor / Fair / Good,1874.5
+17,No,Good,Poor / Fair / Good,8400
+18,No,Excellent,Very good / Excellent,1874.5
+19,No,Excellent,Very good / Excellent,8400
+20,Yes,Good,Poor / Fair / Good,1450
+21,No,Good,Poor / Fair / Good,600
+22,Yes,Excellent,Very good / Excellent,200
+23,No,Good,Poor / Fair / Good,NA
+24,Yes,Fair,Poor / Fair / Good,1874.5
+25,No,Very good,Very good / Excellent,1024
+26,Yes,Fair,Poor / Fair / Good,NA
+27,No,Good,Poor / Fair / Good,2500
+28,Yes,Excellent,Very good / Excellent,4174.5
+29,No,Good,Poor / Fair / Good,1874.5
+30,No,Good,Poor / Fair / Good,5824
+31,Yes,Good,Poor / Fair / Good,3324.5
+32,No,Excellent,Very good / Excellent,NA
+33,No,Poor,Poor / Fair / Good,3324.5
+34,Yes,Very good,Very good / Excellent,1450
+35,Yes,Good,Poor / Fair / Good,3324.5
+36,No,Fair,Poor / Fair / Good,2500
+37,No,Good,Poor / Fair / Good,NA
+38,No,Fair,Poor / Fair / Good,5000
+39,No,Good,Poor / Fair / Good,NA
+40,No,Good,Poor / Fair / Good,1450
+41,Yes,Good,Poor / Fair / Good,1450
+42,Yes,Excellent,Very good / Excellent,7324
+43,Yes,Good,Poor / Fair / Good,1874.5
+44,Yes,Good,Poor / Fair / Good,2500
+45,Yes,Very good,Very good / Excellent,4174.5
+46,Yes,Fair,Poor / Fair / Good,600
+47,Yes,Excellent,Very good / Excellent,8400
+48,Yes,Excellent,Very good / Excellent,1874.5
+49,No,Very good,Very good / Excellent,5824
+50,No,Excellent,Very good / Excellent,5000
+51,No,Good,Poor / Fair / Good,1024
+52,No,Excellent,Very good / Excellent,1874.5
+53,No,Excellent,Very good / Excellent,5824
+54,Yes,Good,Poor / Fair / Good,7324
+55,No,Fair,Poor / Fair / Good,200
+56,No,Fair,Poor / Fair / Good,1450
+57,No,Fair,Poor / Fair / Good,1874.5
+58,No,Fair,Poor / Fair / Good,3324.5
+59,Yes,Good,Poor / Fair / Good,3324.5
+60,Yes,Good,Poor / Fair / Good,5824
+61,No,Good,Poor / Fair / Good,2500
+62,No,Good,Poor / Fair / Good,2500
+63,No,Good,Poor / Fair / Good,1874.5
+64,No,Fair,Poor / Fair / Good,5000
+65,No,Fair,Poor / Fair / Good,NA
+66,No,Good,Poor / Fair / Good,600
+67,No,Fair,Poor / Fair / Good,1024
+68,No,Good,Poor / Fair / Good,2500
+69,No,Good,Poor / Fair / Good,7324
+70,No,Good,Poor / Fair / Good,5824
+71,No,Very good,Very good / Excellent,8400
+72,Yes,Very good,Very good / Excellent,2500
+73,Yes,Good,Poor / Fair / Good,NA
+74,No,Good,Poor / Fair / Good,1450
+75,No,Excellent,Very good / Excellent,NA
+76,Yes,Excellent,Very good / Excellent,8400
+77,No,Good,Poor / Fair / Good,1024
+78,No,Poor,Poor / Fair / Good,1024
+79,No,Fair,Poor / Fair / Good,3324.5
+80,Yes,Very good,Very good / Excellent,7324
+81,No,Good,Poor / Fair / Good,5000
+82,No,Excellent,Very good / Excellent,1024
+83,Yes,Good,Poor / Fair / Good,5824
+84,Yes,Very good,Very good / Excellent,8400
+85,Yes,Very good,Very good / Excellent,1024
+86,No,Fair,Poor / Fair / Good,1874.5
+87,Yes,Good,Poor / Fair / Good,2500
+88,No,Fair,Poor / Fair / Good,5824
+89,Yes,Excellent,Very good / Excellent,2500
+90,No,Fair,Poor / Fair / Good,600
+91,Yes,Excellent,Very good / Excellent,NA
+92,Yes,Good,Poor / Fair / Good,1874.5
+93,Yes,Good,Poor / Fair / Good,1874.5
+94,Yes,Good,Poor / Fair / Good,8400
+95,No,Good,Poor / Fair / Good,1024
+96,Yes,Fair,Poor / Fair / Good,200
+97,No,Good,Poor / Fair / Good,NA
+98,No,Good,Poor / Fair / Good,NA
+99,Yes,Very good,Very good / Excellent,8400
+100,Yes,Very good,Very good / Excellent,7324
+101,No,Fair,Poor / Fair / Good,1450
+102,No,Excellent,Very good / Excellent,NA
+103,No,Good,Poor / Fair / Good,1024
+104,No,Fair,Poor / Fair / Good,1874.5
+105,Yes,Poor,Poor / Fair / Good,1450
+106,Yes,Fair,Poor / Fair / Good,1450
+107,Yes,Good,Poor / Fair / Good,2500
+108,No,Good,Poor / Fair / Good,3324.5
+109,No,Good,Poor / Fair / Good,5000
+110,Yes,Good,Poor / Fair / Good,NA
+111,Yes,Very good,Very good / Excellent,4174.5
+112,No,Fair,Poor / Fair / Good,1024
+113,No,Good,Poor / Fair / Good,1874.5
+114,No,Fair,Poor / Fair / Good,NA
+115,No,Good,Poor / Fair / Good,8400
+116,No,Very good,Very good / Excellent,4174.5
+117,Yes,Good,Poor / Fair / Good,5824
+118,No,Fair,Poor / Fair / Good,3324.5
+119,No,Good,Poor / Fair / Good,7324
+120,Yes,Excellent,Very good / Excellent,8400
+121,No,Excellent,Very good / Excellent,7324
+122,No,Very good,Very good / Excellent,5000
+123,Yes,Very good,Very good / Excellent,2500
+124,No,Fair,Poor / Fair / Good,4174.5
+125,No,Very good,Very good / Excellent,8400
+126,No,Good,Poor / Fair / Good,2500
+127,Yes,Excellent,Very good / Excellent,NA
+128,No,Very good,Very good / Excellent,2500
+129,Yes,Fair,Poor / Fair / Good,5000
+130,Yes,Very good,Very good / Excellent,1874.5
+131,No,Good,Poor / Fair / Good,200
+132,No,Fair,Poor / Fair / Good,3324.5
+133,Yes,Good,Poor / Fair / Good,4174.5
+134,No,Good,Poor / Fair / Good,1874.5
+135,Yes,Fair,Poor / Fair / Good,200
+136,No,Good,Poor / Fair / Good,4174.5
+137,No,Fair,Poor / Fair / Good,1450
+138,No,Fair,Poor / Fair / Good,5824
+139,No,Very good,Very good / Excellent,7324
+140,No,Fair,Poor / Fair / Good,1024
+141,No,Fair,Poor / Fair / Good,1874.5
+142,No,Fair,Poor / Fair / Good,600
+143,Yes,Very good,Very good / Excellent,1450
+144,No,Fair,Poor / Fair / Good,1024
+145,Yes,Good,Poor / Fair / Good,5000
+146,No,Fair,Poor / Fair / Good,1874.5
+147,No,Good,Poor / Fair / Good,600
+148,No,Good,Poor / Fair / Good,7324
+149,No,Very good,Very good / Excellent,3324.5
+150,No,Very good,Very good / Excellent,2500
+151,No,Good,Poor / Fair / Good,4174.5
+152,No,Good,Poor / Fair / Good,1874.5
+153,No,Good,Poor / Fair / Good,3324.5
+154,Yes,Excellent,Very good / Excellent,5824
+155,No,Fair,Poor / Fair / Good,8400
+156,Yes,Good,Poor / Fair / Good,5824
+157,No,Poor,Poor / Fair / Good,600
+158,Yes,Very good,Very good / Excellent,1450
+159,No,Very good,Very good / Excellent,8400
+160,Yes,Good,Poor / Fair / Good,1450
+161,Yes,Good,Poor / Fair / Good,5824
+162,Yes,Excellent,Very good / Excellent,1450
+163,Yes,Very good,Very good / Excellent,4174.5
+164,No,Very good,Very good / Excellent,8400
+165,No,Very good,Very good / Excellent,3324.5
+166,No,Excellent,Very good / Excellent,NA
+167,No,Fair,Poor / Fair / Good,4174.5
+168,No,Very good,Very good / Excellent,600
+169,No,Excellent,Very good / Excellent,2500
+170,No,Good,Poor / Fair / Good,7324
+171,No,Fair,Poor / Fair / Good,2500
+172,Yes,Good,Poor / Fair / Good,7324
+173,Yes,Good,Poor / Fair / Good,200
+174,No,Very good,Very good / Excellent,3324.5
+175,No,Very good,Very good / Excellent,1024
+176,No,Fair,Poor / Fair / Good,600
+177,No,Fair,Poor / Fair / Good,NA
+178,No,Good,Poor / Fair / Good,600
+179,No,Fair,Poor / Fair / Good,NA
+180,Yes,Very good,Very good / Excellent,8400
+181,Yes,Good,Poor / Fair / Good,5000
+182,No,Very good,Very good / Excellent,1024
+183,No,Fair,Poor / Fair / Good,7324
+184,Yes,Very good,Very good / Excellent,NA
+185,No,Good,Poor / Fair / Good,3324.5
+186,Yes,Good,Poor / Fair / Good,NA
+187,Yes,Very good,Very good / Excellent,4174.5
+188,No,Fair,Poor / Fair / Good,1450
+189,No,Good,Poor / Fair / Good,5824
+190,Yes,Good,Poor / Fair / Good,1024
+191,Yes,Good,Poor / Fair / Good,2500
+192,Yes,Excellent,Very good / Excellent,5000
+193,Yes,Excellent,Very good / Excellent,4174.5
+194,No,Good,Poor / Fair / Good,600
+195,Yes,Good,Poor / Fair / Good,2500
+196,Yes,Good,Poor / Fair / Good,1874.5
+197,No,Fair,Poor / Fair / Good,1024
+198,No,Good,Poor / Fair / Good,5824
+199,Yes,Very good,Very good / Excellent,3324.5
+200,No,Good,Poor / Fair / Good,8400
+201,No,Fair,Poor / Fair / Good,2500
+202,Yes,Very good,Very good / Excellent,2500
+203,Yes,Very good,Very good / Excellent,8400
+204,No,Fair,Poor / Fair / Good,5000
+205,No,Very good,Very good / Excellent,600
+206,No,Very good,Very good / Excellent,600
+207,No,Poor,Poor / Fair / Good,NA
+208,Yes,Very good,Very good / Excellent,7324
+209,Yes,Good,Poor / Fair / Good,1024
+210,No,Good,Poor / Fair / Good,NA
+211,Yes,Good,Poor / Fair / Good,2500
+212,No,Good,Poor / Fair / Good,3324.5
+213,No,Very good,Very good / Excellent,1874.5
+214,No,Fair,Poor / Fair / Good,3324.5
+215,No,Excellent,Very good / Excellent,1874.5
+216,No,Good,Poor / Fair / Good,7324
+217,No,Very good,Very good / Excellent,NA
+218,Yes,Good,Poor / Fair / Good,4174.5
+219,No,Good,Poor / Fair / Good,600
+220,Yes,Good,Poor / Fair / Good,5824
+221,Yes,Very good,Very good / Excellent,7324
+222,No,Very good,Very good / Excellent,NA
+223,Yes,Good,Poor / Fair / Good,1874.5
+224,Yes,Very good,Very good / Excellent,8400
+225,No,Poor,Poor / Fair / Good,NA
+226,Yes,Fair,Poor / Fair / Good,8400
+227,Yes,Very good,Very good / Excellent,7324
+228,No,Fair,Poor / Fair / Good,3324.5
+229,No,Very good,Very good / Excellent,7324
+230,No,Good,Poor / Fair / Good,3324.5
+231,No,Very good,Very good / Excellent,1024
+232,No,Good,Poor / Fair / Good,1024
+233,No,Good,Poor / Fair / Good,NA
+234,Yes,Very good,Very good / Excellent,8400
+235,Yes,Very good,Very good / Excellent,1024
+236,No,Good,Poor / Fair / Good,600
+237,Yes,Good,Poor / Fair / Good,4174.5
+238,No,Poor,Poor / Fair / Good,1024
+239,No,Poor,Poor / Fair / Good,NA
+240,Yes,Good,Poor / Fair / Good,200
+241,No,Very good,Very good / Excellent,5824
+242,No,Very good,Very good / Excellent,1450
+243,No,Fair,Poor / Fair / Good,1024
+244,No,Very good,Very good / Excellent,1024
+245,Yes,Very good,Very good / Excellent,4174.5
+246,Yes,Good,Poor / Fair / Good,1450
+247,No,Fair,Poor / Fair / Good,1024
+248,Yes,Good,Poor / Fair / Good,5000
+249,No,Good,Poor / Fair / Good,1874.5
+250,Yes,Very good,Very good / Excellent,NA
+251,Yes,Very good,Very good / Excellent,1874.5
+252,No,Good,Poor / Fair / Good,NA
+253,Yes,Good,Poor / Fair / Good,1024
+254,No,Very good,Very good / Excellent,4174.5
+255,No,Poor,Poor / Fair / Good,NA
+256,No,Very good,Very good / Excellent,8400
+257,No,Very good,Very good / Excellent,1874.5
+258,Yes,Excellent,Very good / Excellent,NA
+259,Yes,Excellent,Very good / Excellent,NA
+260,Yes,Very good,Very good / Excellent,4174.5
+261,Yes,Good,Poor / Fair / Good,5824
+262,No,Poor,Poor / Fair / Good,8400
+263,No,Fair,Poor / Fair / Good,4174.5
+264,No,Fair,Poor / Fair / Good,3324.5
+265,No,Very good,Very good / Excellent,3324.5
+266,No,Good,Poor / Fair / Good,5000
+267,No,Good,Poor / Fair / Good,1024
+268,No,Very good,Very good / Excellent,2500
+269,No,Fair,Poor / Fair / Good,4174.5
+270,No,Good,Poor / Fair / Good,3324.5
+271,Yes,Very good,Very good / Excellent,5000
+272,No,Very good,Very good / Excellent,1024
+273,No,Very good,Very good / Excellent,3324.5
+274,No,Fair,Poor / Fair / Good,1024
+275,No,Poor,Poor / Fair / Good,200
+276,No,Good,Poor / Fair / Good,2500
+277,Yes,Very good,Very good / Excellent,1024
+278,Yes,Very good,Very good / Excellent,5824
+279,Yes,Good,Poor / Fair / Good,8400
+280,No,Good,Poor / Fair / Good,8400
+281,No,Excellent,Very good / Excellent,3324.5
+282,No,Good,Poor / Fair / Good,5824
+283,Yes,Good,Poor / Fair / Good,3324.5
+284,No,Good,Poor / Fair / Good,8400
+285,No,Very good,Very good / Excellent,2500
+286,No,Very good,Very good / Excellent,1450
+287,No,Good,Poor / Fair / Good,2500
+288,No,Good,Poor / Fair / Good,1450
+289,No,Very good,Very good / Excellent,7324
+290,No,Good,Poor / Fair / Good,1024
+291,No,Good,Poor / Fair / Good,1874.5
+292,No,Very good,Very good / Excellent,3324.5
+293,No,Good,Poor / Fair / Good,5000
+294,No,Good,Poor / Fair / Good,NA
+295,Yes,Good,Poor / Fair / Good,4174.5
+296,No,Good,Poor / Fair / Good,200
+297,Yes,Good,Poor / Fair / Good,3324.5
+298,No,Good,Poor / Fair / Good,5000
+299,No,Very good,Very good / Excellent,600
+300,No,Excellent,Very good / Excellent,1450
+301,Yes,Very good,Very good / Excellent,NA
+302,No,Poor,Poor / Fair / Good,600
+303,Yes,Excellent,Very good / Excellent,NA
+304,Yes,Good,Poor / Fair / Good,1024
+305,No,Excellent,Very good / Excellent,2500
+306,Yes,Fair,Poor / Fair / Good,2500
+307,No,Good,Poor / Fair / Good,NA
+308,Yes,Good,Poor / Fair / Good,1024
+309,No,Very good,Very good / Excellent,5000
+310,Yes,Good,Poor / Fair / Good,NA
+311,Yes,Excellent,Very good / Excellent,5824
+312,Yes,Good,Poor / Fair / Good,1024
+313,No,Very good,Very good / Excellent,4174.5
+314,No,Fair,Poor / Fair / Good,600
+315,Yes,Very good,Very good / Excellent,8400
+316,Yes,Good,Poor / Fair / Good,NA
+317,No,Fair,Poor / Fair / Good,4174.5
+318,Yes,Very good,Very good / Excellent,1450
+319,No,Good,Poor / Fair / Good,2500
+320,No,Very good,Very good / Excellent,3324.5
+321,No,Very good,Very good / Excellent,1450
+322,No,Fair,Poor / Fair / Good,1874.5
+323,No,Fair,Poor / Fair / Good,2500
+324,No,Good,Poor / Fair / Good,NA
+325,Yes,Excellent,Very good / Excellent,3324.5
+326,No,Excellent,Very good / Excellent,NA
+327,No,Very good,Very good / Excellent,2500
+328,No,Good,Poor / Fair / Good,4174.5
+329,No,Excellent,Very good / Excellent,NA
+330,No,Fair,Poor / Fair / Good,3324.5
+331,No,Very good,Very good / Excellent,1874.5
+332,No,Fair,Poor / Fair / Good,1874.5
+333,No,Fair,Poor / Fair / Good,1024
+334,Yes,Very good,Very good / Excellent,1024
+335,No,Good,Poor / Fair / Good,1874.5
+336,No,Fair,Poor / Fair / Good,1450
+337,Yes,Very good,Very good / Excellent,4174.5
+338,No,Good,Poor / Fair / Good,1874.5
+339,Yes,Poor,Poor / Fair / Good,1450
+340,No,Fair,Poor / Fair / Good,600
+341,No,Very good,Very good / Excellent,5824
+342,Yes,Excellent,Very good / Excellent,NA
+343,Yes,Very good,Very good / Excellent,8400
+344,No,Good,Poor / Fair / Good,1024
+345,No,Very good,Very good / Excellent,1024
+346,No,Good,Poor / Fair / Good,7324
+347,Yes,Very good,Very good / Excellent,4174.5
+348,No,Excellent,Very good / Excellent,1024
+349,No,Good,Poor / Fair / Good,NA
+350,No,Very good,Very good / Excellent,1024
+351,No,Excellent,Very good / Excellent,1874.5
+352,Yes,Excellent,Very good / Excellent,5824
+353,Yes,Very good,Very good / Excellent,200
+354,No,Fair,Poor / Fair / Good,1024
+355,Yes,Fair,Poor / Fair / Good,8400
+356,Yes,Very good,Very good / Excellent,7324
+357,No,Very good,Very good / Excellent,3324.5
+358,No,Fair,Poor / Fair / Good,NA
+359,Yes,Very good,Very good / Excellent,NA
+360,Yes,Good,Poor / Fair / Good,5000
+361,No,Fair,Poor / Fair / Good,1024
+362,Yes,Good,Poor / Fair / Good,5000
+363,Yes,Good,Poor / Fair / Good,8400
+364,No,Very good,Very good / Excellent,8400
+365,Yes,Poor,Poor / Fair / Good,3324.5
+366,Yes,Very good,Very good / Excellent,4174.5
+367,No,Poor,Poor / Fair / Good,200
+368,Yes,Excellent,Very good / Excellent,4174.5
+369,No,Good,Poor / Fair / Good,1450
+370,No,Very good,Very good / Excellent,600
+371,No,Good,Poor / Fair / Good,1450
+372,No,Good,Poor / Fair / Good,NA
+373,No,Good,Poor / Fair / Good,1450
+374,No,Very good,Very good / Excellent,1874.5
+375,No,Good,Poor / Fair / Good,2500
+376,Yes,Very good,Very good / Excellent,8400
+377,No,Good,Poor / Fair / Good,2500
+378,Yes,Very good,Very good / Excellent,1450
+379,No,Very good,Very good / Excellent,1874.5
+380,No,Very good,Very good / Excellent,1024
+381,No,Good,Poor / Fair / Good,2500
+382,No,Good,Poor / Fair / Good,3324.5
+383,No,Fair,Poor / Fair / Good,1024
+384,Yes,Good,Poor / Fair / Good,1024
+385,No,Good,Poor / Fair / Good,5000
+386,No,Fair,Poor / Fair / Good,NA
+387,Yes,Good,Poor / Fair / Good,1874.5
+388,Yes,Very good,Very good / Excellent,2500
+389,Yes,Very good,Very good / Excellent,1024
+390,Yes,Good,Poor / Fair / Good,5000
+391,Yes,Fair,Poor / Fair / Good,3324.5
+392,Yes,Good,Poor / Fair / Good,5824
+393,No,Good,Poor / Fair / Good,4174.5
+394,No,Fair,Poor / Fair / Good,5000
+395,No,Good,Poor / Fair / Good,NA
+396,Yes,Fair,Poor / Fair / Good,2500
+397,No,Very good,Very good / Excellent,7324
+398,No,Poor,Poor / Fair / Good,4174.5
+399,No,Good,Poor / Fair / Good,5000
+400,No,Good,Poor / Fair / Good,3324.5
+401,No,Very good,Very good / Excellent,1874.5
+402,No,Good,Poor / Fair / Good,NA
+403,Yes,Fair,Poor / Fair / Good,5000
+404,Yes,Very good,Very good / Excellent,5824
+405,No,Very good,Very good / Excellent,8400
+406,Yes,Good,Poor / Fair / Good,4174.5
+407,Yes,Good,Poor / Fair / Good,1024
+408,No,Excellent,Very good / Excellent,1024
+409,No,Good,Poor / Fair / Good,7324
+410,No,Fair,Poor / Fair / Good,1874.5
+411,No,Good,Poor / Fair / Good,NA
+412,Yes,Good,Poor / Fair / Good,8400
+413,No,Very good,Very good / Excellent,2500
+414,Yes,Fair,Poor / Fair / Good,200
+415,Yes,Good,Poor / Fair / Good,4174.5
+416,No,Good,Poor / Fair / Good,5824
+417,No,Good,Poor / Fair / Good,200
+418,Yes,Very good,Very good / Excellent,2500
+419,No,Very good,Very good / Excellent,2500
+420,No,Very good,Very good / Excellent,8400
+421,No,Very good,Very good / Excellent,1874.5
+422,Yes,Good,Poor / Fair / Good,7324
+423,No,Good,Poor / Fair / Good,3324.5
+424,No,Very good,Very good / Excellent,8400
+425,No,Good,Poor / Fair / Good,5000
+426,No,Very good,Very good / Excellent,NA
+427,No,Very good,Very good / Excellent,200
+428,Yes,Good,Poor / Fair / Good,3324.5
+429,Yes,Poor,Poor / Fair / Good,1024
+430,No,Good,Poor / Fair / Good,2500
+431,Yes,Good,Poor / Fair / Good,NA
+432,No,Good,Poor / Fair / Good,3324.5
+433,No,Excellent,Very good / Excellent,8400
+434,No,Good,Poor / Fair / Good,2500
+435,No,Fair,Poor / Fair / Good,1874.5
+436,Yes,Good,Poor / Fair / Good,2500
+437,Yes,Very good,Very good / Excellent,5824
+438,Yes,Excellent,Very good / Excellent,4174.5
+439,No,Fair,Poor / Fair / Good,3324.5
+440,Yes,Very good,Very good / Excellent,7324
+441,Yes,Good,Poor / Fair / Good,5824
+442,No,Good,Poor / Fair / Good,1024
+443,No,Very good,Very good / Excellent,2500
+444,Yes,Good,Poor / Fair / Good,3324.5
+445,No,Fair,Poor / Fair / Good,4174.5
+446,No,Good,Poor / Fair / Good,1024
+447,No,Fair,Poor / Fair / Good,1024
+448,No,Good,Poor / Fair / Good,3324.5
+449,No,Good,Poor / Fair / Good,1450
+450,No,Good,Poor / Fair / Good,1874.5
+451,No,Good,Poor / Fair / Good,8400
+452,No,Fair,Poor / Fair / Good,1024
+453,No,Very good,Very good / Excellent,5824
+454,Yes,Very good,Very good / Excellent,7324
+455,Yes,Poor,Poor / Fair / Good,3324.5
+456,No,Good,Poor / Fair / Good,NA
+457,No,Excellent,Very good / Excellent,5824
+458,No,Excellent,Very good / Excellent,8400
+459,Yes,Fair,Poor / Fair / Good,2500
+460,No,Excellent,Very good / Excellent,7324
+461,No,Fair,Poor / Fair / Good,1024
+462,Yes,Very good,Very good / Excellent,NA
+463,No,Fair,Poor / Fair / Good,5824
+464,No,Good,Poor / Fair / Good,5000
+465,Yes,Poor,Poor / Fair / Good,NA
+466,No,Good,Poor / Fair / Good,5000
+467,Yes,Poor,Poor / Fair / Good,1024
+468,No,Poor,Poor / Fair / Good,NA
+469,No,Poor,Poor / Fair / Good,NA
+470,No,Very good,Very good / Excellent,NA
+471,No,Very good,Very good / Excellent,1024
+472,No,Very good,Very good / Excellent,2500
+473,Yes,Good,Poor / Fair / Good,1874.5
+474,No,Good,Poor / Fair / Good,1450
+475,No,Poor,Poor / Fair / Good,3324.5
+476,No,Very good,Very good / Excellent,2500
+477,No,Good,Poor / Fair / Good,1024
+478,No,Good,Poor / Fair / Good,600
+479,Yes,Fair,Poor / Fair / Good,1874.5
+480,Yes,Fair,Poor / Fair / Good,4174.5
+481,No,Good,Poor / Fair / Good,1450
+482,No,Good,Poor / Fair / Good,4174.5
+483,Yes,Fair,Poor / Fair / Good,5824
+484,No,Good,Poor / Fair / Good,1874.5
+485,Yes,Good,Poor / Fair / Good,NA
+486,Yes,Very good,Very good / Excellent,200
+487,No,Fair,Poor / Fair / Good,NA
+488,No,Fair,Poor / Fair / Good,600
+489,No,Very good,Very good / Excellent,5000
+490,No,Fair,Poor / Fair / Good,5000
+491,No,Fair,Poor / Fair / Good,1024
+492,No,Good,Poor / Fair / Good,NA
+493,Yes,Good,Poor / Fair / Good,2500
+494,Yes,Good,Poor / Fair / Good,7324
+495,No,Good,Poor / Fair / Good,2500
+496,No,Good,Poor / Fair / Good,7324
+497,No,Fair,Poor / Fair / Good,4174.5
+498,No,Very good,Very good / Excellent,1450
+499,Yes,Very good,Very good / Excellent,8400
+500,No,Very good,Very good / Excellent,4174.5
+501,No,Fair,Poor / Fair / Good,3324.5
+502,No,Good,Poor / Fair / Good,5824
+503,Yes,Very good,Very good / Excellent,4174.5
+504,No,Very good,Very good / Excellent,4174.5
+505,Yes,Good,Poor / Fair / Good,7324
+506,No,Very good,Very good / Excellent,8400
+507,No,Good,Poor / Fair / Good,1450
+508,No,Good,Poor / Fair / Good,1874.5
+509,No,Good,Poor / Fair / Good,5000
+510,No,Excellent,Very good / Excellent,1450
+511,No,Very good,Very good / Excellent,2500
+512,No,Good,Poor / Fair / Good,1024
+513,Yes,Fair,Poor / Fair / Good,2500
+514,No,Very good,Very good / Excellent,2500
+515,Yes,Good,Poor / Fair / Good,7324
+516,Yes,Fair,Poor / Fair / Good,600
+517,Yes,Very good,Very good / Excellent,200
+518,Yes,Very good,Very good / Excellent,2500
+519,No,Fair,Poor / Fair / Good,1874.5
+520,Yes,Good,Poor / Fair / Good,5824
+521,No,Good,Poor / Fair / Good,1450
+522,Yes,Good,Poor / Fair / Good,4174.5
+523,No,Very good,Very good / Excellent,4174.5
+524,No,Good,Poor / Fair / Good,1024
+525,No,Good,Poor / Fair / Good,2500
+526,Yes,Excellent,Very good / Excellent,8400
+527,Yes,Fair,Poor / Fair / Good,4174.5
+528,Yes,Good,Poor / Fair / Good,5000
+529,No,Very good,Very good / Excellent,2500
+530,No,Excellent,Very good / Excellent,7324
+531,Yes,Good,Poor / Fair / Good,5000
+532,No,Good,Poor / Fair / Good,1450
+533,No,Good,Poor / Fair / Good,3324.5
+534,Yes,Excellent,Very good / Excellent,8400
+535,No,Fair,Poor / Fair / Good,1874.5
+536,Yes,Fair,Poor / Fair / Good,1450
+537,No,Good,Poor / Fair / Good,1024
+538,No,Very good,Very good / Excellent,1450
+539,No,Good,Poor / Fair / Good,3324.5
+540,No,Fair,Poor / Fair / Good,1024
+541,Yes,Good,Poor / Fair / Good,7324
+542,Yes,Fair,Poor / Fair / Good,1874.5
+543,Yes,Excellent,Very good / Excellent,8400
+544,Yes,Very good,Very good / Excellent,2500
+545,No,Good,Poor / Fair / Good,2500
+546,No,Good,Poor / Fair / Good,4174.5
+547,No,Poor,Poor / Fair / Good,7324
+548,No,Good,Poor / Fair / Good,1874.5
+549,No,Fair,Poor / Fair / Good,4174.5
+550,Yes,Good,Poor / Fair / Good,8400
+551,No,Fair,Poor / Fair / Good,NA
+552,Yes,Excellent,Very good / Excellent,7324
+553,Yes,Excellent,Very good / Excellent,4174.5
+554,No,Good,Poor / Fair / Good,1024
+555,No,Fair,Poor / Fair / Good,5824
+556,Yes,Very good,Very good / Excellent,7324
+557,No,Very good,Very good / Excellent,5824
+558,Yes,Very good,Very good / Excellent,8400
+559,No,Good,Poor / Fair / Good,1450
+560,Yes,Excellent,Very good / Excellent,4174.5
+561,No,Fair,Poor / Fair / Good,2500
+562,Yes,Good,Poor / Fair / Good,5000
+563,No,Good,Poor / Fair / Good,1024
+564,No,Very good,Very good / Excellent,1024
+565,No,Good,Poor / Fair / Good,1874.5
+566,No,Very good,Very good / Excellent,600
+567,No,Fair,Poor / Fair / Good,1024
+568,No,Good,Poor / Fair / Good,600
+569,No,Very good,Very good / Excellent,5824
+570,Yes,Very good,Very good / Excellent,1450
+571,No,Very good,Very good / Excellent,4174.5
+572,Yes,Fair,Poor / Fair / Good,1874.5
+573,No,Good,Poor / Fair / Good,3324.5
+574,Yes,Very good,Very good / Excellent,4174.5
+575,No,Good,Poor / Fair / Good,2500
+576,No,Good,Poor / Fair / Good,NA
+577,Yes,Good,Poor / Fair / Good,2500
+578,No,Good,Poor / Fair / Good,4174.5
+579,No,Good,Poor / Fair / Good,8400
+580,No,Very good,Very good / Excellent,600
+581,No,Good,Poor / Fair / Good,NA
+582,No,Good,Poor / Fair / Good,5824
+583,Yes,Good,Poor / Fair / Good,1024
+584,Yes,Fair,Poor / Fair / Good,NA
+585,No,Good,Poor / Fair / Good,1874.5
+586,No,Good,Poor / Fair / Good,600
+587,No,Good,Poor / Fair / Good,1450
+588,No,Excellent,Very good / Excellent,1874.5
+589,Yes,Good,Poor / Fair / Good,7324
+590,No,Very good,Very good / Excellent,1024
+591,No,Fair,Poor / Fair / Good,1874.5
+592,Yes,Very good,Very good / Excellent,8400
+593,Yes,Good,Poor / Fair / Good,7324
+594,Yes,Very good,Very good / Excellent,7324
+595,No,Good,Poor / Fair / Good,4174.5
+596,No,Good,Poor / Fair / Good,3324.5
+597,No,Excellent,Very good / Excellent,600
+598,No,Very good,Very good / Excellent,1874.5
+599,Yes,Good,Poor / Fair / Good,5000
+600,No,Good,Poor / Fair / Good,2500
+601,No,Good,Poor / Fair / Good,1874.5
+602,Yes,Very good,Very good / Excellent,5824
+603,Yes,Very good,Very good / Excellent,8400
+604,Yes,Very good,Very good / Excellent,5000
+605,Yes,Good,Poor / Fair / Good,5000
+606,No,Very good,Very good / Excellent,1450
+607,No,Excellent,Very good / Excellent,3324.5
+608,Yes,Good,Poor / Fair / Good,4174.5
+609,No,Excellent,Very good / Excellent,4174.5
+610,No,Very good,Very good / Excellent,7324
+611,No,Good,Poor / Fair / Good,1874.5
+612,No,Good,Poor / Fair / Good,1874.5
+613,No,Very good,Very good / Excellent,4174.5
+614,No,Poor,Poor / Fair / Good,NA
+615,Yes,Very good,Very good / Excellent,8400
+616,Yes,Good,Poor / Fair / Good,1874.5
+617,No,Fair,Poor / Fair / Good,4174.5
+618,Yes,Very good,Very good / Excellent,1874.5
+619,Yes,Very good,Very good / Excellent,5000
+620,Yes,Very good,Very good / Excellent,1024
+621,No,Fair,Poor / Fair / Good,1024
+622,No,Fair,Poor / Fair / Good,8400
+623,No,Very good,Very good / Excellent,1450
+624,No,Good,Poor / Fair / Good,1874.5
+625,Yes,Very good,Very good / Excellent,8400
+626,Yes,Very good,Very good / Excellent,200
+627,No,Very good,Very good / Excellent,8400
+628,Yes,Excellent,Very good / Excellent,7324
+629,No,Fair,Poor / Fair / Good,1874.5
+630,Yes,Poor,Poor / Fair / Good,1874.5
+631,No,Fair,Poor / Fair / Good,1450
+632,No,Good,Poor / Fair / Good,NA
+633,No,Good,Poor / Fair / Good,NA
+634,No,Excellent,Very good / Excellent,1450
+635,Yes,Excellent,Very good / Excellent,5000
+636,No,Excellent,Very good / Excellent,2500
+637,Yes,Very good,Very good / Excellent,2500
+638,No,Good,Poor / Fair / Good,200
+639,Yes,Very good,Very good / Excellent,7324
+640,No,Very good,Very good / Excellent,200
+641,Yes,Good,Poor / Fair / Good,1450
+642,No,Fair,Poor / Fair / Good,1450
+643,Yes,Good,Poor / Fair / Good,4174.5
+644,Yes,Very good,Very good / Excellent,3324.5
+645,Yes,Good,Poor / Fair / Good,7324
+646,No,Fair,Poor / Fair / Good,5824
+647,No,Very good,Very good / Excellent,1024
+648,Yes,Very good,Very good / Excellent,5000
+649,No,Good,Poor / Fair / Good,2500
+650,No,Very good,Very good / Excellent,1874.5
+651,Yes,Very good,Very good / Excellent,8400
+652,No,Poor,Poor / Fair / Good,5824
+653,No,Very good,Very good / Excellent,1874.5
+654,Yes,Very good,Very good / Excellent,4174.5
+655,Yes,Very good,Very good / Excellent,5000
+656,Yes,Fair,Poor / Fair / Good,4174.5
+657,Yes,Excellent,Very good / Excellent,8400
+658,Yes,Good,Poor / Fair / Good,2500
+659,No,Excellent,Very good / Excellent,1024
+660,No,Good,Poor / Fair / Good,3324.5
+661,No,Very good,Very good / Excellent,3324.5
+662,No,Good,Poor / Fair / Good,1024
+663,Yes,Fair,Poor / Fair / Good,8400
+664,Yes,Excellent,Very good / Excellent,1450
+665,Yes,Very good,Very good / Excellent,7324
+666,No,Good,Poor / Fair / Good,1874.5
+667,Yes,Very good,Very good / Excellent,8400
+668,No,Fair,Poor / Fair / Good,1024
+669,No,Fair,Poor / Fair / Good,1874.5
+670,No,Good,Poor / Fair / Good,2500
+671,No,Fair,Poor / Fair / Good,NA
+672,Yes,Poor,Poor / Fair / Good,NA
+673,Yes,Very good,Very good / Excellent,8400
+674,No,Very good,Very good / Excellent,NA
+675,Yes,Very good,Very good / Excellent,8400
+676,No,Very good,Very good / Excellent,8400
+677,No,Very good,Very good / Excellent,3324.5
+678,No,Good,Poor / Fair / Good,1450
+679,No,Fair,Poor / Fair / Good,1874.5
+680,No,Very good,Very good / Excellent,7324
+681,Yes,Excellent,Very good / Excellent,2500
+682,No,Fair,Poor / Fair / Good,4174.5
+683,Yes,Very good,Very good / Excellent,2500
+684,No,Good,Poor / Fair / Good,4174.5
+685,Yes,Good,Poor / Fair / Good,7324
+686,No,Fair,Poor / Fair / Good,NA
+687,No,Very good,Very good / Excellent,5000
+688,No,Good,Poor / Fair / Good,2500
+689,No,Very good,Very good / Excellent,NA
+690,Yes,Excellent,Very good / Excellent,4174.5
+691,Yes,Good,Poor / Fair / Good,4174.5
+692,No,Fair,Poor / Fair / Good,600
+693,No,Excellent,Very good / Excellent,NA
+694,No,Good,Poor / Fair / Good,1024
+695,No,Excellent,Very good / Excellent,5000
+696,No,Very good,Very good / Excellent,2500
+697,No,Good,Poor / Fair / Good,3324.5
+698,No,Excellent,Very good / Excellent,7324
+699,No,Fair,Poor / Fair / Good,4174.5
+700,No,Very good,Very good / Excellent,5824
+701,No,Very good,Very good / Excellent,8400
+702,Yes,Good,Poor / Fair / Good,5000
+703,Yes,Very good,Very good / Excellent,7324
+704,No,Good,Poor / Fair / Good,600
+705,Yes,Excellent,Very good / Excellent,5000
+706,Yes,Good,Poor / Fair / Good,NA
+707,No,Fair,Poor / Fair / Good,NA
+708,No,Very good,Very good / Excellent,NA
+709,No,Excellent,Very good / Excellent,4174.5
+710,Yes,Good,Poor / Fair / Good,NA
+711,Yes,Excellent,Very good / Excellent,8400
+712,No,Very good,Very good / Excellent,1024
+713,Yes,Fair,Poor / Fair / Good,NA
+714,No,Good,Poor / Fair / Good,1874.5
+715,No,Good,Poor / Fair / Good,8400
+716,Yes,Good,Poor / Fair / Good,8400
+717,No,Fair,Poor / Fair / Good,1024
+718,No,Good,Poor / Fair / Good,NA
+719,Yes,Very good,Very good / Excellent,5824
+720,No,Good,Poor / Fair / Good,3324.5
+721,No,Fair,Poor / Fair / Good,1874.5
+722,No,Very good,Very good / Excellent,1450
+723,No,Fair,Poor / Fair / Good,2500
+724,No,Fair,Poor / Fair / Good,NA
+725,Yes,Very good,Very good / Excellent,NA
+726,No,Good,Poor / Fair / Good,4174.5
+727,Yes,Very good,Very good / Excellent,4174.5
+728,No,Poor,Poor / Fair / Good,NA
+729,No,Fair,Poor / Fair / Good,1450
+730,Yes,Good,Poor / Fair / Good,NA
+731,No,Good,Poor / Fair / Good,1024
+732,Yes,Very good,Very good / Excellent,8400
+733,No,Excellent,Very good / Excellent,1874.5
+734,Yes,Very good,Very good / Excellent,3324.5
+735,No,Good,Poor / Fair / Good,NA
+736,Yes,Good,Poor / Fair / Good,2500
+737,Yes,Excellent,Very good / Excellent,2500
+738,No,Very good,Very good / Excellent,200
+739,No,Fair,Poor / Fair / Good,NA
+740,Yes,Good,Poor / Fair / Good,1874.5
+741,No,Very good,Very good / Excellent,3324.5
+742,No,Excellent,Very good / Excellent,1874.5
+743,No,Very good,Very good / Excellent,1024
+744,No,Fair,Poor / Fair / Good,1450
+745,No,Fair,Poor / Fair / Good,1874.5
+746,No,Excellent,Very good / Excellent,1024
+747,No,Very good,Very good / Excellent,1874.5
+748,Yes,Very good,Very good / Excellent,8400
+749,Yes,Good,Poor / Fair / Good,2500
+750,No,Fair,Poor / Fair / Good,1024
+751,No,Fair,Poor / Fair / Good,1024
+752,Yes,Good,Poor / Fair / Good,1450
+753,Yes,Very good,Very good / Excellent,3324.5
+754,No,Very good,Very good / Excellent,1874.5
+755,Yes,Good,Poor / Fair / Good,4174.5
+756,No,Good,Poor / Fair / Good,1024
+757,No,Good,Poor / Fair / Good,600
+758,No,Poor,Poor / Fair / Good,600
+759,No,Fair,Poor / Fair / Good,600
+760,No,Good,Poor / Fair / Good,8400
+761,No,Good,Poor / Fair / Good,200
+762,No,Very good,Very good / Excellent,1874.5
+763,No,Very good,Very good / Excellent,2500
+764,Yes,Poor,Poor / Fair / Good,1450
+765,No,Very good,Very good / Excellent,1874.5
+766,No,Fair,Poor / Fair / Good,NA
+767,Yes,Good,Poor / Fair / Good,5000
+768,No,Good,Poor / Fair / Good,1450
+769,No,Fair,Poor / Fair / Good,3324.5
+770,Yes,Fair,Poor / Fair / Good,1024
+771,No,Fair,Poor / Fair / Good,NA
+772,No,Excellent,Very good / Excellent,1024
+773,No,Fair,Poor / Fair / Good,1024
+774,Yes,Good,Poor / Fair / Good,2500
+775,No,Fair,Poor / Fair / Good,4174.5
+776,No,Good,Poor / Fair / Good,2500
+777,No,Good,Poor / Fair / Good,1024
+778,Yes,Very good,Very good / Excellent,8400
+779,No,Very good,Very good / Excellent,2500
+780,No,Good,Poor / Fair / Good,1450
+781,No,Excellent,Very good / Excellent,1450
+782,No,Good,Poor / Fair / Good,3324.5
+783,No,Fair,Poor / Fair / Good,1874.5
+784,No,Fair,Poor / Fair / Good,5000
+785,No,Fair,Poor / Fair / Good,NA
+786,No,Fair,Poor / Fair / Good,2500
+787,Yes,Good,Poor / Fair / Good,3324.5
+788,No,Good,Poor / Fair / Good,1024
+789,Yes,Excellent,Very good / Excellent,4174.5
+790,Yes,Very good,Very good / Excellent,200
+791,No,Fair,Poor / Fair / Good,7324
+792,No,Very good,Very good / Excellent,NA
+793,No,Very good,Very good / Excellent,200
+794,Yes,Very good,Very good / Excellent,5000
+795,No,Good,Poor / Fair / Good,2500
+796,No,Very good,Very good / Excellent,4174.5
+797,No,Good,Poor / Fair / Good,3324.5
+798,No,Very good,Very good / Excellent,3324.5
+799,No,Good,Poor / Fair / Good,3324.5
+800,No,Good,Poor / Fair / Good,600
+801,No,Excellent,Very good / Excellent,5000
+802,No,Good,Poor / Fair / Good,4174.5
+803,No,Fair,Poor / Fair / Good,8400
+804,Yes,Good,Poor / Fair / Good,1874.5
+805,Yes,Good,Poor / Fair / Good,1024
+806,No,Good,Poor / Fair / Good,1024
+807,Yes,Good,Poor / Fair / Good,1024
+808,Yes,Excellent,Very good / Excellent,NA
+809,Yes,Very good,Very good / Excellent,7324
+810,No,Good,Poor / Fair / Good,1874.5
+811,No,Fair,Poor / Fair / Good,1874.5
+812,Yes,Good,Poor / Fair / Good,5824
+813,Yes,Excellent,Very good / Excellent,8400
+814,No,Very good,Very good / Excellent,1874.5
+815,No,Very good,Very good / Excellent,3324.5
+816,No,Very good,Very good / Excellent,4174.5
+817,Yes,Very good,Very good / Excellent,4174.5
+818,Yes,Good,Poor / Fair / Good,2500
+819,No,Fair,Poor / Fair / Good,5824
+820,No,Poor,Poor / Fair / Good,600
+821,Yes,Fair,Poor / Fair / Good,7324
+822,Yes,Good,Poor / Fair / Good,1024
+823,No,Good,Poor / Fair / Good,1024
+824,Yes,Very good,Very good / Excellent,NA
+825,Yes,Good,Poor / Fair / Good,600
+826,No,Good,Poor / Fair / Good,600
+827,No,Good,Poor / Fair / Good,1024
+828,Yes,Very good,Very good / Excellent,NA
+829,No,Very good,Very good / Excellent,NA
+830,No,Excellent,Very good / Excellent,1874.5
+831,Yes,Very good,Very good / Excellent,1450
+832,Yes,Good,Poor / Fair / Good,1874.5
+833,No,Good,Poor / Fair / Good,NA
+834,No,Fair,Poor / Fair / Good,1874.5
+835,Yes,Fair,Poor / Fair / Good,3324.5
+836,No,Poor,Poor / Fair / Good,600
+837,Yes,Good,Poor / Fair / Good,7324
+838,No,Very good,Very good / Excellent,3324.5
+839,No,Good,Poor / Fair / Good,600
+840,No,Good,Poor / Fair / Good,NA
+841,Yes,Good,Poor / Fair / Good,4174.5
+842,Yes,Good,Poor / Fair / Good,1024
+843,No,Excellent,Very good / Excellent,NA
+844,No,Very good,Very good / Excellent,NA
+845,No,Very good,Very good / Excellent,8400
+846,Yes,Very good,Very good / Excellent,1450
+847,Yes,Fair,Poor / Fair / Good,4174.5
+848,No,Very good,Very good / Excellent,NA
+849,Yes,Good,Poor / Fair / Good,1024
+850,No,Very good,Very good / Excellent,2500
+851,No,Very good,Very good / Excellent,3324.5
+852,No,Very good,Very good / Excellent,8400
+853,No,Good,Poor / Fair / Good,1024
+854,No,Very good,Very good / Excellent,3324.5
+855,No,Good,Poor / Fair / Good,1874.5
+856,No,Very good,Very good / Excellent,5824
+857,Yes,Good,Poor / Fair / Good,3324.5
+858,No,Good,Poor / Fair / Good,7324
+859,No,Poor,Poor / Fair / Good,2500
+860,No,Good,Poor / Fair / Good,1874.5
+861,No,Fair,Poor / Fair / Good,5824
+862,Yes,Very good,Very good / Excellent,5824
+863,No,Excellent,Very good / Excellent,1450
+864,Yes,Very good,Very good / Excellent,8400
+865,Yes,Very good,Very good / Excellent,1874.5
+866,No,Fair,Poor / Fair / Good,NA
+867,No,Fair,Poor / Fair / Good,4174.5
+868,No,Fair,Poor / Fair / Good,1450
+869,Yes,Excellent,Very good / Excellent,8400
+870,No,Fair,Poor / Fair / Good,1024
+871,No,Good,Poor / Fair / Good,1874.5
+872,No,Good,Poor / Fair / Good,7324
+873,Yes,Very good,Very good / Excellent,7324
+874,No,Good,Poor / Fair / Good,NA
+875,No,Good,Poor / Fair / Good,5000
+876,Yes,Very good,Very good / Excellent,4174.5
+877,No,Fair,Poor / Fair / Good,1024
+878,No,Excellent,Very good / Excellent,7324
+879,Yes,Very good,Very good / Excellent,200
+880,Yes,Excellent,Very good / Excellent,3324.5
+881,No,Good,Poor / Fair / Good,5824
+882,No,Good,Poor / Fair / Good,600
+883,No,Very good,Very good / Excellent,7324
+884,Yes,Good,Poor / Fair / Good,1874.5
+885,No,Good,Poor / Fair / Good,3324.5
+886,No,Fair,Poor / Fair / Good,8400
+887,No,Good,Poor / Fair / Good,1450
+888,No,Excellent,Very good / Excellent,7324
+889,No,Excellent,Very good / Excellent,2500
+890,No,Fair,Poor / Fair / Good,4174.5
+891,Yes,Fair,Poor / Fair / Good,1024
+892,No,Very good,Very good / Excellent,1874.5
+893,No,Fair,Poor / Fair / Good,NA
+894,Yes,Very good,Very good / Excellent,4174.5
+895,No,Poor,Poor / Fair / Good,4174.5
+896,No,Very good,Very good / Excellent,1874.5
+897,No,Fair,Poor / Fair / Good,1024
+898,No,Good,Poor / Fair / Good,4174.5
+899,No,Good,Poor / Fair / Good,1024
+900,Yes,Good,Poor / Fair / Good,2500
+901,No,Good,Poor / Fair / Good,600
+902,Yes,Fair,Poor / Fair / Good,3324.5
+903,No,Fair,Poor / Fair / Good,600
+904,Yes,Very good,Very good / Excellent,NA
+905,Yes,Good,Poor / Fair / Good,3324.5
+906,No,Very good,Very good / Excellent,1450
+907,Yes,Very good,Very good / Excellent,NA
+908,No,Good,Poor / Fair / Good,NA
+909,No,Poor,Poor / Fair / Good,600
+910,Yes,Very good,Very good / Excellent,5824
+911,No,Good,Poor / Fair / Good,200
+912,No,Good,Poor / Fair / Good,NA
+913,No,Fair,Poor / Fair / Good,8400
+914,No,Good,Poor / Fair / Good,1874.5
+915,Yes,Excellent,Very good / Excellent,3324.5
+916,Yes,Very good,Very good / Excellent,1874.5
+917,No,Poor,Poor / Fair / Good,200
+918,No,Poor,Poor / Fair / Good,1024
+919,No,Good,Poor / Fair / Good,4174.5
+920,No,Good,Poor / Fair / Good,5824
+921,Yes,Good,Poor / Fair / Good,1874.5
+922,Yes,Fair,Poor / Fair / Good,1024
+923,Yes,Good,Poor / Fair / Good,2500
+924,No,Good,Poor / Fair / Good,1450
+925,No,Very good,Very good / Excellent,8400
+926,Yes,Good,Poor / Fair / Good,NA
+927,Yes,Fair,Poor / Fair / Good,1450
+928,Yes,Very good,Very good / Excellent,8400
+929,No,Fair,Poor / Fair / Good,1874.5
+930,Yes,Fair,Poor / Fair / Good,7324
+931,Yes,Very good,Very good / Excellent,1874.5
+932,No,Fair,Poor / Fair / Good,7324
+933,No,Excellent,Very good / Excellent,200
+934,Yes,Very good,Very good / Excellent,2500
+935,Yes,Good,Poor / Fair / Good,1450
+936,Yes,Good,Poor / Fair / Good,NA
+937,Yes,Good,Poor / Fair / Good,7324
+938,Yes,Very good,Very good / Excellent,NA
+939,No,Excellent,Very good / Excellent,NA
+940,Yes,Very good,Very good / Excellent,1450
+941,Yes,Good,Poor / Fair / Good,5824
+942,No,Very good,Very good / Excellent,7324
+943,No,Good,Poor / Fair / Good,200
+944,No,Fair,Poor / Fair / Good,1024
+945,No,Fair,Poor / Fair / Good,600
+946,No,Good,Poor / Fair / Good,600
+947,No,Very good,Very good / Excellent,2500
+948,Yes,Fair,Poor / Fair / Good,1450
+949,Yes,Excellent,Very good / Excellent,1874.5
+950,Yes,Very good,Very good / Excellent,7324
+951,No,Very good,Very good / Excellent,1024
+952,Yes,Excellent,Very good / Excellent,1450
+953,No,Good,Poor / Fair / Good,2500
+954,No,Good,Poor / Fair / Good,4174.5
+955,Yes,Fair,Poor / Fair / Good,2500
+956,No,Fair,Poor / Fair / Good,1024
+957,Yes,Excellent,Very good / Excellent,NA
+958,No,Good,Poor / Fair / Good,1024
+959,Yes,Excellent,Very good / Excellent,3324.5
+960,No,Good,Poor / Fair / Good,1874.5
+961,Yes,Fair,Poor / Fair / Good,1450
+962,No,Very good,Very good / Excellent,NA
+963,No,Good,Poor / Fair / Good,NA
+964,No,Good,Poor / Fair / Good,3324.5
+965,No,Fair,Poor / Fair / Good,2500
+966,No,Good,Poor / Fair / Good,NA
+967,No,Good,Poor / Fair / Good,1450
+968,Yes,Very good,Very good / Excellent,1024
+969,No,Fair,Poor / Fair / Good,1024
+970,No,Poor,Poor / Fair / Good,600
+971,Yes,Very good,Very good / Excellent,1874.5
+972,Yes,Good,Poor / Fair / Good,3324.5
+973,No,Very good,Very good / Excellent,200
+974,No,Very good,Very good / Excellent,1450
+975,No,Fair,Poor / Fair / Good,7324
+976,No,Good,Poor / Fair / Good,1874.5
+977,Yes,Very good,Very good / Excellent,7324
+978,No,Good,Poor / Fair / Good,NA
+979,No,Good,Poor / Fair / Good,4174.5
+980,No,Excellent,Very good / Excellent,1450
+981,Yes,Very good,Very good / Excellent,8400
+982,No,Very good,Very good / Excellent,7324
+983,No,Very good,Very good / Excellent,1024
+984,No,Good,Poor / Fair / Good,8400
+985,Yes,Good,Poor / Fair / Good,2500
+986,Yes,Very good,Very good / Excellent,1874.5
+987,No,Good,Poor / Fair / Good,NA
+988,No,Good,Poor / Fair / Good,1024
+989,Yes,Excellent,Very good / Excellent,600
+990,No,Good,Poor / Fair / Good,1874.5
+991,No,Very good,Very good / Excellent,4174.5
+992,No,Fair,Poor / Fair / Good,NA
+993,No,Good,Poor / Fair / Good,8400
+994,Yes,Good,Poor / Fair / Good,3324.5
+995,No,Fair,Poor / Fair / Good,5824
+996,No,Excellent,Very good / Excellent,1874.5
+997,No,Good,Poor / Fair / Good,5000
+998,No,Poor,Poor / Fair / Good,1024
+999,No,Very good,Very good / Excellent,3324.5
+1000,No,Good,Poor / Fair / Good,3324.5
+1001,No,Fair,Poor / Fair / Good,1024
+1002,No,Very good,Very good / Excellent,600
+1003,No,Good,Poor / Fair / Good,4174.5
+1004,No,Poor,Poor / Fair / Good,3324.5
+1005,No,Fair,Poor / Fair / Good,1874.5
+1006,Yes,Very good,Very good / Excellent,4174.5
+1007,Yes,Very good,Very good / Excellent,8400
+1008,Yes,Good,Poor / Fair / Good,1450
+1009,No,Good,Poor / Fair / Good,4174.5
+1010,Yes,Very good,Very good / Excellent,1450
+1011,No,Excellent,Very good / Excellent,3324.5
+1012,No,Fair,Poor / Fair / Good,4174.5
+1013,No,Good,Poor / Fair / Good,1024
+1014,Yes,Very good,Very good / Excellent,7324
+1015,No,Fair,Poor / Fair / Good,1024
+1016,Yes,Good,Poor / Fair / Good,5824
+1017,No,Very good,Very good / Excellent,NA
+1018,No,Very good,Very good / Excellent,1874.5
+1019,No,Good,Poor / Fair / Good,8400
+1020,Yes,Good,Poor / Fair / Good,3324.5
+1021,No,Very good,Very good / Excellent,2500
+1022,No,Good,Poor / Fair / Good,3324.5
+1023,Yes,Fair,Poor / Fair / Good,5000
+1024,Yes,Very good,Very good / Excellent,3324.5
+1025,Yes,Fair,Poor / Fair / Good,5824
+1026,No,Fair,Poor / Fair / Good,1024
+1027,Yes,Very good,Very good / Excellent,8400
+1028,No,Excellent,Very good / Excellent,5824
+1029,No,Very good,Very good / Excellent,1024
+1030,Yes,Good,Poor / Fair / Good,200
+1031,No,Good,Poor / Fair / Good,NA
+1032,No,Good,Poor / Fair / Good,2500
+1033,No,Good,Poor / Fair / Good,1874.5
+1034,No,Good,Poor / Fair / Good,5824
+1035,No,Good,Poor / Fair / Good,3324.5
+1036,Yes,Excellent,Very good / Excellent,4174.5
+1037,No,Good,Poor / Fair / Good,8400
+1038,No,Good,Poor / Fair / Good,8400
+1039,No,Very good,Very good / Excellent,3324.5
+1040,Yes,Fair,Poor / Fair / Good,5824
+1041,Yes,Good,Poor / Fair / Good,5000
+1042,Yes,Excellent,Very good / Excellent,8400
+1043,Yes,Fair,Poor / Fair / Good,600
+1044,No,Fair,Poor / Fair / Good,4174.5
+1045,Yes,Fair,Poor / Fair / Good,1450
+1046,No,Good,Poor / Fair / Good,3324.5
+1047,Yes,Poor,Poor / Fair / Good,1024
+1048,No,Good,Poor / Fair / Good,7324
+1049,No,Fair,Poor / Fair / Good,2500
+1050,No,Very good,Very good / Excellent,5824
+1051,Yes,Good,Poor / Fair / Good,1450
+1052,No,Fair,Poor / Fair / Good,NA
+1053,Yes,Very good,Very good / Excellent,2500
+1054,No,Very good,Very good / Excellent,5000
+1055,No,Good,Poor / Fair / Good,3324.5
+1056,Yes,Good,Poor / Fair / Good,5000
+1057,Yes,Very good,Very good / Excellent,NA
+1058,Yes,Good,Poor / Fair / Good,8400
+1059,Yes,Very good,Very good / Excellent,7324
+1060,No,Fair,Poor / Fair / Good,7324
+1061,No,Good,Poor / Fair / Good,5000
+1062,No,Good,Poor / Fair / Good,2500
+1063,No,Good,Poor / Fair / Good,4174.5
+1064,No,Poor,Poor / Fair / Good,4174.5
+1065,No,Fair,Poor / Fair / Good,NA
+1066,No,Poor,Poor / Fair / Good,NA
+1067,No,Good,Poor / Fair / Good,1024
+1068,No,Very good,Very good / Excellent,5000
+1069,No,Fair,Poor / Fair / Good,1024
+1070,Yes,Good,Poor / Fair / Good,3324.5
+1071,No,Very good,Very good / Excellent,600
+1072,No,Good,Poor / Fair / Good,2500
+1073,No,Good,Poor / Fair / Good,4174.5
+1074,No,Good,Poor / Fair / Good,7324
+1075,No,Fair,Poor / Fair / Good,1874.5
+1076,No,Good,Poor / Fair / Good,NA
+1077,Yes,Very good,Very good / Excellent,7324
+1078,No,Good,Poor / Fair / Good,1024
+1079,No,Fair,Poor / Fair / Good,3324.5
+1080,No,Excellent,Very good / Excellent,3324.5
+1081,No,Fair,Poor / Fair / Good,1450
+1082,Yes,Good,Poor / Fair / Good,4174.5
+1083,No,Very good,Very good / Excellent,200
+1084,No,Very good,Very good / Excellent,7324
+1085,Yes,Good,Poor / Fair / Good,5824
+1086,No,Excellent,Very good / Excellent,3324.5
+1087,Yes,Good,Poor / Fair / Good,1450
+1088,No,Good,Poor / Fair / Good,600
+1089,No,Fair,Poor / Fair / Good,7324
+1090,No,Excellent,Very good / Excellent,5824
+1091,Yes,Good,Poor / Fair / Good,1024
+1092,No,Good,Poor / Fair / Good,4174.5
+1093,No,Fair,Poor / Fair / Good,NA
+1094,Yes,Excellent,Very good / Excellent,1024
+1095,No,Very good,Very good / Excellent,4174.5
+1096,No,Fair,Poor / Fair / Good,1450
+1097,Yes,Fair,Poor / Fair / Good,5000
+1098,Yes,Good,Poor / Fair / Good,NA
+1099,No,Good,Poor / Fair / Good,1024
+1100,No,Fair,Poor / Fair / Good,NA
+1101,Yes,Good,Poor / Fair / Good,1024
+1102,No,Very good,Very good / Excellent,3324.5
+1103,No,Fair,Poor / Fair / Good,1024
+1104,Yes,Very good,Very good / Excellent,8400
+1105,Yes,Good,Poor / Fair / Good,4174.5
+1106,No,Very good,Very good / Excellent,7324
+1107,Yes,Good,Poor / Fair / Good,1450
+1108,No,Very good,Very good / Excellent,2500
+1109,No,Fair,Poor / Fair / Good,1024
+1110,No,Very good,Very good / Excellent,NA
+1111,Yes,Good,Poor / Fair / Good,2500
+1112,No,Very good,Very good / Excellent,5000
+1113,Yes,Excellent,Very good / Excellent,1024
+1114,Yes,Very good,Very good / Excellent,NA
+1115,Yes,Very good,Very good / Excellent,4174.5
+1116,Yes,Good,Poor / Fair / Good,3324.5
+1117,No,Very good,Very good / Excellent,4174.5
+1118,No,Very good,Very good / Excellent,2500
+1119,Yes,Excellent,Very good / Excellent,7324
+1120,No,Good,Poor / Fair / Good,5000
+1121,Yes,Poor,Poor / Fair / Good,NA
+1122,No,Good,Poor / Fair / Good,4174.5
+1123,Yes,Good,Poor / Fair / Good,2500
+1124,No,Very good,Very good / Excellent,2500
+1125,Yes,Very good,Very good / Excellent,1874.5
+1126,Yes,Excellent,Very good / Excellent,8400
+1127,Yes,Fair,Poor / Fair / Good,NA
+1128,Yes,Very good,Very good / Excellent,8400
+1129,Yes,Very good,Very good / Excellent,1024
+1130,No,Good,Poor / Fair / Good,3324.5
+1131,No,Good,Poor / Fair / Good,600
+1132,Yes,Very good,Very good / Excellent,1024
+1133,Yes,Poor,Poor / Fair / Good,1874.5
+1134,No,Good,Poor / Fair / Good,1450
+1135,No,Very good,Very good / Excellent,8400
+1136,Yes,Good,Poor / Fair / Good,3324.5
+1137,Yes,Fair,Poor / Fair / Good,2500
+1138,Yes,Good,Poor / Fair / Good,7324
+1139,Yes,Very good,Very good / Excellent,NA
+1140,No,Good,Poor / Fair / Good,1874.5
+1141,No,Good,Poor / Fair / Good,7324
+1142,No,Very good,Very good / Excellent,3324.5
+1143,Yes,Fair,Poor / Fair / Good,NA
+1144,No,Good,Poor / Fair / Good,5824
+1145,No,Excellent,Very good / Excellent,1874.5
+1146,No,Good,Poor / Fair / Good,600
+1147,No,Good,Poor / Fair / Good,1874.5
+1148,No,Excellent,Very good / Excellent,1450
+1149,No,Excellent,Very good / Excellent,3324.5
+1150,No,Very good,Very good / Excellent,1024
+1151,No,Very good,Very good / Excellent,5824
+1152,No,Poor,Poor / Fair / Good,1024
+1153,No,Good,Poor / Fair / Good,5000
+1154,Yes,Fair,Poor / Fair / Good,1450
+1155,No,Fair,Poor / Fair / Good,600
+1156,No,Fair,Poor / Fair / Good,4174.5
+1157,Yes,Good,Poor / Fair / Good,8400
+1158,No,Good,Poor / Fair / Good,600
+1159,Yes,Very good,Very good / Excellent,7324
+1160,No,Fair,Poor / Fair / Good,1874.5
+1161,No,Very good,Very good / Excellent,3324.5
+1162,No,Fair,Poor / Fair / Good,1024
+1163,No,Very good,Very good / Excellent,NA
+1164,No,Good,Poor / Fair / Good,NA
+1165,No,Excellent,Very good / Excellent,NA
+1166,Yes,Excellent,Very good / Excellent,5824
+1167,No,Excellent,Very good / Excellent,1450
+1168,No,Very good,Very good / Excellent,1874.5
+1169,Yes,Very good,Very good / Excellent,NA
+1170,No,Very good,Very good / Excellent,NA
+1171,Yes,Very good,Very good / Excellent,4174.5
+1172,No,Very good,Very good / Excellent,1024
+1173,No,Good,Poor / Fair / Good,5000
+1174,No,Good,Poor / Fair / Good,2500
+1175,Yes,Good,Poor / Fair / Good,1874.5
+1176,No,Fair,Poor / Fair / Good,1874.5
+1177,No,Very good,Very good / Excellent,5824
+1178,Yes,Poor,Poor / Fair / Good,4174.5
+1179,Yes,Very good,Very good / Excellent,1450
+1180,No,Good,Poor / Fair / Good,8400
+1181,Yes,Very good,Very good / Excellent,1874.5
+1182,No,Very good,Very good / Excellent,3324.5
+1183,No,Very good,Very good / Excellent,1024
+1184,No,Fair,Poor / Fair / Good,4174.5
+1185,No,Good,Poor / Fair / Good,7324
+1186,Yes,Poor,Poor / Fair / Good,2500
+1187,No,Good,Poor / Fair / Good,1024
+1188,No,Good,Poor / Fair / Good,3324.5
+1189,No,Excellent,Very good / Excellent,1450
+1190,Yes,Excellent,Very good / Excellent,7324
+1191,No,Very good,Very good / Excellent,5000
+1192,Yes,Good,Poor / Fair / Good,7324
+1193,No,Fair,Poor / Fair / Good,NA
+1194,No,Very good,Very good / Excellent,2500
+1195,Yes,Very good,Very good / Excellent,1874.5
+1196,Yes,Good,Poor / Fair / Good,NA
+1197,No,Good,Poor / Fair / Good,2500
+1198,No,Very good,Very good / Excellent,7324
+1199,No,Very good,Very good / Excellent,1450
+1200,No,Fair,Poor / Fair / Good,NA
+1201,No,Good,Poor / Fair / Good,2500
+1202,Yes,Good,Poor / Fair / Good,3324.5
+1203,No,Good,Poor / Fair / Good,1450
+1204,Yes,Fair,Poor / Fair / Good,1024
+1205,Yes,Poor,Poor / Fair / Good,3324.5
+1206,Yes,Excellent,Very good / Excellent,1024
+1207,No,Good,Poor / Fair / Good,2500
+1208,Yes,Excellent,Very good / Excellent,3324.5
+1209,No,Good,Poor / Fair / Good,1024
+1210,No,Very good,Very good / Excellent,8400
+1211,No,Very good,Very good / Excellent,2500
+1212,No,Good,Poor / Fair / Good,5000
+1213,Yes,Good,Poor / Fair / Good,3324.5
+1214,Yes,Good,Poor / Fair / Good,NA
+1215,No,Good,Poor / Fair / Good,5000
+1216,No,Good,Poor / Fair / Good,2500
+1217,No,Good,Poor / Fair / Good,NA
+1218,No,Good,Poor / Fair / Good,NA
+1219,No,Good,Poor / Fair / Good,3324.5
+1220,No,Good,Poor / Fair / Good,1024
+1221,No,Good,Poor / Fair / Good,1024
+1222,Yes,Fair,Poor / Fair / Good,NA
+1223,No,Poor,Poor / Fair / Good,5000
+1224,Yes,Very good,Very good / Excellent,5000
+1225,Yes,Good,Poor / Fair / Good,3324.5
+1226,Yes,Excellent,Very good / Excellent,1024
+1227,No,Very good,Very good / Excellent,1450
+1228,Yes,Very good,Very good / Excellent,3324.5
+1229,No,Very good,Very good / Excellent,1874.5
+1230,Yes,Fair,Poor / Fair / Good,600
+1231,No,Good,Poor / Fair / Good,1024
+1232,No,Good,Poor / Fair / Good,2500
+1233,Yes,Good,Poor / Fair / Good,5824
+1234,No,Good,Poor / Fair / Good,1450
+1235,No,Good,Poor / Fair / Good,4174.5
+1236,No,Fair,Poor / Fair / Good,1874.5
+1237,Yes,Good,Poor / Fair / Good,2500
+1238,No,Good,Poor / Fair / Good,3324.5
+1239,No,Fair,Poor / Fair / Good,1024
+1240,No,Fair,Poor / Fair / Good,1450
+1241,Yes,Poor,Poor / Fair / Good,1874.5
+1242,No,Very good,Very good / Excellent,3324.5
+1243,No,Poor,Poor / Fair / Good,NA
+1244,Yes,Very good,Very good / Excellent,8400
+1245,No,Very good,Very good / Excellent,3324.5
+1246,Yes,Good,Poor / Fair / Good,1024
+1247,Yes,Very good,Very good / Excellent,1874.5
+1248,No,Excellent,Very good / Excellent,1874.5
+1249,No,Fair,Poor / Fair / Good,8400
+1250,Yes,Good,Poor / Fair / Good,1024
+1251,No,Very good,Very good / Excellent,2500
+1252,Yes,Good,Poor / Fair / Good,5824
+1253,No,Excellent,Very good / Excellent,4174.5
+1254,No,Good,Poor / Fair / Good,1024
+1255,Yes,Poor,Poor / Fair / Good,7324
+1256,Yes,Good,Poor / Fair / Good,2500
+1257,No,Fair,Poor / Fair / Good,1450
+1258,No,Good,Poor / Fair / Good,1024
+1259,No,Poor,Poor / Fair / Good,2500
+1260,No,Good,Poor / Fair / Good,5824
+1261,No,Good,Poor / Fair / Good,4174.5
+1262,No,Fair,Poor / Fair / Good,1874.5
+1263,No,Fair,Poor / Fair / Good,5000
+1264,No,Very good,Very good / Excellent,4174.5
+1265,No,Very good,Very good / Excellent,8400
+1266,No,Very good,Very good / Excellent,7324
+1267,Yes,Very good,Very good / Excellent,4174.5
+1268,Yes,Fair,Poor / Fair / Good,200
+1269,No,Very good,Very good / Excellent,200
+1270,No,Fair,Poor / Fair / Good,1024
+1271,No,Good,Poor / Fair / Good,200
+1272,No,Good,Poor / Fair / Good,1024
+1273,No,Fair,Poor / Fair / Good,3324.5
+1274,No,Excellent,Very good / Excellent,5824
+1275,Yes,Good,Poor / Fair / Good,7324
+1276,Yes,Good,Poor / Fair / Good,NA
+1277,No,Good,Poor / Fair / Good,NA
+1278,No,Fair,Poor / Fair / Good,NA
+1279,No,Fair,Poor / Fair / Good,200
+1280,No,Good,Poor / Fair / Good,NA
+1281,No,Good,Poor / Fair / Good,4174.5
+1282,No,Good,Poor / Fair / Good,NA
+1283,No,Fair,Poor / Fair / Good,200
+1284,Yes,Very good,Very good / Excellent,1874.5
+1285,No,Very good,Very good / Excellent,3324.5
+1286,Yes,Very good,Very good / Excellent,4174.5
+1287,No,Good,Poor / Fair / Good,3324.5
+1288,No,Good,Poor / Fair / Good,3324.5
+1289,No,Very good,Very good / Excellent,200
+1290,No,Fair,Poor / Fair / Good,3324.5
+1291,No,Fair,Poor / Fair / Good,5824
+1292,No,Fair,Poor / Fair / Good,1450
+1293,Yes,Good,Poor / Fair / Good,1024
+1294,No,Good,Poor / Fair / Good,3324.5
+1295,Yes,Fair,Poor / Fair / Good,200
+1296,No,Very good,Very good / Excellent,2500
+1297,Yes,Fair,Poor / Fair / Good,1450
+1298,No,Good,Poor / Fair / Good,NA
+1299,No,Very good,Very good / Excellent,3324.5
+1300,No,Excellent,Very good / Excellent,2500
+1301,Yes,Very good,Very good / Excellent,2500
+1302,No,Good,Poor / Fair / Good,2500
+1303,No,Excellent,Very good / Excellent,1024
+1304,No,Poor,Poor / Fair / Good,600
+1305,No,Very good,Very good / Excellent,3324.5
+1306,Yes,Very good,Very good / Excellent,3324.5
+1307,No,Good,Poor / Fair / Good,1024
+1308,Yes,Very good,Very good / Excellent,3324.5
+1309,No,Fair,Poor / Fair / Good,2500
+1310,No,Excellent,Very good / Excellent,3324.5
+1311,No,Very good,Very good / Excellent,5824
+1312,No,Fair,Poor / Fair / Good,2500
+1313,Yes,Fair,Poor / Fair / Good,1024
+1314,No,Good,Poor / Fair / Good,2500
+1315,No,Good,Poor / Fair / Good,2500
+1316,No,Very good,Very good / Excellent,5824
+1317,No,Very good,Very good / Excellent,1450
+1318,Yes,Very good,Very good / Excellent,1874.5
+1319,No,Good,Poor / Fair / Good,1024
+1320,No,Poor,Poor / Fair / Good,2500
+1321,No,Good,Poor / Fair / Good,600
+1322,No,Very good,Very good / Excellent,NA
+1323,No,Good,Poor / Fair / Good,8400
+1324,No,Fair,Poor / Fair / Good,1874.5
+1325,No,Good,Poor / Fair / Good,1024
+1326,No,Very good,Very good / Excellent,1450
+1327,No,Very good,Very good / Excellent,2500
+1328,Yes,Good,Poor / Fair / Good,8400
+1329,Yes,Fair,Poor / Fair / Good,1874.5
+1330,Yes,Excellent,Very good / Excellent,7324
+1331,No,Good,Poor / Fair / Good,3324.5
+1332,No,Good,Poor / Fair / Good,1024
+1333,Yes,Good,Poor / Fair / Good,2500
+1334,Yes,Very good,Very good / Excellent,4174.5
+1335,No,Very good,Very good / Excellent,2500
+1336,No,Excellent,Very good / Excellent,1874.5
+1337,No,Excellent,Very good / Excellent,1024
+1338,Yes,Good,Poor / Fair / Good,2500
+1339,No,Good,Poor / Fair / Good,1024
+1340,No,Fair,Poor / Fair / Good,3324.5
+1341,Yes,Good,Poor / Fair / Good,8400
+1342,Yes,Good,Poor / Fair / Good,600
+1343,No,Good,Poor / Fair / Good,1450
+1344,Yes,Good,Poor / Fair / Good,600
+1345,No,Fair,Poor / Fair / Good,4174.5
+1346,No,Excellent,Very good / Excellent,8400
+1347,No,Very good,Very good / Excellent,1024
+1348,No,Good,Poor / Fair / Good,1024
+1349,No,Very good,Very good / Excellent,NA
+1350,Yes,Very good,Very good / Excellent,4174.5
+1351,No,Poor,Poor / Fair / Good,1024
+1352,No,Very good,Very good / Excellent,1874.5
+1353,Yes,Very good,Very good / Excellent,4174.5
+1354,No,Excellent,Very good / Excellent,1024
+1355,Yes,Fair,Poor / Fair / Good,5824
+1356,No,Fair,Poor / Fair / Good,4174.5
+1357,No,Fair,Poor / Fair / Good,600
+1358,No,Good,Poor / Fair / Good,2500
+1359,Yes,Very good,Very good / Excellent,2500
+1360,No,Very good,Very good / Excellent,1874.5
+1361,Yes,Good,Poor / Fair / Good,1024
+1362,Yes,Good,Poor / Fair / Good,5000
+1363,Yes,Good,Poor / Fair / Good,5000
+1364,No,Excellent,Very good / Excellent,1450
+1365,No,Fair,Poor / Fair / Good,200
+1366,No,Good,Poor / Fair / Good,3324.5
+1367,No,Good,Poor / Fair / Good,1450
+1368,Yes,Good,Poor / Fair / Good,7324
+1369,No,Good,Poor / Fair / Good,4174.5
+1370,No,Fair,Poor / Fair / Good,3324.5
+1371,Yes,Very good,Very good / Excellent,4174.5
+1372,No,Very good,Very good / Excellent,4174.5
+1373,Yes,Very good,Very good / Excellent,5000
+1374,Yes,Fair,Poor / Fair / Good,4174.5
+1375,Yes,Good,Poor / Fair / Good,3324.5
+1376,No,Excellent,Very good / Excellent,5824
+1377,Yes,Very good,Very good / Excellent,7324
+1378,No,Good,Poor / Fair / Good,NA
+1379,Yes,Good,Poor / Fair / Good,8400
+1380,No,Fair,Poor / Fair / Good,2500
+1381,No,Excellent,Very good / Excellent,NA
+1382,No,Good,Poor / Fair / Good,3324.5
+1383,Yes,Good,Poor / Fair / Good,NA
+1384,No,Good,Poor / Fair / Good,5000
+1385,Yes,Good,Poor / Fair / Good,7324
+1386,No,Fair,Poor / Fair / Good,1450
+1387,No,Good,Poor / Fair / Good,1874.5
+1388,No,Good,Poor / Fair / Good,2500
+1389,Yes,Very good,Very good / Excellent,1874.5
+1390,No,Good,Poor / Fair / Good,3324.5
+1391,Yes,Good,Poor / Fair / Good,3324.5
+1392,No,Good,Poor / Fair / Good,8400
+1393,No,Excellent,Very good / Excellent,5000
+1394,No,Fair,Poor / Fair / Good,2500
+1395,No,Good,Poor / Fair / Good,600
+1396,No,Good,Poor / Fair / Good,5824
+1397,Yes,Fair,Poor / Fair / Good,NA
+1398,No,Good,Poor / Fair / Good,1874.5
+1399,No,Very good,Very good / Excellent,2500
+1400,Yes,Very good,Very good / Excellent,600
+1401,No,Good,Poor / Fair / Good,600
+1402,No,Very good,Very good / Excellent,1874.5
+1403,Yes,Very good,Very good / Excellent,4174.5
+1404,No,Very good,Very good / Excellent,200
+1405,No,Good,Poor / Fair / Good,5000
+1406,Yes,Very good,Very good / Excellent,1874.5
+1407,Yes,Excellent,Very good / Excellent,4174.5
+1408,No,Good,Poor / Fair / Good,2500
+1409,No,Very good,Very good / Excellent,1450
+1410,No,Excellent,Very good / Excellent,4174.5
+1411,No,Very good,Very good / Excellent,1450
+1412,No,Very good,Very good / Excellent,7324
+1413,Yes,Very good,Very good / Excellent,8400
+1414,No,Very good,Very good / Excellent,3324.5
+1415,No,Fair,Poor / Fair / Good,NA
+1416,Yes,Very good,Very good / Excellent,NA
+1417,No,Good,Poor / Fair / Good,1450
+1418,No,Very good,Very good / Excellent,1024
+1419,Yes,Good,Poor / Fair / Good,1024
+1420,Yes,Good,Poor / Fair / Good,7324
+1421,No,Fair,Poor / Fair / Good,600
+1422,No,Fair,Poor / Fair / Good,1874.5
+1423,No,Good,Poor / Fair / Good,3324.5
+1424,Yes,Fair,Poor / Fair / Good,4174.5
+1425,Yes,Very good,Very good / Excellent,5000
+1426,No,Very good,Very good / Excellent,3324.5
+1427,Yes,Excellent,Very good / Excellent,7324
+1428,No,Good,Poor / Fair / Good,8400
+1429,Yes,Good,Poor / Fair / Good,3324.5
+1430,No,Fair,Poor / Fair / Good,1450
+1431,No,Very good,Very good / Excellent,1450
+1432,No,Good,Poor / Fair / Good,NA
+1433,No,Good,Poor / Fair / Good,1024
+1434,Yes,Good,Poor / Fair / Good,5000
+1435,Yes,Good,Poor / Fair / Good,1874.5
+1436,Yes,Very good,Very good / Excellent,4174.5
+1437,No,Good,Poor / Fair / Good,1024
+1438,No,Excellent,Very good / Excellent,NA
+1439,No,Very good,Very good / Excellent,1024
+1440,No,Fair,Poor / Fair / Good,NA
+1441,No,Good,Poor / Fair / Good,7324
+1442,Yes,Very good,Very good / Excellent,2500
+1443,No,Good,Poor / Fair / Good,1450
+1444,No,Poor,Poor / Fair / Good,NA
+1445,No,Very good,Very good / Excellent,8400
+1446,No,Poor,Poor / Fair / Good,1024
+1447,No,Very good,Very good / Excellent,1024
+1448,Yes,Very good,Very good / Excellent,NA
+1449,No,Good,Poor / Fair / Good,4174.5
+1450,Yes,Excellent,Very good / Excellent,NA
+1451,No,Good,Poor / Fair / Good,8400
+1452,No,Excellent,Very good / Excellent,5000
+1453,Yes,Good,Poor / Fair / Good,600
+1454,Yes,Good,Poor / Fair / Good,2500
+1455,No,Very good,Very good / Excellent,5824
+1456,No,Good,Poor / Fair / Good,1024
+1457,Yes,Very good,Very good / Excellent,600
+1458,No,Very good,Very good / Excellent,NA
+1459,No,Very good,Very good / Excellent,NA
+1460,No,Fair,Poor / Fair / Good,3324.5
+1461,No,Good,Poor / Fair / Good,1024
+1462,Yes,Fair,Poor / Fair / Good,NA
+1463,No,Fair,Poor / Fair / Good,1450
+1464,No,Good,Poor / Fair / Good,1450
+1465,No,Very good,Very good / Excellent,2500
+1466,Yes,Very good,Very good / Excellent,3324.5
+1467,Yes,Excellent,Very good / Excellent,4174.5
+1468,Yes,Good,Poor / Fair / Good,2500
+1469,No,Good,Poor / Fair / Good,NA
+1470,No,Excellent,Very good / Excellent,2500
+1471,No,Excellent,Very good / Excellent,1024
+1472,No,Good,Poor / Fair / Good,2500
+1473,Yes,Excellent,Very good / Excellent,5000
+1474,No,Fair,Poor / Fair / Good,1874.5
+1475,No,Excellent,Very good / Excellent,4174.5
+1476,No,Fair,Poor / Fair / Good,4174.5
+1477,Yes,Good,Poor / Fair / Good,5000
+1478,No,Very good,Very good / Excellent,600
+1479,Yes,Fair,Poor / Fair / Good,4174.5
+1480,Yes,Excellent,Very good / Excellent,4174.5
+1481,No,Good,Poor / Fair / Good,3324.5
+1482,No,Fair,Poor / Fair / Good,600
+1483,No,Good,Poor / Fair / Good,1874.5
+1484,Yes,Fair,Poor / Fair / Good,1024
+1485,Yes,Good,Poor / Fair / Good,8400
+1486,Yes,Very good,Very good / Excellent,1874.5
+1487,Yes,Very good,Very good / Excellent,600
+1488,No,Good,Poor / Fair / Good,2500
+1489,No,Good,Poor / Fair / Good,2500
+1490,No,Fair,Poor / Fair / Good,7324
+1491,Yes,Excellent,Very good / Excellent,8400
+1492,No,Good,Poor / Fair / Good,5000
+1493,No,Good,Poor / Fair / Good,7324
+1494,No,Good,Poor / Fair / Good,1874.5
+1495,No,Good,Poor / Fair / Good,8400
+1496,No,Good,Poor / Fair / Good,2500
+1497,Yes,Excellent,Very good / Excellent,NA
+1498,No,Very good,Very good / Excellent,NA
+1499,No,Good,Poor / Fair / Good,5824
+1500,No,Good,Poor / Fair / Good,2500
+1501,Yes,Very good,Very good / Excellent,7324
+1502,No,Good,Poor / Fair / Good,1874.5
+1503,Yes,Very good,Very good / Excellent,5824
+1504,No,Good,Poor / Fair / Good,1874.5
+1505,No,Fair,Poor / Fair / Good,2500
+1506,Yes,Very good,Very good / Excellent,NA
+1507,No,Fair,Poor / Fair / Good,NA
+1508,No,Very good,Very good / Excellent,1024
+1509,No,Fair,Poor / Fair / Good,5000
+1510,Yes,Excellent,Very good / Excellent,1450
+1511,Yes,Good,Poor / Fair / Good,7324
+1512,No,Poor,Poor / Fair / Good,2500
+1513,No,Very good,Very good / Excellent,1874.5
+1514,Yes,Fair,Poor / Fair / Good,8400
+1515,No,Very good,Very good / Excellent,8400
+1516,No,Good,Poor / Fair / Good,1874.5
+1517,No,Good,Poor / Fair / Good,NA
+1518,No,Good,Poor / Fair / Good,1024
+1519,No,Very good,Very good / Excellent,5000
+1520,No,Fair,Poor / Fair / Good,1024
+1521,No,Good,Poor / Fair / Good,200
+1522,No,Poor,Poor / Fair / Good,1450
+1523,Yes,Good,Poor / Fair / Good,5824
+1524,No,Poor,Poor / Fair / Good,2500
+1525,No,Very good,Very good / Excellent,5824
+1526,No,Good,Poor / Fair / Good,NA
+1527,Yes,Good,Poor / Fair / Good,1874.5
+1528,Yes,Good,Poor / Fair / Good,1024
+1529,Yes,Very good,Very good / Excellent,1874.5
+1530,No,Good,Poor / Fair / Good,2500
+1531,Yes,Good,Poor / Fair / Good,4174.5
+1532,No,Poor,Poor / Fair / Good,3324.5
+1533,No,Very good,Very good / Excellent,7324
+1534,No,Good,Poor / Fair / Good,4174.5
+1535,No,Very good,Very good / Excellent,5824
+1536,Yes,Good,Poor / Fair / Good,NA
+1537,No,Fair,Poor / Fair / Good,NA
+1538,Yes,Very good,Very good / Excellent,NA
+1539,No,Good,Poor / Fair / Good,1450
+1540,Yes,Excellent,Very good / Excellent,8400
+1541,No,Excellent,Very good / Excellent,3324.5
+1542,No,Good,Poor / Fair / Good,1874.5
+1543,No,Good,Poor / Fair / Good,1450
+1544,Yes,Good,Poor / Fair / Good,600
+1545,Yes,Good,Poor / Fair / Good,5000
+1546,Yes,Very good,Very good / Excellent,1450
+1547,Yes,Good,Poor / Fair / Good,3324.5
+1548,No,Poor,Poor / Fair / Good,5000
+1549,Yes,Very good,Very good / Excellent,200
+1550,No,Good,Poor / Fair / Good,1874.5
+1551,Yes,Very good,Very good / Excellent,2500
+1552,Yes,Fair,Poor / Fair / Good,2500
+1553,Yes,Good,Poor / Fair / Good,2500
+1554,No,Good,Poor / Fair / Good,8400
+1555,No,Good,Poor / Fair / Good,5000
+1556,No,Good,Poor / Fair / Good,1450
+1557,Yes,Very good,Very good / Excellent,3324.5
+1558,No,Good,Poor / Fair / Good,3324.5
+1559,Yes,Very good,Very good / Excellent,200
+1560,No,Fair,Poor / Fair / Good,7324
+1561,No,Good,Poor / Fair / Good,200
+1562,No,Excellent,Very good / Excellent,1450
+1563,Yes,Good,Poor / Fair / Good,3324.5
+1564,Yes,Very good,Very good / Excellent,1450
+1565,No,Good,Poor / Fair / Good,200
+1566,Yes,Very good,Very good / Excellent,2500
+1567,No,Excellent,Very good / Excellent,8400
+1568,No,Fair,Poor / Fair / Good,1450
+1569,No,Fair,Poor / Fair / Good,2500
+1570,No,Excellent,Very good / Excellent,600
+1571,Yes,Good,Poor / Fair / Good,8400
+1572,Yes,Excellent,Very good / Excellent,200
+1573,No,Good,Poor / Fair / Good,1874.5
+1574,No,Fair,Poor / Fair / Good,NA
+1575,Yes,Good,Poor / Fair / Good,5824
+1576,No,Good,Poor / Fair / Good,1450
+1577,No,Good,Poor / Fair / Good,NA
+1578,No,Excellent,Very good / Excellent,2500
+1579,Yes,Good,Poor / Fair / Good,1450
+1580,Yes,Good,Poor / Fair / Good,600
+1581,No,Excellent,Very good / Excellent,4174.5
+1582,No,Good,Poor / Fair / Good,600
+1583,No,Good,Poor / Fair / Good,5824
+1584,Yes,Very good,Very good / Excellent,8400
+1585,Yes,Fair,Poor / Fair / Good,3324.5
+1586,No,Good,Poor / Fair / Good,2500
+1587,No,Good,Poor / Fair / Good,1874.5
+1588,No,Excellent,Very good / Excellent,600
+1589,No,Fair,Poor / Fair / Good,2500
+1590,No,Good,Poor / Fair / Good,1450
+1591,Yes,Fair,Poor / Fair / Good,4174.5
+1592,No,Very good,Very good / Excellent,1874.5
+1593,No,Fair,Poor / Fair / Good,1450
+1594,Yes,Very good,Very good / Excellent,7324
+1595,Yes,Good,Poor / Fair / Good,8400
+1596,No,Very good,Very good / Excellent,1874.5
+1597,Yes,Fair,Poor / Fair / Good,1024
+1598,No,Very good,Very good / Excellent,5824
+1599,Yes,Very good,Very good / Excellent,600
+1600,No,Good,Poor / Fair / Good,1874.5
+1601,No,Good,Poor / Fair / Good,1874.5
+1602,Yes,Fair,Poor / Fair / Good,2500
+1603,Yes,Fair,Poor / Fair / Good,1874.5
+1604,No,Fair,Poor / Fair / Good,NA
+1605,No,Excellent,Very good / Excellent,NA
+1606,Yes,Good,Poor / Fair / Good,8400
+1607,No,Good,Poor / Fair / Good,7324
+1608,Yes,Very good,Very good / Excellent,1450
+1609,Yes,Good,Poor / Fair / Good,5000
+1610,Yes,Good,Poor / Fair / Good,1450
+1611,No,Good,Poor / Fair / Good,2500
+1612,Yes,Excellent,Very good / Excellent,NA
+1613,Yes,Good,Poor / Fair / Good,1450
+1614,No,Very good,Very good / Excellent,3324.5
+1615,Yes,Good,Poor / Fair / Good,4174.5
+1616,No,Good,Poor / Fair / Good,1874.5
+1617,No,Good,Poor / Fair / Good,1874.5
+1618,No,Good,Poor / Fair / Good,1024
+1619,No,Excellent,Very good / Excellent,4174.5
+1620,No,Very good,Very good / Excellent,NA
+1621,No,Good,Poor / Fair / Good,1024
+1622,No,Good,Poor / Fair / Good,600
+1623,No,Good,Poor / Fair / Good,4174.5
+1624,No,Good,Poor / Fair / Good,3324.5
+1625,No,Very good,Very good / Excellent,2500
+1626,No,Good,Poor / Fair / Good,1024
+1627,No,Fair,Poor / Fair / Good,2500
+1628,No,Fair,Poor / Fair / Good,2500
+1629,No,Good,Poor / Fair / Good,1024
+1630,No,Fair,Poor / Fair / Good,1450
+1631,No,Fair,Poor / Fair / Good,1874.5
+1632,Yes,Very good,Very good / Excellent,NA
+1633,No,Very good,Very good / Excellent,5824
+1634,No,Poor,Poor / Fair / Good,1450
+1635,Yes,Good,Poor / Fair / Good,1874.5
+1636,No,Good,Poor / Fair / Good,600
+1637,No,Fair,Poor / Fair / Good,NA
+1638,No,Good,Poor / Fair / Good,600
+1639,No,Good,Poor / Fair / Good,4174.5
+1640,No,Fair,Poor / Fair / Good,3324.5
+1641,No,Very good,Very good / Excellent,5824
+1642,Yes,Very good,Very good / Excellent,1024
+1643,Yes,Fair,Poor / Fair / Good,7324
+1644,Yes,Fair,Poor / Fair / Good,600
+1645,No,Good,Poor / Fair / Good,8400
+1646,Yes,Good,Poor / Fair / Good,8400
+1647,No,Excellent,Very good / Excellent,NA
+1648,No,Excellent,Very good / Excellent,1024
+1649,No,Fair,Poor / Fair / Good,4174.5
+1650,No,Good,Poor / Fair / Good,2500
+1651,No,Fair,Poor / Fair / Good,600
+1652,No,Very good,Very good / Excellent,1874.5
+1653,Yes,Good,Poor / Fair / Good,8400
+1654,Yes,Very good,Very good / Excellent,7324
+1655,Yes,Very good,Very good / Excellent,3324.5
+1656,No,Good,Poor / Fair / Good,1450
+1657,No,Good,Poor / Fair / Good,NA
+1658,Yes,Fair,Poor / Fair / Good,1024
+1659,No,Very good,Very good / Excellent,600
+1660,No,Very good,Very good / Excellent,2500
+1661,Yes,Very good,Very good / Excellent,3324.5
+1662,Yes,Good,Poor / Fair / Good,NA
+1663,Yes,Good,Poor / Fair / Good,3324.5
+1664,No,Fair,Poor / Fair / Good,600
+1665,No,Good,Poor / Fair / Good,3324.5
+1666,No,Good,Poor / Fair / Good,1874.5
+1667,No,Good,Poor / Fair / Good,1450
+1668,No,Good,Poor / Fair / Good,1024
+1669,Yes,Fair,Poor / Fair / Good,1874.5
+1670,No,Very good,Very good / Excellent,NA
+1671,Yes,Fair,Poor / Fair / Good,2500
+1672,No,Fair,Poor / Fair / Good,1450
+1673,No,Very good,Very good / Excellent,1024
+1674,Yes,Excellent,Very good / Excellent,1874.5
+1675,Yes,Good,Poor / Fair / Good,2500
+1676,No,Good,Poor / Fair / Good,5824
+1677,No,Excellent,Very good / Excellent,5000
+1678,Yes,Fair,Poor / Fair / Good,NA
+1679,Yes,Excellent,Very good / Excellent,NA
+1680,Yes,Good,Poor / Fair / Good,600
+1681,No,Good,Poor / Fair / Good,7324
+1682,No,Fair,Poor / Fair / Good,1874.5
+1683,No,Good,Poor / Fair / Good,1024
+1684,No,Very good,Very good / Excellent,3324.5
+1685,Yes,Very good,Very good / Excellent,8400
+1686,No,Very good,Very good / Excellent,4174.5
+1687,No,Fair,Poor / Fair / Good,600
+1688,No,Good,Poor / Fair / Good,3324.5
+1689,Yes,Excellent,Very good / Excellent,5824
+1690,No,Excellent,Very good / Excellent,3324.5
+1691,No,Fair,Poor / Fair / Good,1450
+1692,No,Good,Poor / Fair / Good,1450
+1693,No,Very good,Very good / Excellent,600
+1694,Yes,Very good,Very good / Excellent,5824
+1695,Yes,Good,Poor / Fair / Good,3324.5
+1696,No,Good,Poor / Fair / Good,4174.5
+1697,No,Fair,Poor / Fair / Good,1024
+1698,No,Good,Poor / Fair / Good,2500
+1699,Yes,Very good,Very good / Excellent,8400
+1700,Yes,Good,Poor / Fair / Good,8400
+1701,No,Very good,Very good / Excellent,600
+1702,Yes,Good,Poor / Fair / Good,4174.5
+1703,Yes,Good,Poor / Fair / Good,5824
+1704,Yes,Poor,Poor / Fair / Good,1450
+1705,No,Excellent,Very good / Excellent,NA
+1706,No,Good,Poor / Fair / Good,5000
+1707,No,Good,Poor / Fair / Good,3324.5
+1708,No,Good,Poor / Fair / Good,5000
+1709,No,Good,Poor / Fair / Good,1874.5
+1710,No,Good,Poor / Fair / Good,600
+1711,No,Very good,Very good / Excellent,4174.5
+1712,Yes,Good,Poor / Fair / Good,3324.5
+1713,Yes,Very good,Very good / Excellent,5824
+1714,No,Fair,Poor / Fair / Good,2500
+1715,No,Good,Poor / Fair / Good,1450
+1716,No,Very good,Very good / Excellent,4174.5
+1717,No,Very good,Very good / Excellent,NA
+1718,No,Good,Poor / Fair / Good,600
+1719,No,Very good,Very good / Excellent,1024
+1720,No,Fair,Poor / Fair / Good,1874.5
+1721,Yes,Good,Poor / Fair / Good,1024
+1722,No,Very good,Very good / Excellent,1874.5
+1723,No,Very good,Very good / Excellent,1450
+1724,Yes,Very good,Very good / Excellent,7324
+1725,Yes,Good,Poor / Fair / Good,7324
+1726,No,Very good,Very good / Excellent,3324.5
+1727,No,Very good,Very good / Excellent,1024
+1728,Yes,Excellent,Very good / Excellent,NA
+1729,No,Poor,Poor / Fair / Good,NA
+1730,Yes,Good,Poor / Fair / Good,600
+1731,No,Very good,Very good / Excellent,1024
+1732,No,Very good,Very good / Excellent,1450
+1733,Yes,Good,Poor / Fair / Good,8400
+1734,No,Excellent,Very good / Excellent,1874.5
+1735,No,Very good,Very good / Excellent,2500
+1736,No,Very good,Very good / Excellent,NA
+1737,No,Good,Poor / Fair / Good,600
+1738,No,Good,Poor / Fair / Good,1024
+1739,No,Good,Poor / Fair / Good,1450
+1740,No,Very good,Very good / Excellent,5824
+1741,No,Good,Poor / Fair / Good,7324
+1742,No,Very good,Very good / Excellent,3324.5
+1743,Yes,Very good,Very good / Excellent,4174.5
+1744,No,Good,Poor / Fair / Good,1874.5
+1745,Yes,Fair,Poor / Fair / Good,2500
+1746,No,Fair,Poor / Fair / Good,4174.5
+1747,Yes,Good,Poor / Fair / Good,5824
+1748,Yes,Good,Poor / Fair / Good,200
+1749,No,Good,Poor / Fair / Good,1024
+1750,No,Good,Poor / Fair / Good,8400
+1751,Yes,Very good,Very good / Excellent,8400
+1752,No,Very good,Very good / Excellent,7324
+1753,Yes,Good,Poor / Fair / Good,7324
+1754,No,Fair,Poor / Fair / Good,1024
+1755,Yes,Fair,Poor / Fair / Good,1024
+1756,No,Good,Poor / Fair / Good,1874.5
+1757,No,Good,Poor / Fair / Good,NA
+1758,No,Good,Poor / Fair / Good,2500
+1759,Yes,Good,Poor / Fair / Good,1874.5
+1760,No,Good,Poor / Fair / Good,2500
+1761,Yes,Good,Poor / Fair / Good,5824
+1762,Yes,Fair,Poor / Fair / Good,8400
+1763,No,Good,Poor / Fair / Good,1024
+1764,No,Fair,Poor / Fair / Good,1024
+1765,Yes,Very good,Very good / Excellent,1024
+1766,No,Very good,Very good / Excellent,1024
+1767,Yes,Good,Poor / Fair / Good,7324
+1768,No,Fair,Poor / Fair / Good,1450
+1769,No,Very good,Very good / Excellent,4174.5
+1770,No,Very good,Very good / Excellent,200
+1771,Yes,Excellent,Very good / Excellent,1874.5
+1772,No,Good,Poor / Fair / Good,NA
+1773,Yes,Very good,Very good / Excellent,1874.5
+1774,Yes,Excellent,Very good / Excellent,1450
+1775,No,Fair,Poor / Fair / Good,3324.5
+1776,No,Fair,Poor / Fair / Good,3324.5
+1777,No,Fair,Poor / Fair / Good,2500
+1778,Yes,Poor,Poor / Fair / Good,1874.5
+1779,No,Excellent,Very good / Excellent,8400
+1780,No,Fair,Poor / Fair / Good,3324.5
+1781,Yes,Very good,Very good / Excellent,NA
+1782,No,Fair,Poor / Fair / Good,1024
+1783,Yes,Good,Poor / Fair / Good,5000
+1784,Yes,Fair,Poor / Fair / Good,600
+1785,No,Excellent,Very good / Excellent,1024
+1786,Yes,Very good,Very good / Excellent,1024
+1787,No,Very good,Very good / Excellent,NA
+1788,Yes,Very good,Very good / Excellent,8400
+1789,Yes,Very good,Very good / Excellent,1450
+1790,No,Good,Poor / Fair / Good,2500
+1791,Yes,Good,Poor / Fair / Good,7324
+1792,Yes,Very good,Very good / Excellent,8400
+1793,Yes,Excellent,Very good / Excellent,7324
+1794,No,Good,Poor / Fair / Good,5824
+1795,Yes,Very good,Very good / Excellent,NA
+1796,Yes,Poor,Poor / Fair / Good,5824
+1797,No,Very good,Very good / Excellent,NA
+1798,No,Good,Poor / Fair / Good,7324
+1799,No,Good,Poor / Fair / Good,2500
+1800,No,Very good,Very good / Excellent,7324
+1801,Yes,Very good,Very good / Excellent,8400
+1802,No,Excellent,Very good / Excellent,5000
+1803,No,Good,Poor / Fair / Good,1450
+1804,No,Good,Poor / Fair / Good,5824
+1805,No,Good,Poor / Fair / Good,5000
+1806,No,Fair,Poor / Fair / Good,NA
+1807,Yes,Good,Poor / Fair / Good,3324.5
+1808,Yes,Very good,Very good / Excellent,200
+1809,No,Fair,Poor / Fair / Good,1450
+1810,No,Good,Poor / Fair / Good,5824
+1811,Yes,Fair,Poor / Fair / Good,1024
+1812,No,Very good,Very good / Excellent,1874.5
+1813,Yes,Good,Poor / Fair / Good,1024
+1814,Yes,Very good,Very good / Excellent,3324.5
+1815,No,Fair,Poor / Fair / Good,5000
+1816,No,Fair,Poor / Fair / Good,200
+1817,Yes,Very good,Very good / Excellent,1874.5
+1818,No,Excellent,Very good / Excellent,5000
+1819,Yes,Fair,Poor / Fair / Good,4174.5
+1820,Yes,Very good,Very good / Excellent,8400
+1821,Yes,Good,Poor / Fair / Good,5824
+1822,No,Very good,Very good / Excellent,8400
+1823,No,Good,Poor / Fair / Good,8400
+1824,No,Good,Poor / Fair / Good,1450
+1825,No,Good,Poor / Fair / Good,4174.5
+1826,No,Good,Poor / Fair / Good,5824
+1827,Yes,Good,Poor / Fair / Good,1024
+1828,No,Fair,Poor / Fair / Good,NA
+1829,No,Fair,Poor / Fair / Good,5000
+1830,No,Fair,Poor / Fair / Good,1024
+1831,No,Fair,Poor / Fair / Good,1874.5
+1832,Yes,Fair,Poor / Fair / Good,5824
+1833,No,Very good,Very good / Excellent,1024
+1834,No,Good,Poor / Fair / Good,3324.5
+1835,No,Excellent,Very good / Excellent,1024
+1836,No,Good,Poor / Fair / Good,1450
+1837,No,Very good,Very good / Excellent,5824
+1838,No,Good,Poor / Fair / Good,5824
+1839,No,Good,Poor / Fair / Good,1874.5
+1840,No,Fair,Poor / Fair / Good,NA
+1841,No,Good,Poor / Fair / Good,1450
+1842,Yes,Good,Poor / Fair / Good,2500
+1843,No,Fair,Poor / Fair / Good,1874.5
+1844,No,Very good,Very good / Excellent,1874.5
+1845,No,Very good,Very good / Excellent,8400
+1846,No,Fair,Poor / Fair / Good,7324
+1847,No,Good,Poor / Fair / Good,3324.5
+1848,Yes,Good,Poor / Fair / Good,3324.5
+1849,No,Good,Poor / Fair / Good,5000
+1850,Yes,Very good,Very good / Excellent,3324.5
+1851,Yes,Good,Poor / Fair / Good,NA
+1852,No,Fair,Poor / Fair / Good,5000
+1853,No,Fair,Poor / Fair / Good,1450
+1854,No,Fair,Poor / Fair / Good,2500
+1855,No,Fair,Poor / Fair / Good,1874.5
+1856,Yes,Poor,Poor / Fair / Good,1024
+1857,No,Excellent,Very good / Excellent,1024
+1858,No,Fair,Poor / Fair / Good,1450
+1859,No,Fair,Poor / Fair / Good,1874.5
+1860,No,Fair,Poor / Fair / Good,3324.5
+1861,No,Good,Poor / Fair / Good,2500
+1862,No,Good,Poor / Fair / Good,1874.5
+1863,No,Very good,Very good / Excellent,3324.5
+1864,Yes,Excellent,Very good / Excellent,NA
+1865,No,Good,Poor / Fair / Good,NA
+1866,Yes,Fair,Poor / Fair / Good,1450
+1867,Yes,Good,Poor / Fair / Good,7324
+1868,No,Good,Poor / Fair / Good,7324
+1869,No,Good,Poor / Fair / Good,1874.5
+1870,Yes,Fair,Poor / Fair / Good,600
+1871,Yes,Good,Poor / Fair / Good,1450
+1872,Yes,Good,Poor / Fair / Good,1874.5
+1873,No,Good,Poor / Fair / Good,NA
+1874,Yes,Good,Poor / Fair / Good,4174.5
+1875,No,Fair,Poor / Fair / Good,1450
+1876,Yes,Good,Poor / Fair / Good,1024
+1877,Yes,Very good,Very good / Excellent,1874.5
+1878,No,Good,Poor / Fair / Good,2500
+1879,No,Very good,Very good / Excellent,1874.5
+1880,Yes,Very good,Very good / Excellent,8400
+1881,No,Good,Poor / Fair / Good,2500
+1882,Yes,Excellent,Very good / Excellent,3324.5
+1883,Yes,Very good,Very good / Excellent,NA
+1884,No,Very good,Very good / Excellent,7324
+1885,No,Very good,Very good / Excellent,2500
+1886,No,Fair,Poor / Fair / Good,1024
+1887,No,Fair,Poor / Fair / Good,2500
+1888,No,Good,Poor / Fair / Good,4174.5
+1889,Yes,Good,Poor / Fair / Good,3324.5
+1890,No,Excellent,Very good / Excellent,NA
+1891,No,Fair,Poor / Fair / Good,1024
+1892,No,Poor,Poor / Fair / Good,1024
+1893,No,Very good,Very good / Excellent,600
+1894,No,Good,Poor / Fair / Good,1874.5
+1895,No,Good,Poor / Fair / Good,1024
+1896,No,Poor,Poor / Fair / Good,3324.5
+1897,No,Fair,Poor / Fair / Good,5824
+1898,Yes,Fair,Poor / Fair / Good,3324.5
+1899,No,Good,Poor / Fair / Good,200
+1900,Yes,Very good,Very good / Excellent,2500
+1901,Yes,Good,Poor / Fair / Good,NA
+1902,No,Good,Poor / Fair / Good,1450
+1903,No,Very good,Very good / Excellent,5000
+1904,No,Good,Poor / Fair / Good,1874.5
+1905,Yes,Good,Poor / Fair / Good,2500
+1906,No,Good,Poor / Fair / Good,1024
+1907,No,Very good,Very good / Excellent,2500
+1908,Yes,Poor,Poor / Fair / Good,NA
+1909,No,Fair,Poor / Fair / Good,5000
+1910,Yes,Good,Poor / Fair / Good,NA
+1911,Yes,Good,Poor / Fair / Good,1450
+1912,No,Good,Poor / Fair / Good,2500
+1913,No,Fair,Poor / Fair / Good,1874.5
+1914,No,Good,Poor / Fair / Good,NA
+1915,No,Fair,Poor / Fair / Good,600
+1916,Yes,Very good,Very good / Excellent,1024
+1917,Yes,Good,Poor / Fair / Good,2500
+1918,Yes,Very good,Very good / Excellent,NA
+1919,Yes,Good,Poor / Fair / Good,2500
+1920,No,Very good,Very good / Excellent,7324
+1921,Yes,Excellent,Very good / Excellent,5000
+1922,No,Very good,Very good / Excellent,1450
+1923,Yes,Very good,Very good / Excellent,7324
+1924,Yes,Very good,Very good / Excellent,8400
+1925,No,Excellent,Very good / Excellent,1024
+1926,No,Very good,Very good / Excellent,7324
+1927,No,Fair,Poor / Fair / Good,4174.5
+1928,Yes,Fair,Poor / Fair / Good,2500
+1929,Yes,Good,Poor / Fair / Good,5000
+1930,No,Very good,Very good / Excellent,8400
+1931,No,Good,Poor / Fair / Good,4174.5
+1932,No,Very good,Very good / Excellent,3324.5
+1933,Yes,Good,Poor / Fair / Good,7324
+1934,Yes,Good,Poor / Fair / Good,5000
+1935,No,Good,Poor / Fair / Good,1024
+1936,No,Very good,Very good / Excellent,2500
+1937,Yes,Very good,Very good / Excellent,8400
+1938,Yes,Very good,Very good / Excellent,NA
+1939,Yes,Very good,Very good / Excellent,7324
+1940,No,Excellent,Very good / Excellent,NA
+1941,No,Very good,Very good / Excellent,2500
+1942,No,Very good,Very good / Excellent,5000
+1943,Yes,Very good,Very good / Excellent,5824
+1944,No,Good,Poor / Fair / Good,2500
+1945,No,Very good,Very good / Excellent,NA
+1946,No,Good,Poor / Fair / Good,4174.5
+1947,Yes,Good,Poor / Fair / Good,NA
+1948,Yes,Very good,Very good / Excellent,1874.5
+1949,Yes,Very good,Very good / Excellent,8400
+1950,No,Very good,Very good / Excellent,2500
+1951,No,Good,Poor / Fair / Good,5824
+1952,No,Fair,Poor / Fair / Good,2500
+1953,No,Good,Poor / Fair / Good,8400
+1954,Yes,Good,Poor / Fair / Good,NA
+1955,Yes,Very good,Very good / Excellent,1450
+1956,No,Very good,Very good / Excellent,3324.5
+1957,No,Excellent,Very good / Excellent,1450
+1958,No,Good,Poor / Fair / Good,1874.5
+1959,No,Fair,Poor / Fair / Good,3324.5
+1960,Yes,Fair,Poor / Fair / Good,2500
+1961,Yes,Very good,Very good / Excellent,7324
+1962,No,Fair,Poor / Fair / Good,3324.5
+1963,No,Very good,Very good / Excellent,3324.5
+1964,No,Good,Poor / Fair / Good,3324.5
+1965,Yes,Excellent,Very good / Excellent,1024
+1966,No,Fair,Poor / Fair / Good,1450
+1967,No,Poor,Poor / Fair / Good,5000
+1968,No,Good,Poor / Fair / Good,5000
+1969,Yes,Good,Poor / Fair / Good,1024
+1970,Yes,Excellent,Very good / Excellent,8400
+1971,No,Fair,Poor / Fair / Good,3324.5
+1972,No,Very good,Very good / Excellent,600
+1973,No,Fair,Poor / Fair / Good,1450
+1974,Yes,Excellent,Very good / Excellent,8400
+1975,Yes,Very good,Very good / Excellent,NA
+1976,Yes,Very good,Very good / Excellent,5000
+1977,No,Fair,Poor / Fair / Good,NA
+1978,Yes,Very good,Very good / Excellent,1024
+1979,Yes,Good,Poor / Fair / Good,4174.5
+1980,No,Good,Poor / Fair / Good,3324.5
+1981,Yes,Good,Poor / Fair / Good,8400
+1982,No,Excellent,Very good / Excellent,4174.5
+1983,No,Fair,Poor / Fair / Good,1024
+1984,No,Good,Poor / Fair / Good,5000
+1985,Yes,Good,Poor / Fair / Good,200
+1986,Yes,Fair,Poor / Fair / Good,4174.5
+1987,No,Good,Poor / Fair / Good,1024
+1988,Yes,Good,Poor / Fair / Good,NA
+1989,No,Fair,Poor / Fair / Good,200
+1990,Yes,Good,Poor / Fair / Good,1874.5
+1991,No,Good,Poor / Fair / Good,NA
+1992,No,Good,Poor / Fair / Good,1024
+1993,No,Good,Poor / Fair / Good,4174.5
+1994,Yes,Very good,Very good / Excellent,4174.5
+1995,Yes,Very good,Very good / Excellent,1450
+1996,No,Good,Poor / Fair / Good,200
+1997,No,Good,Poor / Fair / Good,600
+1998,Yes,Good,Poor / Fair / Good,NA
+1999,No,Good,Poor / Fair / Good,NA
+2000,Yes,Excellent,Very good / Excellent,1874.5
+2001,No,Excellent,Very good / Excellent,4174.5
+2002,Yes,Very good,Very good / Excellent,5824
+2003,No,Fair,Poor / Fair / Good,NA
+2004,No,Good,Poor / Fair / Good,4174.5
+2005,No,Very good,Very good / Excellent,1024
+2006,Yes,Fair,Poor / Fair / Good,1874.5
+2007,No,Good,Poor / Fair / Good,5000
+2008,Yes,Excellent,Very good / Excellent,8400
+2009,Yes,Very good,Very good / Excellent,1874.5
+2010,No,Very good,Very good / Excellent,NA
+2011,Yes,Good,Poor / Fair / Good,1450
+2012,No,Fair,Poor / Fair / Good,1874.5
+2013,No,Good,Poor / Fair / Good,3324.5
+2014,No,Poor,Poor / Fair / Good,2500
+2015,Yes,Good,Poor / Fair / Good,NA
+2016,No,Good,Poor / Fair / Good,1874.5
+2017,No,Good,Poor / Fair / Good,5000
+2018,Yes,Good,Poor / Fair / Good,600
+2019,Yes,Good,Poor / Fair / Good,3324.5
+2020,Yes,Very good,Very good / Excellent,NA
+2021,Yes,Fair,Poor / Fair / Good,NA
+2022,Yes,Excellent,Very good / Excellent,8400
+2023,Yes,Excellent,Very good / Excellent,2500
+2024,Yes,Very good,Very good / Excellent,8400
+2025,No,Very good,Very good / Excellent,NA
+2026,No,Good,Poor / Fair / Good,3324.5
+2027,No,Fair,Poor / Fair / Good,1450
+2028,Yes,Excellent,Very good / Excellent,600
+2029,Yes,Good,Poor / Fair / Good,1450
+2030,No,Fair,Poor / Fair / Good,2500
+2031,Yes,Excellent,Very good / Excellent,8400
+2032,No,Excellent,Very good / Excellent,8400
+2033,No,Very good,Very good / Excellent,1450
+2034,Yes,Very good,Very good / Excellent,8400
+2035,Yes,Very good,Very good / Excellent,5000
+2036,No,Good,Poor / Fair / Good,NA
+2037,No,Fair,Poor / Fair / Good,7324
+2038,No,Excellent,Very good / Excellent,NA
+2039,No,Good,Poor / Fair / Good,2500
+2040,No,Good,Poor / Fair / Good,600
+2041,Yes,Good,Poor / Fair / Good,5000
+2042,No,Excellent,Very good / Excellent,2500
+2043,Yes,Good,Poor / Fair / Good,5824
+2044,Yes,Very good,Very good / Excellent,4174.5
+2045,No,Good,Poor / Fair / Good,1874.5
+2046,No,Fair,Poor / Fair / Good,1874.5
+2047,No,Good,Poor / Fair / Good,2500
+2048,No,Fair,Poor / Fair / Good,NA
+2049,Yes,Good,Poor / Fair / Good,8400
+2050,No,Good,Poor / Fair / Good,1450
+2051,No,Good,Poor / Fair / Good,NA
+2052,Yes,Fair,Poor / Fair / Good,NA
+2053,No,Poor,Poor / Fair / Good,1024
+2054,Yes,Very good,Very good / Excellent,5824
+2055,No,Very good,Very good / Excellent,7324
+2056,Yes,Very good,Very good / Excellent,7324
+2057,No,Good,Poor / Fair / Good,1450
+2058,Yes,Excellent,Very good / Excellent,NA
+2059,No,Excellent,Very good / Excellent,8400
+2060,Yes,Good,Poor / Fair / Good,2500
+2061,Yes,Poor,Poor / Fair / Good,2500
+2062,No,Very good,Very good / Excellent,4174.5
+2063,Yes,Excellent,Very good / Excellent,7324
+2064,Yes,Excellent,Very good / Excellent,8400
+2065,No,Very good,Very good / Excellent,1874.5
+2066,Yes,Good,Poor / Fair / Good,1024
+2067,No,Very good,Very good / Excellent,5824
+2068,No,Very good,Very good / Excellent,600
+2069,No,Very good,Very good / Excellent,8400
+2070,Yes,Fair,Poor / Fair / Good,600
+2071,Yes,Very good,Very good / Excellent,1024
+2072,No,Good,Poor / Fair / Good,1874.5
+2073,No,Excellent,Very good / Excellent,7324
+2074,Yes,Very good,Very good / Excellent,1450
+2075,Yes,Very good,Very good / Excellent,1024
+2076,No,Fair,Poor / Fair / Good,600
+2077,Yes,Good,Poor / Fair / Good,8400
+2078,Yes,Good,Poor / Fair / Good,3324.5
+2079,No,Poor,Poor / Fair / Good,3324.5
+2080,No,Good,Poor / Fair / Good,4174.5
+2081,Yes,Good,Poor / Fair / Good,1024
+2082,Yes,Very good,Very good / Excellent,2500
+2083,No,Good,Poor / Fair / Good,4174.5
+2084,Yes,Excellent,Very good / Excellent,4174.5
+2085,Yes,Excellent,Very good / Excellent,8400
+2086,No,Fair,Poor / Fair / Good,2500
+2087,Yes,Very good,Very good / Excellent,4174.5
+2088,No,Fair,Poor / Fair / Good,600
+2089,Yes,Fair,Poor / Fair / Good,8400
+2090,No,Very good,Very good / Excellent,NA
+2091,Yes,Good,Poor / Fair / Good,3324.5
+2092,No,Fair,Poor / Fair / Good,1874.5
+2093,No,Very good,Very good / Excellent,1450
+2094,Yes,Fair,Poor / Fair / Good,600
+2095,Yes,Excellent,Very good / Excellent,600
+2096,Yes,Fair,Poor / Fair / Good,1024
+2097,Yes,Very good,Very good / Excellent,1450
+2098,Yes,Excellent,Very good / Excellent,8400
+2099,Yes,Good,Poor / Fair / Good,5000
+2100,No,Good,Poor / Fair / Good,7324
+2101,No,Fair,Poor / Fair / Good,3324.5
+2102,No,Good,Poor / Fair / Good,1874.5
+2103,No,Good,Poor / Fair / Good,5824
+2104,Yes,Good,Poor / Fair / Good,1874.5
+2105,No,Good,Poor / Fair / Good,3324.5
+2106,No,Very good,Very good / Excellent,600
+2107,No,Very good,Very good / Excellent,4174.5
+2108,No,Fair,Poor / Fair / Good,200
+2109,No,Very good,Very good / Excellent,4174.5
+2110,No,Very good,Very good / Excellent,5000
+2111,No,Fair,Poor / Fair / Good,1874.5
+2112,No,Fair,Poor / Fair / Good,1874.5
+2113,No,Very good,Very good / Excellent,1450
+2114,No,Very good,Very good / Excellent,4174.5
+2115,Yes,Very good,Very good / Excellent,5824
+2116,No,Fair,Poor / Fair / Good,1024
+2117,No,Very good,Very good / Excellent,1450
+2118,Yes,Very good,Very good / Excellent,7324
+2119,No,Good,Poor / Fair / Good,1024
+2120,Yes,Good,Poor / Fair / Good,5824
+2121,No,Good,Poor / Fair / Good,2500
+2122,No,Fair,Poor / Fair / Good,2500
+2123,No,Good,Poor / Fair / Good,2500
+2124,No,Good,Poor / Fair / Good,5000
+2125,Yes,Excellent,Very good / Excellent,NA
+2126,No,Good,Poor / Fair / Good,1874.5
+2127,No,Good,Poor / Fair / Good,5000
+2128,No,Good,Poor / Fair / Good,2500
+2129,Yes,Very good,Very good / Excellent,600
+2130,No,Good,Poor / Fair / Good,1874.5
+2131,Yes,Very good,Very good / Excellent,1874.5
+2132,Yes,Very good,Very good / Excellent,2500
+2133,No,Fair,Poor / Fair / Good,1874.5
+2134,Yes,Excellent,Very good / Excellent,1024
+2135,Yes,Fair,Poor / Fair / Good,3324.5
+2136,No,Excellent,Very good / Excellent,4174.5
+2137,Yes,Very good,Very good / Excellent,8400
+2138,Yes,Good,Poor / Fair / Good,200
+2139,Yes,Very good,Very good / Excellent,7324
+2140,Yes,Fair,Poor / Fair / Good,1450
+2141,No,Good,Poor / Fair / Good,NA
+2142,No,Good,Poor / Fair / Good,NA
+2143,No,Good,Poor / Fair / Good,1024
+2144,No,Good,Poor / Fair / Good,1024
+2145,No,Good,Poor / Fair / Good,5824
+2146,Yes,Very good,Very good / Excellent,3324.5
+2147,Yes,Good,Poor / Fair / Good,1874.5
+2148,No,Very good,Very good / Excellent,8400
+2149,No,Fair,Poor / Fair / Good,5000
+2150,No,Good,Poor / Fair / Good,5000
+2151,No,Good,Poor / Fair / Good,NA
+2152,No,Good,Poor / Fair / Good,3324.5
+2153,Yes,Very good,Very good / Excellent,4174.5
+2154,Yes,Very good,Very good / Excellent,1874.5
+2155,No,Good,Poor / Fair / Good,4174.5
+2156,No,Good,Poor / Fair / Good,1024
+2157,Yes,Very good,Very good / Excellent,5824
+2158,No,Fair,Poor / Fair / Good,1450
+2159,Yes,Good,Poor / Fair / Good,600
+2160,No,Good,Poor / Fair / Good,NA
+2161,Yes,Very good,Very good / Excellent,NA
+2162,No,Good,Poor / Fair / Good,5824
+2163,Yes,Good,Poor / Fair / Good,NA
+2164,No,Fair,Poor / Fair / Good,1024
+2165,Yes,Good,Poor / Fair / Good,1024
+2166,Yes,Very good,Very good / Excellent,7324
+2167,Yes,Good,Poor / Fair / Good,1874.5
+2168,No,Fair,Poor / Fair / Good,4174.5
+2169,No,Very good,Very good / Excellent,7324
+2170,No,Excellent,Very good / Excellent,1024
+2171,Yes,Very good,Very good / Excellent,1450
+2172,Yes,Very good,Very good / Excellent,1450
+2173,No,Good,Poor / Fair / Good,2500
+2174,No,Fair,Poor / Fair / Good,NA
+2175,No,Fair,Poor / Fair / Good,1450
+2176,No,Poor,Poor / Fair / Good,NA
+2177,No,Good,Poor / Fair / Good,1024
+2178,Yes,Good,Poor / Fair / Good,7324
+2179,No,Very good,Very good / Excellent,200
+2180,No,Fair,Poor / Fair / Good,1024
+2181,No,Good,Poor / Fair / Good,NA
+2182,Yes,Good,Poor / Fair / Good,3324.5
+2183,No,Fair,Poor / Fair / Good,200
+2184,Yes,Good,Poor / Fair / Good,7324
+2185,No,Fair,Poor / Fair / Good,1024
+2186,Yes,Excellent,Very good / Excellent,5000
+2187,No,Good,Poor / Fair / Good,200
+2188,No,Good,Poor / Fair / Good,8400
+2189,No,Very good,Very good / Excellent,5000
+2190,No,Good,Poor / Fair / Good,NA
+2191,No,Very good,Very good / Excellent,1874.5
+2192,No,Good,Poor / Fair / Good,1874.5
+2193,No,Good,Poor / Fair / Good,1024
+2194,No,Very good,Very good / Excellent,1874.5
+2195,No,Good,Poor / Fair / Good,3324.5
+2196,Yes,Excellent,Very good / Excellent,NA
+2197,No,Good,Poor / Fair / Good,1874.5
+2198,No,Good,Poor / Fair / Good,1874.5
+2199,Yes,Excellent,Very good / Excellent,3324.5
+2200,No,Good,Poor / Fair / Good,NA
+2201,No,Fair,Poor / Fair / Good,1024
+2202,Yes,Good,Poor / Fair / Good,1450
+2203,No,Very good,Very good / Excellent,3324.5
+2204,Yes,Good,Poor / Fair / Good,1874.5
+2205,Yes,Very good,Very good / Excellent,5824
+2206,Yes,Excellent,Very good / Excellent,4174.5
+2207,No,Good,Poor / Fair / Good,5000
+2208,No,Very good,Very good / Excellent,8400
+2209,Yes,Good,Poor / Fair / Good,3324.5
+2210,Yes,Good,Poor / Fair / Good,NA
+2211,Yes,Good,Poor / Fair / Good,4174.5
+2212,No,Fair,Poor / Fair / Good,1024
+2213,No,Good,Poor / Fair / Good,1874.5
+2214,No,Very good,Very good / Excellent,4174.5
+2215,Yes,Excellent,Very good / Excellent,4174.5
+2216,No,Very good,Very good / Excellent,1450
+2217,No,Good,Poor / Fair / Good,1874.5
+2218,No,Good,Poor / Fair / Good,1024
+2219,Yes,Poor,Poor / Fair / Good,2500
+2220,No,Excellent,Very good / Excellent,1450
+2221,No,Good,Poor / Fair / Good,1024
+2222,No,Very good,Very good / Excellent,2500
+2223,No,Fair,Poor / Fair / Good,1024
+2224,Yes,Very good,Very good / Excellent,NA
+2225,Yes,Very good,Very good / Excellent,5000
+2226,No,Very good,Very good / Excellent,600
+2227,No,Very good,Very good / Excellent,3324.5
+2228,No,Good,Poor / Fair / Good,NA
+2229,No,Good,Poor / Fair / Good,4174.5
+2230,No,Good,Poor / Fair / Good,2500
+2231,No,Very good,Very good / Excellent,5000
+2232,Yes,Very good,Very good / Excellent,3324.5
+2233,No,Good,Poor / Fair / Good,1024
+2234,No,Poor,Poor / Fair / Good,NA
+2235,Yes,Good,Poor / Fair / Good,5000
+2236,Yes,Very good,Very good / Excellent,8400
+2237,No,Good,Poor / Fair / Good,2500
+2238,Yes,Excellent,Very good / Excellent,1024
+2239,No,Good,Poor / Fair / Good,1874.5
+2240,Yes,Very good,Very good / Excellent,4174.5
+2241,No,Very good,Very good / Excellent,5824
+2242,No,Very good,Very good / Excellent,1874.5
+2243,No,Fair,Poor / Fair / Good,1874.5
+2244,No,Good,Poor / Fair / Good,8400
+2245,No,Fair,Poor / Fair / Good,3324.5
+2246,Yes,Poor,Poor / Fair / Good,1024
+2247,No,Fair,Poor / Fair / Good,1450
+2248,Yes,Very good,Very good / Excellent,5000
+2249,Yes,Excellent,Very good / Excellent,8400
+2250,Yes,Good,Poor / Fair / Good,7324
+2251,No,Good,Poor / Fair / Good,600
+2252,No,Fair,Poor / Fair / Good,1874.5
+2253,Yes,Good,Poor / Fair / Good,4174.5
+2254,No,Fair,Poor / Fair / Good,2500
+2255,No,Good,Poor / Fair / Good,1024
+2256,Yes,Good,Poor / Fair / Good,8400
+2257,Yes,Fair,Poor / Fair / Good,3324.5
+2258,Yes,Good,Poor / Fair / Good,8400
+2259,No,Very good,Very good / Excellent,1024
+2260,No,Excellent,Very good / Excellent,1874.5
+2261,No,Good,Poor / Fair / Good,200
+2262,No,Good,Poor / Fair / Good,4174.5
+2263,No,Fair,Poor / Fair / Good,1024
+2264,No,Fair,Poor / Fair / Good,8400
+2265,No,Very good,Very good / Excellent,1450
+2266,No,Very good,Very good / Excellent,1450
+2267,No,Good,Poor / Fair / Good,200
+2268,Yes,Very good,Very good / Excellent,1450
+2269,No,Good,Poor / Fair / Good,600
+2270,Yes,Excellent,Very good / Excellent,8400
+2271,No,Good,Poor / Fair / Good,4174.5
+2272,Yes,Fair,Poor / Fair / Good,1450
+2273,No,Poor,Poor / Fair / Good,1024
+2274,No,Good,Poor / Fair / Good,4174.5
+2275,Yes,Good,Poor / Fair / Good,3324.5
+2276,No,Fair,Poor / Fair / Good,200
+2277,Yes,Poor,Poor / Fair / Good,5824
+2278,Yes,Very good,Very good / Excellent,8400
+2279,No,Fair,Poor / Fair / Good,1024
+2280,No,Very good,Very good / Excellent,NA
+2281,No,Very good,Very good / Excellent,3324.5
+2282,Yes,Very good,Very good / Excellent,4174.5
+2283,Yes,Very good,Very good / Excellent,7324
+2284,No,Excellent,Very good / Excellent,1450
+2285,No,Excellent,Very good / Excellent,1874.5
+2286,No,Good,Poor / Fair / Good,1024
+2287,No,Very good,Very good / Excellent,2500
+2288,Yes,Very good,Very good / Excellent,8400
+2289,Yes,Fair,Poor / Fair / Good,NA
+2290,No,Good,Poor / Fair / Good,1450
+2291,No,Very good,Very good / Excellent,NA
+2292,No,Fair,Poor / Fair / Good,NA
+2293,Yes,Very good,Very good / Excellent,600
+2294,Yes,Good,Poor / Fair / Good,1024
+2295,No,Very good,Very good / Excellent,1874.5
+2296,Yes,Good,Poor / Fair / Good,3324.5
+2297,No,Fair,Poor / Fair / Good,1024
+2298,Yes,Very good,Very good / Excellent,NA
+2299,No,Good,Poor / Fair / Good,1024
+2300,Yes,Fair,Poor / Fair / Good,2500
+2301,Yes,Fair,Poor / Fair / Good,1024
+2302,Yes,Good,Poor / Fair / Good,4174.5
+2303,No,Good,Poor / Fair / Good,5000
+2304,No,Very good,Very good / Excellent,1450
+2305,No,Fair,Poor / Fair / Good,NA
+2306,No,Good,Poor / Fair / Good,3324.5
+2307,Yes,Very good,Very good / Excellent,5824
+2308,No,Fair,Poor / Fair / Good,1874.5
+2309,No,Good,Poor / Fair / Good,1874.5
+2310,Yes,Very good,Very good / Excellent,8400
+2311,No,Good,Poor / Fair / Good,1450
+2312,Yes,Good,Poor / Fair / Good,7324
+2313,Yes,Good,Poor / Fair / Good,1874.5
+2314,No,Very good,Very good / Excellent,5000
+2315,Yes,Good,Poor / Fair / Good,8400
+2316,No,Good,Poor / Fair / Good,1874.5
+2317,No,Good,Poor / Fair / Good,2500
+2318,No,Good,Poor / Fair / Good,1450
+2319,No,Good,Poor / Fair / Good,1450
+2320,No,Good,Poor / Fair / Good,1024
+2321,No,Good,Poor / Fair / Good,3324.5
+2322,No,Poor,Poor / Fair / Good,3324.5
+2323,No,Good,Poor / Fair / Good,4174.5
+2324,No,Fair,Poor / Fair / Good,2500
+2325,No,Good,Poor / Fair / Good,1450
+2326,Yes,Good,Poor / Fair / Good,7324
+2327,No,Good,Poor / Fair / Good,2500
+2328,No,Excellent,Very good / Excellent,200
+2329,Yes,Very good,Very good / Excellent,NA
+2330,Yes,Very good,Very good / Excellent,5824
+2331,Yes,Good,Poor / Fair / Good,NA
+2332,Yes,Fair,Poor / Fair / Good,1024
+2333,No,Good,Poor / Fair / Good,7324
+2334,No,Fair,Poor / Fair / Good,1024
+2335,Yes,Very good,Very good / Excellent,8400
+2336,No,Fair,Poor / Fair / Good,3324.5
+2337,No,Fair,Poor / Fair / Good,2500
+2338,Yes,Good,Poor / Fair / Good,8400
+2339,No,Good,Poor / Fair / Good,1874.5
+2340,No,Excellent,Very good / Excellent,1450
+2341,No,Good,Poor / Fair / Good,1450
+2342,No,Good,Poor / Fair / Good,1024
+2343,Yes,Good,Poor / Fair / Good,1450
+2344,No,Very good,Very good / Excellent,1874.5
+2345,No,Poor,Poor / Fair / Good,1874.5
+2346,No,Poor,Poor / Fair / Good,2500
+2347,No,Good,Poor / Fair / Good,5000
+2348,Yes,Fair,Poor / Fair / Good,2500
+2349,No,Fair,Poor / Fair / Good,600
+2350,No,Excellent,Very good / Excellent,3324.5
+2351,No,Very good,Very good / Excellent,5824
+2352,No,Good,Poor / Fair / Good,1450
+2353,Yes,Very good,Very good / Excellent,NA
+2354,No,Excellent,Very good / Excellent,600
+2355,No,Good,Poor / Fair / Good,2500
+2356,No,Good,Poor / Fair / Good,NA
+2357,Yes,Very good,Very good / Excellent,8400
+2358,No,Fair,Poor / Fair / Good,1024
+2359,No,Excellent,Very good / Excellent,NA
+2360,No,Fair,Poor / Fair / Good,1874.5
+2361,No,Fair,Poor / Fair / Good,1450
+2362,Yes,Fair,Poor / Fair / Good,1024
+2363,No,Very good,Very good / Excellent,1024
+2364,No,Good,Poor / Fair / Good,1450
+2365,No,Fair,Poor / Fair / Good,1024
+2366,No,Very good,Very good / Excellent,1450
+2367,No,Very good,Very good / Excellent,1024
+2368,No,Fair,Poor / Fair / Good,1874.5
+2369,No,Good,Poor / Fair / Good,7324
+2370,No,Good,Poor / Fair / Good,8400
+2371,Yes,Very good,Very good / Excellent,2500
+2372,Yes,Very good,Very good / Excellent,1024
+2373,Yes,Good,Poor / Fair / Good,600
+2374,No,Good,Poor / Fair / Good,7324
+2375,No,Poor,Poor / Fair / Good,600
+2376,No,Very good,Very good / Excellent,4174.5
+2377,Yes,Poor,Poor / Fair / Good,NA
+2378,Yes,Excellent,Very good / Excellent,NA
+2379,No,Good,Poor / Fair / Good,5824
+2380,Yes,Good,Poor / Fair / Good,1874.5
+2381,No,Very good,Very good / Excellent,1874.5
+2382,Yes,Excellent,Very good / Excellent,3324.5
+2383,Yes,Fair,Poor / Fair / Good,3324.5
+2384,No,Good,Poor / Fair / Good,2500
+2385,No,Good,Poor / Fair / Good,5824
+2386,Yes,Very good,Very good / Excellent,8400
+2387,Yes,Good,Poor / Fair / Good,4174.5
+2388,No,Fair,Poor / Fair / Good,1024
+2389,Yes,Poor,Poor / Fair / Good,NA
+2390,Yes,Good,Poor / Fair / Good,1024
+2391,No,Fair,Poor / Fair / Good,1874.5
+2392,Yes,Good,Poor / Fair / Good,200
+2393,Yes,Good,Poor / Fair / Good,1874.5
+2394,Yes,Good,Poor / Fair / Good,8400
+2395,Yes,Very good,Very good / Excellent,5824
+2396,Yes,Excellent,Very good / Excellent,NA
+2397,Yes,Excellent,Very good / Excellent,1024
+2398,No,Fair,Poor / Fair / Good,1024
+2399,No,Very good,Very good / Excellent,4174.5
+2400,Yes,Very good,Very good / Excellent,3324.5
+2401,Yes,Good,Poor / Fair / Good,7324
+2402,No,Good,Poor / Fair / Good,1024
+2403,No,Very good,Very good / Excellent,4174.5
+2404,Yes,Very good,Very good / Excellent,2500
+2405,No,Very good,Very good / Excellent,200
+2406,No,Excellent,Very good / Excellent,1024
+2407,No,Fair,Poor / Fair / Good,1024
+2408,No,Fair,Poor / Fair / Good,4174.5
+2409,No,Good,Poor / Fair / Good,5000
+2410,Yes,Fair,Poor / Fair / Good,2500
+2411,No,Very good,Very good / Excellent,5000
+2412,No,Fair,Poor / Fair / Good,1024
+2413,No,Fair,Poor / Fair / Good,7324
+2414,No,Very good,Very good / Excellent,1024
+2415,No,Excellent,Very good / Excellent,8400
+2416,Yes,Good,Poor / Fair / Good,7324
+2417,No,Fair,Poor / Fair / Good,600
+2418,Yes,Good,Poor / Fair / Good,4174.5
+2419,Yes,Good,Poor / Fair / Good,1024
+2420,No,Fair,Poor / Fair / Good,8400
+2421,No,Very good,Very good / Excellent,2500
+2422,No,Very good,Very good / Excellent,5824
+2423,No,Fair,Poor / Fair / Good,2500
+2424,No,Fair,Poor / Fair / Good,2500
+2425,No,Good,Poor / Fair / Good,1024
+2426,No,Poor,Poor / Fair / Good,3324.5
+2427,Yes,Fair,Poor / Fair / Good,1874.5
+2428,No,Fair,Poor / Fair / Good,1874.5
+2429,No,Fair,Poor / Fair / Good,NA
+2430,No,Excellent,Very good / Excellent,200
+2431,No,Fair,Poor / Fair / Good,2500
+2432,Yes,Good,Poor / Fair / Good,4174.5
+2433,No,Good,Poor / Fair / Good,1024
+2434,No,Fair,Poor / Fair / Good,1024
+2435,No,Good,Poor / Fair / Good,1450
+2436,No,Very good,Very good / Excellent,NA
+2437,Yes,Good,Poor / Fair / Good,NA
+2438,Yes,Fair,Poor / Fair / Good,1024
+2439,Yes,Very good,Very good / Excellent,8400
+2440,No,Good,Poor / Fair / Good,2500
+2441,No,Fair,Poor / Fair / Good,1024
+2442,No,Very good,Very good / Excellent,600
+2443,No,Good,Poor / Fair / Good,4174.5
+2444,Yes,Fair,Poor / Fair / Good,1874.5
+2445,No,Fair,Poor / Fair / Good,1024
+2446,Yes,Fair,Poor / Fair / Good,5824
+2447,Yes,Good,Poor / Fair / Good,1874.5
+2448,No,Excellent,Very good / Excellent,600
+2449,Yes,Excellent,Very good / Excellent,1450
+2450,No,Good,Poor / Fair / Good,4174.5
+2451,No,Very good,Very good / Excellent,NA
+2452,Yes,Good,Poor / Fair / Good,5824
+2453,No,Good,Poor / Fair / Good,200
+2454,Yes,Good,Poor / Fair / Good,7324
+2455,No,Excellent,Very good / Excellent,8400
+2456,No,Fair,Poor / Fair / Good,NA
+2457,Yes,Excellent,Very good / Excellent,8400
+2458,No,Good,Poor / Fair / Good,1874.5
+2459,No,Good,Poor / Fair / Good,1450
+2460,Yes,Good,Poor / Fair / Good,1874.5
+2461,Yes,Good,Poor / Fair / Good,NA
+2462,No,Good,Poor / Fair / Good,1450
+2463,Yes,Fair,Poor / Fair / Good,NA
+2464,Yes,Excellent,Very good / Excellent,8400
+2465,No,Good,Poor / Fair / Good,1024
+2466,No,Good,Poor / Fair / Good,3324.5
+2467,No,Good,Poor / Fair / Good,NA
+2468,No,Excellent,Very good / Excellent,7324
+2469,No,Good,Poor / Fair / Good,4174.5
+2470,Yes,Fair,Poor / Fair / Good,1024
+2471,No,Good,Poor / Fair / Good,1874.5
+2472,No,Fair,Poor / Fair / Good,NA
+2473,Yes,Very good,Very good / Excellent,1024
+2474,No,Good,Poor / Fair / Good,1874.5
+2475,Yes,Excellent,Very good / Excellent,8400
+2476,No,Good,Poor / Fair / Good,1450
+2477,No,Good,Poor / Fair / Good,1874.5
+2478,Yes,Good,Poor / Fair / Good,7324
+2479,No,Very good,Very good / Excellent,1024
+2480,No,Good,Poor / Fair / Good,NA
+2481,No,Good,Poor / Fair / Good,NA
+2482,No,Very good,Very good / Excellent,3324.5
+2483,Yes,Good,Poor / Fair / Good,3324.5
+2484,Yes,Good,Poor / Fair / Good,4174.5
+2485,No,Good,Poor / Fair / Good,5824
+2486,No,Good,Poor / Fair / Good,1874.5
+2487,No,Very good,Very good / Excellent,5824
+2488,Yes,Very good,Very good / Excellent,8400
+2489,Yes,Very good,Very good / Excellent,8400
+2490,Yes,Very good,Very good / Excellent,8400
+2491,Yes,Fair,Poor / Fair / Good,200
+2492,No,Excellent,Very good / Excellent,8400
+2493,No,Excellent,Very good / Excellent,NA
+2494,Yes,Good,Poor / Fair / Good,4174.5
+2495,Yes,Good,Poor / Fair / Good,2500
+2496,Yes,Good,Poor / Fair / Good,4174.5
+2497,Yes,Very good,Very good / Excellent,8400
+2498,No,Good,Poor / Fair / Good,200
+2499,Yes,Good,Poor / Fair / Good,NA
+2500,No,Fair,Poor / Fair / Good,1024
+2501,No,Very good,Very good / Excellent,NA
+2502,No,Good,Poor / Fair / Good,200
+2503,Yes,Very good,Very good / Excellent,7324
+2504,No,Fair,Poor / Fair / Good,1874.5
+2505,No,Good,Poor / Fair / Good,NA
+2506,No,Good,Poor / Fair / Good,2500
+2507,Yes,Good,Poor / Fair / Good,1450
+2508,No,Good,Poor / Fair / Good,NA
+2509,No,Good,Poor / Fair / Good,1874.5
+2510,No,Very good,Very good / Excellent,3324.5
+2511,No,Very good,Very good / Excellent,3324.5
+2512,No,Good,Poor / Fair / Good,8400
+2513,No,Excellent,Very good / Excellent,4174.5
+2514,No,Good,Poor / Fair / Good,5000
+2515,No,Fair,Poor / Fair / Good,7324
+2516,No,Fair,Poor / Fair / Good,2500
+2517,Yes,Good,Poor / Fair / Good,8400
+2518,No,Good,Poor / Fair / Good,2500
+2519,Yes,Very good,Very good / Excellent,8400
+2520,No,Good,Poor / Fair / Good,3324.5
+2521,Yes,Very good,Very good / Excellent,1874.5
+2522,Yes,Very good,Very good / Excellent,1874.5
+2523,No,Good,Poor / Fair / Good,8400
+2524,No,Good,Poor / Fair / Good,7324
+2525,No,Fair,Poor / Fair / Good,2500
+2526,No,Very good,Very good / Excellent,4174.5
+2527,Yes,Very good,Very good / Excellent,7324
+2528,No,Good,Poor / Fair / Good,1450
+2529,No,Excellent,Very good / Excellent,8400
+2530,No,Fair,Poor / Fair / Good,1024
+2531,Yes,Very good,Very good / Excellent,5824
+2532,No,Fair,Poor / Fair / Good,3324.5
+2533,No,Very good,Very good / Excellent,5000
+2534,Yes,Excellent,Very good / Excellent,8400
+2535,No,Very good,Very good / Excellent,3324.5
+2536,Yes,Very good,Very good / Excellent,2500
+2537,No,Good,Poor / Fair / Good,8400
+2538,No,Poor,Poor / Fair / Good,5824
+2539,No,Good,Poor / Fair / Good,NA
+2540,Yes,Good,Poor / Fair / Good,5000
+2541,Yes,Good,Poor / Fair / Good,NA
+2542,No,Good,Poor / Fair / Good,NA
+2543,Yes,Very good,Very good / Excellent,1450
+2544,No,Good,Poor / Fair / Good,3324.5
+2545,Yes,Good,Poor / Fair / Good,5824
+2546,Yes,Very good,Very good / Excellent,1874.5
+2547,No,Fair,Poor / Fair / Good,1450
+2548,Yes,Good,Poor / Fair / Good,1024
+2549,No,Excellent,Very good / Excellent,1024
+2550,Yes,Good,Poor / Fair / Good,5000
+2551,No,Good,Poor / Fair / Good,2500
+2552,No,Excellent,Very good / Excellent,2500
+2553,Yes,Excellent,Very good / Excellent,3324.5
+2554,No,Poor,Poor / Fair / Good,1874.5
+2555,Yes,Very good,Very good / Excellent,4174.5
+2556,Yes,Good,Poor / Fair / Good,5824
+2557,No,Fair,Poor / Fair / Good,1024
+2558,No,Good,Poor / Fair / Good,7324
+2559,No,Good,Poor / Fair / Good,1874.5
+2560,No,Good,Poor / Fair / Good,2500
+2561,No,Very good,Very good / Excellent,1874.5
+2562,Yes,Good,Poor / Fair / Good,1024
+2563,No,Good,Poor / Fair / Good,NA
+2564,No,Good,Poor / Fair / Good,1874.5
+2565,No,Very good,Very good / Excellent,1024
+2566,No,Good,Poor / Fair / Good,5000
+2567,Yes,Good,Poor / Fair / Good,5824
+2568,No,Good,Poor / Fair / Good,2500
+2569,Yes,Good,Poor / Fair / Good,8400
+2570,Yes,Very good,Very good / Excellent,1450
+2571,No,Fair,Poor / Fair / Good,2500
+2572,No,Very good,Very good / Excellent,8400
+2573,Yes,Very good,Very good / Excellent,8400
+2574,No,Good,Poor / Fair / Good,2500
+2575,Yes,Good,Poor / Fair / Good,8400
+2576,No,Good,Poor / Fair / Good,1024
+2577,Yes,Very good,Very good / Excellent,5824
+2578,No,Very good,Very good / Excellent,5000
+2579,Yes,Poor,Poor / Fair / Good,NA
+2580,No,Excellent,Very good / Excellent,5000
+2581,No,Fair,Poor / Fair / Good,8400
+2582,No,Fair,Poor / Fair / Good,NA
+2583,Yes,Good,Poor / Fair / Good,3324.5
+2584,No,Very good,Very good / Excellent,600
+2585,No,Excellent,Very good / Excellent,2500
+2586,No,Fair,Poor / Fair / Good,4174.5
+2587,No,Fair,Poor / Fair / Good,3324.5
+2588,No,Fair,Poor / Fair / Good,1874.5
+2589,No,Fair,Poor / Fair / Good,NA
+2590,No,Fair,Poor / Fair / Good,2500
+2591,No,Good,Poor / Fair / Good,5824
+2592,Yes,Very good,Very good / Excellent,NA
+2593,No,Fair,Poor / Fair / Good,1024
+2594,No,Good,Poor / Fair / Good,600
+2595,No,Good,Poor / Fair / Good,1024
+2596,No,Very good,Very good / Excellent,5000
+2597,No,Good,Poor / Fair / Good,5824
+2598,Yes,Good,Poor / Fair / Good,1874.5
+2599,Yes,Good,Poor / Fair / Good,8400
+2600,No,Very good,Very good / Excellent,2500
+2601,Yes,Good,Poor / Fair / Good,4174.5
+2602,No,Poor,Poor / Fair / Good,1450
+2603,Yes,Very good,Very good / Excellent,200
+2604,No,Good,Poor / Fair / Good,7324
+2605,No,Good,Poor / Fair / Good,7324
+2606,Yes,Fair,Poor / Fair / Good,1024
+2607,No,Very good,Very good / Excellent,1874.5
+2608,No,Good,Poor / Fair / Good,200
+2609,Yes,Very good,Very good / Excellent,200
+2610,Yes,Very good,Very good / Excellent,8400
+2611,Yes,Good,Poor / Fair / Good,1450
+2612,Yes,Very good,Very good / Excellent,2500
+2613,Yes,Excellent,Very good / Excellent,8400
+2614,Yes,Fair,Poor / Fair / Good,200
+2615,No,Good,Poor / Fair / Good,2500
+2616,No,Excellent,Very good / Excellent,5000
+2617,No,Good,Poor / Fair / Good,3324.5
+2618,Yes,Excellent,Very good / Excellent,3324.5
+2619,No,Fair,Poor / Fair / Good,NA
+2620,No,Very good,Very good / Excellent,8400
+2621,No,Fair,Poor / Fair / Good,1024
+2622,Yes,Good,Poor / Fair / Good,4174.5
+2623,No,Good,Poor / Fair / Good,8400
+2624,No,Good,Poor / Fair / Good,4174.5
+2625,Yes,Very good,Very good / Excellent,5000
+2626,Yes,Good,Poor / Fair / Good,5000
+2627,No,Poor,Poor / Fair / Good,1024
+2628,No,Excellent,Very good / Excellent,5824
+2629,No,Good,Poor / Fair / Good,NA
+2630,No,Fair,Poor / Fair / Good,1024
+2631,No,Good,Poor / Fair / Good,1024
+2632,No,Very good,Very good / Excellent,7324
+2633,No,Good,Poor / Fair / Good,1450
+2634,No,Good,Poor / Fair / Good,200
+2635,Yes,Fair,Poor / Fair / Good,8400
+2636,No,Good,Poor / Fair / Good,NA
+2637,No,Good,Poor / Fair / Good,NA
+2638,No,Good,Poor / Fair / Good,2500
+2639,Yes,Fair,Poor / Fair / Good,2500
+2640,Yes,Very good,Very good / Excellent,2500
+2641,No,Excellent,Very good / Excellent,1024
+2642,No,Excellent,Very good / Excellent,8400
+2643,No,Fair,Poor / Fair / Good,1024
+2644,No,Good,Poor / Fair / Good,1874.5
+2645,No,Good,Poor / Fair / Good,3324.5
+2646,Yes,Good,Poor / Fair / Good,4174.5
+2647,No,Good,Poor / Fair / Good,1450
+2648,Yes,Good,Poor / Fair / Good,2500
+2649,No,Poor,Poor / Fair / Good,1024
+2650,No,Excellent,Very good / Excellent,1450
+2651,No,Very good,Very good / Excellent,1450
+2652,No,Fair,Poor / Fair / Good,5824
+2653,Yes,Good,Poor / Fair / Good,5824
+2654,No,Very good,Very good / Excellent,1024
+2655,No,Excellent,Very good / Excellent,4174.5
+2656,No,Excellent,Very good / Excellent,2500
+2657,No,Fair,Poor / Fair / Good,3324.5
+2658,No,Poor,Poor / Fair / Good,1450
+2659,No,Fair,Poor / Fair / Good,2500
+2660,Yes,Fair,Poor / Fair / Good,2500
+2661,No,Very good,Very good / Excellent,7324
+2662,Yes,Good,Poor / Fair / Good,7324
+2663,Yes,Good,Poor / Fair / Good,5000
+2664,No,Very good,Very good / Excellent,4174.5
+2665,No,Very good,Very good / Excellent,3324.5
+2666,Yes,Good,Poor / Fair / Good,7324
+2667,Yes,Good,Poor / Fair / Good,3324.5
+2668,No,Fair,Poor / Fair / Good,600
+2669,No,Good,Poor / Fair / Good,3324.5
+2670,No,Fair,Poor / Fair / Good,1024
+2671,Yes,Fair,Poor / Fair / Good,NA
+2672,No,Very good,Very good / Excellent,4174.5
+2673,No,Excellent,Very good / Excellent,8400
+2674,No,Good,Poor / Fair / Good,1024
+2675,Yes,Good,Poor / Fair / Good,1450
+2676,No,Good,Poor / Fair / Good,1024
+2677,No,Excellent,Very good / Excellent,3324.5
+2678,No,Fair,Poor / Fair / Good,1024
+2679,Yes,Fair,Poor / Fair / Good,600
+2680,No,Very good,Very good / Excellent,1024
+2681,No,Fair,Poor / Fair / Good,1024
+2682,Yes,Fair,Poor / Fair / Good,1024
+2683,Yes,Very good,Very good / Excellent,4174.5
+2684,No,Good,Poor / Fair / Good,3324.5
+2685,No,Good,Poor / Fair / Good,1024
+2686,No,Very good,Very good / Excellent,7324
+2687,No,Good,Poor / Fair / Good,8400
+2688,No,Good,Poor / Fair / Good,1024
+2689,No,Fair,Poor / Fair / Good,600
+2690,Yes,Good,Poor / Fair / Good,8400
+2691,No,Good,Poor / Fair / Good,NA
+2692,Yes,Excellent,Very good / Excellent,8400
+2693,Yes,Fair,Poor / Fair / Good,8400
+2694,Yes,Poor,Poor / Fair / Good,2500
+2695,Yes,Very good,Very good / Excellent,3324.5
+2696,Yes,Excellent,Very good / Excellent,3324.5
+2697,No,Fair,Poor / Fair / Good,600
+2698,No,Fair,Poor / Fair / Good,3324.5
+2699,Yes,Good,Poor / Fair / Good,5824
+2700,Yes,Good,Poor / Fair / Good,NA
+2701,Yes,Very good,Very good / Excellent,5000
+2702,No,Very good,Very good / Excellent,1450
+2703,Yes,Very good,Very good / Excellent,8400
+2704,No,Fair,Poor / Fair / Good,2500
+2705,No,Very good,Very good / Excellent,5000
+2706,Yes,Very good,Very good / Excellent,1874.5
+2707,Yes,Good,Poor / Fair / Good,4174.5
+2708,No,Fair,Poor / Fair / Good,1450
+2709,Yes,Very good,Very good / Excellent,8400
+2710,No,Fair,Poor / Fair / Good,600
+2711,No,Excellent,Very good / Excellent,4174.5
+2712,Yes,Fair,Poor / Fair / Good,200
+2713,Yes,Good,Poor / Fair / Good,5000
+2714,Yes,Good,Poor / Fair / Good,3324.5
+2715,No,Excellent,Very good / Excellent,8400
+2716,No,Fair,Poor / Fair / Good,NA
+2717,No,Very good,Very good / Excellent,200
+2718,No,Fair,Poor / Fair / Good,2500
+2719,No,Fair,Poor / Fair / Good,4174.5
+2720,Yes,Excellent,Very good / Excellent,1024
+2721,No,Good,Poor / Fair / Good,4174.5
+2722,Yes,Fair,Poor / Fair / Good,1024
+2723,No,Fair,Poor / Fair / Good,NA
+2724,No,Good,Poor / Fair / Good,1450
+2725,No,Good,Poor / Fair / Good,1874.5
+2726,No,Fair,Poor / Fair / Good,2500
+2727,Yes,Fair,Poor / Fair / Good,1450
+2728,No,Excellent,Very good / Excellent,5000
+2729,No,Fair,Poor / Fair / Good,2500
+2730,No,Very good,Very good / Excellent,8400
+2731,Yes,Very good,Very good / Excellent,3324.5
+2732,No,Very good,Very good / Excellent,7324
+2733,No,Excellent,Very good / Excellent,4174.5
+2734,No,Good,Poor / Fair / Good,2500
+2735,Yes,Very good,Very good / Excellent,7324
+2736,No,Very good,Very good / Excellent,8400
+2737,Yes,Good,Poor / Fair / Good,1874.5
+2738,Yes,Good,Poor / Fair / Good,3324.5
+2739,Yes,Good,Poor / Fair / Good,1024
+2740,No,Good,Poor / Fair / Good,1024
+2741,No,Very good,Very good / Excellent,2500
+2742,No,Excellent,Very good / Excellent,NA
+2743,Yes,Fair,Poor / Fair / Good,1874.5
+2744,No,Good,Poor / Fair / Good,600
+2745,No,Good,Poor / Fair / Good,2500
+2746,Yes,Poor,Poor / Fair / Good,1450
+2747,Yes,Good,Poor / Fair / Good,5824
+2748,Yes,Very good,Very good / Excellent,4174.5
+2749,No,Very good,Very good / Excellent,4174.5
+2750,No,Fair,Poor / Fair / Good,1024
+2751,Yes,Good,Poor / Fair / Good,7324
+2752,No,Fair,Poor / Fair / Good,1024
+2753,Yes,Good,Poor / Fair / Good,1874.5
+2754,Yes,Good,Poor / Fair / Good,2500
+2755,No,Very good,Very good / Excellent,2500
+2756,Yes,Good,Poor / Fair / Good,3324.5
+2757,Yes,Very good,Very good / Excellent,4174.5
+2758,No,Good,Poor / Fair / Good,4174.5
+2759,No,Very good,Very good / Excellent,600
+2760,Yes,Excellent,Very good / Excellent,NA
+2761,Yes,Very good,Very good / Excellent,NA
+2762,No,Fair,Poor / Fair / Good,NA
+2763,Yes,Very good,Very good / Excellent,7324
+2764,No,Good,Poor / Fair / Good,600
+2765,No,Good,Poor / Fair / Good,2500
+2766,No,Good,Poor / Fair / Good,1874.5
+2767,No,Good,Poor / Fair / Good,4174.5
+2768,No,Very good,Very good / Excellent,1450
+2769,No,Good,Poor / Fair / Good,1450
+2770,No,Very good,Very good / Excellent,8400
+2771,No,Poor,Poor / Fair / Good,1450
+2772,No,Very good,Very good / Excellent,4174.5
+2773,Yes,Very good,Very good / Excellent,3324.5
+2774,No,Excellent,Very good / Excellent,4174.5
+2775,No,Fair,Poor / Fair / Good,1024
+2776,Yes,Very good,Very good / Excellent,4174.5
+2777,No,Good,Poor / Fair / Good,7324
+2778,No,Good,Poor / Fair / Good,1024
+2779,No,Fair,Poor / Fair / Good,7324
+2780,Yes,Good,Poor / Fair / Good,1450
+2781,Yes,Excellent,Very good / Excellent,2500
+2782,No,Good,Poor / Fair / Good,4174.5
+2783,No,Very good,Very good / Excellent,7324
+2784,No,Very good,Very good / Excellent,5000
+2785,Yes,Good,Poor / Fair / Good,5000
+2786,No,Good,Poor / Fair / Good,4174.5
+2787,No,Fair,Poor / Fair / Good,1024
+2788,No,Fair,Poor / Fair / Good,1874.5
+2789,No,Good,Poor / Fair / Good,2500
+2790,Yes,Good,Poor / Fair / Good,NA
+2791,No,Good,Poor / Fair / Good,600
+2792,Yes,Good,Poor / Fair / Good,5000
+2793,No,Poor,Poor / Fair / Good,1874.5
+2794,Yes,Excellent,Very good / Excellent,7324
+2795,Yes,Very good,Very good / Excellent,8400
+2796,Yes,Very good,Very good / Excellent,2500
+2797,Yes,Very good,Very good / Excellent,3324.5
+2798,No,Excellent,Very good / Excellent,4174.5
+2799,No,Excellent,Very good / Excellent,3324.5
+2800,Yes,Excellent,Very good / Excellent,7324
+2801,No,Very good,Very good / Excellent,3324.5
+2802,Yes,Very good,Very good / Excellent,1024
+2803,Yes,Good,Poor / Fair / Good,7324
+2804,No,Good,Poor / Fair / Good,7324
+2805,No,Excellent,Very good / Excellent,1450
+2806,No,Good,Poor / Fair / Good,8400
+2807,No,Good,Poor / Fair / Good,1874.5
+2808,No,Very good,Very good / Excellent,1874.5
+2809,No,Excellent,Very good / Excellent,1874.5
+2810,Yes,Good,Poor / Fair / Good,1024
+2811,No,Good,Poor / Fair / Good,3324.5
+2812,No,Good,Poor / Fair / Good,8400
+2813,No,Fair,Poor / Fair / Good,1024
+2814,Yes,Good,Poor / Fair / Good,3324.5
+2815,No,Very good,Very good / Excellent,NA
+2816,Yes,Very good,Very good / Excellent,8400
+2817,No,Fair,Poor / Fair / Good,1450
+2818,No,Excellent,Very good / Excellent,600
+2819,No,Very good,Very good / Excellent,2500
+2820,Yes,Excellent,Very good / Excellent,8400
+2821,Yes,Very good,Very good / Excellent,3324.5
+2822,Yes,Good,Poor / Fair / Good,1024
+2823,Yes,Good,Poor / Fair / Good,2500
+2824,No,Good,Poor / Fair / Good,NA
+2825,Yes,Good,Poor / Fair / Good,NA
+2826,Yes,Fair,Poor / Fair / Good,3324.5
+2827,Yes,Very good,Very good / Excellent,8400
+2828,Yes,Good,Poor / Fair / Good,1024
+2829,No,Good,Poor / Fair / Good,1450
+2830,Yes,Fair,Poor / Fair / Good,5824
+2831,No,Good,Poor / Fair / Good,7324
+2832,No,Good,Poor / Fair / Good,NA
+2833,Yes,Good,Poor / Fair / Good,8400
+2834,Yes,Fair,Poor / Fair / Good,4174.5
+2835,Yes,Good,Poor / Fair / Good,5000
+2836,No,Good,Poor / Fair / Good,1024
+2837,No,Very good,Very good / Excellent,4174.5
+2838,Yes,Excellent,Very good / Excellent,NA
+2839,No,Good,Poor / Fair / Good,2500
+2840,Yes,Very good,Very good / Excellent,8400
+2841,Yes,Excellent,Very good / Excellent,4174.5
+2842,No,Excellent,Very good / Excellent,2500
+2843,Yes,Good,Poor / Fair / Good,8400
+2844,Yes,Very good,Very good / Excellent,5000
+2845,No,Good,Poor / Fair / Good,4174.5
+2846,No,Good,Poor / Fair / Good,200
+2847,No,Fair,Poor / Fair / Good,1024
+2848,No,Very good,Very good / Excellent,1874.5
+2849,No,Excellent,Very good / Excellent,1450
+2850,Yes,Very good,Very good / Excellent,8400
+2851,No,Good,Poor / Fair / Good,5000
+2852,Yes,Excellent,Very good / Excellent,8400
+2853,Yes,Fair,Poor / Fair / Good,7324
+2854,No,Very good,Very good / Excellent,7324
+2855,Yes,Very good,Very good / Excellent,2500
+2856,Yes,Good,Poor / Fair / Good,2500
+2857,No,Good,Poor / Fair / Good,3324.5
+2858,No,Very good,Very good / Excellent,NA
+2859,No,Good,Poor / Fair / Good,1874.5
+2860,Yes,Very good,Very good / Excellent,5824
+2861,Yes,Fair,Poor / Fair / Good,200
+2862,Yes,Very good,Very good / Excellent,200
+2863,No,Very good,Very good / Excellent,2500
+2864,No,Excellent,Very good / Excellent,7324
+2865,Yes,Very good,Very good / Excellent,4174.5
+2866,Yes,Good,Poor / Fair / Good,NA
+2867,Yes,Good,Poor / Fair / Good,8400
+2868,No,Fair,Poor / Fair / Good,1024
+2869,Yes,Fair,Poor / Fair / Good,5000
+2870,No,Fair,Poor / Fair / Good,3324.5
+2871,No,Very good,Very good / Excellent,200
+2872,Yes,Very good,Very good / Excellent,200
+2873,Yes,Good,Poor / Fair / Good,3324.5
+2874,No,Good,Poor / Fair / Good,NA
+2875,No,Fair,Poor / Fair / Good,3324.5
+2876,No,Fair,Poor / Fair / Good,3324.5
+2877,Yes,Excellent,Very good / Excellent,8400
+2878,No,Fair,Poor / Fair / Good,600
+2879,No,Poor,Poor / Fair / Good,1024
+2880,Yes,Good,Poor / Fair / Good,4174.5
+2881,No,Excellent,Very good / Excellent,1874.5
+2882,No,Very good,Very good / Excellent,NA
+2883,No,Fair,Poor / Fair / Good,2500
+2884,Yes,Fair,Poor / Fair / Good,2500
+2885,No,Very good,Very good / Excellent,NA
+2886,No,Good,Poor / Fair / Good,2500
+2887,No,Fair,Poor / Fair / Good,5000
+2888,No,Good,Poor / Fair / Good,3324.5
+2889,No,Fair,Poor / Fair / Good,1874.5
+2890,No,Fair,Poor / Fair / Good,8400
+2891,No,Fair,Poor / Fair / Good,1874.5
+2892,No,Very good,Very good / Excellent,5824
+2893,Yes,Good,Poor / Fair / Good,5824
+2894,No,Very good,Very good / Excellent,1450
+2895,No,Very good,Very good / Excellent,2500
+2896,No,Very good,Very good / Excellent,7324
+2897,Yes,Fair,Poor / Fair / Good,1024
+2898,No,Fair,Poor / Fair / Good,1024
+2899,No,Very good,Very good / Excellent,1024
+2900,No,Excellent,Very good / Excellent,8400
+2901,No,Excellent,Very good / Excellent,5000
+2902,Yes,Very good,Very good / Excellent,7324
+2903,No,Fair,Poor / Fair / Good,5000
+2904,Yes,Very good,Very good / Excellent,7324
+2905,No,Good,Poor / Fair / Good,2500
+2906,No,Very good,Very good / Excellent,NA
+2907,Yes,Excellent,Very good / Excellent,8400
+2908,Yes,Good,Poor / Fair / Good,8400
+2909,Yes,Very good,Very good / Excellent,1874.5
+2910,No,Poor,Poor / Fair / Good,NA
+2911,No,Poor,Poor / Fair / Good,7324
+2912,No,Good,Poor / Fair / Good,2500
+2913,Yes,Good,Poor / Fair / Good,2500
+2914,No,Fair,Poor / Fair / Good,1450
+2915,No,Excellent,Very good / Excellent,3324.5
+2916,No,Excellent,Very good / Excellent,5000
+2917,No,Fair,Poor / Fair / Good,1024
+2918,Yes,Good,Poor / Fair / Good,1024
+2919,No,Poor,Poor / Fair / Good,2500
+2920,No,Very good,Very good / Excellent,8400
+2921,No,Good,Poor / Fair / Good,NA
+2922,No,Very good,Very good / Excellent,1874.5
+2923,Yes,Very good,Very good / Excellent,8400
+2924,No,Excellent,Very good / Excellent,NA
+2925,No,Poor,Poor / Fair / Good,1450
+2926,No,Good,Poor / Fair / Good,NA
+2927,No,Very good,Very good / Excellent,4174.5
+2928,Yes,Good,Poor / Fair / Good,1450
+2929,Yes,Good,Poor / Fair / Good,2500
+2930,No,Good,Poor / Fair / Good,5000
+2931,No,Good,Poor / Fair / Good,1874.5
+2932,No,Good,Poor / Fair / Good,1024
+2933,No,Good,Poor / Fair / Good,1024
+2934,No,Good,Poor / Fair / Good,600
+2935,Yes,Fair,Poor / Fair / Good,1024
+2936,No,Fair,Poor / Fair / Good,7324
+2937,Yes,Very good,Very good / Excellent,600
+2938,No,Good,Poor / Fair / Good,NA
+2939,Yes,Very good,Very good / Excellent,1024
+2940,No,Good,Poor / Fair / Good,1874.5
+2941,No,Good,Poor / Fair / Good,2500
+2942,No,Fair,Poor / Fair / Good,4174.5
+2943,No,Very good,Very good / Excellent,NA
+2944,No,Excellent,Very good / Excellent,200
+2945,Yes,Very good,Very good / Excellent,1874.5
+2946,No,Good,Poor / Fair / Good,1024
+2947,No,Very good,Very good / Excellent,2500
+2948,No,Poor,Poor / Fair / Good,1450
+2949,Yes,Excellent,Very good / Excellent,7324
+2950,No,Very good,Very good / Excellent,600
+2951,Yes,Fair,Poor / Fair / Good,1024
+2952,Yes,Excellent,Very good / Excellent,200
+2953,Yes,Good,Poor / Fair / Good,1024
+2954,No,Very good,Very good / Excellent,1874.5
+2955,No,Very good,Very good / Excellent,2500
+2956,No,Excellent,Very good / Excellent,4174.5
+2957,Yes,Fair,Poor / Fair / Good,1874.5
+2958,Yes,Excellent,Very good / Excellent,4174.5
+2959,No,Excellent,Very good / Excellent,5824
+2960,No,Very good,Very good / Excellent,1450
+2961,No,Excellent,Very good / Excellent,600
+2962,No,Good,Poor / Fair / Good,1024
+2963,No,Good,Poor / Fair / Good,4174.5
+2964,No,Very good,Very good / Excellent,8400
+2965,Yes,Excellent,Very good / Excellent,NA
+2966,No,Very good,Very good / Excellent,1874.5
+2967,No,Good,Poor / Fair / Good,200
+2968,No,Excellent,Very good / Excellent,600
+2969,No,Good,Poor / Fair / Good,4174.5
+2970,No,Very good,Very good / Excellent,7324
+2971,No,Fair,Poor / Fair / Good,200
+2972,No,Very good,Very good / Excellent,8400
+2973,No,Very good,Very good / Excellent,2500
+2974,No,Good,Poor / Fair / Good,1024
+2975,Yes,Good,Poor / Fair / Good,2500
+2976,Yes,Excellent,Very good / Excellent,3324.5
+2977,No,Very good,Very good / Excellent,2500
+2978,No,Fair,Poor / Fair / Good,8400
+2979,No,Good,Poor / Fair / Good,1874.5
+2980,No,Poor,Poor / Fair / Good,600
+2981,Yes,Good,Poor / Fair / Good,1874.5
+2982,No,Poor,Poor / Fair / Good,600
+2983,No,Good,Poor / Fair / Good,1450
+2984,Yes,Very good,Very good / Excellent,1450
+2985,No,Fair,Poor / Fair / Good,1024
+2986,No,Fair,Poor / Fair / Good,4174.5
+2987,No,Very good,Very good / Excellent,5824
+2988,No,Fair,Poor / Fair / Good,3324.5
+2989,No,Poor,Poor / Fair / Good,3324.5
+2990,Yes,Fair,Poor / Fair / Good,600
+2991,Yes,Good,Poor / Fair / Good,8400
+2992,Yes,Fair,Poor / Fair / Good,4174.5
+2993,No,Good,Poor / Fair / Good,1874.5
+2994,No,Very good,Very good / Excellent,600
+2995,No,Very good,Very good / Excellent,8400
+2996,Yes,Good,Poor / Fair / Good,1024
+2997,No,Very good,Very good / Excellent,4174.5
+2998,No,Very good,Very good / Excellent,NA
+2999,No,Good,Poor / Fair / Good,1874.5
+3000,No,Poor,Poor / Fair / Good,5000
+3001,No,Very good,Very good / Excellent,NA
+3002,No,Very good,Very good / Excellent,NA
+3003,Yes,Fair,Poor / Fair / Good,8400
+3004,Yes,Excellent,Very good / Excellent,7324
+3005,Yes,Good,Poor / Fair / Good,NA
+3006,No,Good,Poor / Fair / Good,NA
+3007,No,Good,Poor / Fair / Good,3324.5
+3008,No,Very good,Very good / Excellent,4174.5
+3009,No,Good,Poor / Fair / Good,600
+3010,Yes,Good,Poor / Fair / Good,600
+3011,No,Poor,Poor / Fair / Good,3324.5
+3012,No,Fair,Poor / Fair / Good,1450
+3013,Yes,Good,Poor / Fair / Good,8400
+3014,Yes,Very good,Very good / Excellent,600
+3015,Yes,Very good,Very good / Excellent,7324
+3016,Yes,Good,Poor / Fair / Good,3324.5
+3017,Yes,Good,Poor / Fair / Good,1874.5
+3018,No,Good,Poor / Fair / Good,1450
+3019,Yes,Very good,Very good / Excellent,8400
+3020,No,Fair,Poor / Fair / Good,200
+3021,No,Very good,Very good / Excellent,1024
+3022,No,Fair,Poor / Fair / Good,1024
+3023,Yes,Good,Poor / Fair / Good,3324.5
+3024,No,Good,Poor / Fair / Good,4174.5
+3025,No,Good,Poor / Fair / Good,600
+3026,No,Fair,Poor / Fair / Good,5000
+3027,No,Good,Poor / Fair / Good,2500
+3028,No,Poor,Poor / Fair / Good,1024
+3029,No,Good,Poor / Fair / Good,7324
+3030,No,Very good,Very good / Excellent,3324.5
+3031,No,Very good,Very good / Excellent,1874.5
+3032,Yes,Very good,Very good / Excellent,8400
+3033,No,Very good,Very good / Excellent,3324.5
+3034,No,Excellent,Very good / Excellent,1874.5
+3035,Yes,Very good,Very good / Excellent,1450
+3036,No,Good,Poor / Fair / Good,8400
+3037,Yes,Very good,Very good / Excellent,8400
+3038,Yes,Very good,Very good / Excellent,NA
+3039,No,Fair,Poor / Fair / Good,7324
+3040,Yes,Good,Poor / Fair / Good,4174.5
+3041,No,Good,Poor / Fair / Good,2500
+3042,No,Very good,Very good / Excellent,3324.5
+3043,Yes,Good,Poor / Fair / Good,2500
+3044,No,Good,Poor / Fair / Good,1450
+3045,No,Good,Poor / Fair / Good,NA
+3046,No,Very good,Very good / Excellent,8400
+3047,No,Good,Poor / Fair / Good,1024
+3048,No,Fair,Poor / Fair / Good,5824
+3049,Yes,Good,Poor / Fair / Good,1450
+3050,No,Very good,Very good / Excellent,3324.5
+3051,No,Good,Poor / Fair / Good,7324
+3052,Yes,Excellent,Very good / Excellent,1450
+3053,No,Poor,Poor / Fair / Good,600
+3054,No,Very good,Very good / Excellent,8400
+3055,No,Excellent,Very good / Excellent,5824
+3056,No,Very good,Very good / Excellent,2500
+3057,No,Very good,Very good / Excellent,2500
+3058,Yes,Fair,Poor / Fair / Good,3324.5
+3059,Yes,Very good,Very good / Excellent,NA
+3060,No,Fair,Poor / Fair / Good,2500
+3061,No,Very good,Very good / Excellent,4174.5
+3062,No,Good,Poor / Fair / Good,4174.5
+3063,No,Very good,Very good / Excellent,2500
+3064,Yes,Excellent,Very good / Excellent,8400
+3065,No,Good,Poor / Fair / Good,7324
+3066,No,Good,Poor / Fair / Good,1874.5
+3067,No,Good,Poor / Fair / Good,4174.5
+3068,Yes,Excellent,Very good / Excellent,3324.5
+3069,No,Good,Poor / Fair / Good,3324.5
+3070,Yes,Good,Poor / Fair / Good,5000
+3071,Yes,Very good,Very good / Excellent,1450
+3072,No,Very good,Very good / Excellent,2500
+3073,No,Poor,Poor / Fair / Good,600
+3074,Yes,Fair,Poor / Fair / Good,1024
+3075,No,Good,Poor / Fair / Good,NA
+3076,No,Very good,Very good / Excellent,1024
+3077,No,Excellent,Very good / Excellent,1024
+3078,No,Fair,Poor / Fair / Good,1874.5
+3079,Yes,Good,Poor / Fair / Good,8400
+3080,No,Fair,Poor / Fair / Good,3324.5
+3081,Yes,Fair,Poor / Fair / Good,7324
+3082,No,Good,Poor / Fair / Good,NA
+3083,No,Good,Poor / Fair / Good,3324.5
+3084,No,Good,Poor / Fair / Good,4174.5
+3085,No,Excellent,Very good / Excellent,1450
+3086,No,Good,Poor / Fair / Good,3324.5
+3087,No,Good,Poor / Fair / Good,1024
+3088,Yes,Excellent,Very good / Excellent,7324
+3089,No,Very good,Very good / Excellent,1024
+3090,No,Fair,Poor / Fair / Good,NA
+3091,Yes,Very good,Very good / Excellent,5000
+3092,No,Poor,Poor / Fair / Good,1450
+3093,No,Very good,Very good / Excellent,NA
+3094,Yes,Very good,Very good / Excellent,2500
+3095,No,Excellent,Very good / Excellent,5000
+3096,No,Very good,Very good / Excellent,7324
+3097,No,Good,Poor / Fair / Good,7324
+3098,Yes,Fair,Poor / Fair / Good,1450
+3099,Yes,Good,Poor / Fair / Good,3324.5
+3100,Yes,Very good,Very good / Excellent,8400
+3101,Yes,Good,Poor / Fair / Good,7324
+3102,No,Good,Poor / Fair / Good,1024
+3103,Yes,Good,Poor / Fair / Good,600
+3104,Yes,Good,Poor / Fair / Good,NA
+3105,Yes,Excellent,Very good / Excellent,3324.5
+3106,No,Very good,Very good / Excellent,2500
+3107,No,Good,Poor / Fair / Good,5000
+3108,No,Fair,Poor / Fair / Good,1024
+3109,No,Very good,Very good / Excellent,2500
+3110,Yes,Very good,Very good / Excellent,7324
+3111,No,Very good,Very good / Excellent,3324.5
+3112,No,Very good,Very good / Excellent,1450
+3113,No,Very good,Very good / Excellent,3324.5
+3114,Yes,Good,Poor / Fair / Good,7324
+3115,No,Good,Poor / Fair / Good,1024
+3116,No,Fair,Poor / Fair / Good,NA
+3117,No,Fair,Poor / Fair / Good,3324.5
+3118,No,Very good,Very good / Excellent,1450
+3119,No,Fair,Poor / Fair / Good,1874.5
+3120,No,Good,Poor / Fair / Good,2500
+3121,No,Fair,Poor / Fair / Good,1450
+3122,No,Very good,Very good / Excellent,600
+3123,Yes,Excellent,Very good / Excellent,4174.5
+3124,Yes,Excellent,Very good / Excellent,600
+3125,Yes,Excellent,Very good / Excellent,4174.5
+3126,No,Fair,Poor / Fair / Good,200
+3127,No,Fair,Poor / Fair / Good,1450
+3128,Yes,Very good,Very good / Excellent,600
+3129,No,Good,Poor / Fair / Good,4174.5
+3130,No,Fair,Poor / Fair / Good,1024
+3131,No,Very good,Very good / Excellent,1874.5
+3132,Yes,Good,Poor / Fair / Good,3324.5
+3133,No,Good,Poor / Fair / Good,3324.5
+3134,Yes,Very good,Very good / Excellent,8400
+3135,Yes,Good,Poor / Fair / Good,1874.5
+3136,Yes,Good,Poor / Fair / Good,1874.5
+3137,No,Fair,Poor / Fair / Good,1874.5
+3138,No,Fair,Poor / Fair / Good,600
+3139,No,Good,Poor / Fair / Good,7324
+3140,No,Very good,Very good / Excellent,1874.5
+3141,No,Fair,Poor / Fair / Good,NA
+3142,Yes,Good,Poor / Fair / Good,7324
+3143,No,Good,Poor / Fair / Good,NA
+3144,No,Fair,Poor / Fair / Good,1450
+3145,Yes,Good,Poor / Fair / Good,5000
+3146,No,Good,Poor / Fair / Good,NA
+3147,No,Good,Poor / Fair / Good,4174.5
+3148,No,Good,Poor / Fair / Good,600
+3149,No,Good,Poor / Fair / Good,600
+3150,No,Fair,Poor / Fair / Good,5000
+3151,No,Good,Poor / Fair / Good,1024
+3152,Yes,Fair,Poor / Fair / Good,NA
+3153,No,Good,Poor / Fair / Good,3324.5
+3154,Yes,Good,Poor / Fair / Good,1024
+3155,Yes,Very good,Very good / Excellent,7324
+3156,No,Good,Poor / Fair / Good,8400
+3157,No,Good,Poor / Fair / Good,2500
+3158,No,Good,Poor / Fair / Good,1874.5
+3159,Yes,Excellent,Very good / Excellent,3324.5
+3160,No,Fair,Poor / Fair / Good,1024
+3161,No,Very good,Very good / Excellent,1874.5
+3162,No,Good,Poor / Fair / Good,NA
+3163,No,Fair,Poor / Fair / Good,NA
+3164,No,Very good,Very good / Excellent,NA
+3165,No,Very good,Very good / Excellent,4174.5
+3166,No,Very good,Very good / Excellent,5824
+3167,Yes,Poor,Poor / Fair / Good,1450
+3168,No,Fair,Poor / Fair / Good,2500
+3169,No,Good,Poor / Fair / Good,5000
+3170,No,Good,Poor / Fair / Good,2500
+3171,No,Good,Poor / Fair / Good,1024
+3172,Yes,Good,Poor / Fair / Good,8400
+3173,No,Good,Poor / Fair / Good,1024
+3174,No,Good,Poor / Fair / Good,2500
+3175,No,Good,Poor / Fair / Good,7324
+3176,No,Good,Poor / Fair / Good,7324
+3177,No,Excellent,Very good / Excellent,5824
+3178,No,Good,Poor / Fair / Good,5824
+3179,Yes,Very good,Very good / Excellent,2500
+3180,Yes,Very good,Very good / Excellent,2500
+3181,No,Good,Poor / Fair / Good,2500
+3182,No,Excellent,Very good / Excellent,1024
+3183,No,Good,Poor / Fair / Good,5000
+3184,No,Very good,Very good / Excellent,4174.5
+3185,No,Very good,Very good / Excellent,1450
+3186,Yes,Good,Poor / Fair / Good,200
+3187,Yes,Very good,Very good / Excellent,8400
+3188,No,Very good,Very good / Excellent,600
+3189,Yes,Very good,Very good / Excellent,1874.5
+3190,Yes,Good,Poor / Fair / Good,4174.5
+3191,No,Fair,Poor / Fair / Good,4174.5
+3192,Yes,Very good,Very good / Excellent,5824
+3193,Yes,Fair,Poor / Fair / Good,4174.5
+3194,Yes,Fair,Poor / Fair / Good,5000
+3195,No,Poor,Poor / Fair / Good,200
+3196,No,Very good,Very good / Excellent,1450
+3197,No,Good,Poor / Fair / Good,NA
+3198,Yes,Fair,Poor / Fair / Good,NA
+3199,Yes,Fair,Poor / Fair / Good,1024
+3200,No,Excellent,Very good / Excellent,7324
+3201,No,Good,Poor / Fair / Good,1024
+3202,No,Fair,Poor / Fair / Good,600
+3203,No,Good,Poor / Fair / Good,4174.5
+3204,No,Good,Poor / Fair / Good,7324
+3205,No,Good,Poor / Fair / Good,1024
+3206,No,Good,Poor / Fair / Good,2500
+3207,Yes,Good,Poor / Fair / Good,8400
+3208,No,Very good,Very good / Excellent,2500
+3209,No,Very good,Very good / Excellent,2500
+3210,Yes,Excellent,Very good / Excellent,4174.5
+3211,No,Fair,Poor / Fair / Good,3324.5
+3212,No,Good,Poor / Fair / Good,5000
+3213,Yes,Very good,Very good / Excellent,1450
+3214,No,Fair,Poor / Fair / Good,8400
+3215,Yes,Very good,Very good / Excellent,4174.5
+3216,No,Good,Poor / Fair / Good,2500
+3217,No,Fair,Poor / Fair / Good,1874.5
+3218,Yes,Very good,Very good / Excellent,NA
+3219,Yes,Good,Poor / Fair / Good,NA
+3220,Yes,Very good,Very good / Excellent,3324.5
+3221,No,Fair,Poor / Fair / Good,2500
+3222,No,Good,Poor / Fair / Good,5000
+3223,No,Fair,Poor / Fair / Good,NA
+3224,No,Good,Poor / Fair / Good,1450
+3225,No,Good,Poor / Fair / Good,3324.5
+3226,Yes,Very good,Very good / Excellent,5824
+3227,No,Good,Poor / Fair / Good,1874.5
+3228,Yes,Good,Poor / Fair / Good,4174.5
+3229,Yes,Poor,Poor / Fair / Good,1024
+3230,No,Very good,Very good / Excellent,1874.5
+3231,Yes,Excellent,Very good / Excellent,NA
+3232,Yes,Fair,Poor / Fair / Good,1024
+3233,Yes,Excellent,Very good / Excellent,200
+3234,No,Good,Poor / Fair / Good,5824
+3235,Yes,Very good,Very good / Excellent,5824
+3236,No,Good,Poor / Fair / Good,NA
+3237,Yes,Good,Poor / Fair / Good,1450
+3238,No,Very good,Very good / Excellent,1024
+3239,No,Poor,Poor / Fair / Good,1024
+3240,No,Good,Poor / Fair / Good,600
+3241,No,Fair,Poor / Fair / Good,1450
+3242,Yes,Very good,Very good / Excellent,3324.5
+3243,No,Good,Poor / Fair / Good,1874.5
+3244,No,Good,Poor / Fair / Good,1450
+3245,No,Very good,Very good / Excellent,8400
+3246,No,Very good,Very good / Excellent,5824
+3247,Yes,Good,Poor / Fair / Good,1024
+3248,Yes,Very good,Very good / Excellent,8400
+3249,No,Fair,Poor / Fair / Good,5000
+3250,No,Good,Poor / Fair / Good,1450
+3251,Yes,Very good,Very good / Excellent,8400
+3252,No,Very good,Very good / Excellent,8400
+3253,Yes,Very good,Very good / Excellent,NA
+3254,No,Good,Poor / Fair / Good,1024
+3255,Yes,Good,Poor / Fair / Good,3324.5
+3256,No,Fair,Poor / Fair / Good,1024
+3257,No,Fair,Poor / Fair / Good,7324
+3258,Yes,Good,Poor / Fair / Good,8400
+3259,No,Very good,Very good / Excellent,NA
+3260,No,Good,Poor / Fair / Good,NA
+3261,No,Fair,Poor / Fair / Good,8400
+3262,No,Excellent,Very good / Excellent,7324
+3263,No,Very good,Very good / Excellent,4174.5
+3264,Yes,Good,Poor / Fair / Good,1874.5
+3265,No,Very good,Very good / Excellent,7324
+3266,No,Good,Poor / Fair / Good,4174.5
+3267,No,Good,Poor / Fair / Good,NA
+3268,No,Excellent,Very good / Excellent,1450
+3269,No,Good,Poor / Fair / Good,3324.5
+3270,Yes,Excellent,Very good / Excellent,2500
+3271,No,Good,Poor / Fair / Good,600
+3272,No,Good,Poor / Fair / Good,1024
+3273,Yes,Very good,Very good / Excellent,4174.5
+3274,No,Good,Poor / Fair / Good,2500
+3275,No,Very good,Very good / Excellent,1450
+3276,No,Fair,Poor / Fair / Good,NA
+3277,Yes,Good,Poor / Fair / Good,8400
+3278,Yes,Very good,Very good / Excellent,5000
+3279,No,Poor,Poor / Fair / Good,4174.5
+3280,No,Good,Poor / Fair / Good,1024
+3281,No,Good,Poor / Fair / Good,5000
+3282,No,Good,Poor / Fair / Good,1450
+3283,Yes,Very good,Very good / Excellent,8400
+3284,No,Very good,Very good / Excellent,2500
+3285,Yes,Good,Poor / Fair / Good,1874.5
+3286,Yes,Very good,Very good / Excellent,3324.5
+3287,Yes,Fair,Poor / Fair / Good,1024
+3288,No,Fair,Poor / Fair / Good,NA
+3289,Yes,Very good,Very good / Excellent,4174.5
+3290,No,Fair,Poor / Fair / Good,NA
+3291,No,Good,Poor / Fair / Good,1874.5
+3292,No,Fair,Poor / Fair / Good,1024
+3293,No,Very good,Very good / Excellent,5824
+3294,No,Good,Poor / Fair / Good,NA
+3295,No,Good,Poor / Fair / Good,1024
+3296,No,Fair,Poor / Fair / Good,200
+3297,No,Good,Poor / Fair / Good,5824
+3298,Yes,Good,Poor / Fair / Good,1450
+3299,Yes,Good,Poor / Fair / Good,5824
+3300,No,Good,Poor / Fair / Good,8400
+3301,No,Good,Poor / Fair / Good,1024
+3302,No,Good,Poor / Fair / Good,3324.5
+3303,No,Good,Poor / Fair / Good,5000
+3304,No,Good,Poor / Fair / Good,8400
+3305,No,Good,Poor / Fair / Good,600
+3306,No,Good,Poor / Fair / Good,NA
+3307,No,Poor,Poor / Fair / Good,600
+3308,No,Excellent,Very good / Excellent,1874.5
+3309,Yes,Very good,Very good / Excellent,8400
+3310,No,Fair,Poor / Fair / Good,1874.5
+3311,No,Good,Poor / Fair / Good,8400
+3312,No,Fair,Poor / Fair / Good,1450
+3313,No,Very good,Very good / Excellent,4174.5
+3314,No,Good,Poor / Fair / Good,1874.5
+3315,Yes,Good,Poor / Fair / Good,3324.5
+3316,No,Excellent,Very good / Excellent,600
+3317,Yes,Very good,Very good / Excellent,600
+3318,Yes,Good,Poor / Fair / Good,5000
+3319,Yes,Excellent,Very good / Excellent,1450
+3320,Yes,Excellent,Very good / Excellent,7324
+3321,No,Good,Poor / Fair / Good,5824
+3322,Yes,Good,Poor / Fair / Good,8400
+3323,No,Very good,Very good / Excellent,1874.5
+3324,Yes,Good,Poor / Fair / Good,1024
+3325,Yes,Very good,Very good / Excellent,5000
+3326,No,Good,Poor / Fair / Good,2500
+3327,No,Very good,Very good / Excellent,2500
+3328,No,Very good,Very good / Excellent,2500
+3329,No,Very good,Very good / Excellent,3324.5
+3330,No,Very good,Very good / Excellent,8400
+3331,Yes,Very good,Very good / Excellent,8400
+3332,No,Good,Poor / Fair / Good,7324
+3333,No,Very good,Very good / Excellent,NA
+3334,Yes,Very good,Very good / Excellent,5000
+3335,No,Very good,Very good / Excellent,8400
+3336,No,Very good,Very good / Excellent,4174.5
+3337,No,Very good,Very good / Excellent,5000
+3338,No,Excellent,Very good / Excellent,8400
+3339,Yes,Excellent,Very good / Excellent,2500
+3340,Yes,Very good,Very good / Excellent,3324.5
+3341,No,Good,Poor / Fair / Good,3324.5
+3342,No,Fair,Poor / Fair / Good,1024
+3343,No,Good,Poor / Fair / Good,7324
+3344,Yes,Good,Poor / Fair / Good,200
+3345,Yes,Excellent,Very good / Excellent,4174.5
+3346,No,Very good,Very good / Excellent,8400
+3347,No,Good,Poor / Fair / Good,8400
+3348,No,Good,Poor / Fair / Good,600
+3349,No,Good,Poor / Fair / Good,1024
+3350,No,Good,Poor / Fair / Good,1874.5
+3351,Yes,Good,Poor / Fair / Good,NA
+3352,Yes,Good,Poor / Fair / Good,3324.5
+3353,No,Very good,Very good / Excellent,NA
+3354,No,Fair,Poor / Fair / Good,200
+3355,No,Poor,Poor / Fair / Good,200
+3356,Yes,Good,Poor / Fair / Good,1024
+3357,No,Good,Poor / Fair / Good,1874.5
+3358,No,Good,Poor / Fair / Good,1450
+3359,No,Very good,Very good / Excellent,8400
+3360,No,Good,Poor / Fair / Good,600
+3361,Yes,Fair,Poor / Fair / Good,3324.5
+3362,No,Poor,Poor / Fair / Good,1874.5
+3363,No,Very good,Very good / Excellent,8400
+3364,No,Fair,Poor / Fair / Good,2500
+3365,No,Very good,Very good / Excellent,5824
+3366,No,Excellent,Very good / Excellent,1450
+3367,No,Very good,Very good / Excellent,NA
+3368,Yes,Fair,Poor / Fair / Good,NA
+3369,No,Good,Poor / Fair / Good,2500
+3370,Yes,Excellent,Very good / Excellent,8400
+3371,No,Good,Poor / Fair / Good,600
+3372,Yes,Very good,Very good / Excellent,1874.5
+3373,No,Fair,Poor / Fair / Good,NA
+3374,No,Very good,Very good / Excellent,1024
+3375,No,Very good,Very good / Excellent,4174.5
+3376,No,Very good,Very good / Excellent,3324.5
+3377,No,Excellent,Very good / Excellent,NA
+3378,Yes,Good,Poor / Fair / Good,1450
+3379,Yes,Very good,Very good / Excellent,8400
+3380,Yes,Good,Poor / Fair / Good,1024
+3381,Yes,Good,Poor / Fair / Good,NA
+3382,No,Good,Poor / Fair / Good,1874.5
+3383,Yes,Very good,Very good / Excellent,5000
+3384,No,Excellent,Very good / Excellent,1024
+3385,No,Very good,Very good / Excellent,1450
+3386,Yes,Good,Poor / Fair / Good,3324.5
+3387,Yes,Very good,Very good / Excellent,NA
+3388,Yes,Fair,Poor / Fair / Good,1874.5
+3389,No,Fair,Poor / Fair / Good,1450
+3390,No,Good,Poor / Fair / Good,5000
+3391,No,Good,Poor / Fair / Good,1024
+3392,Yes,Poor,Poor / Fair / Good,2500
+3393,Yes,Good,Poor / Fair / Good,1450
+3394,No,Very good,Very good / Excellent,2500
+3395,Yes,Very good,Very good / Excellent,600
+3396,Yes,Fair,Poor / Fair / Good,1874.5
+3397,Yes,Excellent,Very good / Excellent,8400
+3398,No,Good,Poor / Fair / Good,7324
+3399,No,Good,Poor / Fair / Good,1024
+3400,No,Good,Poor / Fair / Good,1450
+3401,No,Excellent,Very good / Excellent,NA
+3402,Yes,Excellent,Very good / Excellent,200
+3403,Yes,Excellent,Very good / Excellent,2500
+3404,No,Good,Poor / Fair / Good,200
+3405,Yes,Fair,Poor / Fair / Good,1450
+3406,No,Excellent,Very good / Excellent,8400
+3407,No,Good,Poor / Fair / Good,1024
+3408,No,Excellent,Very good / Excellent,200
+3409,Yes,Excellent,Very good / Excellent,2500
+3410,No,Very good,Very good / Excellent,1024
+3411,Yes,Very good,Very good / Excellent,4174.5
+3412,No,Very good,Very good / Excellent,NA
+3413,Yes,Very good,Very good / Excellent,5000
+3414,No,Very good,Very good / Excellent,3324.5
+3415,No,Very good,Very good / Excellent,5824
+3416,No,Very good,Very good / Excellent,8400
+3417,No,Good,Poor / Fair / Good,NA
+3418,Yes,Fair,Poor / Fair / Good,4174.5
+3419,No,Fair,Poor / Fair / Good,2500
+3420,No,Good,Poor / Fair / Good,2500
+3421,No,Very good,Very good / Excellent,5000
+3422,No,Good,Poor / Fair / Good,NA
+3423,No,Fair,Poor / Fair / Good,NA
+3424,No,Poor,Poor / Fair / Good,5000
+3425,No,Good,Poor / Fair / Good,4174.5
+3426,Yes,Good,Poor / Fair / Good,1874.5
+3427,No,Excellent,Very good / Excellent,2500
+3428,No,Good,Poor / Fair / Good,200
+3429,Yes,Good,Poor / Fair / Good,7324
+3430,No,Good,Poor / Fair / Good,1024
+3431,No,Good,Poor / Fair / Good,NA
+3432,No,Fair,Poor / Fair / Good,1024
+3433,No,Excellent,Very good / Excellent,NA
+3434,No,Fair,Poor / Fair / Good,1450
+3435,Yes,Very good,Very good / Excellent,1450
+3436,No,Good,Poor / Fair / Good,4174.5
+3437,Yes,Good,Poor / Fair / Good,1024
+3438,No,Very good,Very good / Excellent,1450
+3439,No,Very good,Very good / Excellent,3324.5
+3440,No,Excellent,Very good / Excellent,3324.5
+3441,No,Good,Poor / Fair / Good,NA
+3442,No,Good,Poor / Fair / Good,1450
+3443,Yes,Good,Poor / Fair / Good,5824
+3444,No,Good,Poor / Fair / Good,1450
+3445,No,Excellent,Very good / Excellent,1874.5
+3446,No,Fair,Poor / Fair / Good,600
+3447,Yes,Very good,Very good / Excellent,4174.5
+3448,Yes,Good,Poor / Fair / Good,7324
+3449,Yes,Very good,Very good / Excellent,5000
+3450,Yes,Very good,Very good / Excellent,8400
+3451,No,Poor,Poor / Fair / Good,5824
+3452,No,Good,Poor / Fair / Good,3324.5
+3453,No,Poor,Poor / Fair / Good,1024
+3454,No,Fair,Poor / Fair / Good,NA
+3455,Yes,Very good,Very good / Excellent,NA
+3456,Yes,Very good,Very good / Excellent,1024
+3457,No,Good,Poor / Fair / Good,600
+3458,Yes,Good,Poor / Fair / Good,4174.5
+3459,No,Very good,Very good / Excellent,5824
+3460,No,Good,Poor / Fair / Good,200
+3461,Yes,Very good,Very good / Excellent,3324.5
+3462,No,Good,Poor / Fair / Good,1450
+3463,No,Poor,Poor / Fair / Good,NA
+3464,Yes,Fair,Poor / Fair / Good,1450
+3465,No,Good,Poor / Fair / Good,200
+3466,No,Very good,Very good / Excellent,NA
+3467,No,Fair,Poor / Fair / Good,2500
+3468,Yes,Excellent,Very good / Excellent,1450
+3469,Yes,Good,Poor / Fair / Good,4174.5
+3470,No,Good,Poor / Fair / Good,1450
+3471,No,Very good,Very good / Excellent,NA
+3472,No,Very good,Very good / Excellent,8400
+3473,No,Good,Poor / Fair / Good,5000
+3474,Yes,Excellent,Very good / Excellent,8400
+3475,No,Good,Poor / Fair / Good,NA
+3476,No,Fair,Poor / Fair / Good,2500
+3477,No,Good,Poor / Fair / Good,1450
+3478,No,Very good,Very good / Excellent,4174.5
+3479,Yes,Very good,Very good / Excellent,8400
+3480,No,Good,Poor / Fair / Good,1024
+3481,No,Good,Poor / Fair / Good,NA
+3482,No,Good,Poor / Fair / Good,1024
+3483,No,Excellent,Very good / Excellent,NA
+3484,No,Good,Poor / Fair / Good,1024
+3485,No,Good,Poor / Fair / Good,5000
+3486,No,Poor,Poor / Fair / Good,600
+3487,Yes,Good,Poor / Fair / Good,1450
+3488,No,Good,Poor / Fair / Good,NA
+3489,Yes,Poor,Poor / Fair / Good,5000
+3490,No,Very good,Very good / Excellent,8400
+3491,No,Good,Poor / Fair / Good,1024
+3492,Yes,Poor,Poor / Fair / Good,600
+3493,Yes,Very good,Very good / Excellent,4174.5
+3494,Yes,Good,Poor / Fair / Good,4174.5
+3495,Yes,Good,Poor / Fair / Good,2500
+3496,No,Fair,Poor / Fair / Good,1024
+3497,No,Very good,Very good / Excellent,4174.5
+3498,Yes,Excellent,Very good / Excellent,8400
+3499,No,Good,Poor / Fair / Good,NA
+3500,Yes,Very good,Very good / Excellent,5000
+3501,Yes,Very good,Very good / Excellent,600
+3502,No,Fair,Poor / Fair / Good,1024
+3503,No,Fair,Poor / Fair / Good,3324.5
+3504,Yes,Excellent,Very good / Excellent,NA
+3505,Yes,Good,Poor / Fair / Good,5824
+3506,Yes,Very good,Very good / Excellent,1450
+3507,Yes,Good,Poor / Fair / Good,NA
+3508,No,Fair,Poor / Fair / Good,1874.5
+3509,No,Good,Poor / Fair / Good,1450
+3510,No,Good,Poor / Fair / Good,3324.5
+3511,No,Poor,Poor / Fair / Good,3324.5
+3512,No,Poor,Poor / Fair / Good,2500
+3513,Yes,Very good,Very good / Excellent,7324
+3514,No,Good,Poor / Fair / Good,4174.5
+3515,Yes,Fair,Poor / Fair / Good,3324.5
+3516,No,Very good,Very good / Excellent,1874.5
+3517,No,Excellent,Very good / Excellent,NA
+3518,Yes,Fair,Poor / Fair / Good,3324.5
+3519,No,Fair,Poor / Fair / Good,5000
+3520,Yes,Good,Poor / Fair / Good,1450
+3521,No,Very good,Very good / Excellent,600
+3522,No,Good,Poor / Fair / Good,7324
+3523,No,Poor,Poor / Fair / Good,200
+3524,No,Fair,Poor / Fair / Good,1024
+3525,No,Fair,Poor / Fair / Good,NA
+3526,No,Fair,Poor / Fair / Good,2500
+3527,No,Excellent,Very good / Excellent,5000
+3528,No,Very good,Very good / Excellent,2500
+3529,Yes,Very good,Very good / Excellent,2500
+3530,No,Excellent,Very good / Excellent,3324.5
+3531,No,Good,Poor / Fair / Good,5000
+3532,No,Fair,Poor / Fair / Good,4174.5
+3533,Yes,Very good,Very good / Excellent,4174.5
+3534,Yes,Very good,Very good / Excellent,4174.5
+3535,No,Fair,Poor / Fair / Good,1450
+3536,No,Excellent,Very good / Excellent,1450
+3537,Yes,Excellent,Very good / Excellent,3324.5
+3538,No,Fair,Poor / Fair / Good,NA
+3539,Yes,Very good,Very good / Excellent,5824
+3540,No,Poor,Poor / Fair / Good,600
+3541,No,Good,Poor / Fair / Good,4174.5
+3542,No,Fair,Poor / Fair / Good,NA
+3543,No,Good,Poor / Fair / Good,5824
+3544,No,Fair,Poor / Fair / Good,2500
+3545,Yes,Good,Poor / Fair / Good,1024
+3546,No,Good,Poor / Fair / Good,1024
+3547,No,Very good,Very good / Excellent,2500
+3548,No,Good,Poor / Fair / Good,8400
+3549,No,Fair,Poor / Fair / Good,3324.5
+3550,Yes,Good,Poor / Fair / Good,4174.5
+3551,No,Good,Poor / Fair / Good,1874.5
+3552,Yes,Good,Poor / Fair / Good,1874.5
+3553,Yes,Fair,Poor / Fair / Good,2500
+3554,No,Very good,Very good / Excellent,8400
+3555,No,Poor,Poor / Fair / Good,1024
+3556,Yes,Very good,Very good / Excellent,5824
+3557,Yes,Fair,Poor / Fair / Good,NA
+3558,No,Good,Poor / Fair / Good,600
+3559,No,Good,Poor / Fair / Good,8400
+3560,No,Very good,Very good / Excellent,600
+3561,Yes,Good,Poor / Fair / Good,3324.5
+3562,Yes,Good,Poor / Fair / Good,7324
+3563,No,Fair,Poor / Fair / Good,1874.5
+3564,No,Fair,Poor / Fair / Good,7324
+3565,No,Very good,Very good / Excellent,5824
+3566,No,Fair,Poor / Fair / Good,1450
+3567,No,Good,Poor / Fair / Good,1874.5
+3568,Yes,Fair,Poor / Fair / Good,2500
+3569,No,Fair,Poor / Fair / Good,600
+3570,Yes,Very good,Very good / Excellent,3324.5
+3571,No,Very good,Very good / Excellent,2500
+3572,No,Very good,Very good / Excellent,3324.5
+3573,No,Very good,Very good / Excellent,NA
+3574,No,Good,Poor / Fair / Good,1024
+3575,Yes,Very good,Very good / Excellent,7324
+3576,No,Fair,Poor / Fair / Good,1450
+3577,No,Fair,Poor / Fair / Good,600
+3578,Yes,Fair,Poor / Fair / Good,2500
+3579,Yes,Good,Poor / Fair / Good,1024
+3580,No,Good,Poor / Fair / Good,8400
+3581,No,Good,Poor / Fair / Good,1450
+3582,No,Fair,Poor / Fair / Good,1024
+3583,No,Excellent,Very good / Excellent,2500
+3584,No,Very good,Very good / Excellent,8400
+3585,No,Fair,Poor / Fair / Good,NA
+3586,No,Very good,Very good / Excellent,4174.5
+3587,Yes,Very good,Very good / Excellent,8400
+3588,No,Good,Poor / Fair / Good,NA
+3589,No,Good,Poor / Fair / Good,4174.5
+3590,No,Fair,Poor / Fair / Good,NA
+3591,No,Fair,Poor / Fair / Good,2500
+3592,No,Good,Poor / Fair / Good,200
+3593,Yes,Good,Poor / Fair / Good,NA
+3594,No,Fair,Poor / Fair / Good,8400
+3595,No,Good,Poor / Fair / Good,1874.5
+3596,Yes,Good,Poor / Fair / Good,3324.5
+3597,Yes,Excellent,Very good / Excellent,5000
+3598,No,Good,Poor / Fair / Good,3324.5
+3599,Yes,Fair,Poor / Fair / Good,NA
+3600,Yes,Poor,Poor / Fair / Good,1024
+3601,No,Very good,Very good / Excellent,2500
+3602,No,Good,Poor / Fair / Good,3324.5
+3603,No,Very good,Very good / Excellent,NA
+3604,No,Fair,Poor / Fair / Good,1874.5
+3605,Yes,Fair,Poor / Fair / Good,1024
+3606,No,Good,Poor / Fair / Good,5824
+3607,No,Good,Poor / Fair / Good,8400
+3608,Yes,Good,Poor / Fair / Good,1450
+3609,No,Very good,Very good / Excellent,1024
+3610,No,Good,Poor / Fair / Good,4174.5
+3611,Yes,Very good,Very good / Excellent,3324.5
+3612,Yes,Very good,Very good / Excellent,8400
+3613,No,Excellent,Very good / Excellent,200
+3614,Yes,Very good,Very good / Excellent,2500
+3615,Yes,Very good,Very good / Excellent,2500
+3616,No,Good,Poor / Fair / Good,600
+3617,No,Very good,Very good / Excellent,8400
+3618,No,Good,Poor / Fair / Good,8400
+3619,Yes,Excellent,Very good / Excellent,8400
+3620,No,Poor,Poor / Fair / Good,2500
+3621,No,Good,Poor / Fair / Good,1450
+3622,No,Good,Poor / Fair / Good,1450
+3623,Yes,Good,Poor / Fair / Good,5824
+3624,Yes,Very good,Very good / Excellent,7324
+3625,No,Good,Poor / Fair / Good,600
+3626,No,Good,Poor / Fair / Good,NA
+3627,No,Excellent,Very good / Excellent,1024
+3628,Yes,Fair,Poor / Fair / Good,NA
+3629,Yes,Good,Poor / Fair / Good,1874.5
+3630,No,Fair,Poor / Fair / Good,1874.5
+3631,No,Good,Poor / Fair / Good,3324.5
+3632,No,Very good,Very good / Excellent,8400
+3633,Yes,Very good,Very good / Excellent,1450
+3634,No,Good,Poor / Fair / Good,4174.5
+3635,No,Very good,Very good / Excellent,8400
+3636,Yes,Very good,Very good / Excellent,NA
+3637,Yes,Very good,Very good / Excellent,8400
+3638,Yes,Excellent,Very good / Excellent,2500
+3639,Yes,Good,Poor / Fair / Good,2500
+3640,No,Excellent,Very good / Excellent,1450
+3641,Yes,Very good,Very good / Excellent,5824
+3642,No,Very good,Very good / Excellent,3324.5
+3643,No,Good,Poor / Fair / Good,4174.5
+3644,No,Good,Poor / Fair / Good,1874.5
+3645,Yes,Excellent,Very good / Excellent,8400
+3646,Yes,Excellent,Very good / Excellent,4174.5
+3647,Yes,Good,Poor / Fair / Good,8400
+3648,No,Poor,Poor / Fair / Good,1874.5
+3649,Yes,Excellent,Very good / Excellent,3324.5
+3650,Yes,Good,Poor / Fair / Good,8400
+3651,Yes,Very good,Very good / Excellent,600
+3652,No,Very good,Very good / Excellent,1874.5
+3653,No,Very good,Very good / Excellent,600
+3654,No,Excellent,Very good / Excellent,600
+3655,No,Excellent,Very good / Excellent,1874.5
+3656,No,Very good,Very good / Excellent,3324.5
+3657,Yes,Very good,Very good / Excellent,NA
+3658,No,Good,Poor / Fair / Good,2500
+3659,No,Fair,Poor / Fair / Good,1874.5
+3660,No,Good,Poor / Fair / Good,1024
+3661,No,Very good,Very good / Excellent,5000
+3662,Yes,Good,Poor / Fair / Good,3324.5
+3663,No,Very good,Very good / Excellent,200
+3664,Yes,Good,Poor / Fair / Good,4174.5
+3665,No,Good,Poor / Fair / Good,1024
+3666,No,Very good,Very good / Excellent,1450
+3667,No,Very good,Very good / Excellent,3324.5
+3668,No,Very good,Very good / Excellent,3324.5
+3669,Yes,Fair,Poor / Fair / Good,5000
+3670,No,Fair,Poor / Fair / Good,2500
+3671,No,Very good,Very good / Excellent,NA
+3672,No,Good,Poor / Fair / Good,5000
+3673,No,Good,Poor / Fair / Good,2500
+3674,Yes,Fair,Poor / Fair / Good,1874.5
+3675,Yes,Very good,Very good / Excellent,200
+3676,Yes,Very good,Very good / Excellent,2500
+3677,Yes,Good,Poor / Fair / Good,1450
+3678,No,Good,Poor / Fair / Good,1874.5
+3679,No,Very good,Very good / Excellent,8400
+3680,No,Good,Poor / Fair / Good,1024
+3681,No,Very good,Very good / Excellent,1024
+3682,Yes,Excellent,Very good / Excellent,3324.5
+3683,No,Fair,Poor / Fair / Good,3324.5
+3684,No,Fair,Poor / Fair / Good,1874.5
+3685,No,Good,Poor / Fair / Good,1450
+3686,No,Good,Poor / Fair / Good,200
+3687,No,Excellent,Very good / Excellent,8400
+3688,No,Very good,Very good / Excellent,7324
+3689,Yes,Good,Poor / Fair / Good,1450
+3690,No,Very good,Very good / Excellent,1450
+3691,No,Good,Poor / Fair / Good,NA
+3692,Yes,Very good,Very good / Excellent,5000
+3693,No,Fair,Poor / Fair / Good,NA
+3694,No,Fair,Poor / Fair / Good,1874.5
+3695,No,Good,Poor / Fair / Good,3324.5
+3696,Yes,Good,Poor / Fair / Good,1024
+3697,Yes,Good,Poor / Fair / Good,1024
+3698,No,Good,Poor / Fair / Good,8400
+3699,No,Very good,Very good / Excellent,4174.5
+3700,No,Very good,Very good / Excellent,1450
+3701,Yes,Excellent,Very good / Excellent,NA
+3702,No,Good,Poor / Fair / Good,1450
+3703,No,Very good,Very good / Excellent,2500
+3704,Yes,Excellent,Very good / Excellent,3324.5
+3705,No,Very good,Very good / Excellent,4174.5
+3706,No,Very good,Very good / Excellent,1450
+3707,No,Fair,Poor / Fair / Good,600
+3708,No,Very good,Very good / Excellent,NA
+3709,No,Good,Poor / Fair / Good,1450
+3710,No,Excellent,Very good / Excellent,1874.5
+3711,No,Good,Poor / Fair / Good,7324
+3712,Yes,Very good,Very good / Excellent,600
+3713,No,Very good,Very good / Excellent,200
+3714,Yes,Good,Poor / Fair / Good,2500
+3715,No,Fair,Poor / Fair / Good,8400
+3716,No,Excellent,Very good / Excellent,5000
+3717,Yes,Good,Poor / Fair / Good,1024
+3718,No,Very good,Very good / Excellent,7324
+3719,No,Good,Poor / Fair / Good,200
+3720,No,Good,Poor / Fair / Good,2500
+3721,Yes,Fair,Poor / Fair / Good,600
+3722,No,Very good,Very good / Excellent,1874.5
+3723,Yes,Good,Poor / Fair / Good,1874.5
+3724,No,Good,Poor / Fair / Good,NA
+3725,No,Excellent,Very good / Excellent,5824
+3726,Yes,Very good,Very good / Excellent,NA
+3727,No,Good,Poor / Fair / Good,1874.5
+3728,No,Good,Poor / Fair / Good,3324.5
+3729,No,Good,Poor / Fair / Good,1450
+3730,No,Good,Poor / Fair / Good,7324
+3731,Yes,Very good,Very good / Excellent,5824
+3732,Yes,Good,Poor / Fair / Good,600
+3733,No,Good,Poor / Fair / Good,NA
+3734,No,Fair,Poor / Fair / Good,3324.5
+3735,No,Good,Poor / Fair / Good,3324.5
+3736,Yes,Fair,Poor / Fair / Good,NA
+3737,No,Very good,Very good / Excellent,1450
+3738,Yes,Good,Poor / Fair / Good,600
+3739,No,Good,Poor / Fair / Good,8400
+3740,No,Fair,Poor / Fair / Good,NA
+3741,No,Excellent,Very good / Excellent,1874.5
+3742,Yes,Good,Poor / Fair / Good,1450
+3743,Yes,Poor,Poor / Fair / Good,1024
+3744,No,Fair,Poor / Fair / Good,8400
+3745,Yes,Fair,Poor / Fair / Good,1024
+3746,No,Fair,Poor / Fair / Good,NA
+3747,No,Very good,Very good / Excellent,4174.5
+3748,Yes,Very good,Very good / Excellent,4174.5
+3749,No,Good,Poor / Fair / Good,4174.5
+3750,No,Good,Poor / Fair / Good,4174.5
+3751,No,Very good,Very good / Excellent,3324.5
+3752,No,Good,Poor / Fair / Good,4174.5
+3753,No,Very good,Very good / Excellent,600
+3754,No,Fair,Poor / Fair / Good,5824
+3755,No,Very good,Very good / Excellent,5824
+3756,No,Very good,Very good / Excellent,3324.5
+3757,No,Good,Poor / Fair / Good,7324
+3758,No,Good,Poor / Fair / Good,3324.5
+3759,No,Fair,Poor / Fair / Good,2500
+3760,No,Good,Poor / Fair / Good,600
+3761,Yes,Good,Poor / Fair / Good,2500
+3762,Yes,Good,Poor / Fair / Good,4174.5
+3763,No,Very good,Very good / Excellent,5824
+3764,No,Very good,Very good / Excellent,5824
+3765,No,Fair,Poor / Fair / Good,3324.5
+3766,No,Very good,Very good / Excellent,1024
+3767,No,Good,Poor / Fair / Good,NA
+3768,Yes,Fair,Poor / Fair / Good,1024
+3769,No,Fair,Poor / Fair / Good,1024
+3770,No,Good,Poor / Fair / Good,600
+3771,No,Excellent,Very good / Excellent,8400
+3772,Yes,Fair,Poor / Fair / Good,1450
+3773,No,Very good,Very good / Excellent,8400
+3774,No,Good,Poor / Fair / Good,NA
+3775,Yes,Excellent,Very good / Excellent,2500
+3776,No,Fair,Poor / Fair / Good,4174.5
+3777,No,Good,Poor / Fair / Good,5824
+3778,No,Good,Poor / Fair / Good,200
+3779,No,Very good,Very good / Excellent,2500
+3780,No,Excellent,Very good / Excellent,5000
+3781,No,Good,Poor / Fair / Good,1024
+3782,Yes,Very good,Very good / Excellent,3324.5
+3783,No,Excellent,Very good / Excellent,1024
+3784,Yes,Fair,Poor / Fair / Good,2500
+3785,No,Fair,Poor / Fair / Good,NA
+3786,No,Fair,Poor / Fair / Good,600
+3787,No,Excellent,Very good / Excellent,3324.5
+3788,No,Very good,Very good / Excellent,5000
+3789,No,Excellent,Very good / Excellent,NA
+3790,Yes,Very good,Very good / Excellent,NA
+3791,No,Very good,Very good / Excellent,NA
+3792,Yes,Very good,Very good / Excellent,4174.5
+3793,No,Fair,Poor / Fair / Good,5000
+3794,No,Good,Poor / Fair / Good,1450
+3795,Yes,Very good,Very good / Excellent,5000
+3796,Yes,Very good,Very good / Excellent,NA
+3797,Yes,Good,Poor / Fair / Good,7324
+3798,Yes,Very good,Very good / Excellent,8400
+3799,No,Very good,Very good / Excellent,600
+3800,No,Fair,Poor / Fair / Good,1450
+3801,No,Excellent,Very good / Excellent,1450
+3802,Yes,Good,Poor / Fair / Good,5824
+3803,Yes,Good,Poor / Fair / Good,NA
+3804,Yes,Excellent,Very good / Excellent,1874.5
+3805,Yes,Very good,Very good / Excellent,1874.5
+3806,No,Very good,Very good / Excellent,1874.5
+3807,No,Good,Poor / Fair / Good,8400
+3808,Yes,Good,Poor / Fair / Good,1450
+3809,No,Excellent,Very good / Excellent,2500
+3810,Yes,Good,Poor / Fair / Good,NA
+3811,No,Very good,Very good / Excellent,5000
+3812,Yes,Good,Poor / Fair / Good,1874.5
+3813,No,Very good,Very good / Excellent,1874.5
+3814,No,Good,Poor / Fair / Good,7324
+3815,No,Good,Poor / Fair / Good,600
+3816,Yes,Poor,Poor / Fair / Good,NA
+3817,Yes,Good,Poor / Fair / Good,7324
+3818,No,Poor,Poor / Fair / Good,1450
+3819,Yes,Poor,Poor / Fair / Good,NA
+3820,No,Good,Poor / Fair / Good,NA
+3821,Yes,Very good,Very good / Excellent,3324.5
+3822,No,Very good,Very good / Excellent,4174.5
+3823,No,Good,Poor / Fair / Good,1874.5
+3824,Yes,Good,Poor / Fair / Good,5000
+3825,Yes,Fair,Poor / Fair / Good,600
+3826,No,Good,Poor / Fair / Good,1450
+3827,No,Good,Poor / Fair / Good,NA
+3828,No,Good,Poor / Fair / Good,8400
+3829,Yes,Good,Poor / Fair / Good,3324.5
+3830,No,Very good,Very good / Excellent,NA
+3831,No,Good,Poor / Fair / Good,8400
+3832,No,Fair,Poor / Fair / Good,5824
+3833,Yes,Good,Poor / Fair / Good,7324
+3834,No,Excellent,Very good / Excellent,1024
+3835,No,Fair,Poor / Fair / Good,7324
+3836,No,Excellent,Very good / Excellent,2500
+3837,Yes,Good,Poor / Fair / Good,1024
+3838,No,Very good,Very good / Excellent,5000
+3839,No,Fair,Poor / Fair / Good,4174.5
+3840,Yes,Good,Poor / Fair / Good,2500
+3841,Yes,Good,Poor / Fair / Good,8400
+3842,Yes,Fair,Poor / Fair / Good,5000
+3843,No,Very good,Very good / Excellent,8400
+3844,No,Good,Poor / Fair / Good,4174.5
+3845,No,Fair,Poor / Fair / Good,1874.5
+3846,Yes,Good,Poor / Fair / Good,8400
+3847,No,Good,Poor / Fair / Good,600
+3848,No,Fair,Poor / Fair / Good,8400
+3849,Yes,Fair,Poor / Fair / Good,8400
+3850,No,Very good,Very good / Excellent,8400
+3851,No,Good,Poor / Fair / Good,3324.5
+3852,No,Good,Poor / Fair / Good,2500
+3853,Yes,Fair,Poor / Fair / Good,NA
+3854,Yes,Very good,Very good / Excellent,3324.5
+3855,Yes,Very good,Very good / Excellent,1450
+3856,Yes,Good,Poor / Fair / Good,8400
+3857,No,Fair,Poor / Fair / Good,7324
+3858,No,Good,Poor / Fair / Good,5000
+3859,No,Fair,Poor / Fair / Good,1874.5
+3860,Yes,Good,Poor / Fair / Good,5000
+3861,Yes,Excellent,Very good / Excellent,5000
+3862,No,Very good,Very good / Excellent,7324
+3863,Yes,Very good,Very good / Excellent,4174.5
+3864,Yes,Good,Poor / Fair / Good,4174.5
+3865,No,Good,Poor / Fair / Good,NA
+3866,No,Fair,Poor / Fair / Good,600
+3867,No,Very good,Very good / Excellent,3324.5
+3868,No,Fair,Poor / Fair / Good,2500
+3869,Yes,Good,Poor / Fair / Good,5000
+3870,No,Very good,Very good / Excellent,5000
+3871,Yes,Very good,Very good / Excellent,1874.5
+3872,No,Very good,Very good / Excellent,5824
+3873,No,Very good,Very good / Excellent,1024
+3874,Yes,Good,Poor / Fair / Good,3324.5
+3875,No,Good,Poor / Fair / Good,5824
+3876,No,Very good,Very good / Excellent,3324.5
+3877,No,Fair,Poor / Fair / Good,5000
+3878,No,Good,Poor / Fair / Good,3324.5
+3879,Yes,Very good,Very good / Excellent,5000
+3880,Yes,Very good,Very good / Excellent,7324
+3881,No,Good,Poor / Fair / Good,1874.5
+3882,No,Poor,Poor / Fair / Good,1024
+3883,Yes,Good,Poor / Fair / Good,2500
+3884,Yes,Very good,Very good / Excellent,2500
+3885,Yes,Excellent,Very good / Excellent,4174.5
+3886,Yes,Very good,Very good / Excellent,5824
+3887,No,Fair,Poor / Fair / Good,600
+3888,No,Good,Poor / Fair / Good,8400
+3889,Yes,Good,Poor / Fair / Good,1450
+3890,No,Very good,Very good / Excellent,1450
+3891,No,Good,Poor / Fair / Good,7324
+3892,Yes,Fair,Poor / Fair / Good,1874.5
+3893,No,Good,Poor / Fair / Good,1874.5
+3894,Yes,Good,Poor / Fair / Good,1874.5
+3895,Yes,Very good,Very good / Excellent,1024
+3896,Yes,Good,Poor / Fair / Good,5000
+3897,No,Poor,Poor / Fair / Good,5824
+3898,Yes,Excellent,Very good / Excellent,8400
+3899,No,Excellent,Very good / Excellent,4174.5
+3900,Yes,Good,Poor / Fair / Good,5824
+3901,No,Very good,Very good / Excellent,7324
+3902,No,Fair,Poor / Fair / Good,1874.5
+3903,Yes,Very good,Very good / Excellent,1024
+3904,Yes,Very good,Very good / Excellent,8400
+3905,Yes,Good,Poor / Fair / Good,1450
+3906,No,Very good,Very good / Excellent,3324.5
+3907,Yes,Excellent,Very good / Excellent,1024
+3908,No,Good,Poor / Fair / Good,8400
+3909,Yes,Poor,Poor / Fair / Good,5824
+3910,No,Good,Poor / Fair / Good,5000
+3911,No,Fair,Poor / Fair / Good,NA
+3912,No,Good,Poor / Fair / Good,5000
+3913,Yes,Very good,Very good / Excellent,5000
+3914,No,Good,Poor / Fair / Good,200
+3915,Yes,Very good,Very good / Excellent,1024
+3916,Yes,Very good,Very good / Excellent,8400
+3917,No,Very good,Very good / Excellent,8400
+3918,Yes,Good,Poor / Fair / Good,4174.5
+3919,Yes,Fair,Poor / Fair / Good,4174.5
+3920,Yes,Excellent,Very good / Excellent,5824
+3921,Yes,Good,Poor / Fair / Good,7324
+3922,Yes,Good,Poor / Fair / Good,7324
+3923,No,Good,Poor / Fair / Good,NA
+3924,No,Poor,Poor / Fair / Good,NA
+3925,Yes,Good,Poor / Fair / Good,1024
+3926,Yes,Very good,Very good / Excellent,8400
+3927,No,Poor,Poor / Fair / Good,1450
+3928,No,Very good,Very good / Excellent,3324.5
+3929,Yes,Very good,Very good / Excellent,1024
+3930,No,Good,Poor / Fair / Good,2500
+3931,No,Good,Poor / Fair / Good,NA
+3932,No,Fair,Poor / Fair / Good,3324.5
+3933,No,Very good,Very good / Excellent,2500
+3934,Yes,Good,Poor / Fair / Good,8400
+3935,No,Good,Poor / Fair / Good,2500
+3936,No,Good,Poor / Fair / Good,NA
+3937,No,Fair,Poor / Fair / Good,1874.5
+3938,Yes,Very good,Very good / Excellent,1450
+3939,No,Good,Poor / Fair / Good,4174.5
+3940,No,Good,Poor / Fair / Good,1024
+3941,No,Fair,Poor / Fair / Good,3324.5
+3942,No,Good,Poor / Fair / Good,1874.5
+3943,No,Good,Poor / Fair / Good,7324
+3944,Yes,Fair,Poor / Fair / Good,1874.5
+3945,Yes,Very good,Very good / Excellent,1874.5
+3946,No,Good,Poor / Fair / Good,NA
+3947,Yes,Good,Poor / Fair / Good,1024
+3948,Yes,Excellent,Very good / Excellent,600
+3949,Yes,Good,Poor / Fair / Good,2500
+3950,No,Excellent,Very good / Excellent,1874.5
+3951,Yes,Fair,Poor / Fair / Good,2500
+3952,Yes,Good,Poor / Fair / Good,NA
+3953,No,Good,Poor / Fair / Good,4174.5
+3954,No,Good,Poor / Fair / Good,1024
+3955,No,Good,Poor / Fair / Good,1450
+3956,No,Good,Poor / Fair / Good,1874.5
+3957,No,Good,Poor / Fair / Good,4174.5
+3958,No,Excellent,Very good / Excellent,2500
+3959,No,Very good,Very good / Excellent,600
+3960,No,Fair,Poor / Fair / Good,1450
+3961,Yes,Excellent,Very good / Excellent,5824
+3962,No,Good,Poor / Fair / Good,1874.5
+3963,Yes,Excellent,Very good / Excellent,7324
+3964,Yes,Very good,Very good / Excellent,4174.5
+3965,No,Good,Poor / Fair / Good,600
+3966,No,Fair,Poor / Fair / Good,1450
+3967,Yes,Very good,Very good / Excellent,5000
+3968,Yes,Very good,Very good / Excellent,8400
+3969,No,Very good,Very good / Excellent,1024
+3970,Yes,Good,Poor / Fair / Good,NA
+3971,Yes,Fair,Poor / Fair / Good,5824
+3972,Yes,Good,Poor / Fair / Good,1024
+3973,Yes,Good,Poor / Fair / Good,7324
+3974,No,Good,Poor / Fair / Good,5824
+3975,No,Fair,Poor / Fair / Good,2500
+3976,Yes,Very good,Very good / Excellent,200
+3977,No,Good,Poor / Fair / Good,NA
+3978,No,Good,Poor / Fair / Good,2500
+3979,No,Good,Poor / Fair / Good,1874.5
+3980,No,Good,Poor / Fair / Good,4174.5
+3981,Yes,Good,Poor / Fair / Good,5824
+3982,No,Very good,Very good / Excellent,4174.5
+3983,No,Fair,Poor / Fair / Good,NA
+3984,No,Poor,Poor / Fair / Good,1874.5
+3985,No,Excellent,Very good / Excellent,8400
+3986,Yes,Good,Poor / Fair / Good,1874.5
+3987,No,Fair,Poor / Fair / Good,2500
+3988,No,Very good,Very good / Excellent,3324.5
+3989,Yes,Good,Poor / Fair / Good,NA
+3990,No,Very good,Very good / Excellent,7324
+3991,Yes,Excellent,Very good / Excellent,8400
+3992,No,Fair,Poor / Fair / Good,1024
+3993,No,Very good,Very good / Excellent,NA
+3994,No,Fair,Poor / Fair / Good,NA
+3995,No,Fair,Poor / Fair / Good,1450
+3996,Yes,Good,Poor / Fair / Good,5000
+3997,No,Poor,Poor / Fair / Good,1024
+3998,No,Good,Poor / Fair / Good,1024
+3999,No,Fair,Poor / Fair / Good,4174.5
+4000,Yes,Very good,Very good / Excellent,4174.5
+4001,No,Good,Poor / Fair / Good,1450
+4002,Yes,Excellent,Very good / Excellent,NA
+4003,No,Good,Poor / Fair / Good,2500
+4004,Yes,Very good,Very good / Excellent,8400
+4005,No,Poor,Poor / Fair / Good,1024
+4006,No,Good,Poor / Fair / Good,4174.5
+4007,No,Good,Poor / Fair / Good,2500
+4008,No,Excellent,Very good / Excellent,5000
+4009,No,Good,Poor / Fair / Good,8400
+4010,Yes,Good,Poor / Fair / Good,NA
+4011,No,Good,Poor / Fair / Good,5824
+4012,No,Good,Poor / Fair / Good,2500
+4013,No,Poor,Poor / Fair / Good,600
+4014,Yes,Very good,Very good / Excellent,1450
+4015,No,Very good,Very good / Excellent,5824
+4016,No,Good,Poor / Fair / Good,1450
+4017,No,Good,Poor / Fair / Good,1450
+4018,Yes,Very good,Very good / Excellent,1024
+4019,Yes,Very good,Very good / Excellent,1450
+4020,Yes,Good,Poor / Fair / Good,1874.5
+4021,Yes,Good,Poor / Fair / Good,5000
+4022,No,Fair,Poor / Fair / Good,1450
+4023,No,Good,Poor / Fair / Good,3324.5
+4024,No,Good,Poor / Fair / Good,4174.5
+4025,No,Fair,Poor / Fair / Good,200
+4026,Yes,Excellent,Very good / Excellent,NA
+4027,No,Fair,Poor / Fair / Good,NA
+4028,No,Good,Poor / Fair / Good,1450
+4029,Yes,Fair,Poor / Fair / Good,1874.5
+4030,No,Fair,Poor / Fair / Good,2500
+4031,Yes,Excellent,Very good / Excellent,5000
+4032,No,Good,Poor / Fair / Good,3324.5
+4033,No,Good,Poor / Fair / Good,4174.5
+4034,Yes,Good,Poor / Fair / Good,8400
+4035,No,Excellent,Very good / Excellent,1450
+4036,Yes,Good,Poor / Fair / Good,2500
+4037,No,Good,Poor / Fair / Good,NA
+4038,No,Very good,Very good / Excellent,8400
+4039,Yes,Fair,Poor / Fair / Good,3324.5
+4040,No,Very good,Very good / Excellent,1874.5
+4041,Yes,Excellent,Very good / Excellent,2500
+4042,Yes,Good,Poor / Fair / Good,5824
+4043,No,Very good,Very good / Excellent,3324.5
+4044,Yes,Excellent,Very good / Excellent,1450
+4045,No,Fair,Poor / Fair / Good,1024
+4046,No,Good,Poor / Fair / Good,1450
+4047,No,Poor,Poor / Fair / Good,600
+4048,No,Very good,Very good / Excellent,1024
+4049,No,Good,Poor / Fair / Good,NA
+4050,No,Good,Poor / Fair / Good,1450
+4051,Yes,Very good,Very good / Excellent,1450
+4052,Yes,Fair,Poor / Fair / Good,NA
+4053,No,Very good,Very good / Excellent,7324
+4054,Yes,Excellent,Very good / Excellent,1874.5
+4055,No,Very good,Very good / Excellent,3324.5
+4056,No,Very good,Very good / Excellent,3324.5
+4057,No,Good,Poor / Fair / Good,1450
+4058,No,Very good,Very good / Excellent,1450
+4059,No,Good,Poor / Fair / Good,1874.5
+4060,No,Very good,Very good / Excellent,4174.5
+4061,Yes,Very good,Very good / Excellent,7324
+4062,Yes,Very good,Very good / Excellent,8400
+4063,No,Very good,Very good / Excellent,5824
+4064,Yes,Fair,Poor / Fair / Good,5824
+4065,No,Good,Poor / Fair / Good,1024
+4066,No,Very good,Very good / Excellent,8400
+4067,No,Very good,Very good / Excellent,200
+4068,Yes,Good,Poor / Fair / Good,1024
+4069,No,Very good,Very good / Excellent,8400
+4070,No,Fair,Poor / Fair / Good,3324.5
+4071,Yes,Very good,Very good / Excellent,7324
+4072,Yes,Very good,Very good / Excellent,7324
+4073,Yes,Good,Poor / Fair / Good,600
+4074,No,Very good,Very good / Excellent,3324.5
+4075,No,Good,Poor / Fair / Good,8400
+4076,No,Very good,Very good / Excellent,7324
+4077,No,Good,Poor / Fair / Good,600
+4078,Yes,Good,Poor / Fair / Good,5000
+4079,No,Poor,Poor / Fair / Good,1024
+4080,Yes,Good,Poor / Fair / Good,3324.5
+4081,No,Good,Poor / Fair / Good,2500
+4082,No,Fair,Poor / Fair / Good,5000
+4083,No,Very good,Very good / Excellent,1024
+4084,No,Excellent,Very good / Excellent,1874.5
+4085,No,Good,Poor / Fair / Good,4174.5
+4086,Yes,Good,Poor / Fair / Good,NA
+4087,No,Excellent,Very good / Excellent,4174.5
+4088,No,Fair,Poor / Fair / Good,600
+4089,No,Very good,Very good / Excellent,1874.5
+4090,No,Poor,Poor / Fair / Good,600
+4091,No,Fair,Poor / Fair / Good,4174.5
+4092,No,Good,Poor / Fair / Good,5000
+4093,Yes,Good,Poor / Fair / Good,2500
+4094,Yes,Excellent,Very good / Excellent,1024
+4095,No,Fair,Poor / Fair / Good,1874.5
+4096,No,Good,Poor / Fair / Good,1874.5
+4097,No,Fair,Poor / Fair / Good,1874.5
+4098,Yes,Fair,Poor / Fair / Good,5000
+4099,No,Very good,Very good / Excellent,8400
+4100,No,Good,Poor / Fair / Good,5000
+4101,No,Good,Poor / Fair / Good,8400
+4102,No,Fair,Poor / Fair / Good,1450
+4103,No,Poor,Poor / Fair / Good,2500
+4104,Yes,Very good,Very good / Excellent,3324.5
+4105,No,Good,Poor / Fair / Good,600
+4106,No,Very good,Very good / Excellent,4174.5
+4107,No,Fair,Poor / Fair / Good,NA
+4108,No,Good,Poor / Fair / Good,2500
+4109,No,Good,Poor / Fair / Good,1874.5
+4110,No,Fair,Poor / Fair / Good,3324.5
+4111,Yes,Very good,Very good / Excellent,8400
+4112,Yes,Very good,Very good / Excellent,7324
+4113,No,Fair,Poor / Fair / Good,4174.5
+4114,No,Good,Poor / Fair / Good,3324.5
+4115,No,Fair,Poor / Fair / Good,1450
+4116,No,Good,Poor / Fair / Good,3324.5
+4117,Yes,Poor,Poor / Fair / Good,NA
+4118,No,Good,Poor / Fair / Good,1450
+4119,No,Very good,Very good / Excellent,8400
+4120,No,Very good,Very good / Excellent,1450
+4121,No,Poor,Poor / Fair / Good,1024
+4122,No,Good,Poor / Fair / Good,1024
+4123,No,Good,Poor / Fair / Good,3324.5
+4124,Yes,Very good,Very good / Excellent,3324.5
+4125,No,Fair,Poor / Fair / Good,NA
+4126,No,Excellent,Very good / Excellent,8400
+4127,No,Good,Poor / Fair / Good,NA
+4128,Yes,Good,Poor / Fair / Good,NA
+4129,Yes,Fair,Poor / Fair / Good,2500
+4130,No,Very good,Very good / Excellent,8400
+4131,No,Very good,Very good / Excellent,NA
+4132,Yes,Very good,Very good / Excellent,1874.5
+4133,No,Fair,Poor / Fair / Good,1874.5
+4134,No,Fair,Poor / Fair / Good,NA
+4135,Yes,Good,Poor / Fair / Good,600
+4136,Yes,Good,Poor / Fair / Good,4174.5
+4137,Yes,Good,Poor / Fair / Good,7324
+4138,No,Very good,Very good / Excellent,4174.5
+4139,No,Very good,Very good / Excellent,NA
+4140,Yes,Good,Poor / Fair / Good,5824
+4141,No,Fair,Poor / Fair / Good,5824
+4142,No,Fair,Poor / Fair / Good,3324.5
+4143,Yes,Good,Poor / Fair / Good,5824
+4144,No,Good,Poor / Fair / Good,1874.5
+4145,No,Good,Poor / Fair / Good,1450
+4146,Yes,Very good,Very good / Excellent,NA
+4147,No,Good,Poor / Fair / Good,3324.5
+4148,No,Good,Poor / Fair / Good,NA
+4149,No,Good,Poor / Fair / Good,5000
+4150,No,Very good,Very good / Excellent,8400
+4151,Yes,Very good,Very good / Excellent,5000
+4152,Yes,Good,Poor / Fair / Good,4174.5
+4153,No,Good,Poor / Fair / Good,1024
+4154,Yes,Fair,Poor / Fair / Good,1450
+4155,No,Very good,Very good / Excellent,2500
+4156,No,Very good,Very good / Excellent,NA
+4157,No,Good,Poor / Fair / Good,3324.5
+4158,Yes,Very good,Very good / Excellent,NA
+4159,Yes,Very good,Very good / Excellent,8400
+4160,No,Good,Poor / Fair / Good,NA
+4161,Yes,Good,Poor / Fair / Good,2500
+4162,No,Fair,Poor / Fair / Good,8400
+4163,Yes,Fair,Poor / Fair / Good,1874.5
+4164,Yes,Very good,Very good / Excellent,5000
+4165,Yes,Very good,Very good / Excellent,8400
+4166,Yes,Good,Poor / Fair / Good,2500
+4167,Yes,Excellent,Very good / Excellent,3324.5
+4168,No,Good,Poor / Fair / Good,1024
+4169,Yes,Very good,Very good / Excellent,8400
+4170,No,Good,Poor / Fair / Good,1450
+4171,No,Fair,Poor / Fair / Good,1450
+4172,No,Very good,Very good / Excellent,8400
+4173,No,Good,Poor / Fair / Good,3324.5
+4174,Yes,Very good,Very good / Excellent,5000
+4175,Yes,Good,Poor / Fair / Good,NA
+4176,Yes,Fair,Poor / Fair / Good,1450
+4177,No,Very good,Very good / Excellent,1024
+4178,No,Fair,Poor / Fair / Good,1024
+4179,No,Fair,Poor / Fair / Good,1874.5
+4180,No,Very good,Very good / Excellent,8400
+4181,No,Very good,Very good / Excellent,1024
+4182,No,Poor,Poor / Fair / Good,1024
+4183,Yes,Very good,Very good / Excellent,4174.5
+4184,No,Good,Poor / Fair / Good,1024
+4185,No,Fair,Poor / Fair / Good,NA
+4186,No,Good,Poor / Fair / Good,600
+4187,No,Poor,Poor / Fair / Good,2500
+4188,No,Good,Poor / Fair / Good,5000
+4189,No,Fair,Poor / Fair / Good,1024
+4190,No,Fair,Poor / Fair / Good,1024
+4191,Yes,Good,Poor / Fair / Good,1450
+4192,No,Good,Poor / Fair / Good,2500
+4193,No,Very good,Very good / Excellent,1450
+4194,Yes,Excellent,Very good / Excellent,NA
+4195,Yes,Fair,Poor / Fair / Good,5000
+4196,No,Excellent,Very good / Excellent,1874.5
+4197,No,Good,Poor / Fair / Good,4174.5
+4198,No,Fair,Poor / Fair / Good,2500
+4199,No,Excellent,Very good / Excellent,3324.5
+4200,Yes,Very good,Very good / Excellent,7324
+4201,No,Very good,Very good / Excellent,8400
+4202,No,Good,Poor / Fair / Good,7324
+4203,No,Good,Poor / Fair / Good,200
+4204,Yes,Fair,Poor / Fair / Good,NA
+4205,No,Very good,Very good / Excellent,600
+4206,Yes,Good,Poor / Fair / Good,5824
+4207,Yes,Very good,Very good / Excellent,7324
+4208,Yes,Good,Poor / Fair / Good,3324.5
+4209,No,Very good,Very good / Excellent,2500
+4210,No,Excellent,Very good / Excellent,4174.5
+4211,No,Good,Poor / Fair / Good,1874.5
+4212,No,Excellent,Very good / Excellent,4174.5
+4213,No,Good,Poor / Fair / Good,1874.5
+4214,No,Good,Poor / Fair / Good,200
+4215,No,Fair,Poor / Fair / Good,3324.5
+4216,No,Very good,Very good / Excellent,5000
+4217,No,Good,Poor / Fair / Good,8400
+4218,No,Good,Poor / Fair / Good,200
+4219,No,Very good,Very good / Excellent,1024
+4220,No,Very good,Very good / Excellent,4174.5
+4221,No,Very good,Very good / Excellent,1450
+4222,No,Good,Poor / Fair / Good,2500
+4223,No,Fair,Poor / Fair / Good,3324.5
+4224,No,Good,Poor / Fair / Good,1024
+4225,Yes,Good,Poor / Fair / Good,2500
+4226,No,Excellent,Very good / Excellent,7324
+4227,No,Fair,Poor / Fair / Good,4174.5
+4228,No,Good,Poor / Fair / Good,600
+4229,No,Fair,Poor / Fair / Good,NA
+4230,No,Good,Poor / Fair / Good,1024
+4231,No,Excellent,Very good / Excellent,1024
+4232,Yes,Good,Poor / Fair / Good,5000
+4233,No,Very good,Very good / Excellent,1024
+4234,Yes,Very good,Very good / Excellent,7324
+4235,No,Good,Poor / Fair / Good,1874.5
+4236,No,Fair,Poor / Fair / Good,5824
+4237,Yes,Very good,Very good / Excellent,5000
+4238,No,Good,Poor / Fair / Good,1874.5
+4239,Yes,Very good,Very good / Excellent,1874.5
+4240,No,Very good,Very good / Excellent,1024
+4241,Yes,Excellent,Very good / Excellent,8400
+4242,No,Good,Poor / Fair / Good,8400
+4243,Yes,Very good,Very good / Excellent,5824
+4244,No,Very good,Very good / Excellent,8400
+4245,No,Very good,Very good / Excellent,1024
+4246,Yes,Excellent,Very good / Excellent,8400
+4247,Yes,Good,Poor / Fair / Good,8400
+4248,No,Good,Poor / Fair / Good,3324.5
+4249,No,Good,Poor / Fair / Good,1024
+4250,No,Good,Poor / Fair / Good,1450
+4251,No,Fair,Poor / Fair / Good,3324.5
+4252,Yes,Very good,Very good / Excellent,8400
+4253,No,Fair,Poor / Fair / Good,3324.5
+4254,No,Good,Poor / Fair / Good,4174.5
+4255,No,Good,Poor / Fair / Good,2500
+4256,No,Good,Poor / Fair / Good,5000
+4257,No,Fair,Poor / Fair / Good,2500
+4258,No,Good,Poor / Fair / Good,NA
+4259,No,Poor,Poor / Fair / Good,3324.5
+4260,Yes,Good,Poor / Fair / Good,4174.5
+4261,Yes,Very good,Very good / Excellent,8400
+4262,Yes,Very good,Very good / Excellent,4174.5
+4263,No,Excellent,Very good / Excellent,4174.5
+4264,Yes,Good,Poor / Fair / Good,200
+4265,No,Good,Poor / Fair / Good,8400
+4266,No,Good,Poor / Fair / Good,5000
+4267,Yes,Very good,Very good / Excellent,NA
+4268,No,Very good,Very good / Excellent,NA
+4269,No,Poor,Poor / Fair / Good,1874.5
+4270,No,Fair,Poor / Fair / Good,5000
+4271,Yes,Good,Poor / Fair / Good,5000
+4272,Yes,Good,Poor / Fair / Good,1874.5
+4273,No,Very good,Very good / Excellent,3324.5
+4274,Yes,Good,Poor / Fair / Good,1874.5
+4275,Yes,Very good,Very good / Excellent,4174.5
+4276,No,Good,Poor / Fair / Good,2500
+4277,No,Very good,Very good / Excellent,7324
+4278,No,Fair,Poor / Fair / Good,2500
+4279,No,Good,Poor / Fair / Good,1874.5
+4280,Yes,Good,Poor / Fair / Good,1874.5
+4281,Yes,Very good,Very good / Excellent,8400
+4282,No,Good,Poor / Fair / Good,1450
+4283,No,Good,Poor / Fair / Good,NA
+4284,Yes,Good,Poor / Fair / Good,NA
+4285,Yes,Good,Poor / Fair / Good,8400
+4286,Yes,Good,Poor / Fair / Good,8400
+4287,Yes,Very good,Very good / Excellent,8400
+4288,Yes,Good,Poor / Fair / Good,7324
+4289,Yes,Good,Poor / Fair / Good,5824
+4290,Yes,Good,Poor / Fair / Good,2500
+4291,Yes,Very good,Very good / Excellent,4174.5
+4292,No,Good,Poor / Fair / Good,600
+4293,No,Very good,Very good / Excellent,3324.5
+4294,No,Fair,Poor / Fair / Good,200
+4295,No,Very good,Very good / Excellent,5000
+4296,No,Very good,Very good / Excellent,600
+4297,No,Fair,Poor / Fair / Good,NA
+4298,Yes,Good,Poor / Fair / Good,1024
+4299,Yes,Excellent,Very good / Excellent,8400
+4300,No,Very good,Very good / Excellent,2500
+4301,No,Fair,Poor / Fair / Good,1024
+4302,Yes,Very good,Very good / Excellent,3324.5
+4303,No,Good,Poor / Fair / Good,3324.5
+4304,No,Good,Poor / Fair / Good,3324.5
+4305,No,Fair,Poor / Fair / Good,5000
+4306,Yes,Fair,Poor / Fair / Good,3324.5
+4307,Yes,Very good,Very good / Excellent,5824
+4308,No,Good,Poor / Fair / Good,1024
+4309,Yes,Fair,Poor / Fair / Good,600
+4310,No,Excellent,Very good / Excellent,8400
+4311,No,Good,Poor / Fair / Good,NA
+4312,No,Very good,Very good / Excellent,1024
+4313,No,Good,Poor / Fair / Good,4174.5
+4314,No,Fair,Poor / Fair / Good,600
+4315,Yes,Very good,Very good / Excellent,7324
+4316,Yes,Poor,Poor / Fair / Good,600
+4317,No,Fair,Poor / Fair / Good,1024
+4318,No,Good,Poor / Fair / Good,2500
+4319,No,Good,Poor / Fair / Good,3324.5
+4320,No,Very good,Very good / Excellent,1024
+4321,No,Good,Poor / Fair / Good,1024
+4322,No,Fair,Poor / Fair / Good,1874.5
+4323,No,Very good,Very good / Excellent,4174.5
+4324,No,Good,Poor / Fair / Good,1024
+4325,No,Good,Poor / Fair / Good,200
+4326,No,Very good,Very good / Excellent,8400
+4327,No,Good,Poor / Fair / Good,NA
+4328,No,Very good,Very good / Excellent,8400
+4329,No,Good,Poor / Fair / Good,8400
+4330,Yes,Good,Poor / Fair / Good,1874.5
+4331,Yes,Good,Poor / Fair / Good,4174.5
+4332,Yes,Good,Poor / Fair / Good,8400
+4333,No,Good,Poor / Fair / Good,1024
+4334,No,Very good,Very good / Excellent,1024
+4335,No,Good,Poor / Fair / Good,1450
+4336,No,Very good,Very good / Excellent,5824
+4337,No,Fair,Poor / Fair / Good,5000
+4338,No,Good,Poor / Fair / Good,3324.5
+4339,Yes,Very good,Very good / Excellent,8400
+4340,Yes,Good,Poor / Fair / Good,1024
+4341,No,Good,Poor / Fair / Good,1024
+4342,No,Poor,Poor / Fair / Good,5824
+4343,No,Very good,Very good / Excellent,NA
+4344,No,Very good,Very good / Excellent,1874.5
+4345,Yes,Excellent,Very good / Excellent,1024
+4346,Yes,Fair,Poor / Fair / Good,NA
+4347,No,Fair,Poor / Fair / Good,NA
+4348,No,Fair,Poor / Fair / Good,2500
+4349,Yes,Fair,Poor / Fair / Good,1024
+4350,No,Excellent,Very good / Excellent,5824
+4351,No,Excellent,Very good / Excellent,5000
+4352,Yes,Good,Poor / Fair / Good,1874.5
+4353,No,Good,Poor / Fair / Good,1450
+4354,Yes,Very good,Very good / Excellent,200
+4355,No,Excellent,Very good / Excellent,NA
+4356,No,Poor,Poor / Fair / Good,2500
+4357,No,Good,Poor / Fair / Good,5824
+4358,Yes,Very good,Very good / Excellent,3324.5
+4359,No,Fair,Poor / Fair / Good,2500
+4360,Yes,Good,Poor / Fair / Good,1874.5
+4361,Yes,Good,Poor / Fair / Good,3324.5
+4362,No,Good,Poor / Fair / Good,2500
+4363,No,Good,Poor / Fair / Good,1024
+4364,No,Fair,Poor / Fair / Good,1024
+4365,No,Very good,Very good / Excellent,7324
+4366,Yes,Good,Poor / Fair / Good,8400
+4367,No,Fair,Poor / Fair / Good,1024
+4368,No,Good,Poor / Fair / Good,1024
+4369,No,Very good,Very good / Excellent,200
+4370,No,Good,Poor / Fair / Good,3324.5
+4371,Yes,Excellent,Very good / Excellent,1024
+4372,No,Good,Poor / Fair / Good,NA
+4373,Yes,Good,Poor / Fair / Good,2500
+4374,No,Good,Poor / Fair / Good,2500
+4375,No,Good,Poor / Fair / Good,8400
+4376,Yes,Good,Poor / Fair / Good,5824
+4377,No,Fair,Poor / Fair / Good,1024
+4378,Yes,Good,Poor / Fair / Good,1024
+4379,No,Good,Poor / Fair / Good,8400
+4380,No,Fair,Poor / Fair / Good,1874.5
+4381,No,Very good,Very good / Excellent,600
+4382,Yes,Good,Poor / Fair / Good,1874.5
+4383,No,Fair,Poor / Fair / Good,NA
+4384,No,Fair,Poor / Fair / Good,1874.5
+4385,Yes,Very good,Very good / Excellent,7324
+4386,No,Fair,Poor / Fair / Good,2500
+4387,No,Good,Poor / Fair / Good,NA
+4388,Yes,Very good,Very good / Excellent,200
+4389,No,Very good,Very good / Excellent,2500
+4390,No,Fair,Poor / Fair / Good,7324
+4391,No,Excellent,Very good / Excellent,2500
+4392,No,Good,Poor / Fair / Good,1874.5
+4393,Yes,Poor,Poor / Fair / Good,2500
+4394,Yes,Good,Poor / Fair / Good,3324.5
+4395,Yes,Good,Poor / Fair / Good,8400
+4396,Yes,Good,Poor / Fair / Good,1024
+4397,No,Fair,Poor / Fair / Good,200
+4398,No,Very good,Very good / Excellent,7324
+4399,No,Good,Poor / Fair / Good,4174.5
+4400,Yes,Poor,Poor / Fair / Good,NA
+4401,No,Good,Poor / Fair / Good,1874.5
+4402,Yes,Excellent,Very good / Excellent,4174.5
+4403,Yes,Fair,Poor / Fair / Good,1024
+4404,No,Good,Poor / Fair / Good,3324.5
+4405,Yes,Good,Poor / Fair / Good,200
+4406,Yes,Excellent,Very good / Excellent,1450
+4407,No,Very good,Very good / Excellent,600
+4408,Yes,Good,Poor / Fair / Good,NA
+4409,Yes,Good,Poor / Fair / Good,8400
+4410,Yes,Poor,Poor / Fair / Good,600
+4411,No,Good,Poor / Fair / Good,4174.5
+4412,Yes,Very good,Very good / Excellent,1874.5
+4413,No,Good,Poor / Fair / Good,1024
+4414,No,Excellent,Very good / Excellent,NA
+4415,No,Good,Poor / Fair / Good,600
+4416,Yes,Good,Poor / Fair / Good,7324
+4417,No,Excellent,Very good / Excellent,4174.5
+4418,No,Excellent,Very good / Excellent,NA
+4419,No,Very good,Very good / Excellent,5824
+4420,No,Fair,Poor / Fair / Good,7324
+4421,No,Very good,Very good / Excellent,1024
+4422,Yes,Good,Poor / Fair / Good,8400
+4423,No,Good,Poor / Fair / Good,200
+4424,No,Very good,Very good / Excellent,5824
+4425,No,Good,Poor / Fair / Good,8400
+4426,Yes,Very good,Very good / Excellent,3324.5
+4427,Yes,Very good,Very good / Excellent,2500
+4428,No,Good,Poor / Fair / Good,1024
+4429,Yes,Very good,Very good / Excellent,NA
+4430,No,Good,Poor / Fair / Good,1024
+4431,No,Good,Poor / Fair / Good,NA
+4432,No,Good,Poor / Fair / Good,8400
+4433,Yes,Very good,Very good / Excellent,4174.5
+4434,No,Fair,Poor / Fair / Good,2500
+4435,No,Good,Poor / Fair / Good,4174.5
+4436,Yes,Good,Poor / Fair / Good,3324.5
+4437,No,Good,Poor / Fair / Good,7324
+4438,Yes,Good,Poor / Fair / Good,8400
+4439,No,Fair,Poor / Fair / Good,1450
+4440,No,Excellent,Very good / Excellent,1450
+4441,No,Very good,Very good / Excellent,1024
+4442,No,Good,Poor / Fair / Good,3324.5
+4443,No,Good,Poor / Fair / Good,7324
+4444,No,Good,Poor / Fair / Good,1024
+4445,No,Fair,Poor / Fair / Good,1874.5
+4446,No,Good,Poor / Fair / Good,NA
+4447,No,Fair,Poor / Fair / Good,7324
+4448,Yes,Very good,Very good / Excellent,3324.5
+4449,No,Good,Poor / Fair / Good,5824
+4450,No,Good,Poor / Fair / Good,3324.5
+4451,No,Good,Poor / Fair / Good,1024
+4452,No,Good,Poor / Fair / Good,1874.5
+4453,No,Very good,Very good / Excellent,4174.5
+4454,Yes,Good,Poor / Fair / Good,3324.5
+4455,Yes,Very good,Very good / Excellent,2500
+4456,No,Fair,Poor / Fair / Good,3324.5
+4457,No,Good,Poor / Fair / Good,1024
+4458,No,Very good,Very good / Excellent,4174.5
+4459,No,Very good,Very good / Excellent,NA
+4460,No,Good,Poor / Fair / Good,4174.5
+4461,No,Good,Poor / Fair / Good,3324.5
+4462,Yes,Very good,Very good / Excellent,3324.5
+4463,Yes,Good,Poor / Fair / Good,3324.5
+4464,Yes,Very good,Very good / Excellent,4174.5
+4465,Yes,Very good,Very good / Excellent,NA
+4466,No,Fair,Poor / Fair / Good,1874.5
+4467,Yes,Very good,Very good / Excellent,200
+4468,No,Very good,Very good / Excellent,1450
+4469,No,Good,Poor / Fair / Good,1874.5
+4470,No,Very good,Very good / Excellent,2500
+4471,Yes,Good,Poor / Fair / Good,1450
+4472,Yes,Good,Poor / Fair / Good,1024
+4473,No,Very good,Very good / Excellent,5000
+4474,No,Very good,Very good / Excellent,5000
+4475,No,Fair,Poor / Fair / Good,600
+4476,No,Very good,Very good / Excellent,7324
+4477,No,Good,Poor / Fair / Good,NA
+4478,No,Fair,Poor / Fair / Good,1874.5
+4479,No,Good,Poor / Fair / Good,8400
+4480,No,Very good,Very good / Excellent,NA
+4481,No,Very good,Very good / Excellent,2500
+4482,Yes,Very good,Very good / Excellent,8400
+4483,No,Very good,Very good / Excellent,1450
+4484,No,Very good,Very good / Excellent,7324
+4485,No,Good,Poor / Fair / Good,3324.5
+4486,No,Fair,Poor / Fair / Good,3324.5
+4487,Yes,Fair,Poor / Fair / Good,1024
+4488,No,Very good,Very good / Excellent,1450
+4489,Yes,Good,Poor / Fair / Good,4174.5
+4490,No,Good,Poor / Fair / Good,1874.5
+4491,Yes,Good,Poor / Fair / Good,NA
+4492,Yes,Good,Poor / Fair / Good,5824
+4493,No,Very good,Very good / Excellent,5824
+4494,No,Very good,Very good / Excellent,2500
+4495,No,Very good,Very good / Excellent,3324.5
+4496,No,Very good,Very good / Excellent,2500
+4497,No,Excellent,Very good / Excellent,5824
+4498,Yes,Excellent,Very good / Excellent,7324
+4499,Yes,Very good,Very good / Excellent,1024
+4500,Yes,Good,Poor / Fair / Good,1024
+4501,No,Very good,Very good / Excellent,NA
+4502,Yes,Good,Poor / Fair / Good,5824
+4503,Yes,Good,Poor / Fair / Good,3324.5
+4504,No,Good,Poor / Fair / Good,600
+4505,Yes,Good,Poor / Fair / Good,4174.5
+4506,No,Good,Poor / Fair / Good,1024
+4507,No,Good,Poor / Fair / Good,1024
+4508,Yes,Very good,Very good / Excellent,1024
+4509,Yes,Excellent,Very good / Excellent,5000
+4510,No,Very good,Very good / Excellent,8400
+4511,No,Fair,Poor / Fair / Good,8400
+4512,Yes,Poor,Poor / Fair / Good,8400
+4513,Yes,Good,Poor / Fair / Good,1450
+4514,No,Good,Poor / Fair / Good,4174.5
+4515,No,Good,Poor / Fair / Good,600
+4516,No,Good,Poor / Fair / Good,2500
+4517,No,Very good,Very good / Excellent,3324.5
+4518,Yes,Excellent,Very good / Excellent,4174.5
+4519,No,Good,Poor / Fair / Good,7324
+4520,No,Very good,Very good / Excellent,1874.5
+4521,Yes,Good,Poor / Fair / Good,NA
+4522,Yes,Fair,Poor / Fair / Good,1874.5
+4523,Yes,Very good,Very good / Excellent,8400
+4524,Yes,Very good,Very good / Excellent,1874.5
+4525,No,Good,Poor / Fair / Good,2500
+4526,No,Good,Poor / Fair / Good,4174.5
+4527,No,Good,Poor / Fair / Good,NA
+4528,No,Good,Poor / Fair / Good,1450
+4529,No,Fair,Poor / Fair / Good,200
+4530,Yes,Excellent,Very good / Excellent,NA
+4531,No,Very good,Very good / Excellent,1450
+4532,Yes,Very good,Very good / Excellent,8400
+4533,Yes,Good,Poor / Fair / Good,5000
+4534,No,Good,Poor / Fair / Good,5824
+4535,No,Fair,Poor / Fair / Good,5824
+4536,No,Good,Poor / Fair / Good,NA
+4537,No,Fair,Poor / Fair / Good,1024
+4538,Yes,Good,Poor / Fair / Good,1874.5
+4539,No,Good,Poor / Fair / Good,5824
+4540,No,Good,Poor / Fair / Good,1024
+4541,Yes,Fair,Poor / Fair / Good,1874.5
+4542,Yes,Good,Poor / Fair / Good,1450
+4543,No,Good,Poor / Fair / Good,1874.5
+4544,Yes,Good,Poor / Fair / Good,3324.5
+4545,Yes,Good,Poor / Fair / Good,5824
+4546,No,Good,Poor / Fair / Good,2500
+4547,Yes,Fair,Poor / Fair / Good,1874.5
+4548,Yes,Very good,Very good / Excellent,NA
+4549,No,Good,Poor / Fair / Good,7324
+4550,Yes,Very good,Very good / Excellent,2500
+4551,No,Good,Poor / Fair / Good,4174.5
+4552,Yes,Excellent,Very good / Excellent,8400
+4553,No,Good,Poor / Fair / Good,4174.5
+4554,No,Excellent,Very good / Excellent,NA
+4555,No,Very good,Very good / Excellent,1024
+4556,No,Very good,Very good / Excellent,2500
+4557,Yes,Poor,Poor / Fair / Good,1874.5
+4558,Yes,Good,Poor / Fair / Good,8400
+4559,Yes,Poor,Poor / Fair / Good,2500
+4560,No,Good,Poor / Fair / Good,4174.5
+4561,No,Fair,Poor / Fair / Good,5000
+4562,No,Very good,Very good / Excellent,NA
+4563,Yes,Good,Poor / Fair / Good,NA
+4564,Yes,Very good,Very good / Excellent,2500
+4565,No,Fair,Poor / Fair / Good,200
+4566,Yes,Very good,Very good / Excellent,5824
+4567,No,Very good,Very good / Excellent,7324
+4568,No,Good,Poor / Fair / Good,600
+4569,Yes,Excellent,Very good / Excellent,3324.5
+4570,No,Good,Poor / Fair / Good,2500
+4571,Yes,Very good,Very good / Excellent,7324
+4572,Yes,Fair,Poor / Fair / Good,2500
+4573,Yes,Good,Poor / Fair / Good,NA
+4574,No,Very good,Very good / Excellent,NA
+4575,No,Very good,Very good / Excellent,2500
+4576,No,Fair,Poor / Fair / Good,NA
+4577,No,Very good,Very good / Excellent,200
+4578,No,Good,Poor / Fair / Good,4174.5
+4579,No,Good,Poor / Fair / Good,2500
+4580,No,Good,Poor / Fair / Good,4174.5
+4581,No,Good,Poor / Fair / Good,1874.5
+4582,No,Excellent,Very good / Excellent,600
+4583,No,Good,Poor / Fair / Good,NA
+4584,No,Poor,Poor / Fair / Good,1024
+4585,No,Good,Poor / Fair / Good,1450
+4586,Yes,Good,Poor / Fair / Good,1874.5
+4587,Yes,Very good,Very good / Excellent,2500
+4588,Yes,Good,Poor / Fair / Good,1024
+4589,Yes,Good,Poor / Fair / Good,600
+4590,No,Fair,Poor / Fair / Good,7324
+4591,Yes,Very good,Very good / Excellent,NA
+4592,Yes,Good,Poor / Fair / Good,3324.5
+4593,No,Good,Poor / Fair / Good,NA
+4594,No,Good,Poor / Fair / Good,1450
+4595,No,Very good,Very good / Excellent,5824
+4596,No,Very good,Very good / Excellent,2500
+4597,Yes,Fair,Poor / Fair / Good,2500
+4598,No,Good,Poor / Fair / Good,1874.5
+4599,No,Fair,Poor / Fair / Good,2500
+4600,No,Good,Poor / Fair / Good,4174.5
+4601,No,Excellent,Very good / Excellent,2500
+4602,Yes,Very good,Very good / Excellent,5824
+4603,Yes,Very good,Very good / Excellent,8400
+4604,Yes,Excellent,Very good / Excellent,8400
+4605,Yes,Good,Poor / Fair / Good,600
+4606,No,Very good,Very good / Excellent,200
+4607,Yes,Very good,Very good / Excellent,1024
+4608,No,Very good,Very good / Excellent,5000
+4609,No,Poor,Poor / Fair / Good,200
+4610,No,Fair,Poor / Fair / Good,NA
+4611,No,Good,Poor / Fair / Good,3324.5
+4612,Yes,Fair,Poor / Fair / Good,NA
+4613,No,Good,Poor / Fair / Good,3324.5
+4614,No,Good,Poor / Fair / Good,1874.5
+4615,No,Very good,Very good / Excellent,NA
+4616,No,Fair,Poor / Fair / Good,1874.5
+4617,Yes,Fair,Poor / Fair / Good,5000
+4618,Yes,Good,Poor / Fair / Good,7324
+4619,No,Good,Poor / Fair / Good,1874.5
+4620,Yes,Excellent,Very good / Excellent,4174.5
+4621,Yes,Very good,Very good / Excellent,2500
+4622,No,Fair,Poor / Fair / Good,2500
+4623,No,Good,Poor / Fair / Good,2500
+4624,No,Fair,Poor / Fair / Good,2500
+4625,No,Good,Poor / Fair / Good,2500
+4626,No,Good,Poor / Fair / Good,1450
+4627,No,Good,Poor / Fair / Good,600
+4628,Yes,Good,Poor / Fair / Good,2500
+4629,No,Very good,Very good / Excellent,5000
+4630,No,Very good,Very good / Excellent,8400
+4631,Yes,Very good,Very good / Excellent,2500
+4632,No,Very good,Very good / Excellent,200
+4633,Yes,Good,Poor / Fair / Good,2500
+4634,Yes,Good,Poor / Fair / Good,3324.5
+4635,No,Very good,Very good / Excellent,1874.5
+4636,No,Excellent,Very good / Excellent,5000
+4637,No,Very good,Very good / Excellent,2500
+4638,No,Fair,Poor / Fair / Good,5824
+4639,No,Fair,Poor / Fair / Good,1024
+4640,No,Good,Poor / Fair / Good,1024
+4641,Yes,Very good,Very good / Excellent,3324.5
+4642,No,Good,Poor / Fair / Good,1024
+4643,No,Good,Poor / Fair / Good,7324
+4644,No,Excellent,Very good / Excellent,3324.5
+4645,Yes,Very good,Very good / Excellent,NA
+4646,Yes,Fair,Poor / Fair / Good,7324
+4647,No,Fair,Poor / Fair / Good,NA
+4648,No,Very good,Very good / Excellent,200
+4649,No,Good,Poor / Fair / Good,2500
+4650,No,Very good,Very good / Excellent,2500
+4651,Yes,Excellent,Very good / Excellent,1024
+4652,Yes,Excellent,Very good / Excellent,1874.5
+4653,No,Fair,Poor / Fair / Good,600
+4654,Yes,Good,Poor / Fair / Good,NA
+4655,Yes,Very good,Very good / Excellent,8400
+4656,No,Fair,Poor / Fair / Good,2500
+4657,Yes,Good,Poor / Fair / Good,3324.5
+4658,No,Good,Poor / Fair / Good,3324.5
+4659,Yes,Good,Poor / Fair / Good,2500
+4660,Yes,Very good,Very good / Excellent,2500
+4661,No,Fair,Poor / Fair / Good,1874.5
+4662,Yes,Very good,Very good / Excellent,7324
+4663,Yes,Good,Poor / Fair / Good,2500
+4664,Yes,Fair,Poor / Fair / Good,NA
+4665,No,Poor,Poor / Fair / Good,5000
+4666,Yes,Good,Poor / Fair / Good,4174.5
+4667,Yes,Fair,Poor / Fair / Good,2500
+4668,Yes,Very good,Very good / Excellent,5000
+4669,No,Very good,Very good / Excellent,5000
+4670,Yes,Good,Poor / Fair / Good,4174.5
+4671,No,Fair,Poor / Fair / Good,600
+4672,No,Excellent,Very good / Excellent,NA
+4673,No,Good,Poor / Fair / Good,NA
+4674,No,Good,Poor / Fair / Good,4174.5
+4675,No,Poor,Poor / Fair / Good,3324.5
+4676,Yes,Excellent,Very good / Excellent,7324
+4677,Yes,Good,Poor / Fair / Good,7324
+4678,No,Good,Poor / Fair / Good,1874.5
+4679,No,Fair,Poor / Fair / Good,600
+4680,No,Good,Poor / Fair / Good,1450
+4681,Yes,Very good,Very good / Excellent,8400
+4682,No,Very good,Very good / Excellent,2500
+4683,Yes,Good,Poor / Fair / Good,7324
+4684,No,Good,Poor / Fair / Good,1024
+4685,No,Good,Poor / Fair / Good,1024
+4686,No,Good,Poor / Fair / Good,1874.5
+4687,Yes,Good,Poor / Fair / Good,1450
+4688,Yes,Very good,Very good / Excellent,8400
+4689,No,Fair,Poor / Fair / Good,8400
+4690,Yes,Very good,Very good / Excellent,7324
+4691,No,Good,Poor / Fair / Good,1024
+4692,No,Good,Poor / Fair / Good,NA
+4693,No,Good,Poor / Fair / Good,2500
+4694,No,Very good,Very good / Excellent,1024
+4695,No,Very good,Very good / Excellent,5000
+4696,No,Fair,Poor / Fair / Good,2500
+4697,Yes,Good,Poor / Fair / Good,NA
+4698,Yes,Good,Poor / Fair / Good,3324.5
+4699,Yes,Very good,Very good / Excellent,8400
+4700,No,Good,Poor / Fair / Good,600
+4701,Yes,Good,Poor / Fair / Good,3324.5
+4702,Yes,Fair,Poor / Fair / Good,1450
+4703,Yes,Excellent,Very good / Excellent,8400
+4704,No,Good,Poor / Fair / Good,200
+4705,No,Good,Poor / Fair / Good,1450
+4706,Yes,Very good,Very good / Excellent,4174.5
+4707,No,Very good,Very good / Excellent,8400
+4708,Yes,Good,Poor / Fair / Good,3324.5
+4709,No,Fair,Poor / Fair / Good,1874.5
+4710,No,Good,Poor / Fair / Good,1024
+4711,No,Good,Poor / Fair / Good,1024
+4712,Yes,Good,Poor / Fair / Good,3324.5
+4713,No,Good,Poor / Fair / Good,200
+4714,No,Good,Poor / Fair / Good,3324.5
+4715,No,Poor,Poor / Fair / Good,200
+4716,No,Very good,Very good / Excellent,NA
