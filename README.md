@@ -1,3 +1,3 @@
-# fast.ai APL study group notes
+# APL Exploration
 
-See APL.ipynb for the notebook we're creating as we go. The [forum](https://forums.fast.ai/c/array-programming/56) contains links to the study session details, videos, and links.
+Just my notes and projects as I go through learning DYALOG APL.
