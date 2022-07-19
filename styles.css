@@ -1,10 +1,19 @@
 /* css styles */
 @font-face {
-  font-family: aplfont;
-  src: url(https://github.com/abrudz/SAX2/raw/master/SAX2.ttf);
+  font-family: 'sax2';
+  src: url('www/SAX2.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
 
 
-code {
-    font-family: aplfont;
-}
+pre.language-APL {
+    font-family: 'sax2' !important;
+}   
+
+.apl code {
+    font-family: 'sax2' !important;
+}   
+
+
+
