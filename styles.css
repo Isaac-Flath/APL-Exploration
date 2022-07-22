@@ -36,6 +36,10 @@ pre.language-APL {
   font-family: 'sax2' !important;
 }
 
+.cell-output cell-output-display {
+    font-family: 'sax2' !important;
+
+}
 /* 
 
 code {
