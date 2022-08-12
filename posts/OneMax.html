@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Felix Flath">
+<meta name="dcterms.date" content="2022-07-09">
+
+<title>APL Exploration - One Max</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">APL Exploration</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html">About</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/isaac-flath/apl-exploration"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/isaac-flath/"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">One Max</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">Dyalog</div>
+                <div class="quarto-category">APL</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Felix Flath </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">July 9, 2022</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#one-max" id="toc-one-max" class="nav-link active" data-scroll-target="#one-max">One Max</a>
+  <ul class="collapse">
+  <li><a href="#apl-setup" id="toc-apl-setup" class="nav-link" data-scroll-target="#apl-setup">APL Setup</a></li>
+  <li><a href="#initial-population" id="toc-initial-population" class="nav-link" data-scroll-target="#initial-population">Initial Population</a></li>
+  <li><a href="#sort" id="toc-sort" class="nav-link" data-scroll-target="#sort">Sort</a></li>
+  <li><a href="#group-into-parents" id="toc-group-into-parents" class="nav-link" data-scroll-target="#group-into-parents">Group into parents</a></li>
+  <li><a href="#crossover" id="toc-crossover" class="nav-link" data-scroll-target="#crossover">Crossover</a></li>
+  <li><a href="#repeat" id="toc-repeat" class="nav-link" data-scroll-target="#repeat">Repeat</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="one-max" class="level1">
+<h1>One Max</h1>
+<p>The one max problem is a starter problem for genetic algorithms. The optimization goal is to maximize the number of ones in a list. It is simple but contains all the components you need for genetic algorithms.</p>
+<p>In a nutshell you</p>
+<ol type="1">
+<li>Generate a randomized initial population</li>
+<li>Sort the population by fitness</li>
+<li>Group the population into parents</li>
+<li>Generate children from parent pairs</li>
+<li>Repeat from step 2 until optimization goal is met</li>
+</ol>
+<section id="apl-setup" class="level2">
+<h2 class="anchored" data-anchor-id="apl-setup">APL Setup</h2>
+</section>
+<section id="initial-population" class="level2">
+<h2 class="anchored" data-anchor-id="initial-population">Initial Population</h2>
+<p>Each member of the population is a list. Each element in the lists are a 1 or 0. The apl operator ? is called roll and rolls a die up to the given number.</p>
+<div class="cell" data-execution_count="219">
+<pre class="apl cell-code"><code>? 2</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="219">
+<span style="white-space:pre; font-family: monospace"> 
+2
+ 
+</span>
+</div>
+</div>
+<p>Because APL is 1 indexed we get a 1 or a 2. To generate a list of 1s or 2s we roll against a vector.</p>
+<div class="cell" data-execution_count="220">
+<pre class="apl cell-code"><code>? 2 2 2 2 2 2 2 2 2</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="220">
+<span style="white-space:pre; font-family: monospace">┌→────────────────┐
+│2 2 2 1 2 2 1 1 2│
+└~────────────────┘
+</span>
+</div>
+</div>
+<p>We can use ⍴ to create a list of the correct size</p>
+<div class="cell" data-execution_count="221">
+<pre class="apl cell-code"><code>?10⍴2</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="221">
+<span style="white-space:pre; font-family: monospace">┌→──────────────────┐
+│2 2 2 2 2 2 1 2 2 1│
+└~──────────────────┘
+</span>
+</div>
+</div>
+<p>We can use extend this to generate the entire population of p0</p>
+<div class="cell" data-execution_count="222">
+<pre class="apl cell-code"><code>?10 10 ⍴ 2</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="222">
+<span style="white-space:pre; font-family: monospace">┌→──────────────────┐
+↓2 1 1 2 2 2 1 2 2 1│
+│1 2 2 1 2 1 1 2 2 1│
+│2 1 2 2 2 2 1 1 2 2│
+│1 1 1 2 1 2 2 2 1 2│
+│1 2 2 1 1 2 2 1 2 2│
+│1 1 1 2 2 2 2 2 2 1│
+│1 1 2 1 1 2 2 2 1 2│
+│1 1 1 1 1 1 1 1 2 2│
+│2 2 1 1 1 1 2 2 1 2│
+│1 2 1 2 1 1 1 1 2 2│
+└~──────────────────┘
+</span>
+</div>
+</div>
+<p>To get 1s and 0s we subtract one</p>
+<div class="cell" data-execution_count="223">
+<pre class="apl cell-code"><code>⎕←p0←1 -⍨ ?10 10 ⍴ 2</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="223">
+<span style="white-space:pre; font-family: monospace">┌→──────────────────┐
+↓1 1 1 0 1 0 0 0 0 0│
+│1 0 0 0 1 0 0 0 1 0│
+│0 1 0 1 1 1 1 0 0 0│
+│0 0 0 1 0 1 1 0 0 0│
+│1 1 1 0 1 0 1 1 1 1│
+│1 1 0 1 0 0 0 1 1 1│
+│1 0 0 1 1 0 1 0 0 0│
+│0 1 1 1 0 1 1 0 1 1│
+│1 0 0 1 0 1 0 1 0 1│
+│0 0 1 1 1 0 1 1 0 0│
+└~──────────────────┘
+</span>
+</div>
+</div>
+</section>
+<section id="sort" class="level2">
+<h2 class="anchored" data-anchor-id="sort">Sort</h2>
+<p>To sort we need to identify a fitness function relevant to our optimization goal. We want to maximize the number of 1s in the list. Lets use the number of 1s in the list.</p>
+<div class="cell" data-execution_count="224">
+<pre class="apl cell-code"><code>+/p0 ⍝ Sums across each row</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="224">
+<span style="white-space:pre; font-family: monospace">┌→──────────────────┐
+│4 3 5 3 8 6 4 7 5 5│
+└~──────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="225">
+<pre class="apl cell-code"><code>⍒+/p0 ⍝ Indices in decreasing order</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="225">
+<span style="white-space:pre; font-family: monospace">┌→───────────────────┐
+│5 8 6 3 9 10 1 7 2 4│
+└~───────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="226">
+<pre class="apl cell-code"><code>p0⌷⍨⊂⍒+/p0 ⍝ Use the indices to reorder p0</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="226">
+<span style="white-space:pre; font-family: monospace">┌→──────────────────┐
+↓1 1 1 0 1 0 1 1 1 1│
+│0 1 1 1 0 1 1 0 1 1│
+│1 1 0 1 0 0 0 1 1 1│
+│0 1 0 1 1 1 1 0 0 0│
+│1 0 0 1 0 1 0 1 0 1│
+│0 0 1 1 1 0 1 1 0 0│
+│1 1 1 0 1 0 0 0 0 0│
+│1 0 0 1 1 0 1 0 0 0│
+│1 0 0 0 1 0 0 0 1 0│
+│0 0 0 1 0 1 1 0 0 0│
+└~──────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="227">
+<pre class="apl cell-code"><code>sort←{⍵⌷⍨⊂⍒+/⍵}</code></pre>
+</div>
+</section>
+<section id="group-into-parents" class="level2">
+<h2 class="anchored" data-anchor-id="group-into-parents">Group into parents</h2>
+<p>Once the population is sorted we group into parents. The two fittest members will be used to generate two children. Third and fourth will be grouped etc. APL has ⌺ the sliding window operator.</p>
+<div class="cell" data-execution_count="228">
+<pre class="apl cell-code"><code>⊢⌺(⍪2 2)⊢sort p0 ⍝ Window size of 2 and step size of 2</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="228">
+<span style="white-space:pre; font-family: monospace">┌┌→──────────────────┐
+↓↓1 1 1 0 1 0 1 1 1 1│
+││0 1 1 1 0 1 1 0 1 1│
+││                   │
+││1 1 0 1 0 0 0 1 1 1│
+││0 1 0 1 1 1 1 0 0 0│
+││                   │
+││1 0 0 1 0 1 0 1 0 1│
+││0 0 1 1 1 0 1 1 0 0│
+││                   │
+││1 1 1 0 1 0 0 0 0 0│
+││1 0 0 1 1 0 1 0 0 0│
+││                   │
+││1 0 0 0 1 0 0 0 1 0│
+││0 0 0 1 0 1 1 0 0 0│
+└└~──────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="229">
+<pre class="apl cell-code"><code>group ← {⊢⌺(⍪2 2)⊢⍵}</code></pre>
+</div>
+<div class="cell" data-execution_count="230">
+<pre class="apl cell-code"><code>group sort p0</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="230">
+<span style="white-space:pre; font-family: monospace">┌┌→──────────────────┐
+↓↓1 1 1 0 1 0 1 1 1 1│
+││0 1 1 1 0 1 1 0 1 1│
+││                   │
+││1 1 0 1 0 0 0 1 1 1│
+││0 1 0 1 1 1 1 0 0 0│
+││                   │
+││1 0 0 1 0 1 0 1 0 1│
+││0 0 1 1 1 0 1 1 0 0│
+││                   │
+││1 1 1 0 1 0 0 0 0 0│
+││1 0 0 1 1 0 1 0 0 0│
+││                   │
+││1 0 0 0 1 0 0 0 1 0│
+││0 0 0 1 0 1 1 0 0 0│
+└└~──────────────────┘
+</span>
+</div>
+</div>
+</section>
+<section id="crossover" class="level2">
+<h2 class="anchored" data-anchor-id="crossover">Crossover</h2>
+<p>This is a function that generates children from parents. This problem generally takes a pair of parents. Splits them at the same point (a different point for different pairs) and then swaps the tails.</p>
+<pre><code>[1,1,1,1]    [1,1,1] [1]    [1,1,1,2]
+          -&gt;             -&gt;
+[2,2,2,2]    [2,2,2] [2]    [2,2,2,1]</code></pre>
+<p>Do this for every pair of parents and you have your new population</p>
+<p>Instead of splitting we are going to use ⌽ the rotation operator. ⌽ wraps around.</p>
+<p>[1,1,1,1] [2,2,2,2] -&gt; [1,1,1,1,2,2,2,2] -&gt; [2,1,1,1,1,2,2,2] -&gt; [2,1,1,1] [1,2,2,2]</p>
+<p>Probably close enough</p>
+<div class="cell" data-execution_count="231">
+<pre class="apl cell-code"><code>↓⍤2⊢group sort p0 ⍝ reshape</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="231">
+<span style="white-space:pre; font-family: monospace">┌→────────────────────────────────────────────┐
+↓ ┌→──────────────────┐ ┌→──────────────────┐ │
+│ │1 1 1 0 1 0 1 1 1 1│ │0 1 1 1 0 1 1 0 1 1│ │
+│ └~──────────────────┘ └~──────────────────┘ │
+│ ┌→──────────────────┐ ┌→──────────────────┐ │
+│ │1 1 0 1 0 0 0 1 1 1│ │0 1 0 1 1 1 1 0 0 0│ │
+│ └~──────────────────┘ └~──────────────────┘ │
+│ ┌→──────────────────┐ ┌→──────────────────┐ │
+│ │1 0 0 1 0 1 0 1 0 1│ │0 0 1 1 1 0 1 1 0 0│ │
+│ └~──────────────────┘ └~──────────────────┘ │
+│ ┌→──────────────────┐ ┌→──────────────────┐ │
+│ │1 1 1 0 1 0 0 0 0 0│ │1 0 0 1 1 0 1 0 0 0│ │
+│ └~──────────────────┘ └~──────────────────┘ │
+│ ┌→──────────────────┐ ┌→──────────────────┐ │
+│ │1 0 0 0 1 0 0 0 1 0│ │0 0 0 1 0 1 1 0 0 0│ │
+│ └~──────────────────┘ └~──────────────────┘ │
+└∊────────────────────────────────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="232">
+<pre class="apl cell-code"><code>,/↓⍤2⊢group sort p0 ⍝ ravel each pair of parents together</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="232">
+<span style="white-space:pre; font-family: monospace">┌→──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ ┌→──────────────────────────────────────┐ ┌→──────────────────────────────────────┐ ┌→──────────────────────────────────────┐ ┌→──────────────────────────────────────┐ ┌→──────────────────────────────────────┐ │
+│ │1 1 1 0 1 0 1 1 1 1 0 1 1 1 0 1 1 0 1 1│ │1 1 0 1 0 0 0 1 1 1 0 1 0 1 1 1 1 0 0 0│ │1 0 0 1 0 1 0 1 0 1 0 0 1 1 1 0 1 1 0 0│ │1 1 1 0 1 0 0 0 0 0 1 0 0 1 1 0 1 0 0 0│ │1 0 0 0 1 0 0 0 1 0 0 0 0 1 0 1 1 0 0 0│ │
+│ └~──────────────────────────────────────┘ └~──────────────────────────────────────┘ └~──────────────────────────────────────┘ └~──────────────────────────────────────┘ └~──────────────────────────────────────┘ │
+└∊──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="233">
+<pre class="apl cell-code"><code>↑(?5⍴10) ,.(⊂2 10⍴⌽) ,/↓⍤2⊢group sort p0 ⍝ apply a different rotation to each pair of parents↑</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="233">
+<span style="white-space:pre; font-family: monospace">┌→──────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ ┌→──────────────────┐ ┌→──────────────────┐ ┌→──────────────────┐ ┌→──────────────────┐ ┌→──────────────────┐ │
+│ ↓1 1 0 1 0 1 1 1 1 0│ ↓1 1 0 1 0 1 1 1 1 0│ ↓1 0 0 1 1 1 0 1 1 0│ ↓0 1 0 0 0 0 0 1 0 0│ ↓1 0 0 0 1 0 0 0 0 1│ │
+│ │1 1 1 0 1 1 0 1 1 1│ │0 0 1 1 0 1 0 0 0 1│ │0 1 0 0 1 0 1 0 1 0│ │1 1 0 1 0 0 0 1 1 1│ │0 1 1 0 0 0 1 0 0 0│ │
+│ └~──────────────────┘ └~──────────────────┘ └~──────────────────┘ └~──────────────────┘ └~──────────────────┘ │
+└∊──────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="234">
+<pre class="apl cell-code"><code>↑⍪/⎕←↑(?5⍴10) ,.(⊂2 10⍴⌽) ,/↓⍤2⊢group sort p0 ⍝ reshape into a new population</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="234">
+<span style="white-space:pre; font-family: monospace">┌→──────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ ┌→──────────────────┐ ┌→──────────────────┐ ┌→──────────────────┐ ┌→──────────────────┐ ┌→──────────────────┐ │
+│ ↓1 1 1 0 1 1 1 0 1 1│ ↓0 0 1 1 1 0 1 0 1 1│ ↓0 0 1 0 1 0 1 0 1 0│ ↓1 1 0 1 0 0 0 0 0 1│ ↓0 1 0 0 0 1 0 0 0 0│ │
+│ │0 1 1 1 1 1 0 1 0 1│ │1 1 0 0 0 1 1 0 1 0│ │0 1 1 1 0 1 1 0 0 1│ │0 0 1 1 0 1 0 0 0 1│ │1 0 1 1 0 0 0 1 0 0│ │
+│ └~──────────────────┘ └~──────────────────┘ └~──────────────────┘ └~──────────────────┘ └~──────────────────┘ │
+└∊──────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+┌→──────────────────┐
+↓1 1 1 0 1 1 1 0 1 1│
+│0 1 1 1 1 1 0 1 0 1│
+│0 0 1 1 1 0 1 0 1 1│
+│1 1 0 0 0 1 1 0 1 0│
+│0 0 1 0 1 0 1 0 1 0│
+│0 1 1 1 0 1 1 0 0 1│
+│1 1 0 1 0 0 0 0 0 1│
+│0 0 1 1 0 1 0 0 0 1│
+│0 1 0 0 0 1 0 0 0 0│
+│1 0 1 1 0 0 0 1 0 0│
+└~──────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="235">
+<pre class="apl cell-code"><code>crossover←{count len←⍺⋄↑⍪/↑(?count⍴len) ,.(⊂2 len⍴⌽) ,/↓⍤2⊢⍵}</code></pre>
+</div>
+<div class="cell" data-execution_count="236">
+<pre class="apl cell-code"><code>(5 10) crossover group sort p0</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="236">
+<span style="white-space:pre; font-family: monospace">┌→──────────────────┐
+↓0 1 1 1 0 1 1 0 1 1│
+│1 1 1 0 1 0 1 1 1 1│
+│1 0 0 0 1 1 1 0 1 0│
+│1 1 1 1 0 0 0 1 1 0│
+│1 0 0 1 1 1 0 1 1 0│
+│0 1 0 0 1 0 1 0 1 0│
+│0 1 0 0 0 0 0 1 0 0│
+│1 1 0 1 0 0 0 1 1 1│
+│0 0 0 1 0 0 0 1 0 0│
+│0 0 1 0 1 1 0 0 0 1│
+└~──────────────────┘
+</span>
+</div>
+</div>
+</section>
+<section id="repeat" class="level2">
+<h2 class="anchored" data-anchor-id="repeat">Repeat</h2>
+<p>APL make this easy we use ⍣ to specify function repetition</p>
+<div class="cell" data-execution_count="237">
+<pre class="apl cell-code"><code>{(10 10) crossover group sort ⍵} ⍣ 100 ⊢ 1 -⍨ ?20 10 ⍴ 2</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="237">
+<span style="white-space:pre; font-family: monospace">┌→──────────────────┐
+↓1 1 1 1 1 1 1 1 1 1│
+│1 1 1 1 1 1 1 1 1 1│
+│1 1 1 1 1 1 1 1 1 1│
+│1 1 1 1 1 1 1 1 1 1│
+│1 1 1 1 1 1 1 1 1 1│
+│0 1 1 1 1 1 1 1 1 1│
+│1 1 1 1 1 0 1 1 1 1│
+│1 0 1 1 1 1 1 0 1 1│
+│1 1 1 1 1 0 1 0 1 1│
+│1 1 0 1 0 1 1 0 1 0│
+│1 1 1 0 0 1 1 0 0 1│
+│1 1 1 0 0 1 1 0 0 1│
+│1 0 0 0 0 1 0 1 0 0│
+│0 1 0 1 1 1 0 1 0 0│
+│0 0 0 0 1 0 0 0 1 0│
+│0 0 0 0 0 0 0 1 0 0│
+│0 1 0 0 0 0 0 0 0 0│
+│0 0 0 0 0 0 0 0 0 0│
+│0 0 0 0 0 0 0 0 0 0│
+│0 0 0 0 0 0 0 0 0 0│
+└~──────────────────┘
+</span>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

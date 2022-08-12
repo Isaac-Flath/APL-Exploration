@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Felix Flath">
+<meta name="dcterms.date" content="2022-07-18">
+
+<title>APL Exploration - River Bank</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">APL Exploration</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html">About</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/isaac-flath/apl-exploration"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/isaac-flath/"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">River Bank</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">Dyalog</div>
+                <div class="quarto-category">APL</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Felix Flath </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">July 18, 2022</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#problem" id="toc-problem" class="nav-link active" data-scroll-target="#problem">Problem</a></li>
+  <li><a href="#representation" id="toc-representation" class="nav-link" data-scroll-target="#representation">Representation</a></li>
+  <li><a href="#state-transition-graph" id="toc-state-transition-graph" class="nav-link" data-scroll-target="#state-transition-graph">State Transition Graph</a></li>
+  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution">Solution</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="problem" class="level2">
+<h2 class="anchored" data-anchor-id="problem">Problem</h2>
+<p>The wolf, goat, cabbage riddle is pretty well known. A farmer has a wolf, goat, and cabbage on one side of the river. He needs to transport everything across the river in a small boat that can hold only himself and one other thing. He can’t leave the wolf and goat by themselves, he also cannot leave the goat with the cabbage. How does he get everything across?</p>
+</section>
+<section id="representation" class="level2">
+<h2 class="anchored" data-anchor-id="representation">Representation</h2>
+<p>We have to keep track of which side of the river things are on. There are 4 items lets use a binary array with the elements representing the person, cabbage, goat, wolf. Since each thing can be on one side of the river or the other we only need to know one side to know the other. The state can be represented as a 4 bit array or a number between 0 and 16.</p>
+<p>The starting state is (1,1,1,1) everything on the first side of the river.</p>
+<div class="cell" data-execution_count="3">
+<pre class="apl cell-code"><code>⎕←s0←4⍴1</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<span style="white-space:pre; font-family: monospace">┌→──────┐
+│1 1 1 1│
+└~──────┘
+</span>
+</div>
+</div>
+<p>How do we get the next states we can transion too? We can build an adjacency matrix or anything that is isomorphically the same. For any individul state we know the person has to move and one or zero other items can move. And those get added or removed based on which direction the farmer travels. If we xor the current state with the four possible trips we get the states it can transition too.</p>
+<div class="cell" data-execution_count="4">
+<pre class="apl cell-code"><code>⍝ possible s1s
+(⊂s0)≠(1 0 0 0) (1 0 0 1) (1 0 1 0) (1 1 0 0)</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<span style="white-space:pre; font-family: monospace">┌→────────────────────────────────────────┐
+│ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ │
+│ │0 1 1 1│ │0 1 1 0│ │0 1 0 1│ │0 0 1 1│ │
+│ └~──────┘ └~──────┘ └~──────┘ └~──────┘ │
+└∊────────────────────────────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="5">
+<pre class="apl cell-code"><code>⎕←transitions←(1 0 0 0) (1 0 0 1) (1 0 1 0) (1 1 0 0)</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<span style="white-space:pre; font-family: monospace">┌→────────────────────────────────────────┐
+│ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ │
+│ │1 0 0 0│ │1 0 0 1│ │1 0 1 0│ │1 1 0 0│ │
+│ └~──────┘ └~──────┘ └~──────┘ └~──────┘ │
+└∊────────────────────────────────────────┘
+</span>
+</div>
+</div>
+<p>Lets build the full table.</p>
+<div class="cell" data-execution_count="6">
+<pre class="apl cell-code"><code>⎕←states←↓⍉2 2 2 2⊤⍳16</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<span style="white-space:pre; font-family: monospace">┌→────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ │
+│ │0 0 0 0│ │0 0 0 1│ │0 0 1 0│ │0 0 1 1│ │0 1 0 0│ │0 1 0 1│ │0 1 1 0│ │0 1 1 1│ │1 0 0 0│ │1 0 0 1│ │1 0 1 0│ │1 0 1 1│ │1 1 0 0│ │1 1 0 1│ │1 1 1 0│ │1 1 1 1│ │
+│ └~──────┘ └~──────┘ └~──────┘ └~──────┘ └~──────┘ └~──────┘ └~──────┘ └~──────┘ └~──────┘ └~──────┘ └~──────┘ └~──────┘ └~──────┘ └~──────┘ └~──────┘ └~──────┘ │
+└∊────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="7">
+<pre class="apl cell-code"><code>⍉transitions ∘.≠ states</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<span style="white-space:pre; font-family: monospace">┌→────────────────────────────────────────┐
+↓ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ │
+│ │1 0 0 0│ │1 0 0 1│ │1 0 1 0│ │1 1 0 0│ │
+│ └~──────┘ └~──────┘ └~──────┘ └~──────┘ │
+│ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ │
+│ │1 0 0 1│ │1 0 0 0│ │1 0 1 1│ │1 1 0 1│ │
+│ └~──────┘ └~──────┘ └~──────┘ └~──────┘ │
+│ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ │
+│ │1 0 1 0│ │1 0 1 1│ │1 0 0 0│ │1 1 1 0│ │
+│ └~──────┘ └~──────┘ └~──────┘ └~──────┘ │
+│ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ │
+│ │1 0 1 1│ │1 0 1 0│ │1 0 0 1│ │1 1 1 1│ │
+│ └~──────┘ └~──────┘ └~──────┘ └~──────┘ │
+│ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ │
+│ │1 1 0 0│ │1 1 0 1│ │1 1 1 0│ │1 0 0 0│ │
+│ └~──────┘ └~──────┘ └~──────┘ └~──────┘ │
+│ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ │
+│ │1 1 0 1│ │1 1 0 0│ │1 1 1 1│ │1 0 0 1│ │
+│ └~──────┘ └~──────┘ └~──────┘ └~──────┘ │
+│ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ │
+│ │1 1 1 0│ │1 1 1 1│ │1 1 0 0│ │1 0 1 0│ │
+│ └~──────┘ └~──────┘ └~──────┘ └~──────┘ │
+│ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ │
+│ │1 1 1 1│ │1 1 1 0│ │1 1 0 1│ │1 0 1 1│ │
+│ └~──────┘ └~──────┘ └~──────┘ └~──────┘ │
+│ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ │
+│ │0 0 0 0│ │0 0 0 1│ │0 0 1 0│ │0 1 0 0│ │
+│ └~──────┘ └~──────┘ └~──────┘ └~──────┘ │
+│ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ │
+│ │0 0 0 1│ │0 0 0 0│ │0 0 1 1│ │0 1 0 1│ │
+│ └~──────┘ └~──────┘ └~──────┘ └~──────┘ │
+│ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ │
+│ │0 0 1 0│ │0 0 1 1│ │0 0 0 0│ │0 1 1 0│ │
+│ └~──────┘ └~──────┘ └~──────┘ └~──────┘ │
+│ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ │
+│ │0 0 1 1│ │0 0 1 0│ │0 0 0 1│ │0 1 1 1│ │
+│ └~──────┘ └~──────┘ └~──────┘ └~──────┘ │
+│ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ │
+│ │0 1 0 0│ │0 1 0 1│ │0 1 1 0│ │0 0 0 0│ │
+│ └~──────┘ └~──────┘ └~──────┘ └~──────┘ │
+│ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ │
+│ │0 1 0 1│ │0 1 0 0│ │0 1 1 1│ │0 0 0 1│ │
+│ └~──────┘ └~──────┘ └~──────┘ └~──────┘ │
+│ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ │
+│ │0 1 1 0│ │0 1 1 1│ │0 1 0 0│ │0 0 1 0│ │
+│ └~──────┘ └~──────┘ └~──────┘ └~──────┘ │
+│ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ │
+│ │0 1 1 1│ │0 1 1 0│ │0 1 0 1│ │0 0 1 1│ │
+│ └~──────┘ └~──────┘ └~──────┘ └~──────┘ │
+└∊────────────────────────────────────────┘
+</span>
+</div>
+</div>
+<p>The starting state is the index of each subarray. The numbers are the states it is possible to transition to from the index state.</p>
+<div class="cell" data-execution_count="8">
+<pre class="apl cell-code"><code>⎕←st←↓⍉2⊥¨transitions ∘.≠ states</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<span style="white-space:pre; font-family: monospace">┌→────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ ┌→────────┐ ┌→────────┐ ┌→─────────┐ ┌→─────────┐ ┌→─────────┐ ┌→─────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ │
+│ │8 9 10 12│ │9 8 11 13│ │10 11 8 14│ │11 10 9 15│ │12 13 14 8│ │13 12 15 9│ │14 15 12 10│ │15 14 13 11│ │0 1 2 4│ │1 0 3 5│ │2 3 0 6│ │3 2 1 7│ │4 5 6 0│ │5 4 7 1│ │6 7 4 2│ │7 6 5 3│ │
+│ └~────────┘ └~────────┘ └~─────────┘ └~─────────┘ └~─────────┘ └~─────────┘ └~──────────┘ └~──────────┘ └~──────┘ └~──────┘ └~──────┘ └~──────┘ └~──────┘ └~──────┘ └~──────┘ └~──────┘ │
+└∊────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+</span>
+</div>
+</div>
+<p>State 0 can transition to 8, 9, 10 or 12. State 1 can transition to 9, 8, 11, 13. Etc</p>
+<p>Unfortunatly some states are forbidden. Specifically those without the farmer with wolf-goat or goat-cabbage, or wolf-goat-cabbage. We also have to consider an illegal state cant be on the other side of the river as well. These are</p>
+<p>(0 1 1 0) (0 0 1 1) (0 1 1 1) (1 0 0 1) (1 1 0 0) (1 0 0 0) lets remove these so we cant transition to them.</p>
+<div class="cell" data-execution_count="9">
+<pre class="apl cell-code"><code>2⊥¨(0 1 1 0) (0 0 1 1) (0 1 1 1) (1 0 0 1) (1 1 0 0) (1 0 0 0) </code></pre>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<span style="white-space:pre; font-family: monospace">┌→───────────┐
+│6 3 7 9 12 8│
+└~───────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="10">
+<pre class="apl cell-code"><code>⎕←st←st ~¨ ⊂2⊥¨(0 1 1 0) (0 0 1 1) (0 1 1 1) (1 0 0 1) (1 1 0 0) (1 0 0 0)</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<span style="white-space:pre; font-family: monospace">┌→────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ ┌→─┐ ┌→────┐ ┌→───────┐ ┌→───────┐ ┌→────┐ ┌→────┐ ┌→───────┐ ┌→──────────┐ ┌→──────┐ ┌→────┐ ┌→──┐ ┌→──┐ ┌→────┐ ┌→────┐ ┌→──┐ ┌→┐ │
+│ │10│ │11 13│ │10 11 14│ │11 10 15│ │13 14│ │13 15│ │14 15 10│ │15 14 13 11│ │0 1 2 4│ │1 0 5│ │2 0│ │2 1│ │4 5 0│ │5 4 1│ │4 2│ │5│ │
+│ └~─┘ └~────┘ └~───────┘ └~───────┘ └~────┘ └~────┘ └~───────┘ └~──────────┘ └~──────┘ └~────┘ └~──┘ └~──┘ └~────┘ └~────┘ └~──┘ └~┘ │
+└∊────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="11">
+<pre class="apl cell-code"><code> ⍝ if we want to view the actual adjancency matrix we can
+ {⍉(⍳⍴⍵)∘.∊⍵} st</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<span style="white-space:pre; font-family: monospace">┌→──────────────────────────────┐
+↓0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0│
+│0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0│
+│0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 0│
+│0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1│
+│0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0│
+│0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1│
+│0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1│
+│0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1│
+│1 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0│
+│1 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0│
+│1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0│
+│0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0│
+│1 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0│
+│0 1 0 0 1 1 0 0 0 0 0 0 0 0 0 0│
+│0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0│
+│0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0│
+└~──────────────────────────────┘
+</span>
+</div>
+</div>
+</section>
+<section id="state-transition-graph" class="level2">
+<h2 class="anchored" data-anchor-id="state-transition-graph">State Transition Graph</h2>
+<p>The dfns workspace has a path function to find the shortest path in a graph given the graph s tarting node and an end node. With the state table built this is just a function call.</p>
+<div class="cell" data-execution_count="12">
+<pre class="apl cell-code"><code>st path 15 0</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<span style="white-space:pre; font-family: monospace">┌→──────────────────┐
+│15 5 13 1 11 2 10 0│
+└~──────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="13">
+<pre class="apl cell-code"><code>⎕←bank0←⍉2 2 2 2⊤st path 15 0</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<span style="white-space:pre; font-family: monospace">┌→──────┐
+↓1 1 1 1│
+│0 1 0 1│
+│1 1 0 1│
+│0 0 0 1│
+│1 0 1 1│
+│0 0 1 0│
+│1 0 1 0│
+│0 0 0 0│
+└~──────┘
+</span>
+</div>
+</div>
+</section>
+<section id="solution" class="level2">
+<h2 class="anchored" data-anchor-id="solution">Solution</h2>
+<p>Lets try and make this solution more understandable. First lets show both sides of the river</p>
+<div class="cell" data-execution_count="14">
+<pre class="apl cell-code"><code>bank1←~bank0
+
+bank0 bank1</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<span style="white-space:pre; font-family: monospace">┌→────────────────────┐
+│ ┌→──────┐ ┌→──────┐ │
+│ ↓1 1 1 1│ ↓0 0 0 0│ │
+│ │0 1 0 1│ │1 0 1 0│ │
+│ │1 1 0 1│ │0 0 1 0│ │
+│ │0 0 0 1│ │1 1 1 0│ │
+│ │1 0 1 1│ │0 1 0 0│ │
+│ │0 0 1 0│ │1 1 0 1│ │
+│ │1 0 1 0│ │0 1 0 1│ │
+│ │0 0 0 0│ │1 1 1 1│ │
+│ └~──────┘ └~──────┘ │
+└∊────────────────────┘
+</span>
+</div>
+</div>
+<p>Lets translate these back into names</p>
+<div class="cell" data-execution_count="15">
+<pre class="apl cell-code"><code>⎕←items←'farmer' 'cabbage' 'goat' 'wolf'</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<span style="white-space:pre; font-family: monospace">┌→─────────────────────────────────┐
+│ ┌→─────┐ ┌→──────┐ ┌→───┐ ┌→───┐ │
+│ │farmer│ │cabbage│ │goat│ │wolf│ │
+│ └──────┘ └───────┘ └────┘ └────┘ │
+└∊─────────────────────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="17">
+<pre class="apl cell-code"><code>(/∘items⍤1⊢bank0) (/∘items⍤1⊢bank1)</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<span style="white-space:pre; font-family: monospace">┌→────────────────────────────────────────────────────────────────────────────────────────┐
+│ ┌→────────────────────────────────────────┐ ┌→────────────────────────────────────────┐ │
+│ ↓ ┌→─────┐  ┌→──────┐ ┌→───┐    ┌→───┐    │ ↓ ┌→─────┐  ┌→─────┐  ┌→─────┐  ┌→─────┐  │ │
+│ │ │farmer│  │cabbage│ │goat│    │wolf│    │ │ │      │  │      │  │      │  │      │  │ │
+│ │ └──────┘  └───────┘ └────┘    └────┘    │ │ └──────┘  └──────┘  └──────┘  └──────┘  │ │
+│ │ ┌→──────┐ ┌→───┐    ┌→──────┐ ┌→──────┐ │ │ ┌→─────┐  ┌→───┐    ┌→─────┐  ┌→─────┐  │ │
+│ │ │cabbage│ │wolf│    │       │ │       │ │ │ │farmer│  │goat│    │      │  │      │  │ │
+│ │ └───────┘ └────┘    └───────┘ └───────┘ │ │ └──────┘  └────┘    └──────┘  └──────┘  │ │
+│ │ ┌→─────┐  ┌→──────┐ ┌→───┐    ┌→─────┐  │ │ ┌→───┐    ┌→───┐    ┌→───┐    ┌→───┐    │ │
+│ │ │farmer│  │cabbage│ │wolf│    │      │  │ │ │goat│    │    │    │    │    │    │    │ │
+│ │ └──────┘  └───────┘ └────┘    └──────┘  │ │ └────┘    └────┘    └────┘    └────┘    │ │
+│ │ ┌→───┐    ┌→───┐    ┌→───┐    ┌→───┐    │ │ ┌→─────┐  ┌→──────┐ ┌→───┐    ┌→─────┐  │ │
+│ │ │wolf│    │    │    │    │    │    │    │ │ │farmer│  │cabbage│ │goat│    │      │  │ │
+│ │ └────┘    └────┘    └────┘    └────┘    │ │ └──────┘  └───────┘ └────┘    └──────┘  │ │
+│ │ ┌→─────┐  ┌→───┐    ┌→───┐    ┌→─────┐  │ │ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ │ │
+│ │ │farmer│  │goat│    │wolf│    │      │  │ │ │cabbage│ │       │ │       │ │       │ │ │
+│ │ └──────┘  └────┘    └────┘    └──────┘  │ │ └───────┘ └───────┘ └───────┘ └───────┘ │ │
+│ │ ┌→───┐    ┌→───┐    ┌→───┐    ┌→───┐    │ │ ┌→─────┐  ┌→──────┐ ┌→───┐    ┌→─────┐  │ │
+│ │ │goat│    │    │    │    │    │    │    │ │ │farmer│  │cabbage│ │wolf│    │      │  │ │
+│ │ └────┘    └────┘    └────┘    └────┘    │ │ └──────┘  └───────┘ └────┘    └──────┘  │ │
+│ │ ┌→─────┐  ┌→───┐    ┌→─────┐  ┌→─────┐  │ │ ┌→──────┐ ┌→───┐    ┌→──────┐ ┌→──────┐ │ │
+│ │ │farmer│  │goat│    │      │  │      │  │ │ │cabbage│ │wolf│    │       │ │       │ │ │
+│ │ └──────┘  └────┘    └──────┘  └──────┘  │ │ └───────┘ └────┘    └───────┘ └───────┘ │ │
+│ │ ┌→─────┐  ┌→─────┐  ┌→─────┐  ┌→─────┐  │ │ ┌→─────┐  ┌→──────┐ ┌→───┐    ┌→───┐    │ │
+│ │ │      │  │      │  │      │  │      │  │ │ │farmer│  │cabbage│ │goat│    │wolf│    │ │
+│ │ └──────┘  └──────┘  └──────┘  └──────┘  │ │ └──────┘  └───────┘ └────┘    └────┘    │ │
+│ └∊────────────────────────────────────────┘ └∊────────────────────────────────────────┘ │
+└∊────────────────────────────────────────────────────────────────────────────────────────┘
+</span>
+</div>
+</div>
+<p>What the farmer takes on every river crossing.</p>
+<ol type="1">
+<li>goat</li>
+<li>nothing</li>
+<li>cabbage</li>
+<li>goat</li>
+<li>wolf</li>
+<li>nothing</li>
+<li>goat</li>
+</ol>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

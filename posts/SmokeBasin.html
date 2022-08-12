@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Felix Flath">
+<meta name="dcterms.date" content="2022-07-12">
+
+<title>APL Exploration - Smoke Basin</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">APL Exploration</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html">About</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/isaac-flath/apl-exploration"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/isaac-flath/"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Smoke Basin</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">Dyalog</div>
+                <div class="quarto-category">APL</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Felix Flath </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">July 12, 2022</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#smoke-basin" id="toc-smoke-basin" class="nav-link active" data-scroll-target="#smoke-basin">Smoke Basin</a>
+  <ul class="collapse">
+  <li><a href="#part-1" id="toc-part-1" class="nav-link" data-scroll-target="#part-1">Part 1</a></li>
+  <li><a href="#part-2" id="toc-part-2" class="nav-link" data-scroll-target="#part-2">Part 2</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="smoke-basin" class="level1">
+<h1>Smoke Basin</h1>
+<p><a href="https://adventofcode.com/2021/day/9">This is problem 9 from 2021 advent of code.</a> For those unfamiliar with advent of code it is a yearly programming puzzle contest. Each problem consists of two parts.</p>
+<p>In this problem you are given a grid of numbers. This represents a map. Each number corresponds to the height of the ground at that grid point.</p>
+<section id="part-1" class="level2">
+<h2 class="anchored" data-anchor-id="part-1">Part 1</h2>
+<p>Find all the low points in the grid add 1 to the value of each grid point and then sum those numbers. A low point is any point that is lower than any of its cardinal neighbors (up, down, left, right).</p>
+<div class="cell" data-execution_count="26">
+<pre class="apl cell-code"><code>⎕←ex←↑(2 1 9 9 9 4 3 2 1 0) (3 9 8 7 8 9 4 9 2 1) (9 8 5 6 7 8 9 8 9 2) (8 7 6 7 8 9 6 7 8 9) (9 8 9 9 9 6 5 6 7 8)</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="26">
+<span style="white-space:pre; font-family: monospace">┌→──────────────────┐
+↓2 1 9 9 9 4 3 2 1 0│
+│3 9 8 7 8 9 4 9 2 1│
+│9 8 5 6 7 8 9 8 9 2│
+│8 7 6 7 8 9 6 7 8 9│
+│9 8 9 9 9 6 5 6 7 8│
+└~──────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="79">
+<pre class="apl cell-code"><code>⎕←b←¯1 ⊖ ¯1 ⌽(7 12 ↑ ex)+10×0=(⍳⍴ex)∊⍨⍳7 12 ⍝ add borders to the map</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="79">
+<span style="white-space:pre; font-family: monospace">┌→──────────────────────────────────┐
+↓10 10 10 10 10 10 10 10 10 10 10 10│
+│10  2  1  9  9  9  4  3  2  1  0 10│
+│10  3  9  8  7  8  9  4  9  2  1 10│
+│10  9  8  5  6  7  8  9  8  9  2 10│
+│10  8  7  6  7  8  9  6  7  8  9 10│
+│10  9  8  9  9  9  6  5  6  7  8 10│
+│10 10 10 10 10 10 10 10 10 10 10 10│
+└~──────────────────────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="96">
+<pre class="apl cell-code"><code>⍝ take the original bordered map and rotate it up down left right
+{(1 ¯1 ⊖¨⍵),(1 ¯1 ⌽¨⍵)} 2⍴⊂b</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="96">
+<span style="white-space:pre; font-family: monospace">┌→────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ ┌→──────────────────────────────────┐ ┌→──────────────────────────────────┐ ┌→──────────────────────────────────┐ ┌→──────────────────────────────────┐ │
+│ ↓10  2  1  9  9  9  4  3  2  1  0 10│ ↓10 10 10 10 10 10 10 10 10 10 10 10│ ↓10 10 10 10 10 10 10 10 10 10 10 10│ ↓10 10 10 10 10 10 10 10 10 10 10 10│ │
+│ │10  3  9  8  7  8  9  4  9  2  1 10│ │10 10 10 10 10 10 10 10 10 10 10 10│ │ 2  1  9  9  9  4  3  2  1  0 10 10│ │10 10  2  1  9  9  9  4  3  2  1  0│ │
+│ │10  9  8  5  6  7  8  9  8  9  2 10│ │10  2  1  9  9  9  4  3  2  1  0 10│ │ 3  9  8  7  8  9  4  9  2  1 10 10│ │10 10  3  9  8  7  8  9  4  9  2  1│ │
+│ │10  8  7  6  7  8  9  6  7  8  9 10│ │10  3  9  8  7  8  9  4  9  2  1 10│ │ 9  8  5  6  7  8  9  8  9  2 10 10│ │10 10  9  8  5  6  7  8  9  8  9  2│ │
+│ │10  9  8  9  9  9  6  5  6  7  8 10│ │10  9  8  5  6  7  8  9  8  9  2 10│ │ 8  7  6  7  8  9  6  7  8  9 10 10│ │10 10  8  7  6  7  8  9  6  7  8  9│ │
+│ │10 10 10 10 10 10 10 10 10 10 10 10│ │10  8  7  6  7  8  9  6  7  8  9 10│ │ 9  8  9  9  9  6  5  6  7  8 10 10│ │10 10  9  8  9  9  9  6  5  6  7  8│ │
+│ │10 10 10 10 10 10 10 10 10 10 10 10│ │10  9  8  9  9  9  6  5  6  7  8 10│ │10 10 10 10 10 10 10 10 10 10 10 10│ │10 10 10 10 10 10 10 10 10 10 10 10│ │
+│ └~──────────────────────────────────┘ └~──────────────────────────────────┘ └~──────────────────────────────────┘ └~──────────────────────────────────┘ │
+└∊────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="97">
+<pre class="apl cell-code"><code>⍝ compare all the rotations with the original
+(⊂b)&lt;{(1 ¯1 ⊖¨⍵),(1 ¯1 ⌽¨⍵)} 2⍴⊂b</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="97">
+<span style="white-space:pre; font-family: monospace">┌→────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ ┌→──────────────────────┐ ┌→──────────────────────┐ ┌→──────────────────────┐ ┌→──────────────────────┐ │
+│ ↓0 0 0 0 0 0 0 0 0 0 0 0│ ↓0 0 0 0 0 0 0 0 0 0 0 0│ ↓0 0 0 0 0 0 0 0 0 0 0 0│ ↓0 0 0 0 0 0 0 0 0 0 0 0│ │
+│ │0 1 1 0 0 0 1 1 1 1 1 0│ │0 1 1 1 1 1 1 1 1 1 1 0│ │0 0 1 0 0 0 0 0 0 0 1 0│ │0 1 1 0 0 0 1 1 1 1 1 0│ │
+│ │0 1 0 0 0 0 0 1 0 1 1 0│ │0 0 0 1 1 1 0 0 0 0 0 0│ │0 1 0 0 1 1 0 1 0 0 1 0│ │0 1 0 1 1 0 0 1 0 1 1 0│ │
+│ │0 0 0 1 1 1 1 0 0 0 1 0│ │0 0 1 1 1 1 1 0 1 0 0 0│ │0 0 0 1 1 1 1 0 1 0 1 0│ │0 1 1 1 0 0 0 0 1 0 1 0│ │
+│ │0 1 1 1 1 1 0 0 0 0 0 0│ │0 1 1 0 0 0 0 1 1 1 0 0│ │0 0 0 1 1 1 0 1 1 1 1 0│ │0 1 1 1 0 0 0 1 0 0 0 0│ │
+│ │0 1 1 1 1 1 1 1 1 1 1 0│ │0 0 0 0 0 0 1 1 1 1 1 0│ │0 0 1 0 0 0 0 1 1 1 1 0│ │0 1 1 0 0 0 1 1 0 0 0 0│ │
+│ │0 0 0 0 0 0 0 0 0 0 0 0│ │0 0 0 0 0 0 0 0 0 0 0 0│ │0 0 0 0 0 0 0 0 0 0 0 0│ │0 0 0 0 0 0 0 0 0 0 0 0│ │
+│ └~──────────────────────┘ └~──────────────────────┘ └~──────────────────────┘ └~──────────────────────┘ │
+└∊────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="101">
+<pre class="apl cell-code"><code>⍝ sum up the comparison. Every 4 represents a low point. 
++/(⊂b)&lt;{(1 ¯1 ⊖¨⍵),(1 ¯1 ⌽¨⍵)} 2⍴⊂b</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="101">
+<span style="white-space:pre; font-family: monospace">┌───────────────────────────┐
+│ ┌→──────────────────────┐ │
+│ ↓0 0 0 0 0 0 0 0 0 0 0 0│ │
+│ │0 3 4 1 1 1 3 3 3 3 4 0│ │
+│ │0 3 0 2 3 2 0 3 0 2 3 0│ │
+│ │0 1 2 4 3 3 3 0 3 0 3 0│ │
+│ │0 3 3 3 2 2 0 3 2 2 1 0│ │
+│ │0 2 3 1 1 1 3 4 3 3 3 0│ │
+│ │0 0 0 0 0 0 0 0 0 0 0 0│ │
+│ └~──────────────────────┘ │
+└∊──────────────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="103">
+<pre class="apl cell-code"><code>⍝ identify the low points
+4=+/(⊂b)&lt;{(1 ¯1 ⊖¨⍵),(1 ¯1 ⌽¨⍵)} 2⍴⊂b</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="103">
+<span style="white-space:pre; font-family: monospace">┌───────────────────────────┐
+│ ┌→──────────────────────┐ │
+│ ↓0 0 0 0 0 0 0 0 0 0 0 0│ │
+│ │0 0 1 0 0 0 0 0 0 0 1 0│ │
+│ │0 0 0 0 0 0 0 0 0 0 0 0│ │
+│ │0 0 0 1 0 0 0 0 0 0 0 0│ │
+│ │0 0 0 0 0 0 0 0 0 0 0 0│ │
+│ │0 0 0 0 0 0 0 1 0 0 0 0│ │
+│ │0 0 0 0 0 0 0 0 0 0 0 0│ │
+│ └~──────────────────────┘ │
+└∊──────────────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="110">
+<pre class="apl cell-code"><code>⍝ mask for the low points
+∊4=+/(⊂b)&lt;{(1 ¯1 ⊖¨⍵),(1 ¯1 ⌽¨⍵)} 2⍴⊂b</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="110">
+<span style="white-space:pre; font-family: monospace">┌→──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0│
+└~──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="112">
+<pre class="apl cell-code"><code>⍝ use the mask to pull the values out of the map
+(,b)/⍨∊4=+/(⊂b)&lt;{(1 ¯1 ⊖¨⍵),(1 ¯1 ⌽¨⍵)} 2⍴⊂b</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="112">
+<span style="white-space:pre; font-family: monospace">┌→──────┐
+│1 0 5 5│
+└~──────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="114">
+<pre class="apl cell-code"><code>⍝ add one to the values as per the problem statement
+1+(,b)/⍨∊4=+/(⊂b)&lt;{(1 ¯1 ⊖¨⍵),(1 ¯1 ⌽¨⍵)} 2⍴⊂b</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="114">
+<span style="white-space:pre; font-family: monospace">┌→──────┐
+│2 1 6 6│
+└~──────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="115">
+<pre class="apl cell-code"><code>⍝ sum the risk values
++/1+(,b)/⍨∊4=+/(⊂b)&lt;{(1 ¯1 ⊖¨⍵),(1 ¯1 ⌽¨⍵)} 2⍴⊂b</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="115">
+<span style="white-space:pre; font-family: monospace">  
+15
+  
+</span>
+</div>
+</div>
+</section>
+<section id="part-2" class="level2">
+<h2 class="anchored" data-anchor-id="part-2">Part 2</h2>
+<p>Find the 3 largest basins and multiply their sizes together. A basin is a set of points that all flow down to the same low point. Locations of height 9 are borders and dont count as basins.</p>
+<div class="cell" data-execution_count="140">
+<pre class="apl cell-code"><code>⎕←mask←9≠¯1 ⊖ ¯1 ⌽(7 12 ↑ ex)+9×0=(⍳⍴ex)∊⍨⍳7 12 ⍝ everything not a wall</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="140">
+<span style="white-space:pre; font-family: monospace">┌→──────────────────────┐
+↓0 0 0 0 0 0 0 0 0 0 0 0│
+│0 1 1 0 0 0 1 1 1 1 1 0│
+│0 1 0 1 1 1 0 1 0 1 1 0│
+│0 0 1 1 1 1 1 0 1 0 1 0│
+│0 1 1 1 1 1 0 1 1 1 0 0│
+│0 0 1 0 0 0 1 1 1 1 1 0│
+│0 0 0 0 0 0 0 0 0 0 0 0│
+└~──────────────────────┘
+</span>
+</div>
+</div>
+<p>From part 1 we already know the low points</p>
+<div class="cell" data-execution_count="120">
+<pre class="apl cell-code"><code>⊃4=+/(⊂b)&lt;{(1 ¯1 ⊖¨⍵),(1 ¯1 ⌽¨⍵)} 2⍴⊂b</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="120">
+<span style="white-space:pre; font-family: monospace">┌→──────────────────────┐
+↓0 0 0 0 0 0 0 0 0 0 0 0│
+│0 0 1 0 0 0 0 0 0 0 1 0│
+│0 0 0 0 0 0 0 0 0 0 0 0│
+│0 0 0 1 0 0 0 0 0 0 0 0│
+│0 0 0 0 0 0 0 0 0 0 0 0│
+│0 0 0 0 0 0 0 1 0 0 0 0│
+│0 0 0 0 0 0 0 0 0 0 0 0│
+└~──────────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="127">
+<pre class="apl cell-code"><code>⍝ set each low point id to its index location
+7 12⍴{⍵∧⍳⍴⍵}∊⊃4=+/(⊂b)&lt;{(1 ¯1⊖¨⍵),(1 ¯1⌽¨⍵)}2⍴⊂b</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="127">
+<span style="white-space:pre; font-family: monospace">┌→──────────────────────────┐
+↓0 0  0  0 0 0 0  0 0 0  0 0│
+│0 0 15  0 0 0 0  0 0 0 23 0│
+│0 0  0  0 0 0 0  0 0 0  0 0│
+│0 0  0 40 0 0 0  0 0 0  0 0│
+│0 0  0  0 0 0 0  0 0 0  0 0│
+│0 0  0  0 0 0 0 68 0 0  0 0│
+│0 0  0  0 0 0 0  0 0 0  0 0│
+└~──────────────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="132">
+<pre class="apl cell-code"><code>⍝ apply rotations 
+{(1↑⍵),(1 ¯1 ⊖¨⍵),(1 ¯1 ⌽¨⍵)} 2⍴⊂7 12⍴{⍵∧⍳⍴⍵}∊⊃4=+/(⊂b)&lt;{(1 ¯1⊖¨⍵),(1 ¯1⌽¨⍵)}2⍴⊂b</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="132">
+<span style="white-space:pre; font-family: monospace">┌→──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ ┌→──────────────────────────┐ ┌→──────────────────────────┐ ┌→──────────────────────────┐ ┌→──────────────────────────┐ ┌→──────────────────────────┐ │
+│ ↓0 0  0  0 0 0 0  0 0 0  0 0│ ↓0 0 15  0 0 0 0  0 0 0 23 0│ ↓0 0  0  0 0 0 0  0 0 0  0 0│ ↓0  0  0 0 0 0  0 0 0  0 0 0│ ↓0 0 0  0  0 0 0 0  0 0 0  0│ │
+│ │0 0 15  0 0 0 0  0 0 0 23 0│ │0 0  0  0 0 0 0  0 0 0  0 0│ │0 0  0  0 0 0 0  0 0 0  0 0│ │0 15  0 0 0 0  0 0 0 23 0 0│ │0 0 0 15  0 0 0 0  0 0 0 23│ │
+│ │0 0  0  0 0 0 0  0 0 0  0 0│ │0 0  0 40 0 0 0  0 0 0  0 0│ │0 0 15  0 0 0 0  0 0 0 23 0│ │0  0  0 0 0 0  0 0 0  0 0 0│ │0 0 0  0  0 0 0 0  0 0 0  0│ │
+│ │0 0  0 40 0 0 0  0 0 0  0 0│ │0 0  0  0 0 0 0  0 0 0  0 0│ │0 0  0  0 0 0 0  0 0 0  0 0│ │0  0 40 0 0 0  0 0 0  0 0 0│ │0 0 0  0 40 0 0 0  0 0 0  0│ │
+│ │0 0  0  0 0 0 0  0 0 0  0 0│ │0 0  0  0 0 0 0 68 0 0  0 0│ │0 0  0 40 0 0 0  0 0 0  0 0│ │0  0  0 0 0 0  0 0 0  0 0 0│ │0 0 0  0  0 0 0 0  0 0 0  0│ │
+│ │0 0  0  0 0 0 0 68 0 0  0 0│ │0 0  0  0 0 0 0  0 0 0  0 0│ │0 0  0  0 0 0 0  0 0 0  0 0│ │0  0  0 0 0 0 68 0 0  0 0 0│ │0 0 0  0  0 0 0 0 68 0 0  0│ │
+│ │0 0  0  0 0 0 0  0 0 0  0 0│ │0 0  0  0 0 0 0  0 0 0  0 0│ │0 0  0  0 0 0 0 68 0 0  0 0│ │0  0  0 0 0 0  0 0 0  0 0 0│ │0 0 0  0  0 0 0 0  0 0 0  0│ │
+│ └~──────────────────────────┘ └~──────────────────────────┘ └~──────────────────────────┘ └~──────────────────────────┘ └~──────────────────────────┘ │
+└∊──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="158">
+<pre class="apl cell-code"><code>⍝ combine up the rotations. low point ids have spread to neighbors
+⊃∨/{(1↑⍵),(1 ¯1 ⊖¨⍵),(1 ¯1 ⌽¨⍵)} 2⍴⊂7 12⍴{⍵∧⍳⍴⍵}∊⊃4=+/(⊂b)&lt;{(1 ¯1⊖¨⍵),(1 ¯1⌽¨⍵)}2⍴⊂b</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="158">
+<span style="white-space:pre; font-family: monospace">┌→────────────────────────────────┐
+↓0  0 15  0  0 0  0  0  0  0 23  0│
+│0 15 15 15  0 0  0  0  0 23 23 23│
+│0  0 15 40  0 0  0  0  0  0 23  0│
+│0  0 40 40 40 0  0  0  0  0  0  0│
+│0  0  0 40  0 0  0 68  0  0  0  0│
+│0  0  0  0  0 0 68 68 68  0  0  0│
+│0  0  0  0  0 0  0 68  0  0  0  0│
+└~────────────────────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="159">
+<pre class="apl cell-code"><code>⍝ apply the border mask. this prevents the low points from corrupting any basin except their own
+mask^⊃∨/{(1↑⍵),(1 ¯1 ⊖¨⍵),(1 ¯1 ⌽¨⍵)} 2⍴⊂7 12⍴{⍵∧⍳⍴⍵}∊⊃4=+/(⊂b)&lt;{(1 ¯1⊖¨⍵),(1 ¯1⌽¨⍵)}2⍴⊂b</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="159">
+<span style="white-space:pre; font-family: monospace">┌→───────────────────────────────┐
+↓0  0  0  0  0 0  0  0  0  0  0 0│
+│0 15 15  0  0 0  0  0  0 23 23 0│
+│0  0  0 40  0 0  0  0  0  0 23 0│
+│0  0 40 40 40 0  0  0  0  0  0 0│
+│0  0  0 40  0 0  0 68  0  0  0 0│
+│0  0  0  0  0 0 68 68 68  0  0 0│
+│0  0  0  0  0 0  0  0  0  0  0 0│
+└~───────────────────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="160">
+<pre class="apl cell-code"><code>⍝ repeat until the basins have been fully filled by the low point id
+({mask^⊃∨/{(1↑⍵),(1 ¯1 ⊖¨⍵),(1 ¯1 ⌽¨⍵)} 2⍴⊂⍵}⍣50)7 12⍴{⍵∧⍳⍴⍵}∊⊃4=+/(⊂b)&lt;{(1 ¯1⊖¨⍵),(1 ¯1⌽¨⍵)}2⍴⊂b</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="160">
+<span style="white-space:pre; font-family: monospace">┌→────────────────────────────────┐
+↓0  0  0  0  0  0  0  0  0  0  0 0│
+│0 15 15  0  0  0 23 23 23 23 23 0│
+│0 15  0 40 40 40  0 23  0 23 23 0│
+│0  0 40 40 40 40 40  0 68  0 23 0│
+│0 40 40 40 40 40  0 68 68 68  0 0│
+│0  0 40  0  0  0 68 68 68 68 68 0│
+│0  0  0  0  0  0  0  0  0  0  0 0│
+└~────────────────────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="166">
+<pre class="apl cell-code"><code>⍝ pull out the unique ids
+∪∊({mask^⊃∨/{(1↑⍵),(1 ¯1 ⊖¨⍵),(1 ¯1 ⌽¨⍵)} 2⍴⊂⍵}⍣50)7 12⍴{⍵∧⍳⍴⍵}∊⊃4=+/(⊂b)&lt;{(1 ¯1⊖¨⍵),(1 ¯1⌽¨⍵)}2⍴⊂b</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="166">
+<span style="white-space:pre; font-family: monospace">┌→────────────┐
+│0 15 23 40 68│
+└~────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="169">
+<pre class="apl cell-code"><code>⍝ each row is an indication of where that id is
+{⍵∘.=⍨1↓∪⍵}∊({mask^⊃∨/{(1↑⍵),(1 ¯1 ⊖¨⍵),(1 ¯1 ⌽¨⍵)} 2⍴⊂⍵}⍣50)7 12⍴{⍵∧⍳⍴⍵}∊⊃4=+/(⊂b)&lt;{(1 ¯1⊖¨⍵),(1 ¯1⌽¨⍵)}2⍴⊂b</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="169">
+<span style="white-space:pre; font-family: monospace">┌→──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+↓0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0│
+│0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0│
+│0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0│
+│0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0│
+└~──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="174">
+<pre class="apl cell-code"><code>⍝ sum up the size of each basin and sort descending
+{⍵[⍒⍵]}+/{⍵∘.=⍨1↓∪⍵}∊({mask^⊃∨/{(1↑⍵),(1 ¯1 ⊖¨⍵),(1 ¯1 ⌽¨⍵)} 2⍴⊂⍵}⍣50)7 12⍴{⍵∧⍳⍴⍵}∊⊃4=+/(⊂b)&lt;{(1 ¯1⊖¨⍵),(1 ¯1⌽¨⍵)}2⍴⊂b</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="174">
+<span style="white-space:pre; font-family: monospace">┌→───────┐
+│14 9 9 3│
+└~───────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="176">
+<pre class="apl cell-code"><code>⍝ take the largest 3 and multiply the sizes
+×/3↑{⍵[⍒⍵]}+/{⍵∘.=⍨1↓∪⍵}∊({mask^⊃∨/{(1↑⍵),(1 ¯1 ⊖¨⍵),(1 ¯1 ⌽¨⍵)} 2⍴⊂⍵}⍣50)7 12⍴{⍵∧⍳⍴⍵}∊⊃4=+/(⊂b)&lt;{(1 ¯1⊖¨⍵),(1 ¯1⌽¨⍵)}2⍴⊂b</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="176">
+<span style="white-space:pre; font-family: monospace">    
+1134
+    
+</span>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

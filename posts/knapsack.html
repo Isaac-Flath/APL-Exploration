@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Felix Flath">
+<meta name="dcterms.date" content="2022-08-06">
+
+<title>APL Exploration - Knapsack</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">APL Exploration</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html">About</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/isaac-flath/apl-exploration"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/isaac-flath/"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Knapsack</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">Dyalog</div>
+                <div class="quarto-category">APL</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Felix Flath </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">August 6, 2022</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#intro" id="toc-intro" class="nav-link active" data-scroll-target="#intro">Intro</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#branch" id="toc-branch" class="nav-link" data-scroll-target="#branch">Branch</a></li>
+  <li><a href="#bound" id="toc-bound" class="nav-link" data-scroll-target="#bound">Bound</a>
+  <ul class="collapse">
+  <li><a href="#helpers" id="toc-helpers" class="nav-link" data-scroll-target="#helpers">Helpers</a></li>
+  <li><a href="#greedy" id="toc-greedy" class="nav-link" data-scroll-target="#greedy">Greedy</a></li>
+  <li><a href="#relaxationoptimistic-solution" id="toc-relaxationoptimistic-solution" class="nav-link" data-scroll-target="#relaxationoptimistic-solution">Relaxation/Optimistic solution</a></li>
+  <li><a href="#bound-1" id="toc-bound-1" class="nav-link" data-scroll-target="#bound-1">Bound</a></li>
+  </ul></li>
+  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution">Solution</a>
+  <ul class="collapse">
+  <li><a href="#bigger" id="toc-bigger" class="nav-link" data-scroll-target="#bigger">Bigger?</a></li>
+  <li><a href="#bigger-1" id="toc-bigger-1" class="nav-link" data-scroll-target="#bigger-1">Bigger??</a></li>
+  <li><a href="#bigger-2" id="toc-bigger-2" class="nav-link" data-scroll-target="#bigger-2">Bigger???</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="intro" class="level1">
+<h1>Intro</h1>
+<p>This is another classic computer science problem. You are given a knapsack and the maximum weight it can carry. You also have a list of items. Each item has a value and a weight associated with it. Which items do you take to maximize the value you can fit into the knapsack?</p>
+<p>Why is this hard? The possible solution space is big and grows fast. If you want to check every combination of items and then take the max you have <span class="math inline">\(2^i\)</span> combinations to check. This is unworkable for even small numbers of items.</p>
+<p>The approach here is branch and bound with relaxation. See <a href="https://www.coursera.org/learn/discrete-optimization">Discrete Optimization</a> for a detailed explanation. The idea is to organize the solution space into a tree and ignore branches that we know wont generate good solutions.</p>
+</section>
+<section id="data" class="level1">
+<h1>Data</h1>
+<p>Lets start with a small knapsack. 4 items, maximum capacity 11. This is easy to do even by hand but once we scale it up not so much.</p>
+<p>Item one is \$8 and weighs 4 pounds, item 2 is \$10 and weighs 5 pounds.</p>
+<div class="cell" data-execution_count="156">
+<pre class="apl cell-code"><code>⎕←item_count←4 
+⎕←max_weight←11
+⎕←items←(8 4) (10 5) (15 8) (4 3)</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="156">
+<span style="white-space:pre; font-family: monospace"> 
+4
+ 
+</span>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="156">
+<span style="white-space:pre; font-family: monospace">  
+11
+  
+</span>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="156">
+<span style="white-space:pre; font-family: monospace">┌→──────────────────────────┐
+│ ┌→──┐ ┌→───┐ ┌→───┐ ┌→──┐ │
+│ │8 4│ │10 5│ │15 8│ │4 3│ │
+│ └~──┘ └~───┘ └~───┘ └~──┘ │
+└∊──────────────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="157">
+<pre class="apl cell-code"><code>⎕←ks4←item_count max_weight items</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="157">
+<span style="white-space:pre; font-family: monospace">┌→───────────────────────────────────┐
+│      ┌→──────────────────────────┐ │
+│ 4 11 │ ┌→──┐ ┌→───┐ ┌→───┐ ┌→──┐ │ │
+│      │ │8 4│ │10 5│ │15 8│ │4 3│ │ │
+│      │ └~──┘ └~───┘ └~───┘ └~──┘ │ │
+│      └∊──────────────────────────┘ │
+└∊───────────────────────────────────┘
+</span>
+</div>
+</div>
+<p>A solution will be a list of 1s or 0s in the same order as our item list. Each 1 or 0 will represent a decision to either take or leave that particular item.</p>
+<p>1 1 0 0 means we take items 1 and 2 and leave items 3 and 4. The value of the knapsack then is the value of item 1 plus the value of item 2 provided they both fit in the knapsack. If the weight exceeds the capacity of the knapsack the value is 0.</p>
+</section>
+<section id="branch" class="level1">
+<h1>Branch</h1>
+<p>To organize the solution space into a tree is very simple. You break it into decisions. Do I take item 1 yes or no. Then for each of those decisions you ask do I take item 2 yes or no.</p>
+<div class="cell" data-execution_count="158">
+<pre class="apl cell-code"><code>⎕←⍬
+⎕←⍪0 1
+⎕←⍪(0 0) (0 1) (1 0) (1 1)</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="158">
+<span style="white-space:pre; font-family: monospace">┌⊖┐
+│0│
+└~┘
+</span>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="158">
+<span style="white-space:pre; font-family: monospace">┌→┐
+↓0│
+│1│
+└~┘
+</span>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="158">
+<span style="white-space:pre; font-family: monospace">┌→──────┐
+↓ ┌→──┐ │
+│ │0 0│ │
+│ └~──┘ │
+│ ┌→──┐ │
+│ │0 1│ │
+│ └~──┘ │
+│ ┌→──┐ │
+│ │1 0│ │
+│ └~──┘ │
+│ ┌→──┐ │
+│ │1 1│ │
+│ └~──┘ │
+└∊──────┘
+</span>
+</div>
+</div>
+<p>We take a partial solution and transform it into two slightly more complete solutions by making two copies and appending a 1 onto the first copy and 0 onto the other.</p>
+<div class="cell" data-execution_count="180">
+<pre class="apl cell-code"><code>branch←{⍪,((,/,∘0),(,/,∘1))⍤1⊢⍵}</code></pre>
+</div>
+<div class="cell" data-execution_count="179">
+<pre class="apl cell-code"><code>⎕←(branch ⍬) (branch⍣2⊢⍬) (branch⍣3⊢⍬)</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="179">
+<span style="white-space:pre; font-family: monospace">┌→──────────────────────────┐
+│ ┌→┐ ┌→──────┐ ┌→────────┐ │
+│ ↓0│ ↓ ┌→──┐ │ ↓ ┌→────┐ │ │
+│ │1│ │ │0 0│ │ │ │0 0 0│ │ │
+│ └~┘ │ └~──┘ │ │ └~────┘ │ │
+│     │ ┌→──┐ │ │ ┌→────┐ │ │
+│     │ │0 1│ │ │ │0 0 1│ │ │
+│     │ └~──┘ │ │ └~────┘ │ │
+│     │ ┌→──┐ │ │ ┌→────┐ │ │
+│     │ │1 0│ │ │ │0 1 0│ │ │
+│     │ └~──┘ │ │ └~────┘ │ │
+│     │ ┌→──┐ │ │ ┌→────┐ │ │
+│     │ │1 1│ │ │ │0 1 1│ │ │
+│     │ └~──┘ │ │ └~────┘ │ │
+│     └∊──────┘ │ ┌→────┐ │ │
+│               │ │1 0 0│ │ │
+│               │ └~────┘ │ │
+│               │ ┌→────┐ │ │
+│               │ │1 0 1│ │ │
+│               │ └~────┘ │ │
+│               │ ┌→────┐ │ │
+│               │ │1 1 0│ │ │
+│               │ └~────┘ │ │
+│               │ ┌→────┐ │ │
+│               │ │1 1 1│ │ │
+│               │ └~────┘ │ │
+│               └∊────────┘ │
+└∊──────────────────────────┘
+</span>
+</div>
+</div>
+</section>
+<section id="bound" class="level1">
+<h1>Bound</h1>
+<p>To prune our tree we need two things. A valid solution we can compare the value to. And a way of generating a value we think is good predictor for how well a branch will perform. Without evaluating the branch we need to figure out how well it will do. And this is where relaxation comes in. To guess how well this will perform we relax the constraints a little to create a much easier problem. We will come up with solutions that are not in the orginal solution space but if we are careful that is ok.</p>
+<p>Getting a start solution is easy. We sort the values by item density and take items until the knapsack is full. If an item does not fit we skip it and check the next item.</p>
+<section id="helpers" class="level2">
+<h2 class="anchored" data-anchor-id="helpers">Helpers</h2>
+<p>Lets start off with some helper functions. weight and value both take a knapsack and a partial or full solution. Returns the weight or the value of the given solution</p>
+<div class="cell" data-execution_count="160">
+<pre class="apl cell-code"><code>]dinput
+weight←{
+    c mw is←⍺           ⍝ split the right argument into components count, max weight, and items
+    vs ws←↓⍉↑is         ⍝ extract a list of values and a list of weights from the item lis
+    psolution←c↑⍵       ⍝ pad the partial solution with 0s to the lenght of the item list
+    +/ws∧psolution      ⍝ use the partial solution as a mask to select the weights of the items we take and sum them
+}</code></pre>
+</div>
+<div class="cell" data-execution_count="161">
+<pre class="apl cell-code"><code>]dinput
+value←{
+    c mw is←⍺
+    mw≤⍺ weight ⍵ :0 ⍝ if the weight is more than the capacity the value is 0
+    vs ws←↓⍉↑is
+    psolution←c↑⍵
+    +/vs∧psolution
+}</code></pre>
+</div>
+</section>
+<section id="greedy" class="level2">
+<h2 class="anchored" data-anchor-id="greedy">Greedy</h2>
+<p>Looks at the items in order. If it fits in the knapsack we take it if not we leave it. Then we look at the next item until we run out of items or we fill the knapsack.</p>
+<div class="cell" data-execution_count="162">
+<pre class="apl cell-code"><code>]dinput
+greedy←{
+ c mw is←⍺
+ cw←⍺ weight ⍵
+ c ≤ ⍴⍵: ⍺ value ⍵ ⍝ stop if we have looked at all items
+ mw=cw: ⍺ value ⍵  ⍝ stop if knapsack is full
+ mw&lt;cw: 0          ⍝ stop if knapsack is overfull
+ v w←⊃is↓⍨⍴⍵       ⍝ drop items that have already been considered
+ ⍺∇⍵,w≤mw-cw       ⍝ recurse with an additional item considered
+}</code></pre>
+</div>
+<div class="cell" data-execution_count="163">
+<pre class="apl cell-code"><code>ks4 greedy ⍬</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="163">
+<span style="white-space:pre; font-family: monospace">  
+18
+  
+</span>
+</div>
+</div>
+</section>
+<section id="relaxationoptimistic-solution" class="level2">
+<h2 class="anchored" data-anchor-id="relaxationoptimistic-solution">Relaxation/Optimistic solution</h2>
+<p>For the optimistic solution we sort by value density take items until knapsack is full. And then break the next item into pieces and shove the broken bits into any remaining space.</p>
+<div class="cell" data-execution_count="164">
+<pre class="apl cell-code"><code>]dinput
+optimistic←{
+     c mw is←⍺
+
+     vs ws←↓⍉↑is
+
+     cv ← ⍺ value ⍵
+     cw ← ⍺ weight ⍵
+
+     vs ws←↓⍉↑is↓⍨⍴⍵                     ⍝ drop the items already decided
+     cw&gt;mw:0                             ⍝ if the weight already exceeds max capacity return 0
+     d←(⍴⍵)↓÷⌿⍤1⊢↑is                     ⍝ density
+     cv++/d×ws⌊0⌈¯1↓(mw-cw),(mw-cw)-+\ws ⍝ current value plus optimistic guess for remainder
+
+ }</code></pre>
+</div>
+<div class="cell" data-execution_count="165">
+<pre class="apl cell-code"><code>ks4 optimistic ⍬</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="165">
+<span style="white-space:pre; font-family: monospace">     
+21.75
+     
+</span>
+</div>
+</div>
+</section>
+<section id="bound-1" class="level2">
+<h2 class="anchored" data-anchor-id="bound-1">Bound</h2>
+<p>Given the best solution so far, a problem config, and the list of branches we check each branches and ask what is the optimistic solution. Remember this is not a feasible solution but its better than any possible real solution. If the optimistic solution is not as good as our current best we dont need to explore the branch any further and we discard it.</p>
+<div class="cell" data-execution_count="166">
+<pre class="apl cell-code"><code>]dinput
+bound←{
+     best ks←⍺
+     ⍵⌿⍨best≤ks∘optimistic∘⊃⍤1⊢⍵    ⍝ filter branches where the best solution is less than the optimistic solution 
+ }</code></pre>
+</div>
+</section>
+</section>
+<section id="solution" class="level1">
+<h1>Solution</h1>
+<p>Now that we have all the pieces we just have to put them together and run them a bunch.</p>
+<div class="cell" data-execution_count="167">
+<pre class="apl cell-code"><code>⎕←b← ks4 greedy ⍬</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="167">
+<span style="white-space:pre; font-family: monospace">  
+18
+  
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="168">
+<pre class="apl cell-code"><code>]dinput
+ks_solve←{
+     c mw is←⍵
+     g←⍵ greedy ⍬
+     s←g ⍵∘bound∘branch⍣c⊢⍬
+     ⊃(,s)⌷⍨⊂⍒⍵∘value∘⊃⍤1⊢s
+}</code></pre>
+</div>
+<div class="cell" data-execution_count="169">
+<pre class="apl cell-code"><code>ks_solve ks4</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="169">
+<span style="white-space:pre; font-family: monospace">┌→──────┐
+│1 1 0 0│
+└~──────┘
+</span>
+</div>
+</div>
+<section id="bigger" class="level2">
+<h2 class="anchored" data-anchor-id="bigger">Bigger?</h2>
+<p>Does it work on a problem we cant solve by hand?</p>
+<p>19 items</p>
+<div class="cell" data-execution_count="170">
+<pre class="apl cell-code"><code>]dinput
+read_ks←{
+     temp←↓⍎⍤1⊢↑⊃⎕NGET ⍵ 1
+     count max_weight←⊃temp
+     items←1↓temp
+     items←items⌷⍨⊂⍒÷⌿⍤1⊢↑items
+     count max_weight items
+ }</code></pre>
+</div>
+<div class="cell" data-execution_count="171">
+<pre class="apl cell-code"><code>⎕←ks19←read_ks 'ks_19_0'</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="171">
+<span style="white-space:pre; font-family: monospace">┌→─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│          ┌→────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ │
+│ 19 31181 │ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→─────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→───────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→───────┐ ┌→───────┐ ┌→───────┐ ┌→───────┐ │ │
+│          │ │16553 40006│ │13504 32708│ │3878 9656│ │4136 10372│ │2945 7390│ │2890 7280│ │1945 4990│ │1865 4830│ │1513 3926│ │1833 4766│ │1022 2744│ │962 2624│ │1107 3114│ │1101 3102│ │1060 3020│ │805 2310│ │689 2078│ │667 2034│ │321 1142│ │ │
+│          │ └~──────────┘ └~──────────┘ └~────────┘ └~─────────┘ └~────────┘ └~────────┘ └~────────┘ └~────────┘ └~────────┘ └~────────┘ └~────────┘ └~───────┘ └~────────┘ └~────────┘ └~────────┘ └~───────┘ └~───────┘ └~───────┘ └~───────┘ │ │
+│          └∊────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ │
+└∊─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="172">
+<pre class="apl cell-code"><code>⎕←ks_solve ks19
+⎕←weight∘ks_solve⍨ks19
+⎕←value∘ks_solve⍨ks19</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="172">
+<span style="white-space:pre; font-family: monospace">┌→────────────────────────────────────┐
+│0 0 1 0 1 1 0 0 1 0 1 0 0 0 0 0 0 0 0│
+└~────────────────────────────────────┘
+</span>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="172">
+<span style="white-space:pre; font-family: monospace">     
+30996
+     
+</span>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="172">
+<span style="white-space:pre; font-family: monospace">     
+12248
+     
+</span>
+</div>
+</div>
+<p>Is that the best solution? Dunno but it didnt explode my memory and it returned something that looks correct. Seems legit.</p>
+</section>
+<section id="bigger-1" class="level2">
+<h2 class="anchored" data-anchor-id="bigger-1">Bigger??</h2>
+<p>50 items</p>
+<div class="cell" data-execution_count="173">
+<pre class="apl cell-code"><code>⎕←ks50←read_ks 'ks_50_0'</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="173">
+<span style="white-space:pre; font-family: monospace">┌→──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│           ┌→────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ │
+│ 50 341045 │ ┌→───────────┐ ┌→───────────┐ ┌→───────────┐ ┌→──────────┐ ┌→───────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→─────────┐ ┌→─────────┐ ┌→─────────┐ ┌→─────────┐ ┌→─────────┐ ┌→─────────┐ ┌→─────────┐ ┌→────────┐ ┌→────────┐ ┌→─────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→───────┐ ┌→────────┐ ┌→───────┐ ┌→───────┐ ┌→───────┐ ┌→───────┐ ┌→───────┐ ┌→───────┐ ┌→───────┐ ┌→───────┐ ┌→───────┐ ┌→───────┐ ┌→──────┐ ┌→──────┐ ┌→──────┐ ┌→─────┐ │ │
+│           │ │96601 231302│ │77174 184848│ │50897 122094│ │29688 71276│ │45136 108372│ │41516 99732│ │23527 56554│ │23552 56804│ │23552 56804│ │13269 32038│ │15572 37644│ │16494 39888│ │14393 34886│ │11326 27552│ │7570 18440│ │7512 18324│ │5516 13532│ │4875 12050│ │4446 10992│ │4436 10972│ │4265 10630│ │3024 7548│ │3383 8466│ │4103 10306│ │2889 7278│ │2721 6942│ │2625 6750│ │1906 4912│ │2181 5662│ │2133 5566│ │2129 5558│ │1795 4690│ │1313 3526│ │1242 3384│ │952 2604│ │1086 3072│ │706 2112│ │492 1484│ │445 1390│ │620 1940│ │419 1338│ │566 1832│ │559 1818│ │348 1196│ │313 1126│ │281 1062│ │246 992│ │217 934│ │103 706│ │67 634│ │ │
+│           │ └~───────────┘ └~───────────┘ └~───────────┘ └~──────────┘ └~───────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~─────────┘ └~─────────┘ └~─────────┘ └~─────────┘ └~─────────┘ └~─────────┘ └~─────────┘ └~────────┘ └~────────┘ └~─────────┘ └~────────┘ └~────────┘ └~────────┘ └~────────┘ └~────────┘ └~────────┘ └~────────┘ └~────────┘ └~────────┘ └~────────┘ └~───────┘ └~────────┘ └~───────┘ └~───────┘ └~───────┘ └~───────┘ └~───────┘ └~───────┘ └~───────┘ └~───────┘ └~───────┘ └~───────┘ └~──────┘ └~──────┘ └~──────┘ └~─────┘ │ │
+│           └∊────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ │
+└∊──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="174">
+<pre class="apl cell-code"><code>⎕←ks50_s←ks_solve ks50
+⎕←ks50 weight ks50_s
+⎕←ks50 value ks50_s</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="174">
+<span style="white-space:pre; font-family: monospace">┌→──────────────────────────────────────────────────────────────────────────────────────────────────┐
+│1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0│
+└~──────────────────────────────────────────────────────────────────────────────────────────────────┘
+</span>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="174">
+<span style="white-space:pre; font-family: monospace">      
+341012
+      
+</span>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="174">
+<span style="white-space:pre; font-family: monospace">      
+142156
+      
+</span>
+</div>
+</div>
+</section>
+<section id="bigger-2" class="level2">
+<h2 class="anchored" data-anchor-id="bigger-2">Bigger???</h2>
+<p>1000 items</p>
+<div class="cell" data-execution_count="177">
+<pre class="apl cell-code"><code>⎕←ks1000←read_ks 'ks_1000_0'
+⎕←ks1000_s←ks_solve ks1000
+⎕←ks1000 weight ks1000_s
+⎕←ks1000 value ks1000_s</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="177">
+<span style="white-space:pre; font-family: monospace">┌→────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│             ┌→────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ │
+│ 1000 100000 │ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────┐ ┌→──────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→───────┐ ┌→──────────┐ ┌→──────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→───────┐ ┌→────────┐ ┌→─────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→─────────┐ ┌→─────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→─────────┐ ┌→────────┐ ┌→─────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→─────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────┐ ┌→────────┐ ┌→─────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────┐ ┌→──────────┐ ┌→────────┐ ┌→──────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→─────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→─────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→─────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→─────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→─────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→─────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→─────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────┐ ┌→──────┐ ┌→──────┐ ┌→──────────┐ ┌→──┐ ┌→────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────┐ ┌→──────────┐ ┌→──────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────┐ ┌→────────┐ ┌→──────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→───────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────┐ ┌→────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→─────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→─────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→─────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→─────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→─────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────┐ ┌→──────────┐ ┌→──────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────┐ ┌→──────────┐ ┌→─────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→─────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→─────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→─────────┐ ┌→────────┐ ┌→───────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→───────┐ ┌→─────────┐ ┌→─────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→────────┐ ┌→────────┐ ┌→──────┐ ┌→──────────┐ ┌→────────┐ ┌→──────┐ ┌→─────────┐ ┌→──────────┐ ┌→──────────┐ ┌→─────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→──────────┐ ┌→────┐ ┌→────────┐ │ │
+│             │ │3439 3127│ │13710 12469│ │15347 13958│ │6646 6045│ │14781 13446│ │6064 5517│ │2295 2088│ │12721 11574│ │9142 8318│ │11450 10424│ │5247 4777│ │16636 15151│ │5739 5227│ │303 276│ │438 399│ │1531 1395│ │14880 13565│ │9910 9036│ │4995 4556│ │18889 17232│ │15580 14217│ │14418 13159│ │15642 14277│ │5176 4725│ │253 231│ │9214 8414│ │17592 16065│ │12795 11685│ │11622 10615│ │18039 16476│ │1007 920│ │16771 15328│ │256 234│ │20925 19132│ │7880 7206│ │11973 10951│ │4791 4383│ │4789 4382│ │20852 19080│ │14824 13565│ │16109 14744│ │4048 3705│ │9013 8251│ │2881 2638│ │4080 3736│ │4878 4467│ │20948 19187│ │6264 5738│ │2966 2717│ │16452 15075│ │3240 2969│ │11764 10787│ │15819 14509│ │11989 10997│ │1007 924│ │8178 7509│ │10122 9298│ │20988 19301│ │9998 9196│ │19036 17520│ │4496 4138│ │19221 17691│ │18937 17431│ │506 466│ │17478 16101│ │7596 6998│ │17559 16178│ │18156 16732│ │5024 4630│ │10573 9744│ │10674 9839│ │14572 13435│ │14418 13294│ │18115 16708│ │18961 17495│ │18514 17083│ │19969 18426│ │9506 8772│ │5212 4810│ │17026 15715│ │9099 8399│ │15524 14333│ │19226 17751│ │15038 13885│ │17492 16152│ │18104 16718│ │12570 11609│ │10467 9667│ │9604 8873│ │10264 9485│ │17232 15925│ │13576 12548│ │18021 16657│ │9823 9083│ │18186 16817│ │3157 2920│ │14537 13446│ │9830 9093│ │7391 6838│ │10949 10133│ │663 614│ │12886 11935│ │15895 14722│ │1194 1106│ │6352 5884│ │14877 13787│ │6580 6098│ │10189 9444│ │6501 6027│ │20286 18807│ │3120 2893│ │12327 11432│ │4265 3956│ │1177 1092│ │10782 10010│ │4622 4295│ │7951 7391│ │13203 12275│ │8409 7818│ │6035 5612│ │21495 19995│ │12129 11283│ │6792 6319│ │11264 10483│ │635 591│ │5009 4662│ │10685 9945│ │15872 14774│ │12031 11200│ │16718 15565│ │3181 2962│ │15359 14303│ │496 462│ │17432 16240│ │9050 8434│ │914 852│ │15079 14058│ │5176 4826│ │1294 1207│ │13622 12709│ │9359 8732│ │16627 15516│ │19810 18487│ │3854 3597│ │4412 4118│ │8477 7913│ │15538 14505│ │11833 11049│ │11236 10492│ │14627 13660│ │5826 5441│ │20666 19301│ │5291 4942│ │4409 4119│ │2358 2203│ │9951 9302│ │16200 15145│ │17941 16773│ │9594 8972│ │6802 6363│ │18780 17569│ │17535 16407│ │11277 10553│ │16447 15396│ │17139 16049│ │16308 15275│ │13840 12968│ │15535 14566│ │931 873│ │1512 1418│ │6565 6158│ │2995 2810│ │18273 17146│ │19157 17977│ │10587 9941│ │14127 13267│ │1167 1096│ │8643 8119│ │11468 10774│ │19585 18402│ │7636 7177│ │7554 7100│ │5411 5087│ │8504 7996│ │930 875│ │20437 19230│ │9147 8609│ │5783 5443│ │18730 17629│ │3340 3144│ │16093 15150│ │3619 3407│ │154 145│ │8840 8324│ │18251 17186│ │17680 16655│ │17177 16185│ │18732 17655│ │2603 2454│ │7189 6778│ │19709 18584│ │17922 16902│ │14399 13581│ │6066 5722│ │10163 9590│ │20192 19054│ │20756 19593│ │12069 11396│ │825 779│ │3543 3346│ │17074 16126│ │9965 9415│ │9011 8516│ │2618 2475│ │5240 4954│ │4830 4567│ │3924 3711│ │7655 7241│ │13041 12341│ │19647 18594│ │5065 4794│ │9354 8855│ │19307 18281│ │6923 6556│ │8696 8238│ │18348 17388│ │16875 15993│ │19180 18183│ │10688 10133│ │12605 11952│ │7858 7454│ │14644 13896│ │1357 1288│ │574 545│ │1407 1336│ │15740 14947│ │17616 16729│ │1928 1831│ │8649 8214│ │140 133│ │16588 15762│ │8676 8244│ │21016 19978│ │4079 3878│ │17941 17059│ │672 639│ │19585 18629│ │14861 14138│ │7730 7354│ │11129 10590│ │7256 6905│ │18341 17465│ │7280 6933│ │19458 18542│ │9134 8712│ │16842 16068│ │20384 19451│ │7346 7010│ │11535 11008│ │18412 17572│ │3010 2873│ │4046 3862│ │11945 11408│ │17976 17176│ │8288 7922│ │11737 11220│ │6409 6132│ │17881 17110│ │18242 17461│ │18992 18180│ │1150 1101│ │20172 19317│ │20820 19941│ │4094 3923│ │862 826│ │13155 12606│ │6393 6127│ │6774 6493│ │17117 16407│ │6941 6655│ │12327 11822│ │16362 15693│ │11561 11090│ │14709 14111│ │20323 19499│ │7720 7408│ │18277 17540│ │10923 10488│ │2731 2623│ │3718 3571│ │17872 17166│ │3342 3210│ │17945 17239│ │10015 9621│ │6398 6147│ │15936 15312│ │13077 12571│ │14076 13532│ │14799 14231│ │8845 8506│ │16850 16209│ │11094 10674│ │9095 8752│ │9526 9170│ │9212 8869│ │12008 11561│ │10086 9714│ │11818 11391│ │14993 14456│ │673 649│ │19057 18379│ │9113 8790│ │1531 1477│ │20129 19422│ │1509 1456│ │5615 5419│ │663 640│ │5293 5110│ │17287 16690│ │15119 14598│ │11573 11176│ │10563 10202│ │13519 13057│ │11375 10990│ │7135 6897│ │15795 15271│ │6214 6008│ │12451 12042│ │15308 14807│ │9571 9261│ │9973 9651│ │15474 14975│ │18307 17718│ │9063 8773│ │3227 3124│ │14114 13665│ │10605 10270│ │4588 4445│ │7923 7680│ │18920 18347│ │666 646│ │9218 8945│ │10762 10445│ │8622 8369│ │10517 10213│ │12070 11722│ │16862 16379│ │4408 4283│ │12566 12214│ │18411 17908│ │11942 11616│ │4820 4689│ │6887 6704│ │10671 10391│ │19409 18902│ │10192 9926│ │15910 15501│ │17539 17091│ │11759 11460│ │15721 15323│ │11868 11568│ │17476 17040│ │4466 4356│ │13488 13158│ │4877 4758│ │12593 12291│ │17028 16620│ │19385 18931│ │3510 3428│ │17154 16755│ │4409 4307│ │11509 11246│ │8823 8622│ │12981 12688│ │11524 11268│ │11131 10888│ │5471 5353│ │4510 4413│ │4761 4659│ │709 694│ │20397 19968│ │11765 11519│ │10701 10479│ │10055 9847│ │5733 5615│ │13044 12776│ │3323 3255│ │19918 19513│ │16828 16486│ │5285 5178│ │14625 14329│ │1977 1937│ │893 875│ │10419 10211│ │15025 14728│ │1425 1397│ │7697 7546│ │3898 3822│ │2106 2065│ │6731 6600│ │9875 9685│ │15408 15113│ │8743 8576│ │11898 11676│ │16526 16219│ │595 584│ │12358 12130│ │14485 14222│ │17988 17663│ │111 109│ │8897 8738│ │13546 13304│ │14857 14592│ │3314 3255│ │18781 18450│ │13646 13409│ │16726 16437│ │5582 5486│ │19190 18861│ │2375 2337│ │16564 16302│ │9461 9312│ │3652 3596│ │3302 3254│ │19562 19284│ │14207 14007│ │9799 9667│ │17654 17417│ │13826 13641│ │8003 7896│ │2781 2744│ │6006 5927│ │18208 17973│ │12788 12624│ │11804 11654│ │7068 6980│ │4615 4558│ │3602 3559│ │19169 18947│ │18266 18058│ │19423 19202│ │18209 18002│ │19054 18839│ │9223 9120│ │15284 15114│ │5680 5617│ │14252 14094│ │17838 17646│ │8728 8638│ │2390 2366│ │6930 6862│ │17634 17463│ │10142 10044│ │10053 9956│ │2234 2213│ │11241 11138│ │9390 9304│ │10376 10282│ │13586 13463│ │12902 12789│ │18955 18797│ │4969 4928│ │5822 5774│ │12553 12452│ │13822 13711│ │1257 1247│ │10703 10620│ │14556 14447│ │13879 13776│ │14024 13920│ │2344 2327│ │10318 10245│ │18153 18026│ │18379 18251│ │583 579│ │11528 11457│ │8905 8851│ │7447 7402│ │16607 16508│ │4039 4015│ │7908 7863│ │14642 14559│ │16131 16040│ │3040 3023│ │14215 14137│ │12464 12408│ │12467 12412│ │7508 7475│ │5469 5449│ │5263 5245│ │19158 19101│ │1377 1373│ │3998 3987│ │8768 8744│ │17459 17412│ │1147 1144│ │2779 2773│ │1516 1513│ │16724 16691│ │7001 6988│ │1268 1266│ │1294 1292│ │19125 19096│ │19704 19677│ │10481 10467│ │5522 5515│ │5676 5669│ │14750 14733│ │17895 17879│ │18858 18842│ │12065 12057│ │14954 14945│ │17084 17074│ │12400 12398│ │6421 6420│ │38 38│ │558 558│ │221 221│ │12166 12166│ │1 1│ │73 73│ │12311 12313│ │5198 5199│ │10670 10674│ │2395 2397│ │2838 2841│ │3898 3904│ │18870 18901│ │13099 13122│ │12351 12375│ │13877 13905│ │14380 14410│ │6092 6105│ │14896 14931│ │15571 15609│ │1999 2004│ │9540 9566│ │11173 11206│ │12859 12901│ │8559 8592│ │19806 19883│ │16076 16139│ │5306 5329│ │8316 8353│ │6027 6055│ │9187 9231│ │19201 19294│ │18917 19009│ │16522 16616│ │2796 2813│ │4171 4197│ │12955 13037│ │16307 16412│ │5780 5823│ │8698 8770│ │9377 9456│ │17640 17791│ │9668 9751│ │6297 6352│ │16733 16880│ │17452 17611│ │19153 19334│ │7929 8004│ │18893 19073│ │18123 18299│ │10919 11030│ │7638 7716│ │8968 9060│ │1521 1537│ │828 837│ │9782 9892│ │4067 4114│ │14865 15039│ │12272 12417│ │15359 15542│ │2513 2543│ │5685 5753│ │7577 7668│ │5524 5591│ │11862 12006│ │1925 1949│ │12768 12929│ │6067 6145│ │5754 5829│ │1453 1472│ │13642 13824│ │19210 19467│ │17426 17662│ │9449 9577│ │11989 12155│ │10972 11124│ │12165 12334│ │12811 12989│ │15894 16115│ │6685 6779│ │6962 7062│ │13248 13442│ │8573 8699│ │3142 3189│ │11270 11444│ │7659 7779│ │4707 4781│ │11864 12051│ │14498 14727│ │13644 13860│ │4301 4370│ │7779 7904│ │15258 15504│ │4595 4670│ │16809 17102│ │12399 12618│ │18704 19040│ │10397 10584│ │8746 8908│ │12851 13092│ │9781 9966│ │6335 6456│ │13756 14020│ │13656 13922│ │10392 10597│ │16201 16528│ │3066 3128│ │8243 8410│ │7286 7437│ │191 195│ │16319 16663│ │332 339│ │15739 16071│ │13251 13531│ │6003 6131│ │15303 15632│ │604 617│ │4366 4461│ │456 466│ │5962 6100│ │14820 15167│ │14153 14486│ │15348 15712│ │19187 19644│ │5685 5823│ │10027 10278│ │2439 2501│ │9524 9768│ │4988 5116│ │12738 13068│ │6081 6240│ │14625 15012│ │18602 19095│ │14043 14418│ │2556 2625│ │7331 7530│ │2189 2249│ │15401 15826│ │14816 15229│ │215 221│ │6763 6952│ │1856 1908│ │11355 11675│ │8010 8236│ │11866 12201│ │12244 12590│ │13130 13503│ │16135 16598│ │10505 10809│ │2384 2453│ │1336 1375│ │3112 3203│ │5399 5557│ │13178 13565│ │13221 13633│ │3235 3336│ │17428 17977│ │4913 5074│ │5257 5430│ │10983 11347│ │16140 16676│ │6446 6662│ │8160 8434│ │9639 9963│ │16292 16841│ │18158 18770│ │16836 17404│ │11624 12020│ │732 757│ │15349 15884│ │15029 15554│ │10910 11294│ │3040 3147│ │960 994│ │16368 16948│ │4469 4628│ │10534 10909│ │7120 7374│ │16507 17102│ │14504 15027│ │3846 3985│ │4786 4959│ │14234 14750│ │1210 1254│ │2780 2882│ │10975 11384│ │14436 14975│ │17513 18167│ │2223 2307│ │17224 17876│ │14642 15197│ │6068 6303│ │6065 6300│ │2728 2834│ │12785 13283│ │15387 15995│ │12709 13212│ │10644 11066│ │12684 13192│ │4427 4605│ │12900 13421│ │2500 2601│ │2174 2262│ │13895 14460│ │980 1020│ │4978 5182│ │18248 18998│ │13275 13823│ │18163 18916│ │2623 2733│ │4367 4552│ │16395 17091│ │9063 9448│ │17630 18381│ │12055 12577│ │10942 11418│ │8068 8419│ │5309 5540│ │774 808│ │12321 12863│ │16212 16932│ │2810 2935│ │17378 18159│ │8456 8839│ │1025 1072│ │3650 3818│ │693 725│ │14020 14670│ │18435 19291│ │14182 14848│ │16913 17710│ │169 177│ │84 88│ │9286 9733│ │7427 7785│ │2626 2754│ │2079 2181│ │365 383│ │2928 3074│ │4882 5126│ │8319 8736│ │13834 14528│ │10356 10879│ │14688 15432│ │235 247│ │1252 1316│ │11581 12176│ │5669 5962│ │18476 19438│ │16007 16842│ │9683 10189│ │11363 11957│ │6281 6612│ │1117 1176│ │9681 10194│ │6865 7229│ │10745 11315│ │12257 12914│ │7717 8131│ │8278 8723│ │4719 4973│ │7271 7663│ │13574 14306│ │10088 10633│ │4910 5176│ │6213 6550│ │129 136│ │1269 1338│ │9084 9579│ │11594 12226│ │2270 2394│ │12151 12819│ │16223 17117│ │1042 1100│ │3173 3351│ │6818 7202│ │14375 15186│ │16583 17520│ │7075 7478│ │5097 5395│ │51 54│ │12040 12753│ │3967 4202│ │14627 15495│ │5387 5707│ │1208 1280│ │7541 7992│ │1036 1098│ │5498 5828│ │16208 17181│ │15964 16931│ │13871 14716│ │10387 11021│ │18073 19180│ │9630 10221│ │15226 16161│ │9089 9651│ │17460 18542│ │6524 6929│ │15815 16811│ │5619 5976│ │6126 6517│ │17033 18129│ │2421 2577│ │2990 3183│ │10860 11561│ │15543 16547│ │13733 14621│ │2180 2321│ │6445 6862│ │11437 12177│ │6273 6679│ │4613 4912│ │1242 1325│ │2996 3197│ │10481 11185│ │10170 10858│ │650 694│ │7089 7573│ │3926 4196│ │3311 3539│ │116 124│ │4938 5279│ │14670 15686│ │15146 16200│ │7578 8108│ │4138 4428│ │1336 1430│ │17792 19054│ │18143 19430│ │9856 10556│ │18091 19387│ │5271 5650│ │5259 5638│ │3521 3775│ │6971 7476│ │5240 5620│ │18521 19876│ │7465 8022│ │652 701│ │4790 5150│ │5869 6311│ │6930 7452│ │1704 1833│ │14223 15300│ │1999 2151│ │12565 13526│ │15151 16314│ │8774 9449│ │16238 17489│ │3376 3637│ │17008 18338│ │8405 9063│ │4555 4914│ │5479 5912│ │3005 3243│ │15569 16804│ │7115 7680│ │14525 15682│ │12459 13459│ │12241 13224│ │16837 18190│ │11541 12469│ │3220 3480│ │5096 5508│ │17325 18727│ │13327 14408│ │17443 18859│ │2237 2419│ │11325 12256│ │15676 16976│ │9236 10002│ │3937 4264│ │2115 2291│ │5356 5802│ │14778 16020│ │12125 13146│ │12331 13374│ │2944 3194│ │18028 19564│ │15475 16797│ │12183 13233│ │16210 17614│ │8558 9300│ │15973 17359│ │13504 14678│ │7361 8001│ │16640 18087│ │12044 13094│ │7701 8373│ │12445 13535│ │10697 11636│ │11320 12314│ │17934 19509│ │102 111│ │17931 19516│ │520 566│ │8840 9625│ │13782 15011│ │7041 7670│ │17473 19036│ │1665 1814│ │1812 1975│ │17167 18712│ │10119 11036│ │5357 5843│ │12052 13153│ │8944 9762│ │4240 4628│ │5335 5826│ │5202 5681│ │411 449│ │14218 15534│ │9883 10815│ │11113 12162│ │14295 15645│ │5534 6058│ │2248 2461│ │8085 8852│ │12956 14186│ │9319 10204│ │13816 15129│ │7743 8479│ │10959 12004│ │17658 19342│ │2524 2766│ │7184 7873│ │9217 10104│ │6694 7342│ │4804 5270│ │11470 12584│ │8703 9550│ │12226 13419│ │15966 17524│ │9075 9961│ │7485 8216│ │6726 7386│ │17767 19511│ │4613 5066│ │6735 7401│ │9667 10630│ │2328 2560│ │921 1013│ │8734 9607│ │11328 12466│ │5058 5567│ │970 1068│ │9191 10120│ │9498 10461│ │7692 8473│ │14893 16415│ │6518 7186│ │17669 19481│ │16116 17769│ │5190 5724│ │3425 3778│ │13338 14717│ │12491 13784│ │8831 9747│ │15160 16735│ │10587 11687│ │5521 6095│ │8516 9407│ │1449 1602│ │595 658│ │15830 17515│ │3407 3770│ │366 405│ │9165 10147│ │17013 18840│ │15724 17413│ │9884 10948│ │12708 14077│ │5844 6474│ │12438 13782│ │14515 16104│ │1662 1844│ │12547 13927│ │6230 6917│ │15243 16926│ │14630 16249│ │14384 15981│ │16535 18372│ │63 70│ │8771 9746│ │ │
+│             │ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────┘ └~──────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~───────┘ └~──────────┘ └~──────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~───────┘ └~────────┘ └~─────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~─────────┘ └~─────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~─────────┘ └~────────┘ └~─────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~────────┘ └~─────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────┘ └~────────┘ └~─────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────┘ └~──────────┘ └~────────┘ └~──────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~─────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~─────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~─────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~─────────┘ └~──────────┘ └~──────────┘ └~──────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~─────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~─────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~─────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────┘ └~──────┘ └~──────┘ └~──────────┘ └~──┘ └~────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────┘ └~──────────┘ └~──────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────┘ └~────────┘ └~──────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────┘ └~────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~───────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────┘ └~────┘ └~────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~─────────┘ └~──────────┘ └~────────┘ └~────────┘ └~─────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────┘ └~────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~─────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────┘ └~────────┘ └~────────┘ └~────────┘ └~──────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~─────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────┘ └~────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~─────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────┘ └~──────────┘ └~──────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────┘ └~──────────┘ └~─────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~─────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~─────────┘ └~────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────────┘ └~────────┘ └~────────┘ └~─────────┘ └~────────┘ └~───────┘ └~────────┘ └~──────────┘ └~────────┘ └~───────┘ └~─────────┘ └~─────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~────────┘ └~────────┘ └~──────┘ └~──────────┘ └~────────┘ └~──────┘ └~─────────┘ └~──────────┘ └~──────────┘ └~─────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~──────────┘ └~────┘ └~────────┘ │ │
+│             └∊────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ │
+└∊────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+</span>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="177">
+<span style="white-space:pre; font-family: monospace">┌→──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0│
+└~──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+</span>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="177">
+<span style="white-space:pre; font-family: monospace">     
+99999
+     
+</span>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="177">
+<span style="white-space:pre; font-family: monospace">      
+109899
+      
+</span>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Felix Flath">
+<meta name="dcterms.date" content="2022-08-06">
+
+<title>APL Exploration - Knapsack II</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">APL Exploration</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html">About</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/isaac-flath/apl-exploration"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/isaac-flath/"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Knapsack II</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">Dyalog</div>
+                <div class="quarto-category">APL</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Felix Flath </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">August 6, 2022</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#intro" id="toc-intro" class="nav-link active" data-scroll-target="#intro">Intro</a>
+  <ul class="collapse">
+  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions">Functions</a></li>
+  </ul></li>
+  <li><a href="#baseline" id="toc-baseline" class="nav-link" data-scroll-target="#baseline">Baseline</a></li>
+  <li><a href="#experiments" id="toc-experiments" class="nav-link" data-scroll-target="#experiments">Experiments</a>
+  <ul class="collapse">
+  <li><a href="#bound" id="toc-bound" class="nav-link" data-scroll-target="#bound">Bound</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="intro" class="level1">
+<h1>Intro</h1>
+<p>In the previous knapsack post we showed a basic branch and bound approach to solving the knapsack problem. This is a notebook of experiments on different ways to improve the performance .</p>
+<section id="functions" class="level2">
+<h2 class="anchored" data-anchor-id="functions">Functions</h2>
+<p>See the previous knapsack post for what these are and how they fit.</p>
+<div class="cell" data-execution_count="39">
+<pre class="apl cell-code"><code>branch←{⍪,((,/,∘0),(,/,∘1))⍤1⊢⍵}</code></pre>
+</div>
+<div class="cell" data-execution_count="40">
+<pre class="apl cell-code"><code>]dinput
+weight←{
+    c mw is←⍺           ⍝ split the right argument into components count, max weight, and items
+    vs ws←↓⍉↑is         ⍝ extract a list of values and a list of weights from the item lis
+    psolution←c↑⍵       ⍝ pad the partial solution with 0s to the lenght of the item list
+    +/ws∧psolution      ⍝ use the partial solution as a mask to select the weights of the items we take and sum them
+}</code></pre>
+</div>
+<div class="cell" data-execution_count="41">
+<pre class="apl cell-code"><code>]dinput
+value←{
+    c mw is←⍺
+    mw≤⍺ weight ⍵ :0 ⍝ if the weight is more than the capacity the value is 0
+    vs ws←↓⍉↑is
+    psolution←c↑⍵
+    +/vs∧psolution
+}</code></pre>
+</div>
+<div class="cell" data-execution_count="42">
+<pre class="apl cell-code"><code>]dinput
+greedy←{
+ c mw is←⍺
+ cw←⍺ weight ⍵
+ c ≤ ⍴⍵: ⍺ value ⍵ ⍝ stop if we have looked at all items
+ mw=cw: ⍺ value ⍵  ⍝ stop if knapsack is full
+ mw&lt;cw: 0          ⍝ stop if knapsack is overfull
+ v w←⊃is↓⍨⍴⍵       ⍝ drop items that have already been considered
+ ⍺∇⍵,w≤mw-cw       ⍝ recurse with an additional item considered
+}</code></pre>
+</div>
+<div class="cell" data-execution_count="43">
+<pre class="apl cell-code"><code>]dinput
+optimistic←{
+     c mw is←⍺
+
+     vs ws←↓⍉↑is
+
+     cv ← ⍺ value ⍵
+     cw ← ⍺ weight ⍵
+
+     vs ws←↓⍉↑is↓⍨⍴⍵                     ⍝ drop the items already decided
+     cw&gt;mw:0                             ⍝ if the weight already exceeds max capacity return 0
+     d←(⍴⍵)↓÷⌿⍤1⊢↑is                     ⍝ density
+     cv++/d×ws⌊0⌈¯1↓(mw-cw),(mw-cw)-+\ws ⍝ current value plus optimistic guess for remainder
+
+ }</code></pre>
+</div>
+<div class="cell" data-execution_count="44">
+<pre class="apl cell-code"><code>]dinput
+bound←{
+     best ks←⍺
+     ⍵⌿⍨best≤ks∘optimistic∘⊃⍤1⊢⍵    ⍝ filter branches where the best solution is less than the optimistic solution 
+ }</code></pre>
+</div>
+<div class="cell" data-execution_count="45">
+<pre class="apl cell-code"><code>]dinput
+read_ks←{
+     temp←↓⍎⍤1⊢↑⊃⎕NGET ⍵ 1
+     count max_weight←⊃temp
+     items←1↓temp
+     items←items⌷⍨⊂⍒÷⌿⍤1⊢↑items
+     count max_weight items
+ }</code></pre>
+</div>
+<div class="cell" data-execution_count="46">
+<pre class="apl cell-code"><code>]dinput
+solver1←{
+     c mw is←⍵
+     g←⍵ greedy ⍬
+     s←g ⍵∘bound∘branch⍣c⊢⍬
+     ⊃(,s)⌷⍨⊂⍒⍵∘value∘⊃⍤1⊢s
+}</code></pre>
+</div>
+</section>
+</section>
+<section id="baseline" class="level1">
+<h1>Baseline</h1>
+<p>First lets make it easy to run experiments</p>
+<div class="cell" data-execution_count="49">
+<pre class="apl cell-code"><code>'time' ⎕cy 'dfns'</code></pre>
+</div>
+<div class="cell" data-execution_count="73">
+<pre class="apl cell-code"><code>]dinput
+experiment←{
+    knapsack←read_ks ⍵
+    s←⍺⍺ time knapsack
+    (knapsack value s) (knapsack weight s)
+}</code></pre>
+</div>
+<div class="cell" data-execution_count="75">
+<pre class="apl cell-code"><code>solver1 experiment 'ks_1000_0'</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="75">
+<span style="white-space:pre; font-family: monospace">┌→───────┐
+│25:06.61│
+└────────┘
+┌→───────────┐
+│109899 99999│
+└~───────────┘
+</span>
+</div>
+</div>
+<p>25 minutes for these particular 1000 items</p>
+</section>
+<section id="experiments" class="level1">
+<h1>Experiments</h1>
+<section id="bound" class="level2">
+<h2 class="anchored" data-anchor-id="bound">Bound</h2>
+<p>One of the issues is the how we prune branches. If we have too low of a value it doesn’t prune very many branches. The current solver only uses the greedy value and we never update this.</p>
+<p>The way things currently work is we branch, we calculate the optimistic values and we compare. What if we branch, calculate the optimistic values, take the 5 highest value branches and use those as the starting point for our greedy algorithm. We take the highest value between those and use that to prune our branches.</p>
+<div class="cell" data-execution_count="227">
+<pre class="apl cell-code"><code>]dinput
+solver2_←{
+    ks←⍺
+    c mw is←ks
+    branches←{⍵⌷⍨∘⊂∘⍒ ks∘optimistic∘⊃⍤1⊢⍵} branch ⍵
+    best←⌈/ks∘greedy∘⊃⍤1⊢5↑branches
+    ret←branches⌿⍨best≤ks∘optimistic∘⊃⍤1⊢branches
+    ret
+}</code></pre>
+</div>
+<div class="cell" data-execution_count="246">
+<pre class="apl cell-code"><code>]dinput
+solver2←{
+    c mw is←⍵
+    ss←⍵∘solver2_⍣(c-1)⊢ branch⍣2⊢⍬
+    ⊃ss
+}</code></pre>
+</div>
+<div class="cell" data-execution_count="239">
+<pre class="apl cell-code"><code>solver2 ks19</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="239">
+<span style="white-space:pre; font-family: monospace">┌→──────────┐
+│12248 30996│
+└~──────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="247">
+<pre class="apl cell-code"><code>solver2 experiment 'ks_1000_0'</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="247">
+<span style="white-space:pre; font-family: monospace">┌→────┐
+│31.96│
+└─────┘
+┌→───────────┐
+│109899 99999│
+└~───────────┘
+</span>
+</div>
+</div>
+<p>Huge success. We went from 25 minutes to 32 seconds.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

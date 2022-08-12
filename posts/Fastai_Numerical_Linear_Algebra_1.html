@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Isaac Flath">
+<meta name="dcterms.date" content="2022-07-10">
+
+<title>APL Exploration - Numerical Linear Algebra Part 1</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">APL Exploration</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html">About</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/isaac-flath/apl-exploration"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/isaac-flath/"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Numerical Linear Algebra Part 1</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">Dyalog</div>
+                <div class="quarto-category">APL</div>
+                <div class="quarto-category">Linear Algebra</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Isaac Flath </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">July 10, 2022</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#why-are-we-here" id="toc-why-are-we-here" class="nav-link active" data-scroll-target="#why-are-we-here">1. Why are we here?</a>
+  <ul class="collapse">
+  <li><a href="#why-study-numerical-linear-algebra" id="toc-why-study-numerical-linear-algebra" class="nav-link" data-scroll-target="#why-study-numerical-linear-algebra">Why study Numerical Linear Algebra?</a>
+  <ul class="collapse">
+  <li><a href="#motivation" id="toc-motivation" class="nav-link" data-scroll-target="#motivation">Motivation</a></li>
+  </ul></li>
+  <li><a href="#matrix-computations" id="toc-matrix-computations" class="nav-link" data-scroll-target="#matrix-computations">Matrix Computations</a>
+  <ul class="collapse">
+  <li><a href="#matrix-and-tensor-products" id="toc-matrix-and-tensor-products" class="nav-link" data-scroll-target="#matrix-and-tensor-products">Matrix and Tensor Products</a></li>
+  <li><a href="#matrix-decompositions" id="toc-matrix-decompositions" class="nav-link" data-scroll-target="#matrix-decompositions">Matrix Decompositions</a></li>
+  </ul></li>
+  <li><a href="#accuracy" id="toc-accuracy" class="nav-link" data-scroll-target="#accuracy">Accuracy</a>
+  <ul class="collapse">
+  <li><a href="#floating-point-arithmetic" id="toc-floating-point-arithmetic" class="nav-link" data-scroll-target="#floating-point-arithmetic">Floating Point Arithmetic</a></li>
+  <li><a href="#conditioning-and-stability" id="toc-conditioning-and-stability" class="nav-link" data-scroll-target="#conditioning-and-stability">Conditioning and Stability</a></li>
+  <li><a href="#approximation-accuracy" id="toc-approximation-accuracy" class="nav-link" data-scroll-target="#approximation-accuracy">Approximation accuracy</a></li>
+  <li><a href="#expensive-errors" id="toc-expensive-errors" class="nav-link" data-scroll-target="#expensive-errors">Expensive Errors</a></li>
+  </ul></li>
+  <li><a href="#memory-use" id="toc-memory-use" class="nav-link" data-scroll-target="#memory-use">Memory Use</a>
+  <ul class="collapse">
+  <li><a href="#sparse-vs-dense" id="toc-sparse-vs-dense" class="nav-link" data-scroll-target="#sparse-vs-dense">Sparse vs Dense</a></li>
+  </ul></li>
+  <li><a href="#speed" id="toc-speed" class="nav-link" data-scroll-target="#speed">Speed</a>
+  <ul class="collapse">
+  <li><a href="#computational-complexity" id="toc-computational-complexity" class="nav-link" data-scroll-target="#computational-complexity">Computational complexity</a></li>
+  <li><a href="#vectorization" id="toc-vectorization" class="nav-link" data-scroll-target="#vectorization">Vectorization</a></li>
+  <li><a href="#locality" id="toc-locality" class="nav-link" data-scroll-target="#locality">Locality</a></li>
+  <li><a href="#scaling-to-multiple-cores-and-nodes" id="toc-scaling-to-multiple-cores-and-nodes" class="nav-link" data-scroll-target="#scaling-to-multiple-cores-and-nodes">Scaling to multiple cores and nodes</a></li>
+  </ul></li>
+  <li><a href="#scalability-parallelization" id="toc-scalability-parallelization" class="nav-link" data-scroll-target="#scalability-parallelization">Scalability / parallelization</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p>This notebook is a copy of a notebook from the fast.ai fast.ai Numerical linear algebra course. I have modified it to use APL as a learning experience for myself.</p>
+<p><strong><a href="https://nbviewer.org/github/fastai/numerical-linear-algebra/blob/master/nbs/1.%20Why%20are%20we%20here.ipynb">Check out the original notebook here</a></strong></p>
+<p>I do not have any business affiliation with fast.ai, and <strong>this notebook is not an official fast.ai notebook.</strong></p>
+<p>You can read an overview of this Numerical Linear Algebra course in <a href="http://www.fast.ai/2017/07/17/num-lin-alg/">this blog post</a>. The course was originally taught in the <a href="https://www.usfca.edu/arts-sciences/graduate-programs/analytics">University of San Francisco MS in Analytics</a> graduate program. Course lecture videos are <a href="https://www.youtube.com/playlist?list=PLtmWHNX-gukIc92m1K0P6bIOnZb-mg0hY">available on YouTube</a> (note that the notebook numbers and video numbers do not line up, since some notebooks took longer than 1 video to cover).</p>
+<p>You can ask questions about the course on <a href="http://forums.fast.ai/c/lin-alg">our fast.ai forums</a>.</p>
+<section id="why-are-we-here" class="level1">
+<h1>1. Why are we here?</h1>
+<p><strong>Note: Future lessons have a lot more code than this one</strong></p>
+<section id="why-study-numerical-linear-algebra" class="level2">
+<h2 class="anchored" data-anchor-id="why-study-numerical-linear-algebra">Why study Numerical Linear Algebra?</h2>
+<p><strong>Key Question of this course</strong>: How can we do matrix computations with acceptable speed and acceptable accuracy?</p>
+<p>A list of the <a href="http://www.cs.fsu.edu/~lacher/courses/COT4401/notes/cise_v2_i1/index.html">Top 10 Algorithms</a> of science and engineering during the 20th century includes: the <strong>matrix decompositions</strong> approach to linear algebra. It also includes the QR algorithm, which we’ll cover, and Krylov iterative methods which we’ll see an example of. (See here for <a href="https://nickhigham.wordpress.com/2016/03/29/the-top-10-algorithms-in-applied-mathematics/">another take</a>)</p>
+<p><img src="https://github.com/fastai/numerical-linear-algebra/raw/master/nbs/images/top10.png" alt="" style="width: 50%"> (source: <a href="http://www.cs.fsu.edu/~lacher/courses/COT4401/notes/cise_v2_i1/guest.pdf">Top 10 Algorithms</a>)</p>
+<p>There are 4 things to keep in mind when choosing or designing an algorithm for matrix computations: - Memory Use - Speed - Accuracy - Scalability/Parallelization</p>
+<p>Often there will be trade-offs between these categories.</p>
+<section id="motivation" class="level3">
+<h3 class="anchored" data-anchor-id="motivation">Motivation</h3>
+<p>Matrices are everywhere– anything that can be put in an Excel spreadsheet is a matrix, and language and pictures can be represented as matrices as well. Knowing what options there are for matrix algorithms, and how to navigate compromises, can make enormous differences to your solutions. For instance, an approximate matrix computation can often be thousands of times faster than an exact one.</p>
+<p>It’s not just about knowing the contents of existing libraries, but knowing how they work too. That’s because often you can make variations to an algorithm that aren’t supported by your library, giving you the performance or accuracy that you need. In addition, this field is moving very quickly at the moment, particularly in areas related to <strong>deep learning</strong>, <strong>recommendation systems</strong>, <strong>approximate algorithms</strong>, and <strong>graph analytics</strong>, so you’ll often find there’s recent results that could make big differences in your project, but aren’t in your library.</p>
+<p>Knowing how the algorithms really work helps to both debug and accelerate your solution.</p>
+</section>
+</section>
+<section id="matrix-computations" class="level2">
+<h2 class="anchored" data-anchor-id="matrix-computations">Matrix Computations</h2>
+<p>There are two key types of matrix computation, which get combined in many different ways. These are: - Matrix and tensor products - Matrix decompositions</p>
+<p>So basically we’re going to be combining matrices, and pulling them apart again!</p>
+<section id="matrix-and-tensor-products" class="level3">
+<h3 class="anchored" data-anchor-id="matrix-and-tensor-products">Matrix and Tensor Products</h3>
+<section id="matrix-vector-products" class="level4">
+<h4 class="anchored" data-anchor-id="matrix-vector-products">Matrix-Vector Products:</h4>
+<p>The matrix below gives the probabilities of moving from 1 health state to another in 1 year. If the current health states for a group are: - 85% asymptomatic - 10% symptomatic - 5% AIDS - 0% death</p>
+<p>what will be the % in each health state in 1 year?</p>
+<p><img src="https://github.com/fastai/numerical-linear-algebra/raw/master/nbs/images/markov_health.jpg" alt="floating point" style="width: 80%">(Source: <a href="https://www.youtube.com/watch?v=0Il-y_WLTo4">Concepts of Markov Chains</a>)</p>
+</section>
+<section id="answer" class="level4">
+<h4 class="anchored" data-anchor-id="answer">Answer</h4>
+<section id="set-up-data" class="level5">
+<h5 class="anchored" data-anchor-id="set-up-data">Set up Data</h5>
+<p>Create category names vector for display purposes</p>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2022-07-14T11:01:51.282168Z&quot;,&quot;start_time&quot;:&quot;2022-07-14T11:01:50.800376Z&quot;}" data-execution_count="1">
+<pre class="apl cell-code"><code>]box on -style=max</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<span style="white-space:pre; font-family: monospace">┌→────────────────┐
+│Was ON -style=max│
+└─────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2022-07-14T11:01:51.432935Z&quot;,&quot;start_time&quot;:&quot;2022-07-14T11:01:51.284170Z&quot;}" data-execution_count="2">
+<pre class="apl cell-code"><code>Names←'Asymptomatic' 'Symptomatic' 'Aids'  'Death'</code></pre>
+</div>
+<p>Create current health states array</p>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2022-07-14T11:01:51.575021Z&quot;,&quot;start_time&quot;:&quot;2022-07-14T11:01:51.434402Z&quot;}" data-execution_count="3">
+<pre class="apl cell-code"><code>Names⍪Start←1 4⍴.85 .1 .05 0</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<span style="white-space:pre; font-family: monospace">┌→────────────────────────────────────────────┐
+↓ ┌→───────────┐ ┌→──────────┐ ┌→───┐ ┌→────┐ │
+│ │Asymptomatic│ │Symptomatic│ │Aids│ │Death│ │
+│ └────────────┘ └───────────┘ └────┘ └─────┘ │
+│                                             │
+│ 0.85           0.1           0.05   0       │
+│                                             │
+└∊────────────────────────────────────────────┘
+</span>
+</div>
+</div>
+<p>Create transition table/stochastic matrix</p>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2022-07-14T11:01:51.883489Z&quot;,&quot;start_time&quot;:&quot;2022-07-14T11:01:51.577898Z&quot;}" data-execution_count="4">
+<pre class="apl cell-code"><code>Transitions←4 4⍴.9 .07 .02 .01 0 .93 .05 .02 0 0 .85 .15 0 0 0 1
+((⊂'States')⍪Names)⍪(Names,Transitions)</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<span style="white-space:pre; font-family: monospace">┌→───────────────────────────────────────────────────────────┐
+↓ ┌→─────┐       ┌→───────────┐ ┌→──────────┐ ┌→───┐ ┌→────┐ │
+│ │States│       │Asymptomatic│ │Symptomatic│ │Aids│ │Death│ │
+│ └──────┘       └────────────┘ └───────────┘ └────┘ └─────┘ │
+│ ┌→───────────┐                                             │
+│ │Asymptomatic│ 0.9            0.07          0.02   0.01    │
+│ └────────────┘                                             │
+│ ┌→──────────┐                                              │
+│ │Symptomatic│  0              0.93          0.05   0.02    │
+│ └───────────┘                                              │
+│ ┌→───┐                                                     │
+│ │Aids│         0              0             0.85   0.15    │
+│ └────┘                                                     │
+│ ┌→────┐                                                    │
+│ │Death│        0              0             0      1       │
+│ └─────┘                                                    │
+└∊───────────────────────────────────────────────────────────┘
+</span>
+</div>
+</div>
+</section>
+<section id="answer-calculation" class="level5">
+<h5 class="anchored" data-anchor-id="answer-calculation">Answer Calculation</h5>
+<p>Multiply together to get ending health states</p>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2022-07-14T11:01:52.020839Z&quot;,&quot;start_time&quot;:&quot;2022-07-14T11:01:51.884793Z&quot;}" data-execution_count="5">
+<pre class="apl cell-code"><code>Names⍪End←Start+.×Transitions</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<span style="white-space:pre; font-family: monospace">┌→────────────────────────────────────────────┐
+↓ ┌→───────────┐ ┌→──────────┐ ┌→───┐ ┌→────┐ │
+│ │Asymptomatic│ │Symptomatic│ │Aids│ │Death│ │
+│ └────────────┘ └───────────┘ └────┘ └─────┘ │
+│                                             │
+│ 0.765          0.1525        0.0645 0.018   │
+│                                             │
+└∊────────────────────────────────────────────┘
+</span>
+</div>
+</div>
+</section>
+</section>
+<section id="matrix-matrix-products" class="level4">
+<h4 class="anchored" data-anchor-id="matrix-matrix-products">Matrix-Matrix Products</h4>
+<p><img src="https://github.com/fastai/numerical-linear-algebra/raw/master/nbs/images/shop.png" alt="floating point" style="width: 100%">(Source: <a href="https://www.mff.cuni.cz/veda/konference/wds/proc/pdf06/WDS06_106_m8_Ulrychova.pdf">Several Simple Real-world Applications of Linear Algebra Tools</a>)</p>
+</section>
+<section id="answer-1" class="level4">
+<h4 class="anchored" data-anchor-id="answer-1">Answer</h4>
+<section id="set-up-data-1" class="level5">
+<h5 class="anchored" data-anchor-id="set-up-data-1">Set up Data</h5>
+<p>Lets define the names of all the stuff we are working with for display purposes</p>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2022-07-14T11:01:52.442571Z&quot;,&quot;start_time&quot;:&quot;2022-07-14T11:01:52.022604Z&quot;}" data-execution_count="6">
+<pre class="apl cell-code"><code>items←'roll' 'bun' 'cake' 'bread'
+shops←'S1' 'S2'
+people←'P1' 'P2' 'P3'</code></pre>
+</div>
+<p>Demanded quantity of foodstuff</p>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2022-07-14T11:01:52.745572Z&quot;,&quot;start_time&quot;:&quot;2022-07-14T11:01:52.448499Z&quot;}" data-execution_count="7">
+<pre class="apl cell-code"><code>Demanded←3 4⍴6 5 3 1 3 6 2 2 3 4 3 1
+((⊂'')⍪items)⍪(people,Demanded)</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<span style="white-space:pre; font-family: monospace">┌→─────────────────────────────────┐
+↓ ┌⊖┐  ┌→───┐ ┌→──┐ ┌→───┐ ┌→────┐ │
+│ │ │  │roll│ │bun│ │cake│ │bread│ │
+│ └─┘  └────┘ └───┘ └────┘ └─────┘ │
+│ ┌→─┐                             │
+│ │P1│ 6      5     3      1       │
+│ └──┘                             │
+│ ┌→─┐                             │
+│ │P2│ 3      6     2      2       │
+│ └──┘                             │
+│ ┌→─┐                             │
+│ │P3│ 3      4     3      1       │
+│ └──┘                             │
+└∊─────────────────────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2022-07-14T11:01:53.046910Z&quot;,&quot;start_time&quot;:&quot;2022-07-14T11:01:52.748232Z&quot;}" data-execution_count="8">
+<pre class="apl cell-code"><code>Prices←4 2⍴1.5 1 2 2.5 5 4.5 16 17
+((⊂'')⍪shops)⍪(items,Prices)</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<span style="white-space:pre; font-family: monospace">┌→──────────────────┐
+↓ ┌⊖┐     ┌→─┐ ┌→─┐ │
+│ │ │     │S1│ │S2│ │
+│ └─┘     └──┘ └──┘ │
+│ ┌→───┐            │
+│ │roll│  1.5  1    │
+│ └────┘            │
+│ ┌→──┐             │
+│ │bun│   2    2.5  │
+│ └───┘             │
+│ ┌→───┐            │
+│ │cake│  5    4.5  │
+│ └────┘            │
+│ ┌→────┐           │
+│ │bread│ 16   17   │
+│ └─────┘           │
+└∊──────────────────┘
+</span>
+</div>
+</div>
+</section>
+<section id="answer-calculation-1" class="level5">
+<h5 class="anchored" data-anchor-id="answer-calculation-1">Answer Calculation</h5>
+<p>We can calculate the price for each shop for each person with matrix multiplication</p>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2022-07-14T11:01:53.345481Z&quot;,&quot;start_time&quot;:&quot;2022-07-14T11:01:53.049301Z&quot;}" data-scrolled="true" data-execution_count="9">
+<pre class="apl cell-code"><code>Ans←Demanded+.×Prices
+((⊂'')⍪shops)⍪(people,Ans) ⍝ display</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<span style="white-space:pre; font-family: monospace">┌→───────────────┐
+↓ ┌⊖┐  ┌→─┐ ┌→─┐ │
+│ │ │  │S1│ │S2│ │
+│ └─┘  └──┘ └──┘ │
+│ ┌→─┐           │
+│ │P1│ 50   49   │
+│ └──┘           │
+│ ┌→─┐           │
+│ │P2│ 58.5 61   │
+│ └──┘           │
+│ ┌→─┐           │
+│ │P3│ 43.5 43.5 │
+│ └──┘           │
+└∊───────────────┘
+</span>
+</div>
+</div>
+<p>Then find the lowest price each person can pay so these folks can budget!</p>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2022-07-14T11:01:53.655663Z&quot;,&quot;start_time&quot;:&quot;2022-07-14T11:01:53.351363Z&quot;}" data-execution_count="10">
+<pre class="apl cell-code"><code>lowest_per_person ← ⌊/Ans
+people,3 1⍴lowest_per_person ⍝ display</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<span style="white-space:pre; font-family: monospace">┌→──────────┐
+↓ ┌→─┐      │
+│ │P1│ 49   │
+│ └──┘      │
+│ ┌→─┐      │
+│ │P2│ 58.5 │
+│ └──┘      │
+│ ┌→─┐      │
+│ │P3│ 43.5 │
+│ └──┘      │
+└∊──────────┘
+</span>
+</div>
+</div>
+<p>We can also identify which store each person should go to based on the min price.</p>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2022-07-14T11:23:03.396380Z&quot;,&quot;start_time&quot;:&quot;2022-07-14T11:23:03.235203Z&quot;}" data-execution_count="76">
+<pre class="apl cell-code"><code>3 2 ⍴ people ⍪ shops ⌷⍨ ⊂ {⍵⍳⌊/⍵}¨↓Ans</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="76">
+<span style="white-space:pre; font-family: monospace">┌→──────────┐
+↓ ┌→─┐ ┌→─┐ │
+│ │P1│ │P2│ │
+│ └──┘ └──┘ │
+│ ┌→─┐ ┌→─┐ │
+│ │P3│ │S2│ │
+│ └──┘ └──┘ │
+│ ┌→─┐ ┌→─┐ │
+│ │S1│ │S1│ │
+│ └──┘ └──┘ │
+└∊──────────┘
+</span>
+</div>
+</div>
+</section>
+</section>
+<section id="image-data" class="level4">
+<h4 class="anchored" data-anchor-id="image-data">Image Data</h4>
+<p>Images can be represented by matrices.</p>
+<p><img src="https://github.com/fastai/numerical-linear-algebra/raw/master/nbs/images/digit.gif" alt="digit" style="width: 55%"> (Source: <a href="https://medium.com/@ageitgey/machine-learning-is-fun-part-3-deep-learning-and-convolutional-neural-networks-f40359318721">Adam Geitgey</a>)</p>
+</section>
+<section id="convolution" class="level4">
+<h4 class="anchored" data-anchor-id="convolution">Convolution</h4>
+<p><em>Convolutions</em> are the heart of convolutional neural networks (CNNs), a type of deep learning, responsible for the huge advances in image recognitionin the last few years. They are now increasingly being used for speech as well, such as <a href="https://code.facebook.com/posts/1978007565818999/a-novel-approach-to-neural-machine-translation/">Facebook AI’s results</a> for speech translation which are 9x faster than RNNs (the current most popular approach for speech translation).</p>
+<p>Computers are now more accurate than people at classifying images.</p>
+<p><img src="https://github.com/fastai/numerical-linear-algebra/raw/master/nbs/images/sportspredict.jpeg" alt="ImageNet" style="width: 80%"> (Source: <a href="http://karpathy.github.io/2014/07/03/feature-learning-escapades/">Andrej Karpathy</a>)</p>
+<p><img src="https://github.com/fastai/numerical-linear-algebra/raw/master/nbs/images/InsideImagenet.png" alt="ImageNet" style="width: 80%"> (Source: <a href="https://blogs.nvidia.com/blog/2014/09/07/imagenet/">Nvidia</a>)</p>
+<p>You can think of a convolution as a special kind of matrix product</p>
+<p>The 3 images below are all from an excellent blog post written by a fast.ai student on <a href="https://medium.com/impactai/cnns-from-different-viewpoints-fab7f52d159c">CNNs from Different Viewpoints</a>:</p>
+<p>A convolution applies a filter to each section of an image: <img src="https://github.com/fastai/numerical-linear-algebra/raw/master/nbs/images/cnn1.png" alt="CNNs" style="width: 40%"></p>
+<p>Neural Network Viewpoint: <img src="https://github.com/fastai/numerical-linear-algebra/raw/master/nbs/images/cnn2.png" alt="CNNs" style="width: 40%"></p>
+<p>Matrix Multiplication Viewpoint: <img src="https://github.com/fastai/numerical-linear-algebra/raw/master/nbs/images/cnn3.png" alt="CNNs" style="width: 80%"></p>
+<p>Let’s see how convolutions can be used for <em>edge detection</em> in <a href="convolution-intro.ipynb">this notebook</a>(originally from the <a href="http://course.fast.ai/">fast.ai Deep Learning Course</a>)</p>
+</section>
+</section>
+<section id="matrix-decompositions" class="level3">
+<h3 class="anchored" data-anchor-id="matrix-decompositions">Matrix Decompositions</h3>
+<p>We will be talking about Matrix Decompositions every day of this course, and will cover the below examples in future lessons:</p>
+<ul>
+<li><p><strong>Topic Modeling</strong> (NMF and SVD. SVD uses QR) A group of documents can be represented by a term-document matrix <img src="https://github.com/fastai/numerical-linear-algebra/raw/master/nbs/images/document_term.png" alt="term-document matrix" style="width: 70%"> (source: <a href="http://player.slideplayer.com/15/4528582/#">Introduction to Information Retrieval</a>) <img src="https://github.com/fastai/numerical-linear-algebra/raw/master/nbs/images/nmf_doc.png" alt="NMF on documents" style="width: 70%"> (source: <a href="http://perso.telecom-paristech.fr/~essid/teach/NMF_tutorial_ICME-2014.pdf">NMF Tutorial</a>)</p></li>
+<li><p><strong>Background removal</strong> (robust PCA, which uses truncated SVD) <img src="https://github.com/fastai/numerical-linear-algebra/raw/master/nbs/images/surveillance3.png" class="img-fluid" alt="background removal"></p></li>
+<li><p><strong>Google’s PageRank Algorithm</strong> (eigen decomposition)</p></li>
+</ul>
+<p><img src="https://github.com/fastai/numerical-linear-algebra/raw/master/nbs/images/page_rank_graph.png" alt="PageRank" style="width: 70%"> (source: <a href="http://computationalculture.net/article/what_is_in_pagerank">What is in PageRank?</a>)</p>
+<ul>
+<li>List of other decompositions and some applications <a href="https://sites.google.com/site/igorcarron2/matrixfactorizations">matrix factorization jungle</a></li>
+</ul>
+</section>
+</section>
+<section id="accuracy" class="level2">
+<h2 class="anchored" data-anchor-id="accuracy">Accuracy</h2>
+<section id="floating-point-arithmetic" class="level3">
+<h3 class="anchored" data-anchor-id="floating-point-arithmetic">Floating Point Arithmetic</h3>
+<p>To understand accuracy, we first need to look at <strong>how</strong> computers (which are finite and discrete) store numbers (which are infinite and continuous)</p>
+<section id="exercise" class="level4">
+<h4 class="anchored" data-anchor-id="exercise">Exercise</h4>
+<p>Take a moment to look at the function <span class="math inline">\(f\)</span> below. Before you try running it, write on paper what the output would be of <span class="math inline">\(x_1 = f(\frac{1}{10})\)</span>. Now, (still on paper) plug that back into <span class="math inline">\(f\)</span> and calculate <span class="math inline">\(x_2 = f(x_1)\)</span>. Keep going for 10 iterations.</p>
+<p>This example is taken from page 107 of <em>Numerical Methods</em>, by Greenbaum and Chartier.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> x <span class="op">&lt;=</span> <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>:</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">2</span> <span class="op">*</span> x</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>:</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">2</span><span class="op">*</span>x <span class="op">-</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2022-07-14T11:01:54.071060Z&quot;,&quot;start_time&quot;:&quot;2022-07-14T11:01:53.789686Z&quot;}" data-execution_count="12">
+<pre class="apl cell-code"><code>⍝ Translate function to APL
+f←{(2×⍵)-⍵&gt;.5}</code></pre>
+</div>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2022-07-14T11:01:54.358164Z&quot;,&quot;start_time&quot;:&quot;2022-07-14T11:01:54.075436Z&quot;}" data-execution_count="13">
+<pre class="apl cell-code"><code>⍝ Create generator
+gen←{(f⍣⍵)⍺}</code></pre>
+</div>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2022-07-14T11:01:54.670121Z&quot;,&quot;start_time&quot;:&quot;2022-07-14T11:01:54.368693Z&quot;}" data-execution_count="14">
+<pre class="apl cell-code"><code>⍝ First 10 generations
+.1 gen¨ ⍳10</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<span style="white-space:pre; font-family: monospace">┌→──────────────────────────────────────┐
+│0.2 0.4 0.8 0.6 0.2 0.4 0.8 0.6 0.2 0.4│
+└~──────────────────────────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2022-07-14T11:01:54.992523Z&quot;,&quot;start_time&quot;:&quot;2022-07-14T11:01:54.673975Z&quot;}" data-execution_count="15">
+<pre class="apl cell-code"><code>⍝ First 80 generations (left to right top to bottom)
+16 5⍴.1 gen¨ ⍳80</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<span style="white-space:pre; font-family: monospace">┌→───────────────────────────────────────────────────────────────┐
+↓0.2          0.4          0.8          0.6          0.2         │
+│0.4          0.8          0.6          0.2          0.4         │
+│0.8          0.6          0.2          0.4          0.8         │
+│0.6          0.2          0.4          0.8          0.6         │
+│0.2          0.4          0.8          0.6000000001 0.2000000002│
+│0.4000000004 0.8000000007 0.6000000015 0.200000003  0.400000006 │
+│0.8000000119 0.6000000238 0.2000000477 0.4000000954 0.8000001907│
+│0.6000003815 0.2000007629 0.4000015259 0.8000030518 0.6000061035│
+│0.200012207  0.4000244141 0.8000488281 0.6000976563 0.2001953125│
+│0.400390625  0.80078125   0.6015625    0.203125     0.40625     │
+│0.8125       0.625        0.25         0.5          1           │
+│1            1            1            1            1           │
+│1            1            1            1            1           │
+│1            1            1            1            1           │
+│1            1            1            1            1           │
+│1            1            1            1            1           │
+└~───────────────────────────────────────────────────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2022-07-14T11:01:55.266663Z&quot;,&quot;start_time&quot;:&quot;2022-07-14T11:01:54.994960Z&quot;}" data-execution_count="16">
+<pre class="apl cell-code"><code>⍝ Answer after 80 generations
+(f⍣80).1</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<span style="white-space:pre; font-family: monospace"> 
+1
+ 
+</span>
+</div>
+</div>
+<p>What went wrong?</p>
+</section>
+<section id="problem-math-is-continuous-infinite-but-computers-are-discrete-finite" class="level4">
+<h4 class="anchored" data-anchor-id="problem-math-is-continuous-infinite-but-computers-are-discrete-finite">Problem: math is continuous &amp; infinite, but computers are discrete &amp; finite</h4>
+<p>Two Limitations of computer representations of numbers: 1. they can’t be arbitrarily large or small 2. there must be gaps between them</p>
+<p>The reason we need to care about accuracy, is because computers can’t store infinitely accurate numbers. It’s possible to create calculations that give very wrong answers (particularly when repeating an operation many times, since each operation could multiply the error).</p>
+<p>How computers store numbers:</p>
+<p><img src="https://github.com/fastai/numerical-linear-algebra/raw/master/nbs/images/fpa.png" alt="floating point" style="width: 60%"></p>
+<p>The <em>mantissa</em> can also be referred to as the <em>significand</em>.</p>
+<p>IEEE Double precision arithmetic: - Numbers can be as large as <span class="math inline">\(1.79 \times 10^{308}\)</span> and as small as <span class="math inline">\(2.23 \times 10^{-308}\)</span>. - The interval <span class="math inline">\([1,2]\)</span> is represented by discrete subset:</p>
+<p><span class="math display">\[1, \: 1+2^{-52}, \: 1+2 \times 2^{-52},\: 1+3 \times 2^{-52},\: \ldots, 2\]</span></p>
+<ul>
+<li>The interval <span class="math inline">\([2,4]\)</span> is represented:</li>
+</ul>
+<p><span class="math display">\[2, \: 2+2^{-51}, \: 2+2 \times 2^{-51},\: 2+3 \times 2^{-51},\: \ldots, 4\]</span></p>
+<p>Floats and doubles are not equidistant:</p>
+<p><img src="https://github.com/fastai/numerical-linear-algebra/raw/master/nbs/images/fltscale-wh.png" alt="floating point" style="width: 100%"> Source: <a href="http://www.volkerschatz.com/science/float.html">What you never wanted to know about floating point but will be forced to find out</a></p>
+<p><strong>Machine Epsilon</strong></p>
+<p>Half the distance between 1 and the next larger number. This can vary by computer. IEEE standards for double precision specify <span class="math display">\[ \varepsilon_{machine} = 2^{-53} \approx 1.11 \times 10^{-16}\]</span></p>
+<p><strong>Two important properties of Floating Point Arithmetic</strong>:</p>
+<ul>
+<li><p>The difference between a real number <span class="math inline">\(x\)</span> and its closest floating point approximation <span class="math inline">\(fl(x)\)</span> is always smaller than <span class="math inline">\(\varepsilon_{machine}\)</span> in relative terms. For some <span class="math inline">\(\varepsilon\)</span>, where <span class="math inline">\(\lvert \varepsilon \rvert \leq \varepsilon_{machine}\)</span>, <span class="math display">\[fl(x)=x \cdot (1 + \varepsilon)\]</span></p></li>
+<li><p>Where * is any operation (<span class="math inline">\(+, -, \times, \div\)</span>), and <span class="math inline">\(\circledast\)</span> is its floating point analogue,</p>
+<p><span class="math display">\[ x \circledast y = (x * y)(1 + \varepsilon)\]</span></p></li>
+</ul>
+<p>for some <span class="math inline">\(\varepsilon\)</span>, where <span class="math inline">\(\lvert \varepsilon \rvert \leq \varepsilon_{machine}\)</span> That is, every operation of floating point arithmetic is exact up to a relative error of size at most <span class="math inline">\(\varepsilon_{machine}\)</span></p>
+</section>
+<section id="history" class="level4">
+<h4 class="anchored" data-anchor-id="history">History</h4>
+<p>Floating point arithmetic may seem like a clear choice in hindsight, but there have been many, many ways of storing numbers: - fixed-point arithmetic - logarithmic and semilogarithmic number systems - continued-fractions - rational numbers - possibly infinite strings of rational numbers - level-index number systems - fixed-slash and floating-slash number systems - 2-adic numbers</p>
+<p>For references, see <a href="https://perso.ens-lyon.fr/jean-michel.muller/chapitre1.pdf">Chapter 1</a> (which is free) of the <a href="http://www.springer.com/gp/book/9780817647049">Handbook of Floating-Point Arithmetic</a>. Yes, there is an entire 16 chapter book on floating point!</p>
+<p>Timeline History of Floating Point Arithmetic: - ~1600 BC: Babylonian radix-60 system was earliest floating-point system (Donald Knuth). Represented the significand of a radix-60 floating-point representation (if ratio of two numbers is a power of 60, represented the same) - 1630 Slide rule. Manipulate only significands (radix-10) - 1914 Leonardo Torres y Quevedo described an electromechanical implementation of Babbage’s Analytical Engine with Floating Point Arithmetic. - 1941 First real, modern implementation. Konrad Zuse’s Z3 computer. Used radix-2, with 14 bit significand, 7 bit exponents, and 1 sign bit. - 1985 IEEE 754-1985 Standard for Binary Floating-Point Arithmetic released. Has increased accuracy, reliability, and portability. <a href="https://people.eecs.berkeley.edu/~wkahan/">William Kahan</a> played leading role.</p>
+<p>“Many different ways of approximating real numbers on computers have been introduced.. And yet, floating-point arithmetic is <strong>by far the most widely used</strong> way of representing real numbers in modern computers. Simulating an infinite, continuous set (the real numbers) with a finite set (the “machine numbers”) is not a straightforward task: <strong>clever compromises must be found between, speed, accuracy, dynamic range, ease of use and implementation, and memory</strong>. It appears that floating-point arithmetic, with adequately chosen parameters (radix, precision, extremal exponents, etc.), is a very good compromise for most numerical applications.”</p>
+<p>Although a radix value of 2 (binary) seems like the pretty clear winner now for computers, a variety of other radix values have been used at various point:</p>
+<ul>
+<li>radix-8 used by early machines PDP-10, Burroughs 570 and 6700</li>
+<li>radix-16 IBM 360</li>
+<li>radix-10 financial calculations, pocket calculators, Maple</li>
+<li>radix-3 Russian SETUN computer (1958). Benefits: minimizes beta x p (symbols x digits), for a fixed largest representable number beta^p - 1. Rounding = truncation</li>
+<li>radix-2 most common. Reasons: easy to implement. Studies have shown (with implicit leading bit) this gives better worst-case or average accuracy than all other radices.</li>
+</ul>
+</section>
+</section>
+<section id="conditioning-and-stability" class="level3">
+<h3 class="anchored" data-anchor-id="conditioning-and-stability">Conditioning and Stability</h3>
+<p>Since we can not represent numbers exactly on a computer (due to the finiteness of our storage, and the gaps between numbers in floating point architecture), it becomes important to know <em>how small perturbations in the input to a problem impact the output</em>.</p>
+<p><strong>“A stable algorithm gives nearly the right answer to nearly the right question.”</strong> –Trefethen</p>
+<p><strong>Conditioning</strong>: perturbation behavior of a mathematical problem (e.g.&nbsp;least squares)</p>
+<p><strong>Stability</strong>: perturbation behavior of an algorithm used to solve that problem on a computer (e.g.&nbsp;least squares algorithms, householder, back substitution, gaussian elimination)</p>
+<p>Example: Eigenvalues of a Matrix</p>
+<section id="create-matrices" class="level5">
+<h5 class="anchored" data-anchor-id="create-matrices">Create matrices</h5>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2022-07-14T11:01:55.580471Z&quot;,&quot;start_time&quot;:&quot;2022-07-14T11:01:55.272289Z&quot;}" data-scrolled="true" data-execution_count="17">
+<pre class="apl cell-code"><code>⎕←A←2 2⍴1 1000 0 1
+⎕←B←2 2⍴1 1000 .001 1</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<span style="white-space:pre; font-family: monospace">┌→─────┐
+↓1 1000│
+│0    1│
+└~─────┘
+</span>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<span style="white-space:pre; font-family: monospace">┌→─────────┐
+↓1     1000│
+│0.001    1│
+└~─────────┘
+</span>
+</div>
+</div>
+</section>
+<section id="calculate-eigenvalues-quadratic" class="level5">
+<h5 class="anchored" data-anchor-id="calculate-eigenvalues-quadratic">Calculate Eigenvalues (quadratic)</h5>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2022-07-14T11:01:57.132456Z&quot;,&quot;start_time&quot;:&quot;2022-07-14T11:01:55.582371Z&quot;}" data-execution_count="18">
+<pre class="apl cell-code"><code>I ← {⍵ ⍵ ⍴ 1, ⍵⍴0} ⍝ calculate identity
+tf← {+/+/(⍵×I 2)} ⍝ Calculate Trace
+df ← {(×/×/(⍵×I 2)+0=I 2)-×/×/(I 2)+⍵×0=I 2} ⍝ Calculate Determinant
+
+⍝ Eigenvalue calculation
+e1←{2÷⍨⍵-.5*⍨(⍵*2)-4×⍺} ⍝ Eigenvalue 1
+e2←{2÷⍨⍵+.5*⍨(⍵*2)-4×⍺} ⍝ Eigenvalue 2
+
+⍝ Get both eigenvalues
+eigenvalues←{(d e2 t),(d←df ⍵)e1(t←tf ⍵)} ⍝ Get both eigenvalues</code></pre>
+</div>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2022-07-14T11:01:57.394820Z&quot;,&quot;start_time&quot;:&quot;2022-07-14T11:01:57.134111Z&quot;}" data-execution_count="19">
+<pre class="apl cell-code"><code>eigenvalues A
+eigenvalues B</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="19">
+<span style="white-space:pre; font-family: monospace">┌→──┐
+│1 1│
+└~──┘
+</span>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="19">
+<span style="white-space:pre; font-family: monospace">┌→──┐
+│2 0│
+└~──┘
+</span>
+</div>
+</div>
+<p><strong>Reminder: Two properties of Floating Point Arithmetic</strong></p>
+<ul>
+<li><p>The difference between a real number <span class="math inline">\(x\)</span> and its closest floating point approximation <span class="math inline">\(fl(x)\)</span> is always smaller than <span class="math inline">\(\varepsilon_{machine}\)</span> in relative terms.</p></li>
+<li><p>Every operation <span class="math inline">\(+, -, \times, \div\)</span> of floating point arithmetic is exact up to a relative error of size at most <span class="math inline">\(\varepsilon_{machine}\)</span></p></li>
+</ul>
+<p>Examples we’ll see: - Classical vs Modified Gram-Schmidt accuracy - Gram-Schmidt vs.&nbsp;Householder (2 different ways of computing QR factorization), how orthogonal the answer is - Condition of a system of equations</p>
+</section>
+</section>
+<section id="approximation-accuracy" class="level3">
+<h3 class="anchored" data-anchor-id="approximation-accuracy">Approximation accuracy</h3>
+<p>It’s rare that we need to do highly accurate matrix computations at scale. In fact, often we’re doing some kind of machine learning, and less accurate approaches can prevent overfitting.</p>
+<p>If we accept some decrease in accuracy, then we can often increase speed by orders of magnitude (and/or decrease memory use) by using approximate algorithms. These algorithms typically give a correct answer with some probability. By rerunning the algorithm multiple times you can generally increase that probability multiplicatively!</p>
+<p><strong>Example</strong>: A <strong>bloom filter</strong> allows searching for set membership with 1% false positives, using &lt;10 bits per element. This often represents reductions in memory use of thousands of times.</p>
+<p><img src="https://github.com/fastai/numerical-linear-algebra/raw/master/nbs/images/bloom_filter.png" alt="Bloom Filters" style="width: 60%"></p>
+<p>The false positives can be easily handled by having a second (exact) stage check all returned items - for rare items this can be very effective. For instance, many web browsers use a bloom filter to create a set of blocked pages (e.g.&nbsp;pages with viruses), since blocked web pages are only a small fraction of the whole web. A false positive can be handled here by taking anything returned by the bloom filter and checking against a web service with the full exact list. (See this <a href="https://llimllib.github.io/bloomfilter-tutorial/">bloom filter tutorial</a> for more details).</p>
+</section>
+<section id="expensive-errors" class="level3">
+<h3 class="anchored" data-anchor-id="expensive-errors">Expensive Errors</h3>
+<p><em>The below examples are from Greenbaum &amp; Chartier.</em></p>
+<p>European Space Agency spent 10 years and $7 billion on the Ariane 5 Rocket.</p>
+<p>What can happen when you try to fit a 64 bit number into a 16 bit space (integer overflow):</p>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2022-07-14T11:01:57.713693Z&quot;,&quot;start_time&quot;:&quot;2022-07-14T11:01:57.403329Z&quot;}" data-execution_count="20">
+<pre class="apl cell-code"><code>⍝from IPython.display import YouTubeVideo
+⍝YouTubeVideo("PK_yguLapgA")</code></pre>
+</div>
+<p>Here is a floating point error that cost Intel $475 million:</p>
+<p><a href="http://www.nytimes.com/1994/11/24/business/company-news-flaw-undermines-accuracy-of-pentium-chips.html">1994 NYTimes article about Intel Pentium Error</a> <img src="https://github.com/fastai/numerical-linear-algebra/raw/master/nbs/images/pentium_nytimes.png" class="img-fluid" alt="article"></p>
+<p><strong>Resources</strong>: See Lecture 13 of Trefethen &amp; Bau and Chapter 5 of Greenbaum &amp; Chartier for more on Floating Point Arithmetic</p>
+</section>
+</section>
+<section id="memory-use" class="level2">
+<h2 class="anchored" data-anchor-id="memory-use">Memory Use</h2>
+<section id="sparse-vs-dense" class="level3">
+<h3 class="anchored" data-anchor-id="sparse-vs-dense">Sparse vs Dense</h3>
+<p>Above we covered how <em>numbers</em> are stored, now let’s talk about how <em>matrices</em> are stored. A key way to save memory (and computation) is not to store all of your matrix. Instead, just store the non-zero elements. This is called <strong>sparse</strong> storage, and it is well suited to sparse matrices, that is, matrices where most elements are zero.</p>
+<p><img src="https://github.com/fastai/numerical-linear-algebra/raw/master/nbs/images/sparse.png" alt="floating point" style="width: 50%"></p>
+<p>Here is an example of the matrix from a finite element problem, which shows up in engineering (for instance, when modeling the air-flow around a plane). In this example, the non-zero elements are black and the zero elements are white: <img src="https://github.com/fastai/numerical-linear-algebra/raw/master/nbs/images/Finite_element_sparse_matrix.png" alt="floating point" style="width: 50%"> <a href="https://commons.wikimedia.org/w/index.php?curid=2245335">Source</a></p>
+<p>There are also special types of structured matrix, such as diagonal, tri-diagonal, hessenberg, and triangular, which each display particular patterns of sparsity, which can be leveraged to reduce memory and computation.</p>
+<p>The opposite of a sparse matrix is a <strong>dense</strong> matrix, along with dense storage, which simply refers to a matrix containing mostly non-zeros, in which every element is stored explicitly. Since sparse matrices are helpful and common, numerical linear algebra focuses on maintaining sparsity through as many operations in a computation as possible.</p>
+</section>
+</section>
+<section id="speed" class="level2">
+<h2 class="anchored" data-anchor-id="speed">Speed</h2>
+<p>Speed differences come from a number of areas, particularly: - Computational complexity - Vectorization - Scaling to multiple cores and nodes - Locality</p>
+<section id="computational-complexity" class="level3">
+<h3 class="anchored" data-anchor-id="computational-complexity">Computational complexity</h3>
+<p>If you are unfamiliar with computational complexity and <span class="math inline">\(\mathcal{O}\)</span> notation, you can read about it <a href="https://www.interviewcake.com/article/java/big-o-notation-time-and-space-complexity">on Interview Cake</a> and <a href="https://www.codecademy.com/courses/big-o/0/3">practice on Codecademy</a>. Algorithms are generally expressed in terms of computation complexity with respect to the number of rows and number of columns in the matrix. E.g. you may find an algorithm described as <span class="math inline">\(\mathcal{O(n^2m)}\)</span>.</p>
+</section>
+<section id="vectorization" class="level3">
+<h3 class="anchored" data-anchor-id="vectorization">Vectorization</h3>
+<p>Modern CPUs and GPUs can apply an operation to multiple elements at once on a single core. For instance, take the exponent of 4 floats in a vector in a single step. This is called SIMD. You will not be explicitly writing SIMD code (which tends to require assembly language or special C “intrinsics”), but instead will use vectorized operations in libraries like numpy, which in turn rely on specially tuned vectorized low level linear algebra APIs (in particular, BLAS, and LAPACK).</p>
+<section id="matrix-computation-packages-blas-and-lapack" class="level4">
+<h4 class="anchored" data-anchor-id="matrix-computation-packages-blas-and-lapack">Matrix Computation Packages: BLAS and LAPACK</h4>
+<p><a href="http://www.netlib.org/blas/">BLAS (Basic Linear Algebra Subprograms)</a>: specification for low-level matrix and vector arithmetic operations. These are the standard building blocks for performing basic vector and matrix operations. BLAS originated as a Fortran library in 1979. Examples of BLAS libraries include: AMD Core Math Library (ACML), ATLAS, Intel Math Kernel Library (MKL), and OpenBLAS.</p>
+<p><a href="http://www.netlib.org/lapack/">LAPACK</a> is written in Fortran, provides routines for solving systems of linear equations, eigenvalue problems, and singular value problems. Matrix factorizations (LU, Cholesky, QR, SVD, Schur). Dense and banded matrices are handled, but not general sparse matrices. Real and complex, single and double precision.</p>
+<p>1970s and 1980s: EISPACK (eigenvalue routines) and LINPACK (linear equations and linear least-squares routines) libraries</p>
+<p><strong>LAPACK original goal</strong>: make LINAPCK and EISPACK run efficiently on shared-memory vector and parallel processors and exploit cache on modern cache-based architectures (initially released in 1992). EISPACK and LINPACK ignore multi-layered memory hierarchies and spend too much time moving data around.</p>
+<p>LAPACK uses highly optimized block operations implementations (which much be implemented on each machine) LAPACK written so as much of the computation as possible is performed by BLAS.</p>
+</section>
+</section>
+<section id="locality" class="level3">
+<h3 class="anchored" data-anchor-id="locality">Locality</h3>
+<p>Using slower ways to access data (e.g.&nbsp;over the internet) can be up to a billion times slower than faster ways (e.g.&nbsp;from a register). But there’s much less fast storage than slow storage. So once we have data in fast storage, we want to do any computation required at that time, rather than having to load it multiple times each time we need it. In addition, for most types of storage its much faster to access data items that are stored next to each other, so we should try to always use any data stored nearby that we know we’ll need soon. These two issues are known as locality.</p>
+<section id="speed-of-different-types-of-memory" class="level4">
+<h4 class="anchored" data-anchor-id="speed-of-different-types-of-memory">Speed of different types of memory</h4>
+<p>Here are some <em>numbers everyone should know</em> (from the legendary <a href="http://static.googleusercontent.com/media/research.google.com/en/us/people/jeff/stanford-295-talk.pdf">Jeff Dean</a>): - L1 cache reference 0.5 ns - L2 cache reference 7 ns - Main memory reference/RAM 100 ns - Send 2K bytes over 1 Gbps network 20,000 ns - Read 1 MB sequentially from memory 250,000 ns - Round trip within same datacenter 500,000 ns - Disk seek 10,000,000 ns - Read 1 MB sequentially from network 10,000,000 ns - Read 1 MB sequentially from disk 30,000,000 ns - Send packet CA-&gt;Netherlands-&gt;CA 150,000,000 ns</p>
+<p>And here is an updated, interactive <a href="https://people.eecs.berkeley.edu/~rcs/research/interactive_latency.html">version</a>, which includes a timeline of how these numbers have changed.</p>
+<p><strong>Key take-away</strong>: Each successive memory type is (at least) an order of magnitude worse than the one before it. Disk seeks are <strong>very slow</strong>.</p>
+<p>This video has a great example of showing several ways you could compute the blur of a photo, with various trade-offs. Don’t worry about the C code that appears, just focus on the red and green moving pictures of matrix computation.</p>
+<p>Although the video is about a new language called Halide, it is a good illustration the issues it raises are universal. Watch minutes 1-13:</p>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2022-07-14T11:01:58.013968Z&quot;,&quot;start_time&quot;:&quot;2022-07-14T11:01:57.716542Z&quot;}" data-execution_count="21">
+<pre class="apl cell-code"><code>⍝ from IPython.display import YouTubeVideo
+⍝ YouTubeVideo("3uiEyEKji0M")</code></pre>
+</div>
+<p>Locality is hard. Potential trade-offs: - redundant computation to save memory bandwidth - sacrificing parallelism to get better reuse</p>
+</section>
+<section id="temporaries" class="level4">
+<h4 class="anchored" data-anchor-id="temporaries">Temporaries</h4>
+<p>The issue of “temporaries” occurs when the result of a calculation is stored in a temporary variable in RAM, and then that variable is loaded to do another calculation on it. This is many orders of magnitude slower than simply keeping the data in cache or registers and doing all necessary computations before storing the final result in RAM. This is particularly an issue for us since numpy generally creates temporaries for every single operation or function it does. E.g. <span class="math inline">\(a=b\cdot c^2+ln(d)\)</span> will create four temporaries (since there are four operations and functions).</p>
+</section>
+</section>
+<section id="scaling-to-multiple-cores-and-nodes" class="level3">
+<h3 class="anchored" data-anchor-id="scaling-to-multiple-cores-and-nodes">Scaling to multiple cores and nodes</h3>
+<p>We have a separate section for scalability, but it’s worth noting that this is also important for speed - if we can’t scale across all the computing resources we have, we’ll be stuck with slower computation.</p>
+</section>
+</section>
+<section id="scalability-parallelization" class="level2">
+<h2 class="anchored" data-anchor-id="scalability-parallelization">Scalability / parallelization</h2>
+<p>Often we’ll find that we have more data than we have memory to handle, or time to compute. In such a case we would like to be able to scale our algorithm across <a href="http://www.makeuseof.com/tag/processor-core-makeuseof-explains-2/">multiple cores</a> (within one computer) or nodes (i.e.&nbsp;multiple computers on a network). We will not be tackling multi-node scaling in this course, although we will look at scaling across multiple cores (called parallelization). In general, scalable algorithms are those where the input can be broken up into smaller pieces, each of which are handled by a different core/computer, and then are put back together at the end.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

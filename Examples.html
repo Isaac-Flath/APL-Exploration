@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Isaac Flath">
+<meta name="dcterms.date" content="2022-07-17">
+
+<title>APL Exploration - Example Patterns</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">APL Exploration</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html">About</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/isaac-flath/apl-exploration"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/isaac-flath/"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#plus" id="toc-plus" class="nav-link active" data-scroll-target="#plus"><code>+</code>: + : Plus</a>
+  <ul class="collapse">
+  <li><a href="#conjugate" id="toc-conjugate" class="nav-link" data-scroll-target="#conjugate">Conjugate</a></li>
+  <li><a href="#plus-1" id="toc-plus-1" class="nav-link" data-scroll-target="#plus-1">Plus</a></li>
+  </ul></li>
+  <li><a href="#minus" id="toc-minus" class="nav-link" data-scroll-target="#minus"><code>-</code>: - : Minus</a>
+  <ul class="collapse">
+  <li><a href="#negate" id="toc-negate" class="nav-link" data-scroll-target="#negate">Negate</a></li>
+  <li><a href="#minus-1" id="toc-minus-1" class="nav-link" data-scroll-target="#minus-1">Minus</a></li>
+  </ul></li>
+  <li><a href="#times" id="toc-times" class="nav-link" data-scroll-target="#times"><code>×</code>: `- : Times</a>
+  <ul class="collapse">
+  <li><a href="#direction" id="toc-direction" class="nav-link" data-scroll-target="#direction">Direction</a></li>
+  <li><a href="#times-1" id="toc-times-1" class="nav-link" data-scroll-target="#times-1">Times</a></li>
+  </ul></li>
+  <li><a href="#divide" id="toc-divide" class="nav-link" data-scroll-target="#divide"><code>÷</code>: `= : Divide</a>
+  <ul class="collapse">
+  <li><a href="#reciprocal" id="toc-reciprocal" class="nav-link" data-scroll-target="#reciprocal">Reciprocal</a></li>
+  <li><a href="#division" id="toc-division" class="nav-link" data-scroll-target="#division">Division</a></li>
+  </ul></li>
+  <li><a href="#p-star" id="toc-p-star" class="nav-link" data-scroll-target="#p-star"><code>*</code>: `p : Star</a>
+  <ul class="collapse">
+  <li><a href="#exponential" id="toc-exponential" class="nav-link" data-scroll-target="#exponential">Exponential</a></li>
+  <li><a href="#power" id="toc-power" class="nav-link" data-scroll-target="#power">Power</a></li>
+  </ul></li>
+  <li><a href="#log" id="toc-log" class="nav-link" data-scroll-target="#log"><code>⍟</code>: `* : Log</a>
+  <ul class="collapse">
+  <li><a href="#natural-log" id="toc-natural-log" class="nav-link" data-scroll-target="#natural-log">Natural Log</a></li>
+  <li><a href="#log-1" id="toc-log-1" class="nav-link" data-scroll-target="#log-1">Log</a></li>
+  </ul></li>
+  <li><a href="#domino" id="toc-domino" class="nav-link" data-scroll-target="#domino"><code>⌹</code> : `+ : Domino</a>
+  <ul class="collapse">
+  <li><a href="#matrix-inverse" id="toc-matrix-inverse" class="nav-link" data-scroll-target="#matrix-inverse">Matrix Inverse</a></li>
+  <li><a href="#matrix-divide" id="toc-matrix-divide" class="nav-link" data-scroll-target="#matrix-divide">Matrix Divide</a></li>
+  </ul></li>
+  <li><a href="#o-circle" id="toc-o-circle" class="nav-link" data-scroll-target="#o-circle"><code>○</code> : `o : Circle</a>
+  <ul class="collapse">
+  <li><a href="#pi-times" id="toc-pi-times" class="nav-link" data-scroll-target="#pi-times">Pi Times</a></li>
+  <li><a href="#circular-functions" id="toc-circular-functions" class="nav-link" data-scroll-target="#circular-functions">Circular Functions</a></li>
+  </ul></li>
+  <li><a href="#exclamation-mark" id="toc-exclamation-mark" class="nav-link" data-scroll-target="#exclamation-mark"><code>!</code> : ! : Exclamation Mark</a>
+  <ul class="collapse">
+  <li><a href="#factorial" id="toc-factorial" class="nav-link" data-scroll-target="#factorial">Factorial</a></li>
+  <li><a href="#binomial" id="toc-binomial" class="nav-link" data-scroll-target="#binomial">Binomial</a></li>
+  </ul></li>
+  <li><a href="#question-mark" id="toc-question-mark" class="nav-link" data-scroll-target="#question-mark"><code>?</code> : ? : Question Mark</a>
+  <ul class="collapse">
+  <li><a href="#roll" id="toc-roll" class="nav-link" data-scroll-target="#roll">Roll</a></li>
+  <li><a href="#deal" id="toc-deal" class="nav-link" data-scroll-target="#deal">Deal</a></li>
+  </ul></li>
+  <li><a href="#stile" id="toc-stile" class="nav-link" data-scroll-target="#stile"><code>|</code> : | : Stile</a>
+  <ul class="collapse">
+  <li><a href="#magnitude" id="toc-magnitude" class="nav-link" data-scroll-target="#magnitude">Magnitude</a></li>
+  <li><a href="#residue" id="toc-residue" class="nav-link" data-scroll-target="#residue">Residue</a></li>
+  </ul></li>
+  <li><a href="#s-upstile" id="toc-s-upstile" class="nav-link" data-scroll-target="#s-upstile"><code>⌈</code> : `s : Upstile</a>
+  <ul class="collapse">
+  <li><a href="#ceiling" id="toc-ceiling" class="nav-link" data-scroll-target="#ceiling">Ceiling</a></li>
+  <li><a href="#max" id="toc-max" class="nav-link" data-scroll-target="#max">Max</a></li>
+  </ul></li>
+  <li><a href="#d-downstile" id="toc-d-downstile" class="nav-link" data-scroll-target="#d-downstile"><code>⌊</code> : `d : Downstile</a>
+  <ul class="collapse">
+  <li><a href="#floor" id="toc-floor" class="nav-link" data-scroll-target="#floor">Floor</a></li>
+  <li><a href="#min" id="toc-min" class="nav-link" data-scroll-target="#min">Min</a></li>
+  </ul></li>
+  <li><a href="#i-iota" id="toc-i-iota" class="nav-link" data-scroll-target="#i-iota"><code>⍳</code>: `i : Iota</a>
+  <ul class="collapse">
+  <li><a href="#index-generator" id="toc-index-generator" class="nav-link" data-scroll-target="#index-generator">Index Generator</a></li>
+  <li><a href="#index-of" id="toc-index-of" class="nav-link" data-scroll-target="#index-of">Index Of</a></li>
+  </ul></li>
+  <li><a href="#i-iota-underbar" id="toc-i-iota-underbar" class="nav-link" data-scroll-target="#i-iota-underbar"><code>⍸</code>: `I : Iota Underbar</a>
+  <ul class="collapse">
+  <li><a href="#where" id="toc-where" class="nav-link" data-scroll-target="#where">Where</a></li>
+  <li><a href="#interval-index" id="toc-interval-index" class="nav-link" data-scroll-target="#interval-index">Interval Index</a></li>
+  </ul></li>
+  <li><a href="#equal" id="toc-equal" class="nav-link" data-scroll-target="#equal"><code>=</code>: = : Equal</a>
+  <ul class="collapse">
+  <li><a href="#equal-to" id="toc-equal-to" class="nav-link" data-scroll-target="#equal-to">Equal To</a></li>
+  </ul></li>
+  <li><a href="#not-equal" id="toc-not-equal" class="nav-link" data-scroll-target="#not-equal"><code>≠</code>: `8 : Not Equal</a>
+  <ul class="collapse">
+  <li><a href="#unique-mark" id="toc-unique-mark" class="nav-link" data-scroll-target="#unique-mark">Unique Mark</a></li>
+  <li><a href="#not-equal-to" id="toc-not-equal-to" class="nav-link" data-scroll-target="#not-equal-to">Not Equal to</a></li>
+  </ul></li>
+  <li><a href="#less-than-or-equal-to" id="toc-less-than-or-equal-to" class="nav-link" data-scroll-target="#less-than-or-equal-to"><code>≤</code>: `4 : Less Than or Equal To</a>
+  <ul class="collapse">
+  <li><a href="#less-than-or-equal-to-1" id="toc-less-than-or-equal-to-1" class="nav-link" data-scroll-target="#less-than-or-equal-to-1">Less Than or Equal To</a></li>
+  </ul></li>
+  <li><a href="#less-than" id="toc-less-than" class="nav-link" data-scroll-target="#less-than"><code>&lt;</code>: &lt; : Less Than</a>
+  <ul class="collapse">
+  <li><a href="#less-than-1" id="toc-less-than-1" class="nav-link" data-scroll-target="#less-than-1">Less Than</a></li>
+  </ul></li>
+  <li><a href="#greater-than" id="toc-greater-than" class="nav-link" data-scroll-target="#greater-than"><code>&gt;</code>: &gt; : Greater Than</a>
+  <ul class="collapse">
+  <li><a href="#greater-than-1" id="toc-greater-than-1" class="nav-link" data-scroll-target="#greater-than-1">Greater Than</a></li>
+  </ul></li>
+  <li><a href="#greater-than-or-equal-to" id="toc-greater-than-or-equal-to" class="nav-link" data-scroll-target="#greater-than-or-equal-to"><code>≥</code> : `6 : Greater Than or Equal To</a>
+  <ul class="collapse">
+  <li><a href="#greater-than-or-equal-to-1" id="toc-greater-than-or-equal-to-1" class="nav-link" data-scroll-target="#greater-than-or-equal-to-1">Greater Than or Equal To</a></li>
+  </ul></li>
+  <li><a href="#equal-underbar" id="toc-equal-underbar" class="nav-link" data-scroll-target="#equal-underbar"><code>≡</code>: `: Equal Underbar</a>
+  <ul class="collapse">
+  <li><a href="#depth" id="toc-depth" class="nav-link" data-scroll-target="#depth">Depth</a></li>
+  <li><a href="#match" id="toc-match" class="nav-link" data-scroll-target="#match">Match</a></li>
+  </ul></li>
+  <li><a href="#equal-underbar-slash" id="toc-equal-underbar-slash" class="nav-link" data-scroll-target="#equal-underbar-slash"><code>≢</code>: `” : Equal Underbar Slash</a>
+  <ul class="collapse">
+  <li><a href="#tally" id="toc-tally" class="nav-link" data-scroll-target="#tally">Tally</a></li>
+  <li><a href="#not-match" id="toc-not-match" class="nav-link" data-scroll-target="#not-match">Not Match</a></li>
+  </ul></li>
+  <li><a href="#logical-or" id="toc-logical-or" class="nav-link" data-scroll-target="#logical-or"><code>∨</code>: `9 : Logical Or</a>
+  <ul class="collapse">
+  <li><a href="#greatest-common-divisor" id="toc-greatest-common-divisor" class="nav-link" data-scroll-target="#greatest-common-divisor">Greatest Common Divisor</a></li>
+  </ul></li>
+  <li><a href="#logical-and" id="toc-logical-and" class="nav-link" data-scroll-target="#logical-and"><code>∧</code>: `0 : Logical And</a>
+  <ul class="collapse">
+  <li><a href="#lowest-common-multiple" id="toc-lowest-common-multiple" class="nav-link" data-scroll-target="#lowest-common-multiple">Lowest Common Multiple</a></li>
+  </ul></li>
+  <li><a href="#logical-nand" id="toc-logical-nand" class="nav-link" data-scroll-target="#logical-nand"><code>⍲</code>: `0 : Logical Nand</a>
+  <ul class="collapse">
+  <li><a href="#nand" id="toc-nand" class="nav-link" data-scroll-target="#nand">Nand</a></li>
+  </ul></li>
+  <li><a href="#logical-nor" id="toc-logical-nor" class="nav-link" data-scroll-target="#logical-nor"><code>⍱</code>: `9 : Logical Nor</a>
+  <ul class="collapse">
+  <li><a href="#nor" id="toc-nor" class="nav-link" data-scroll-target="#nor">Nor</a></li>
+  </ul></li>
+  <li><a href="#b-up-tack" id="toc-b-up-tack" class="nav-link" data-scroll-target="#b-up-tack"><code>⊥</code>: `b : Up Tack</a>
+  <ul class="collapse">
+  <li><a href="#decode" id="toc-decode" class="nav-link" data-scroll-target="#decode">Decode</a></li>
+  </ul></li>
+  <li><a href="#n-down-tack" id="toc-n-down-tack" class="nav-link" data-scroll-target="#n-down-tack"><code>⊤</code>: `n : Down Tack</a>
+  <ul class="collapse">
+  <li><a href="#encode" id="toc-encode" class="nav-link" data-scroll-target="#encode">Encode</a></li>
+  </ul></li>
+  <li><a href="#left-tack" id="toc-left-tack" class="nav-link" data-scroll-target="#left-tack"><code>⊣</code>: `| : Left Tack</a>
+  <ul class="collapse">
+  <li><a href="#same" id="toc-same" class="nav-link" data-scroll-target="#same">Same</a></li>
+  <li><a href="#left" id="toc-left" class="nav-link" data-scroll-target="#left">Left</a></li>
+  </ul></li>
+  <li><a href="#right-tack" id="toc-right-tack" class="nav-link" data-scroll-target="#right-tack"><code>⊢</code>: `&nbsp;: Right Tack</a>
+  <ul class="collapse">
+  <li><a href="#same-1" id="toc-same-1" class="nav-link" data-scroll-target="#same-1">Same</a></li>
+  <li><a href="#right" id="toc-right" class="nav-link" data-scroll-target="#right">Right</a></li>
+  </ul></li>
+  <li><a href="#y-up-arrow" id="toc-y-up-arrow" class="nav-link" data-scroll-target="#y-up-arrow"><code>↑</code>: `y : Up Arrow</a>
+  <ul class="collapse">
+  <li><a href="#mix" id="toc-mix" class="nav-link" data-scroll-target="#mix">Mix</a></li>
+  <li><a href="#take" id="toc-take" class="nav-link" data-scroll-target="#take">Take</a></li>
+  </ul></li>
+  <li><a href="#u-down-arrow" id="toc-u-down-arrow" class="nav-link" data-scroll-target="#u-down-arrow"><code>↓</code>: `u : Down Arrow</a>
+  <ul class="collapse">
+  <li><a href="#split" id="toc-split" class="nav-link" data-scroll-target="#split">Split</a></li>
+  <li><a href="#drop" id="toc-drop" class="nav-link" data-scroll-target="#drop">Drop</a></li>
+  </ul></li>
+  <li><a href="#z-left-shoe" id="toc-z-left-shoe" class="nav-link" data-scroll-target="#z-left-shoe"><code>⊂</code>: `z : Left Shoe</a>
+  <ul class="collapse">
+  <li><a href="#enclose" id="toc-enclose" class="nav-link" data-scroll-target="#enclose">Enclose</a></li>
+  <li><a href="#partitioned-enclose" id="toc-partitioned-enclose" class="nav-link" data-scroll-target="#partitioned-enclose">Partitioned Enclose</a></li>
+  </ul></li>
+  <li><a href="#x-right-shoe" id="toc-x-right-shoe" class="nav-link" data-scroll-target="#x-right-shoe"><code>⊃</code> : `x : Right Shoe</a>
+  <ul class="collapse">
+  <li><a href="#first" id="toc-first" class="nav-link" data-scroll-target="#first">First</a></li>
+  <li><a href="#pick" id="toc-pick" class="nav-link" data-scroll-target="#pick">Pick</a></li>
+  </ul></li>
+  <li><a href="#z-left-shoe-underbar" id="toc-z-left-shoe-underbar" class="nav-link" data-scroll-target="#z-left-shoe-underbar"><code>⊆</code>: `Z : Left Shoe Underbar</a>
+  <ul class="collapse">
+  <li><a href="#nest" id="toc-nest" class="nav-link" data-scroll-target="#nest">Nest</a></li>
+  <li><a href="#partition" id="toc-partition" class="nav-link" data-scroll-target="#partition">Partition</a></li>
+  </ul></li>
+  <li><a href="#l-squad" id="toc-l-squad" class="nav-link" data-scroll-target="#l-squad"><code>⎕</code>: `l : Squad</a>
+  <ul class="collapse">
+  <li><a href="#materialize" id="toc-materialize" class="nav-link" data-scroll-target="#materialize">Materialize</a></li>
+  <li><a href="#index" id="toc-index" class="nav-link" data-scroll-target="#index">Index</a></li>
+  </ul></li>
+  <li><a href="#grade-down" id="toc-grade-down" class="nav-link" data-scroll-target="#grade-down"><code>⍒</code>: `# : Grade Down</a>
+  <ul class="collapse">
+  <li><a href="#grade-down-1" id="toc-grade-down-1" class="nav-link" data-scroll-target="#grade-down-1">Grade Down</a></li>
+  <li><a href="#dyadic-grade-down" id="toc-dyadic-grade-down" class="nav-link" data-scroll-target="#dyadic-grade-down">Dyadic Grade Down</a></li>
+  </ul></li>
+  <li><a href="#grade-up" id="toc-grade-up" class="nav-link" data-scroll-target="#grade-up"><code>⍋</code>: `$ : Grade Up</a>
+  <ul class="collapse">
+  <li><a href="#grade-up-1" id="toc-grade-up-1" class="nav-link" data-scroll-target="#grade-up-1">Grade Up</a></li>
+  <li><a href="#dyadic-grade-up" id="toc-dyadic-grade-up" class="nav-link" data-scroll-target="#dyadic-grade-up">Dyadic Grade Up</a></li>
+  </ul></li>
+  <li><a href="#e-epsilon" id="toc-e-epsilon" class="nav-link" data-scroll-target="#e-epsilon"><code>∊</code>: `e : Epsilon</a>
+  <ul class="collapse">
+  <li><a href="#enlist" id="toc-enlist" class="nav-link" data-scroll-target="#enlist">Enlist</a></li>
+  <li><a href="#membership" id="toc-membership" class="nav-link" data-scroll-target="#membership">Membership</a></li>
+  </ul></li>
+  <li><a href="#e-epsilon-underbar" id="toc-e-epsilon-underbar" class="nav-link" data-scroll-target="#e-epsilon-underbar"><code>⍷</code>: `E : Epsilon Underbar</a>
+  <ul class="collapse">
+  <li><a href="#find" id="toc-find" class="nav-link" data-scroll-target="#find">Find</a></li>
+  </ul></li>
+  <li><a href="#v-down-shoe" id="toc-v-down-shoe" class="nav-link" data-scroll-target="#v-down-shoe"><code>∪</code>: `v : Down Shoe</a>
+  <ul class="collapse">
+  <li><a href="#unique" id="toc-unique" class="nav-link" data-scroll-target="#unique">Unique</a></li>
+  <li><a href="#union" id="toc-union" class="nav-link" data-scroll-target="#union">Union</a></li>
+  </ul></li>
+  <li><a href="#c-up-shoe" id="toc-c-up-shoe" class="nav-link" data-scroll-target="#c-up-shoe"><code>∩</code>: `c : Up Shoe</a>
+  <ul class="collapse">
+  <li><a href="#intersection" id="toc-intersection" class="nav-link" data-scroll-target="#intersection">Intersection</a></li>
+  </ul></li>
+  <li><a href="#tilde" id="toc-tilde" class="nav-link" data-scroll-target="#tilde"><code>~</code>: ~ : Tilde</a>
+  <ul class="collapse">
+  <li><a href="#not" id="toc-not" class="nav-link" data-scroll-target="#not">Not</a></li>
+  <li><a href="#without" id="toc-without" class="nav-link" data-scroll-target="#without">Without</a></li>
+  </ul></li>
+  <li><a href="#slash" id="toc-slash" class="nav-link" data-scroll-target="#slash"><code>/</code>: / : Slash</a>
+  <ul class="collapse">
+  <li><a href="#replicate" id="toc-replicate" class="nav-link" data-scroll-target="#replicate">Replicate</a></li>
+  <li><a href="#reduce" id="toc-reduce" class="nav-link" data-scroll-target="#reduce">Reduce</a></li>
+  </ul></li>
+  <li><a href="#backslash" id="toc-backslash" class="nav-link" data-scroll-target="#backslash"><code>\</code>: &nbsp;: Backslash</a>
+  <ul class="collapse">
+  <li><a href="#expand" id="toc-expand" class="nav-link" data-scroll-target="#expand">Expand</a></li>
+  <li><a href="#scan" id="toc-scan" class="nav-link" data-scroll-target="#scan">Scan</a></li>
+  </ul></li>
+  <li><a href="#slash-bar" id="toc-slash-bar" class="nav-link" data-scroll-target="#slash-bar"><code>⌿</code>: `/ : Slash Bar</a>
+  <ul class="collapse">
+  <li><a href="#replicate-first" id="toc-replicate-first" class="nav-link" data-scroll-target="#replicate-first">Replicate First</a></li>
+  <li><a href="#reduce-first" id="toc-reduce-first" class="nav-link" data-scroll-target="#reduce-first">Reduce First</a></li>
+  </ul></li>
+  <li><a href="#backslash-bar" id="toc-backslash-bar" class="nav-link" data-scroll-target="#backslash-bar"><code>⍀</code>: `. : Backslash Bar</a>
+  <ul class="collapse">
+  <li><a href="#expand-first" id="toc-expand-first" class="nav-link" data-scroll-target="#expand-first">Expand First</a></li>
+  <li><a href="#scan-first" id="toc-scan-first" class="nav-link" data-scroll-target="#scan-first">Scan First</a></li>
+  </ul></li>
+  <li><a href="#comma" id="toc-comma" class="nav-link" data-scroll-target="#comma"><code>,</code>: , : Comma</a>
+  <ul class="collapse">
+  <li><a href="#ravel" id="toc-ravel" class="nav-link" data-scroll-target="#ravel">Ravel</a></li>
+  <li><a href="#catenate" id="toc-catenate" class="nav-link" data-scroll-target="#catenate">Catenate</a></li>
+  </ul></li>
+  <li><a href="#comma-bar" id="toc-comma-bar" class="nav-link" data-scroll-target="#comma-bar"><code>⍪</code>: `&lt; : Comma Bar</a>
+  <ul class="collapse">
+  <li><a href="#table" id="toc-table" class="nav-link" data-scroll-target="#table">Table</a></li>
+  <li><a href="#catenate-first" id="toc-catenate-first" class="nav-link" data-scroll-target="#catenate-first">Catenate First</a></li>
+  </ul></li>
+  <li><a href="#r-rho" id="toc-r-rho" class="nav-link" data-scroll-target="#r-rho"><code>⍴</code>: `r : Rho</a>
+  <ul class="collapse">
+  <li><a href="#shape" id="toc-shape" class="nav-link" data-scroll-target="#shape">Shape</a></li>
+  <li><a href="#reshape" id="toc-reshape" class="nav-link" data-scroll-target="#reshape">Reshape</a></li>
+  </ul></li>
+  <li><a href="#circle-stile" id="toc-circle-stile" class="nav-link" data-scroll-target="#circle-stile"><code>⌽</code>: `% : Circle Stile</a>
+  <ul class="collapse">
+  <li><a href="#reverse" id="toc-reverse" class="nav-link" data-scroll-target="#reverse">Reverse</a></li>
+  <li><a href="#rotate" id="toc-rotate" class="nav-link" data-scroll-target="#rotate">Rotate</a></li>
+  </ul></li>
+  <li><a href="#circle-bar" id="toc-circle-bar" class="nav-link" data-scroll-target="#circle-bar"><code>⊖</code>: `&amp; : Circle Bar</a>
+  <ul class="collapse">
+  <li><a href="#reverse-first" id="toc-reverse-first" class="nav-link" data-scroll-target="#reverse-first">Reverse First</a></li>
+  <li><a href="#rotate-first" id="toc-rotate-first" class="nav-link" data-scroll-target="#rotate-first">Rotate First</a></li>
+  </ul></li>
+  <li><a href="#transpose" id="toc-transpose" class="nav-link" data-scroll-target="#transpose"><code>⍉</code>: `^ : Transpose</a>
+  <ul class="collapse">
+  <li><a href="#transpose-1" id="toc-transpose-1" class="nav-link" data-scroll-target="#transpose-1">Transpose</a></li>
+  <li><a href="#dyadic-transpose" id="toc-dyadic-transpose" class="nav-link" data-scroll-target="#dyadic-transpose">Dyadic Transpose</a></li>
+  </ul></li>
+  <li><a href="#diaeresis" id="toc-diaeresis" class="nav-link" data-scroll-target="#diaeresis"><code>¨</code>: `1 : Diaeresis</a>
+  <ul class="collapse">
+  <li><a href="#each" id="toc-each" class="nav-link" data-scroll-target="#each">Each</a></li>
+  </ul></li>
+  <li><a href="#t-tilde-diaeresis" id="toc-t-tilde-diaeresis" class="nav-link" data-scroll-target="#t-tilde-diaeresis"><code>⍨</code>: `T : Tilde Diaeresis</a>
+  <ul class="collapse">
+  <li><a href="#commute" id="toc-commute" class="nav-link" data-scroll-target="#commute">Commute</a></li>
+  <li><a href="#constant" id="toc-constant" class="nav-link" data-scroll-target="#constant">Constant</a></li>
+  </ul></li>
+  <li><a href="#p-star-diaeresis" id="toc-p-star-diaeresis" class="nav-link" data-scroll-target="#p-star-diaeresis"><code>⍣</code>: `P : Star Diaeresis</a>
+  <ul class="collapse">
+  <li><a href="#power-1" id="toc-power-1" class="nav-link" data-scroll-target="#power-1">Power</a></li>
+  </ul></li>
+  <li><a href="#dot" id="toc-dot" class="nav-link" data-scroll-target="#dot"><code>.</code>: . : Dot</a>
+  <ul class="collapse">
+  <li><a href="#product" id="toc-product" class="nav-link" data-scroll-target="#product">Product</a></li>
+  </ul></li>
+  <li><a href="#j-jot" id="toc-j-jot" class="nav-link" data-scroll-target="#j-jot"><code>∘</code>: `j : Jot</a>
+  <ul class="collapse">
+  <li><a href="#beside-and-bind" id="toc-beside-and-bind" class="nav-link" data-scroll-target="#beside-and-bind">Beside and Bind</a></li>
+  </ul></li>
+  <li><a href="#j-jot-diaeresis" id="toc-j-jot-diaeresis" class="nav-link" data-scroll-target="#j-jot-diaeresis"><code>⍤</code>: `J : Jot Diaeresis</a>
+  <ul class="collapse">
+  <li><a href="#atop" id="toc-atop" class="nav-link" data-scroll-target="#atop">Atop</a></li>
+  <li><a href="#rank" id="toc-rank" class="nav-link" data-scroll-target="#rank">Rank</a></li>
+  </ul></li>
+  <li><a href="#o-circle-diaeresis" id="toc-o-circle-diaeresis" class="nav-link" data-scroll-target="#o-circle-diaeresis"><code>⍥</code>: `O : Circle Diaeresis</a>
+  <ul class="collapse">
+  <li><a href="#over" id="toc-over" class="nav-link" data-scroll-target="#over">Over</a></li>
+  </ul></li>
+  <li><a href="#at" id="toc-at" class="nav-link" data-scroll-target="#at"><code>@</code>: @ : At</a>
+  <ul class="collapse">
+  <li><a href="#at-1" id="toc-at-1" class="nav-link" data-scroll-target="#at-1">At</a></li>
+  </ul></li>
+  <li><a href="#quote-quad" id="toc-quote-quad" class="nav-link" data-scroll-target="#quote-quad"><code>⍞</code>: `{ : Quote Quad</a>
+  <ul class="collapse">
+  <li><a href="#character-input" id="toc-character-input" class="nav-link" data-scroll-target="#character-input">Character Input</a></li>
+  <li><a href="#output" id="toc-output" class="nav-link" data-scroll-target="#output">Output</a></li>
+  </ul></li>
+  <li><a href="#l-quad" id="toc-l-quad" class="nav-link" data-scroll-target="#l-quad"><code>⎕</code>: `l : Quad</a>
+  <ul class="collapse">
+  <li><a href="#evaluated-input" id="toc-evaluated-input" class="nav-link" data-scroll-target="#evaluated-input">Evaluated Input</a></li>
+  <li><a href="#output-1" id="toc-output-1" class="nav-link" data-scroll-target="#output-1">Output</a></li>
+  </ul></li>
+  <li><a href="#quad-colon" id="toc-quad-colon" class="nav-link" data-scroll-target="#quad-colon"><code>⍠</code>: `? : Quad Colon</a>
+  <ul class="collapse">
+  <li><a href="#variant" id="toc-variant" class="nav-link" data-scroll-target="#variant">Variant</a></li>
+  </ul></li>
+  <li><a href="#k-quad-equal" id="toc-k-quad-equal" class="nav-link" data-scroll-target="#k-quad-equal"><code>⌸</code>: `K : Quad Equal</a>
+  <ul class="collapse">
+  <li><a href="#key" id="toc-key" class="nav-link" data-scroll-target="#key">Key</a></li>
+  </ul></li>
+  <li><a href="#quad-diamond" id="toc-quad-diamond" class="nav-link" data-scroll-target="#quad-diamond"><code>⌺</code>: `~ : Quad Diamond</a>
+  <ul class="collapse">
+  <li><a href="#stencil" id="toc-stencil" class="nav-link" data-scroll-target="#stencil">Stencil</a></li>
+  </ul></li>
+  <li><a href="#i-beam" id="toc-i-beam" class="nav-link" data-scroll-target="#i-beam"><code>⌶</code>: `! : I-Beam</a>
+  <ul class="collapse">
+  <li><a href="#i-beam-1" id="toc-i-beam-1" class="nav-link" data-scroll-target="#i-beam-1">I-Beam</a></li>
+  </ul></li>
+  <li><a href="#hydrant" id="toc-hydrant" class="nav-link" data-scroll-target="#hydrant"><code>⍎</code>: `; : Hydrant</a>
+  <ul class="collapse">
+  <li><a href="#execute-expr" id="toc-execute-expr" class="nav-link" data-scroll-target="#execute-expr">Execute Expr</a></li>
+  <li><a href="#execute-expr-in-namespace" id="toc-execute-expr-in-namespace" class="nav-link" data-scroll-target="#execute-expr-in-namespace">Execute Expr in Namespace</a></li>
+  </ul></li>
+  <li><a href="#thorn" id="toc-thorn" class="nav-link" data-scroll-target="#thorn"><code>⍕</code>: `’ : Thorn</a>
+  <ul class="collapse">
+  <li><a href="#format" id="toc-format" class="nav-link" data-scroll-target="#format">Format</a></li>
+  <li><a href="#format-by-specification" id="toc-format-by-specification" class="nav-link" data-scroll-target="#format-by-specification">Format by Specification</a></li>
+  </ul></li>
+  <li><a href="#diamond" id="toc-diamond" class="nav-link" data-scroll-target="#diamond"><code>⋄</code>: ``` : Diamond</a>
+  <ul class="collapse">
+  <li><a href="#statement-seperator" id="toc-statement-seperator" class="nav-link" data-scroll-target="#statement-seperator">Statement Seperator</a></li>
+  </ul></li>
+  <li><a href="#right-arrow" id="toc-right-arrow" class="nav-link" data-scroll-target="#right-arrow"><code>→</code>: `] : Right Arrow</a>
+  <ul class="collapse">
+  <li><a href="#branch" id="toc-branch" class="nav-link" data-scroll-target="#branch">Branch</a></li>
+  </ul></li>
+  <li><a href="#g-del" id="toc-g-del" class="nav-link" data-scroll-target="#g-del"><code>∇</code>: `g : Del</a>
+  <ul class="collapse">
+  <li><a href="#self-reference" id="toc-self-reference" class="nav-link" data-scroll-target="#self-reference">Self Reference</a></li>
+  </ul></li>
+  <li><a href="#ampersand" id="toc-ampersand" class="nav-link" data-scroll-target="#ampersand"><code>&amp;</code>: &amp; : Ampersand</a>
+  <ul class="collapse">
+  <li><a href="#spawn" id="toc-spawn" class="nav-link" data-scroll-target="#spawn">Spawn</a></li>
+  </ul></li>
+  <li><a href="#zilde" id="toc-zilde" class="nav-link" data-scroll-target="#zilde"><code>⍬</code>: `} : Zilde</a>
+  <ul class="collapse">
+  <li><a href="#empty-numeric-vector" id="toc-empty-numeric-vector" class="nav-link" data-scroll-target="#empty-numeric-vector">Empty Numeric Vector</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Example Patterns</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Dyalog</div>
+    <div class="quarto-category">APL</div>
+    <div class="quarto-category">Tabular</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Isaac Flath </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 17, 2022</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<section id="plus" class="level2">
+<h2 class="anchored" data-anchor-id="plus"><code>+</code>: + : Plus</h2>
+<section id="conjugate" class="level3">
+<h3 class="anchored" data-anchor-id="conjugate">Conjugate</h3>
+</section>
+<section id="plus-1" class="level3">
+<h3 class="anchored" data-anchor-id="plus-1">Plus</h3>
+<section id="matrix-multiplication" class="level4">
+<h4 class="anchored" data-anchor-id="matrix-multiplication">Matrix Multiplication</h4>
+<div class="cell" hidden="true" data-execution_count="1">
+<pre class="apl cell-code"><code>M1 ← 2 2 ⍴ ⍳4
+M2 ← 2 2 ⍴ ⍳4 - 1
+M1 +.× M2</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<span style="white-space:pre; font-family: monospace"> 7  4
+15 10
+</span>
+</div>
+</div>
+</section>
+<section id="sum-aggregation" class="level4">
+<h4 class="anchored" data-anchor-id="sum-aggregation">Sum Aggregation</h4>
+<div class="cell" hidden="true" data-execution_count="2">
+<pre class="apl cell-code"><code>⎕ ← M ← 2 3 ⍴ ⍳6
+⍝ Row Sum
++/ M
+
+⍝ Col Sum
++⌿ M
+
+⍝ Custom axis sum
++/[1] M
+
+⍝ Full Sum
++/, M
+
+⍝ Cumulative Sum
++\ M</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<span style="white-space:pre; font-family: monospace">1 2 3
+4 5 6
+</span>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<span style="white-space:pre; font-family: monospace">6 15
+</span>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<span style="white-space:pre; font-family: monospace">5 7 9
+</span>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<span style="white-space:pre; font-family: monospace">5 7 9
+</span>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<span style="white-space:pre; font-family: monospace">21
+</span>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<span style="white-space:pre; font-family: monospace">1 3  6
+4 9 15
+</span>
+</div>
+</div>
+</section>
+<section id="normalize" class="level4">
+<h4 class="anchored" data-anchor-id="normalize">Normalize</h4>
+<div class="cell" hidden="true" data-execution_count="49">
+<pre class="apl cell-code"><code>(⊢÷+⌿) ⍳4</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="49">
+<span style="white-space:pre; font-family: monospace">0.1 0.2 0.3 0.4
+</span>
+</div>
+</div>
+</section>
+<section id="count-matches" class="level4">
+<h4 class="anchored" data-anchor-id="count-matches">Count Matches</h4>
+<div class="cell" hidden="true" data-execution_count="50">
+<pre class="apl cell-code"><code>V1 ← 1 2 3 ⋄ V2 ← 1 3 3
+
+⍝ Via inner product
+V1 +.= V2
+
+⍝ Via Sum
++/ V1 = V2</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="50">
+<span style="white-space:pre; font-family: monospace">2
+</span>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="50">
+<span style="white-space:pre; font-family: monospace">2
+</span>
+</div>
+</div>
+</section>
+<section id="mean-squared-error" class="level4">
+<h4 class="anchored" data-anchor-id="mean-squared-error">Mean Squared Error</h4>
+<div class="cell" hidden="true" data-execution_count="43">
+<pre class="apl cell-code"><code>MSE ← {(SE←+/,×⍨⍵) ÷ ×/⍴ ⍵}
+MSE ⍳4</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="43">
+<span style="white-space:pre; font-family: monospace">7.5
+</span>
+</div>
+</div>
+</section>
+<section id="mean-absolute-error" class="level4">
+<h4 class="anchored" data-anchor-id="mean-absolute-error">Mean Absolute Error</h4>
+<div class="cell" hidden="true" data-execution_count="46">
+<pre class="apl cell-code"><code>+/| 2 3 ⍴ 1 ¯2</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="46">
+<span style="white-space:pre; font-family: monospace">4 5
+</span>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="minus" class="level2">
+<h2 class="anchored" data-anchor-id="minus"><code>-</code>: - : Minus</h2>
+<section id="negate" class="level3">
+<h3 class="anchored" data-anchor-id="negate">Negate</h3>
+</section>
+<section id="minus-1" class="level3">
+<h3 class="anchored" data-anchor-id="minus-1">Minus</h3>
+</section>
+</section>
+<section id="times" class="level2">
+<h2 class="anchored" data-anchor-id="times"><code>×</code>: `- : Times</h2>
+<section id="direction" class="level3">
+<h3 class="anchored" data-anchor-id="direction">Direction</h3>
+</section>
+<section id="times-1" class="level3">
+<h3 class="anchored" data-anchor-id="times-1">Times</h3>
+<section id="matrix-multiplication-1" class="level4">
+<h4 class="anchored" data-anchor-id="matrix-multiplication-1">Matrix Multiplication</h4>
+<div class="cell" hidden="true" data-execution_count="7">
+<pre class="apl cell-code"><code>M1 ← 2 2 ⍴ ⍳4
+M2 ← 2 2 ⍴ ⍳4 - 1
+M1 +.× M2</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<span style="white-space:pre; font-family: monospace"> 7  4
+15 10
+</span>
+</div>
+</div>
+</section>
+<section id="product-aggregation" class="level4">
+<h4 class="anchored" data-anchor-id="product-aggregation">Product Aggregation</h4>
+<div class="cell" hidden="true" data-execution_count="8">
+<pre class="apl cell-code"><code>⎕ ← M ← 2 3 ⍴ ⍳6
+⍝ Row product
+×/ M
+
+⍝ Col product
+×⌿ M
+
+⍝ Custom axis product
+×/[1] M
+
+⍝ Full product
+×/, M
+
+⍝ Cumulative product
+×\ M</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<span style="white-space:pre; font-family: monospace">1 2 3
+4 5 6
+</span>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<span style="white-space:pre; font-family: monospace">6 120
+</span>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<span style="white-space:pre; font-family: monospace">4 10 18
+</span>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<span style="white-space:pre; font-family: monospace">4 10 18
+</span>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<span style="white-space:pre; font-family: monospace">720
+</span>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<span style="white-space:pre; font-family: monospace">1  2   6
+4 20 120
+</span>
+</div>
+</div>
+</section>
+<section id="number-of-elements-in-arrayaxis" class="level4">
+<h4 class="anchored" data-anchor-id="number-of-elements-in-arrayaxis">Number of elements in array/axis</h4>
+<div class="cell" data-execution_count="50">
+<pre class="apl cell-code"><code>M ← ⍳ 2 3 4
+S ← 'Bob' 'John'
+
+⍝Number of elements in array 
+⍴∊ M ⍝ Counts elements in nested arrays
+⍴, S ⍝ Counts elements (nested array = 1 element)
+
+shape ← ⍴ M
+
+⍝ multiply all but last axis
+×/¯1↓ shape
+
+⍝ mutliply all but first 2 axis
+×/2↓ shape
+
+⍝ Multiply first 2 axis
+×/2↑ shape
+
+⍝ Multiply last 2 axis
+×/¯2↑ shape
+
+⍝ Multiply custom mask
+×/ 1 0 1 / shape</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="50">
+<span style="white-space:pre; font-family: monospace">72
+</span>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="50">
+<span style="white-space:pre; font-family: monospace">2
+</span>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="50">
+<span style="white-space:pre; font-family: monospace">6
+</span>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="50">
+<span style="white-space:pre; font-family: monospace">4
+</span>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="50">
+<span style="white-space:pre; font-family: monospace">6
+</span>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="50">
+<span style="white-space:pre; font-family: monospace">12
+</span>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="50">
+<span style="white-space:pre; font-family: monospace">8
+</span>
+</div>
+</div>
+</section>
+<section id="mean-squared-error-1" class="level4">
+<h4 class="anchored" data-anchor-id="mean-squared-error-1">Mean Squared Error</h4>
+<div class="cell" hidden="true" data-execution_count="36">
+<pre class="apl cell-code"><code>MSE ← {(SE←+/,×⍨⍵) ÷ ×/⍴ ⍵}
+MSE ⍳4</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="36">
+<span style="white-space:pre; font-family: monospace">7.5
+</span>
+</div>
+</div>
+</section>
+<section id="get-true-elements" class="level4">
+<h4 class="anchored" data-anchor-id="get-true-elements">Get True Elements</h4>
+<div class="cell" hidden="true" data-execution_count="39">
+<pre class="apl cell-code"><code>0 1 0 1 × ⍳4</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="39">
+<span style="white-space:pre; font-family: monospace">0 2 0 4
+</span>
+</div>
+</div>
+</section>
+<section id="percentages" class="level4">
+<h4 class="anchored" data-anchor-id="percentages">Percentages</h4>
+<div class="cell" hidden="true" data-execution_count="14">
+<pre class="apl cell-code"><code>⎕ ← M ← 2 3 ⍴ ⍳6
+⍝ Row percentages
+(100×⊢÷⍤1 0+/) M
+
+⍝ Col percentages
+(100×⊢÷⍤1+⌿) M
+
+⍝ Full percentages
+M ÷ +/,M
+
+⍝ Cumulative percentages (ie pareto)
++\, M ÷ +/,M</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<span style="white-space:pre; font-family: monospace">1 2 3
+4 5 6
+</span>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<span style="white-space:pre; font-family: monospace">16.6667 33.3333 50
+26.6667 33.3333 40
+</span>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<span style="white-space:pre; font-family: monospace">20 28.5714 33.3333
+80 71.4286 66.6667
+</span>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<span style="white-space:pre; font-family: monospace">0.047619 0.0952381 0.142857
+0.190476 0.238095  0.285714
+</span>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<span style="white-space:pre; font-family: monospace">0.047619 0.142857 0.285714 0.47619 0.714286 1
+</span>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="divide" class="level2">
+<h2 class="anchored" data-anchor-id="divide"><code>÷</code>: `= : Divide</h2>
+<section id="reciprocal" class="level3">
+<h3 class="anchored" data-anchor-id="reciprocal">Reciprocal</h3>
+<section id="roots" class="level4">
+<h4 class="anchored" data-anchor-id="roots">Roots</h4>
+<blockquote class="blockquote">
+<p>Get Square, Cube, or other roots</p>
+</blockquote>
+<div class="cell" hidden="true" data-execution_count="15">
+<pre class="apl cell-code"><code>⍝ Cube root
+8 27*÷3
+
+⍝ Root 4
+16 81*÷4</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<span style="white-space:pre; font-family: monospace">2 3
+</span>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<span style="white-space:pre; font-family: monospace">2 3
+</span>
+</div>
+</div>
+</section>
+</section>
+<section id="division" class="level3">
+<h3 class="anchored" data-anchor-id="division">Division</h3>
+</section>
+</section>
+<section id="p-star" class="level2">
+<h2 class="anchored" data-anchor-id="p-star"><code>*</code>: `p : Star</h2>
+<section id="exponential" class="level3">
+<h3 class="anchored" data-anchor-id="exponential">Exponential</h3>
+</section>
+<section id="power" class="level3">
+<h3 class="anchored" data-anchor-id="power">Power</h3>
+</section>
+</section>
+<section id="log" class="level2">
+<h2 class="anchored" data-anchor-id="log"><code>⍟</code>: `* : Log</h2>
+<section id="natural-log" class="level3">
+<h3 class="anchored" data-anchor-id="natural-log">Natural Log</h3>
+</section>
+<section id="log-1" class="level3">
+<h3 class="anchored" data-anchor-id="log-1">Log</h3>
+</section>
+</section>
+<section id="domino" class="level2">
+<h2 class="anchored" data-anchor-id="domino"><code>⌹</code> : `+ : Domino</h2>
+<section id="matrix-inverse" class="level3">
+<h3 class="anchored" data-anchor-id="matrix-inverse">Matrix Inverse</h3>
+</section>
+<section id="matrix-divide" class="level3">
+<h3 class="anchored" data-anchor-id="matrix-divide">Matrix Divide</h3>
+</section>
+</section>
+<section id="o-circle" class="level2">
+<h2 class="anchored" data-anchor-id="o-circle"><code>○</code> : `o : Circle</h2>
+<section id="pi-times" class="level3">
+<h3 class="anchored" data-anchor-id="pi-times">Pi Times</h3>
+</section>
+<section id="circular-functions" class="level3">
+<h3 class="anchored" data-anchor-id="circular-functions">Circular Functions</h3>
+</section>
+</section>
+<section id="exclamation-mark" class="level2">
+<h2 class="anchored" data-anchor-id="exclamation-mark"><code>!</code> : ! : Exclamation Mark</h2>
+<section id="factorial" class="level3">
+<h3 class="anchored" data-anchor-id="factorial">Factorial</h3>
+</section>
+<section id="binomial" class="level3">
+<h3 class="anchored" data-anchor-id="binomial">Binomial</h3>
+</section>
+</section>
+<section id="question-mark" class="level2">
+<h2 class="anchored" data-anchor-id="question-mark"><code>?</code> : ? : Question Mark</h2>
+<section id="roll" class="level3">
+<h3 class="anchored" data-anchor-id="roll">Roll</h3>
+</section>
+<section id="deal" class="level3">
+<h3 class="anchored" data-anchor-id="deal">Deal</h3>
+</section>
+</section>
+<section id="stile" class="level2">
+<h2 class="anchored" data-anchor-id="stile"><code>|</code> : | : Stile</h2>
+<section id="magnitude" class="level3">
+<h3 class="anchored" data-anchor-id="magnitude">Magnitude</h3>
+</section>
+<section id="residue" class="level3">
+<h3 class="anchored" data-anchor-id="residue">Residue</h3>
+</section>
+</section>
+<section id="s-upstile" class="level2">
+<h2 class="anchored" data-anchor-id="s-upstile"><code>⌈</code> : `s : Upstile</h2>
+<section id="ceiling" class="level3">
+<h3 class="anchored" data-anchor-id="ceiling">Ceiling</h3>
+</section>
+<section id="max" class="level3">
+<h3 class="anchored" data-anchor-id="max">Max</h3>
+</section>
+</section>
+<section id="d-downstile" class="level2">
+<h2 class="anchored" data-anchor-id="d-downstile"><code>⌊</code> : `d : Downstile</h2>
+<section id="floor" class="level3">
+<h3 class="anchored" data-anchor-id="floor">Floor</h3>
+</section>
+<section id="min" class="level3">
+<h3 class="anchored" data-anchor-id="min">Min</h3>
+</section>
+</section>
+<section id="i-iota" class="level2">
+<h2 class="anchored" data-anchor-id="i-iota"><code>⍳</code>: `i : Iota</h2>
+<section id="index-generator" class="level3">
+<h3 class="anchored" data-anchor-id="index-generator">Index Generator</h3>
+</section>
+<section id="index-of" class="level3">
+<h3 class="anchored" data-anchor-id="index-of">Index Of</h3>
+</section>
+</section>
+<section id="i-iota-underbar" class="level2">
+<h2 class="anchored" data-anchor-id="i-iota-underbar"><code>⍸</code>: `I : Iota Underbar</h2>
+<section id="where" class="level3">
+<h3 class="anchored" data-anchor-id="where">Where</h3>
+</section>
+<section id="interval-index" class="level3">
+<h3 class="anchored" data-anchor-id="interval-index">Interval Index</h3>
+</section>
+</section>
+<section id="equal" class="level2">
+<h2 class="anchored" data-anchor-id="equal"><code>=</code>: = : Equal</h2>
+<section id="equal-to" class="level3">
+<h3 class="anchored" data-anchor-id="equal-to">Equal To</h3>
+</section>
+</section>
+<section id="not-equal" class="level2">
+<h2 class="anchored" data-anchor-id="not-equal"><code>≠</code>: `8 : Not Equal</h2>
+<section id="unique-mark" class="level3">
+<h3 class="anchored" data-anchor-id="unique-mark">Unique Mark</h3>
+</section>
+<section id="not-equal-to" class="level3">
+<h3 class="anchored" data-anchor-id="not-equal-to">Not Equal to</h3>
+</section>
+</section>
+<section id="less-than-or-equal-to" class="level2">
+<h2 class="anchored" data-anchor-id="less-than-or-equal-to"><code>≤</code>: `4 : Less Than or Equal To</h2>
+<section id="less-than-or-equal-to-1" class="level3">
+<h3 class="anchored" data-anchor-id="less-than-or-equal-to-1">Less Than or Equal To</h3>
+</section>
+</section>
+<section id="less-than" class="level2">
+<h2 class="anchored" data-anchor-id="less-than"><code>&lt;</code>: &lt; : Less Than</h2>
+<section id="less-than-1" class="level3">
+<h3 class="anchored" data-anchor-id="less-than-1">Less Than</h3>
+</section>
+</section>
+<section id="greater-than" class="level2">
+<h2 class="anchored" data-anchor-id="greater-than"><code>&gt;</code>: &gt; : Greater Than</h2>
+<section id="greater-than-1" class="level3">
+<h3 class="anchored" data-anchor-id="greater-than-1">Greater Than</h3>
+</section>
+</section>
+<section id="greater-than-or-equal-to" class="level2">
+<h2 class="anchored" data-anchor-id="greater-than-or-equal-to"><code>≥</code> : `6 : Greater Than or Equal To</h2>
+<section id="greater-than-or-equal-to-1" class="level3">
+<h3 class="anchored" data-anchor-id="greater-than-or-equal-to-1">Greater Than or Equal To</h3>
+</section>
+</section>
+<section id="equal-underbar" class="level2">
+<h2 class="anchored" data-anchor-id="equal-underbar"><code>≡</code>: `: Equal Underbar</h2>
+<section id="depth" class="level3">
+<h3 class="anchored" data-anchor-id="depth">Depth</h3>
+</section>
+<section id="match" class="level3">
+<h3 class="anchored" data-anchor-id="match">Match</h3>
+</section>
+</section>
+<section id="equal-underbar-slash" class="level2">
+<h2 class="anchored" data-anchor-id="equal-underbar-slash"><code>≢</code>: `” : Equal Underbar Slash</h2>
+<section id="tally" class="level3">
+<h3 class="anchored" data-anchor-id="tally">Tally</h3>
+</section>
+<section id="not-match" class="level3">
+<h3 class="anchored" data-anchor-id="not-match">Not Match</h3>
+</section>
+</section>
+<section id="logical-or" class="level2">
+<h2 class="anchored" data-anchor-id="logical-or"><code>∨</code>: `9 : Logical Or</h2>
+<section id="greatest-common-divisor" class="level3">
+<h3 class="anchored" data-anchor-id="greatest-common-divisor">Greatest Common Divisor</h3>
+</section>
+</section>
+<section id="logical-and" class="level2">
+<h2 class="anchored" data-anchor-id="logical-and"><code>∧</code>: `0 : Logical And</h2>
+<section id="lowest-common-multiple" class="level3">
+<h3 class="anchored" data-anchor-id="lowest-common-multiple">Lowest Common Multiple</h3>
+</section>
+</section>
+<section id="logical-nand" class="level2">
+<h2 class="anchored" data-anchor-id="logical-nand"><code>⍲</code>: `0 : Logical Nand</h2>
+<section id="nand" class="level3">
+<h3 class="anchored" data-anchor-id="nand">Nand</h3>
+</section>
+</section>
+<section id="logical-nor" class="level2">
+<h2 class="anchored" data-anchor-id="logical-nor"><code>⍱</code>: `9 : Logical Nor</h2>
+<section id="nor" class="level3">
+<h3 class="anchored" data-anchor-id="nor">Nor</h3>
+</section>
+</section>
+<section id="b-up-tack" class="level2">
+<h2 class="anchored" data-anchor-id="b-up-tack"><code>⊥</code>: `b : Up Tack</h2>
+<section id="decode" class="level3">
+<h3 class="anchored" data-anchor-id="decode">Decode</h3>
+</section>
+</section>
+<section id="n-down-tack" class="level2">
+<h2 class="anchored" data-anchor-id="n-down-tack"><code>⊤</code>: `n : Down Tack</h2>
+<section id="encode" class="level3">
+<h3 class="anchored" data-anchor-id="encode">Encode</h3>
+</section>
+</section>
+<section id="left-tack" class="level2">
+<h2 class="anchored" data-anchor-id="left-tack"><code>⊣</code>: `| : Left Tack</h2>
+<section id="same" class="level3">
+<h3 class="anchored" data-anchor-id="same">Same</h3>
+</section>
+<section id="left" class="level3">
+<h3 class="anchored" data-anchor-id="left">Left</h3>
+</section>
+</section>
+<section id="right-tack" class="level2">
+<h2 class="anchored" data-anchor-id="right-tack"><code>⊢</code>: `&nbsp;: Right Tack</h2>
+<section id="same-1" class="level3">
+<h3 class="anchored" data-anchor-id="same-1">Same</h3>
+</section>
+<section id="right" class="level3">
+<h3 class="anchored" data-anchor-id="right">Right</h3>
+</section>
+</section>
+<section id="y-up-arrow" class="level2">
+<h2 class="anchored" data-anchor-id="y-up-arrow"><code>↑</code>: `y : Up Arrow</h2>
+<section id="mix" class="level3">
+<h3 class="anchored" data-anchor-id="mix">Mix</h3>
+</section>
+<section id="take" class="level3">
+<h3 class="anchored" data-anchor-id="take">Take</h3>
+</section>
+</section>
+<section id="u-down-arrow" class="level2">
+<h2 class="anchored" data-anchor-id="u-down-arrow"><code>↓</code>: `u : Down Arrow</h2>
+<section id="split" class="level3">
+<h3 class="anchored" data-anchor-id="split">Split</h3>
+</section>
+<section id="drop" class="level3">
+<h3 class="anchored" data-anchor-id="drop">Drop</h3>
+</section>
+</section>
+<section id="z-left-shoe" class="level2">
+<h2 class="anchored" data-anchor-id="z-left-shoe"><code>⊂</code>: `z : Left Shoe</h2>
+<section id="enclose" class="level3">
+<h3 class="anchored" data-anchor-id="enclose">Enclose</h3>
+</section>
+<section id="partitioned-enclose" class="level3">
+<h3 class="anchored" data-anchor-id="partitioned-enclose">Partitioned Enclose</h3>
+</section>
+</section>
+<section id="x-right-shoe" class="level2">
+<h2 class="anchored" data-anchor-id="x-right-shoe"><code>⊃</code> : `x : Right Shoe</h2>
+<section id="first" class="level3">
+<h3 class="anchored" data-anchor-id="first">First</h3>
+</section>
+<section id="pick" class="level3">
+<h3 class="anchored" data-anchor-id="pick">Pick</h3>
+</section>
+</section>
+<section id="z-left-shoe-underbar" class="level2">
+<h2 class="anchored" data-anchor-id="z-left-shoe-underbar"><code>⊆</code>: `Z : Left Shoe Underbar</h2>
+<section id="nest" class="level3">
+<h3 class="anchored" data-anchor-id="nest">Nest</h3>
+</section>
+<section id="partition" class="level3">
+<h3 class="anchored" data-anchor-id="partition">Partition</h3>
+</section>
+</section>
+<section id="l-squad" class="level2">
+<h2 class="anchored" data-anchor-id="l-squad"><code>⎕</code>: `l : Squad</h2>
+<section id="materialize" class="level3">
+<h3 class="anchored" data-anchor-id="materialize">Materialize</h3>
+</section>
+<section id="index" class="level3">
+<h3 class="anchored" data-anchor-id="index">Index</h3>
+</section>
+</section>
+<section id="grade-down" class="level2">
+<h2 class="anchored" data-anchor-id="grade-down"><code>⍒</code>: `# : Grade Down</h2>
+<section id="grade-down-1" class="level3">
+<h3 class="anchored" data-anchor-id="grade-down-1">Grade Down</h3>
+</section>
+<section id="dyadic-grade-down" class="level3">
+<h3 class="anchored" data-anchor-id="dyadic-grade-down">Dyadic Grade Down</h3>
+</section>
+</section>
+<section id="grade-up" class="level2">
+<h2 class="anchored" data-anchor-id="grade-up"><code>⍋</code>: `$ : Grade Up</h2>
+<section id="grade-up-1" class="level3">
+<h3 class="anchored" data-anchor-id="grade-up-1">Grade Up</h3>
+</section>
+<section id="dyadic-grade-up" class="level3">
+<h3 class="anchored" data-anchor-id="dyadic-grade-up">Dyadic Grade Up</h3>
+</section>
+</section>
+<section id="e-epsilon" class="level2">
+<h2 class="anchored" data-anchor-id="e-epsilon"><code>∊</code>: `e : Epsilon</h2>
+<section id="enlist" class="level3">
+<h3 class="anchored" data-anchor-id="enlist">Enlist</h3>
+</section>
+<section id="membership" class="level3">
+<h3 class="anchored" data-anchor-id="membership">Membership</h3>
+</section>
+</section>
+<section id="e-epsilon-underbar" class="level2">
+<h2 class="anchored" data-anchor-id="e-epsilon-underbar"><code>⍷</code>: `E : Epsilon Underbar</h2>
+<section id="find" class="level3">
+<h3 class="anchored" data-anchor-id="find">Find</h3>
+</section>
+</section>
+<section id="v-down-shoe" class="level2">
+<h2 class="anchored" data-anchor-id="v-down-shoe"><code>∪</code>: `v : Down Shoe</h2>
+<section id="unique" class="level3">
+<h3 class="anchored" data-anchor-id="unique">Unique</h3>
+</section>
+<section id="union" class="level3">
+<h3 class="anchored" data-anchor-id="union">Union</h3>
+</section>
+</section>
+<section id="c-up-shoe" class="level2">
+<h2 class="anchored" data-anchor-id="c-up-shoe"><code>∩</code>: `c : Up Shoe</h2>
+<section id="intersection" class="level3">
+<h3 class="anchored" data-anchor-id="intersection">Intersection</h3>
+</section>
+</section>
+<section id="tilde" class="level2">
+<h2 class="anchored" data-anchor-id="tilde"><code>~</code>: ~ : Tilde</h2>
+<section id="not" class="level3">
+<h3 class="anchored" data-anchor-id="not">Not</h3>
+</section>
+<section id="without" class="level3">
+<h3 class="anchored" data-anchor-id="without">Without</h3>
+</section>
+</section>
+<section id="slash" class="level2">
+<h2 class="anchored" data-anchor-id="slash"><code>/</code>: / : Slash</h2>
+<section id="replicate" class="level3">
+<h3 class="anchored" data-anchor-id="replicate">Replicate</h3>
+</section>
+<section id="reduce" class="level3">
+<h3 class="anchored" data-anchor-id="reduce">Reduce</h3>
+</section>
+</section>
+<section id="backslash" class="level2">
+<h2 class="anchored" data-anchor-id="backslash"><code>\</code>: &nbsp;: Backslash</h2>
+<section id="expand" class="level3">
+<h3 class="anchored" data-anchor-id="expand">Expand</h3>
+</section>
+<section id="scan" class="level3">
+<h3 class="anchored" data-anchor-id="scan">Scan</h3>
+</section>
+</section>
+<section id="slash-bar" class="level2">
+<h2 class="anchored" data-anchor-id="slash-bar"><code>⌿</code>: `/ : Slash Bar</h2>
+<section id="replicate-first" class="level3">
+<h3 class="anchored" data-anchor-id="replicate-first">Replicate First</h3>
+</section>
+<section id="reduce-first" class="level3">
+<h3 class="anchored" data-anchor-id="reduce-first">Reduce First</h3>
+</section>
+</section>
+<section id="backslash-bar" class="level2">
+<h2 class="anchored" data-anchor-id="backslash-bar"><code>⍀</code>: `. : Backslash Bar</h2>
+<section id="expand-first" class="level3">
+<h3 class="anchored" data-anchor-id="expand-first">Expand First</h3>
+</section>
+<section id="scan-first" class="level3">
+<h3 class="anchored" data-anchor-id="scan-first">Scan First</h3>
+</section>
+</section>
+<section id="comma" class="level2">
+<h2 class="anchored" data-anchor-id="comma"><code>,</code>: , : Comma</h2>
+<section id="ravel" class="level3">
+<h3 class="anchored" data-anchor-id="ravel">Ravel</h3>
+</section>
+<section id="catenate" class="level3">
+<h3 class="anchored" data-anchor-id="catenate">Catenate</h3>
+</section>
+</section>
+<section id="comma-bar" class="level2">
+<h2 class="anchored" data-anchor-id="comma-bar"><code>⍪</code>: `&lt; : Comma Bar</h2>
+<section id="table" class="level3">
+<h3 class="anchored" data-anchor-id="table">Table</h3>
+</section>
+<section id="catenate-first" class="level3">
+<h3 class="anchored" data-anchor-id="catenate-first">Catenate First</h3>
+</section>
+</section>
+<section id="r-rho" class="level2">
+<h2 class="anchored" data-anchor-id="r-rho"><code>⍴</code>: `r : Rho</h2>
+<section id="shape" class="level3">
+<h3 class="anchored" data-anchor-id="shape">Shape</h3>
+</section>
+<section id="reshape" class="level3">
+<h3 class="anchored" data-anchor-id="reshape">Reshape</h3>
+</section>
+</section>
+<section id="circle-stile" class="level2">
+<h2 class="anchored" data-anchor-id="circle-stile"><code>⌽</code>: `% : Circle Stile</h2>
+<section id="reverse" class="level3">
+<h3 class="anchored" data-anchor-id="reverse">Reverse</h3>
+</section>
+<section id="rotate" class="level3">
+<h3 class="anchored" data-anchor-id="rotate">Rotate</h3>
+</section>
+</section>
+<section id="circle-bar" class="level2">
+<h2 class="anchored" data-anchor-id="circle-bar"><code>⊖</code>: `&amp; : Circle Bar</h2>
+<section id="reverse-first" class="level3">
+<h3 class="anchored" data-anchor-id="reverse-first">Reverse First</h3>
+</section>
+<section id="rotate-first" class="level3">
+<h3 class="anchored" data-anchor-id="rotate-first">Rotate First</h3>
+</section>
+</section>
+<section id="transpose" class="level2">
+<h2 class="anchored" data-anchor-id="transpose"><code>⍉</code>: `^ : Transpose</h2>
+<section id="transpose-1" class="level3">
+<h3 class="anchored" data-anchor-id="transpose-1">Transpose</h3>
+</section>
+<section id="dyadic-transpose" class="level3">
+<h3 class="anchored" data-anchor-id="dyadic-transpose">Dyadic Transpose</h3>
+</section>
+</section>
+<section id="diaeresis" class="level2">
+<h2 class="anchored" data-anchor-id="diaeresis"><code>¨</code>: `1 : Diaeresis</h2>
+<section id="each" class="level3">
+<h3 class="anchored" data-anchor-id="each">Each</h3>
+</section>
+</section>
+<section id="t-tilde-diaeresis" class="level2">
+<h2 class="anchored" data-anchor-id="t-tilde-diaeresis"><code>⍨</code>: `T : Tilde Diaeresis</h2>
+<section id="commute" class="level3">
+<h3 class="anchored" data-anchor-id="commute">Commute</h3>
+</section>
+<section id="constant" class="level3">
+<h3 class="anchored" data-anchor-id="constant">Constant</h3>
+</section>
+</section>
+<section id="p-star-diaeresis" class="level2">
+<h2 class="anchored" data-anchor-id="p-star-diaeresis"><code>⍣</code>: `P : Star Diaeresis</h2>
+<section id="power-1" class="level3">
+<h3 class="anchored" data-anchor-id="power-1">Power</h3>
+</section>
+</section>
+<section id="dot" class="level2">
+<h2 class="anchored" data-anchor-id="dot"><code>.</code>: . : Dot</h2>
+<section id="product" class="level3">
+<h3 class="anchored" data-anchor-id="product">Product</h3>
+</section>
+</section>
+<section id="j-jot" class="level2">
+<h2 class="anchored" data-anchor-id="j-jot"><code>∘</code>: `j : Jot</h2>
+<section id="beside-and-bind" class="level3">
+<h3 class="anchored" data-anchor-id="beside-and-bind">Beside and Bind</h3>
+</section>
+</section>
+<section id="j-jot-diaeresis" class="level2">
+<h2 class="anchored" data-anchor-id="j-jot-diaeresis"><code>⍤</code>: `J : Jot Diaeresis</h2>
+<section id="atop" class="level3">
+<h3 class="anchored" data-anchor-id="atop">Atop</h3>
+</section>
+<section id="rank" class="level3">
+<h3 class="anchored" data-anchor-id="rank">Rank</h3>
+</section>
+</section>
+<section id="o-circle-diaeresis" class="level2">
+<h2 class="anchored" data-anchor-id="o-circle-diaeresis"><code>⍥</code>: `O : Circle Diaeresis</h2>
+<section id="over" class="level3">
+<h3 class="anchored" data-anchor-id="over">Over</h3>
+</section>
+</section>
+<section id="at" class="level2">
+<h2 class="anchored" data-anchor-id="at"><code>@</code>: @ : At</h2>
+<section id="at-1" class="level3">
+<h3 class="anchored" data-anchor-id="at-1">At</h3>
+</section>
+</section>
+<section id="quote-quad" class="level2">
+<h2 class="anchored" data-anchor-id="quote-quad"><code>⍞</code>: `{ : Quote Quad</h2>
+<section id="character-input" class="level3">
+<h3 class="anchored" data-anchor-id="character-input">Character Input</h3>
+</section>
+<section id="output" class="level3">
+<h3 class="anchored" data-anchor-id="output">Output</h3>
+</section>
+</section>
+<section id="l-quad" class="level2">
+<h2 class="anchored" data-anchor-id="l-quad"><code>⎕</code>: `l : Quad</h2>
+<section id="evaluated-input" class="level3">
+<h3 class="anchored" data-anchor-id="evaluated-input">Evaluated Input</h3>
+</section>
+<section id="output-1" class="level3">
+<h3 class="anchored" data-anchor-id="output-1">Output</h3>
+</section>
+</section>
+<section id="quad-colon" class="level2">
+<h2 class="anchored" data-anchor-id="quad-colon"><code>⍠</code>: `? : Quad Colon</h2>
+<section id="variant" class="level3">
+<h3 class="anchored" data-anchor-id="variant">Variant</h3>
+</section>
+</section>
+<section id="k-quad-equal" class="level2">
+<h2 class="anchored" data-anchor-id="k-quad-equal"><code>⌸</code>: `K : Quad Equal</h2>
+<section id="key" class="level3">
+<h3 class="anchored" data-anchor-id="key">Key</h3>
+</section>
+</section>
+<section id="quad-diamond" class="level2">
+<h2 class="anchored" data-anchor-id="quad-diamond"><code>⌺</code>: `~ : Quad Diamond</h2>
+<section id="stencil" class="level3">
+<h3 class="anchored" data-anchor-id="stencil">Stencil</h3>
+</section>
+</section>
+<section id="i-beam" class="level2">
+<h2 class="anchored" data-anchor-id="i-beam"><code>⌶</code>: `! : I-Beam</h2>
+<section id="i-beam-1" class="level3">
+<h3 class="anchored" data-anchor-id="i-beam-1">I-Beam</h3>
+</section>
+</section>
+<section id="hydrant" class="level2">
+<h2 class="anchored" data-anchor-id="hydrant"><code>⍎</code>: `; : Hydrant</h2>
+<section id="execute-expr" class="level3">
+<h3 class="anchored" data-anchor-id="execute-expr">Execute Expr</h3>
+</section>
+<section id="execute-expr-in-namespace" class="level3">
+<h3 class="anchored" data-anchor-id="execute-expr-in-namespace">Execute Expr in Namespace</h3>
+</section>
+</section>
+<section id="thorn" class="level2">
+<h2 class="anchored" data-anchor-id="thorn"><code>⍕</code>: `’ : Thorn</h2>
+<section id="format" class="level3">
+<h3 class="anchored" data-anchor-id="format">Format</h3>
+</section>
+<section id="format-by-specification" class="level3">
+<h3 class="anchored" data-anchor-id="format-by-specification">Format by Specification</h3>
+</section>
+</section>
+<section id="diamond" class="level2">
+<h2 class="anchored" data-anchor-id="diamond"><code>⋄</code>: ``` : Diamond</h2>
+<section id="statement-seperator" class="level3">
+<h3 class="anchored" data-anchor-id="statement-seperator">Statement Seperator</h3>
+</section>
+</section>
+<section id="right-arrow" class="level2">
+<h2 class="anchored" data-anchor-id="right-arrow"><code>→</code>: `] : Right Arrow</h2>
+<section id="branch" class="level3">
+<h3 class="anchored" data-anchor-id="branch">Branch</h3>
+</section>
+</section>
+<section id="g-del" class="level2">
+<h2 class="anchored" data-anchor-id="g-del"><code>∇</code>: `g : Del</h2>
+<section id="self-reference" class="level3">
+<h3 class="anchored" data-anchor-id="self-reference">Self Reference</h3>
+</section>
+</section>
+<section id="ampersand" class="level2">
+<h2 class="anchored" data-anchor-id="ampersand"><code>&amp;</code>: &amp; : Ampersand</h2>
+<section id="spawn" class="level3">
+<h3 class="anchored" data-anchor-id="spawn">Spawn</h3>
+</section>
+</section>
+<section id="zilde" class="level2">
+<h2 class="anchored" data-anchor-id="zilde"><code>⍬</code>: `} : Zilde</h2>
+<section id="empty-numeric-vector" class="level3">
+<h3 class="anchored" data-anchor-id="empty-numeric-vector">Empty Numeric Vector</h3>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

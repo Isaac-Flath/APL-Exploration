@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Isaac Flath">
+<meta name="dcterms.date" content="2022-07-20">
+
+<title>APL Exploration - Bootstrapping</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">APL Exploration</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html">About</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/isaac-flath/apl-exploration"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/isaac-flath/"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Bootstrapping</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">Dyalog</div>
+                <div class="quarto-category">APL</div>
+                <div class="quarto-category">Statistics</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Isaac Flath </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">July 20, 2022</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#samplingbootstrapping" id="toc-samplingbootstrapping" class="nav-link active" data-scroll-target="#samplingbootstrapping">Sampling/Bootstrapping</a>
+  <ul class="collapse">
+  <li><a href="#why-bootstrapping" id="toc-why-bootstrapping" class="nav-link" data-scroll-target="#why-bootstrapping">Why Bootstrapping</a></li>
+  </ul></li>
+  <li><a href="#sampling-distribution" id="toc-sampling-distribution" class="nav-link" data-scroll-target="#sampling-distribution">Sampling Distribution</a>
+  <ul class="collapse">
+  <li><a href="#create-1-sample" id="toc-create-1-sample" class="nav-link" data-scroll-target="#create-1-sample">Create 1 Sample</a></li>
+  <li><a href="#create-sampling-distribution" id="toc-create-sampling-distribution" class="nav-link" data-scroll-target="#create-sampling-distribution">Create sampling distribution</a></li>
+  </ul></li>
+  <li><a href="#calculate-statistics" id="toc-calculate-statistics" class="nav-link" data-scroll-target="#calculate-statistics">Calculate statistics</a>
+  <ul class="collapse">
+  <li><a href="#confidence-intervals" id="toc-confidence-intervals" class="nav-link" data-scroll-target="#confidence-intervals">Confidence Intervals</a></li>
+  <li><a href="#p-values" id="toc-p-values" class="nav-link" data-scroll-target="#p-values">P values</a>
+  <ul class="collapse">
+  <li><a href="#p-value-on-equal-means" id="toc-p-value-on-equal-means" class="nav-link" data-scroll-target="#p-value-on-equal-means">P value on equal means</a></li>
+  <li><a href="#p-value-on-different-means" id="toc-p-value-on-different-means" class="nav-link" data-scroll-target="#p-value-on-different-means">P value on different means</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="samplingbootstrapping" class="level1">
+<h1>Sampling/Bootstrapping</h1>
+<p>This post shows how to calculate statistics in the way I believe should be the default for data scientists, bootstrapping. If you are not familiar with this approach and think it sounds intriguing, <a href="https://www.lock5stat.com/">check out this page</a> to find a great book to get a fantastic start on bootstrapping and practical statistics.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The quality and simplicity of the APL code in this post was improved thanks to the kind feedback provided by rak1507. It’s awesome to have experienced community members like rak1507 that are willing to read through material written by people newer to array programming and offer feedback in a supportive way.</p>
+</div>
+</div>
+<section id="why-bootstrapping" class="level2">
+<h2 class="anchored" data-anchor-id="why-bootstrapping">Why Bootstrapping</h2>
+<p>Because this opinions seems to put me in the minority of data scientists I am writing a short piece on why bootstrapping here.</p>
+<p>In classical statistics, very clever algebraic formulas are used to approximate a sampling distribution, and that approximation can be used to calculate a p-value or a confidence interval or other statistics. These formulas rely on assumptions about the data and do not work if those baked in assumptions are not true. In other words they are really shortcuts to calculating an answer that work in specific situations.</p>
+<p>In modern days, we do not need to approximate a sampling distribution using algebra. We can do something much more elementary, more powerful, and more flexible. Thanks to modern computers, we can just sample our data repeatedly to create an actual sampling distribution and calculate based off of that. You get the same answer. So why do I advocate for a bootstrapping first approach?</p>
+<ul>
+<li>It is simpler and more intuitive. This means it is far easier to craft custom tests and statistics based on whatever you want and reason about what things are.</li>
+<li>Bootstrapping assumes nothing other than you have data. Classical statistical formulas are shortcuts that are enabled with baked in assumptions about the data. This means the same boostrapping approach works in basically all situations, where classical statistical formulas only apply in the particular situations they were designed for.</li>
+</ul>
+<p>For this reason I believe it should be the default and you can change to computational shortcuts in the situations where it makes sense (ie you are very confident you understand assumptions, confident they are true in your problem, and the amount of data makes it non-trivial to bootstrap).</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Much of this next bit is heavily inspired by <a href="https://www.lock5stat.com/Lock5Overview.pdf">Overview of Statistics: UnLocking the Power of Data By Lock, Lock, Lock, Lock, and Lock Published by Wiley (2012)</a>. I have summarized key points that I think are relevant to what I want to communicate. For example, the quotes I am using are quotes I originally saw in their article.</p>
+</div>
+</div>
+<p>Many of the top statisticians have known bootstrapping is a more elementary but more flexible approach for longer than the approach was computationally feasible. For example, in 1936 Sir R.A. Fisher (who created the foundations of statistical inference) spoke about using this bootstrapping approach:</p>
+<blockquote class="blockquote">
+<p>Actually, the statistician does not carry out this very simple and very tedious process, but his conclusions have no justification beyond the fact that they agree with those which could have been arrived at by this elementary method.</p>
+</blockquote>
+<p>While these methods were tedious in 1936, they are trivial thanks to modern computers. We no longer have to do clever algebraic tricks to approximate a sampling distribution - we can just create a sampling distribution, as George Cobb pointed out in the journal <em>Technology Innovations in Statistical Education</em>.</p>
+<blockquote class="blockquote">
+<p>What we teach is largely the technical machinery of numerical approximations based on the normal distribution and its many subsidiary cogs. This machinery was once necessary, because the conceptually simpler alternative based on permutations was computationally beyond our reach. Before computers statisticians had no choice. These days we have no excuse.</p>
+</blockquote>
+</section>
+</section>
+<section id="sampling-distribution" class="level1">
+<h1>Sampling Distribution</h1>
+<p>A sampling distribution is a distribution of samples. Let’s talk about what that means.</p>
+<p>First, a <strong>sample</strong> is a subset of our data. <code>[1, 0, 2, 1]</code> is a sample of <code>[0, 1, 2, 3]</code>. A few things about samples: + We will sample by taking a random selection of values from our data. + We are sampling with replacement, meaning we can pick the same data point multiple times.</p>
+<p>Next, a <strong>distribution</strong> is mostly just a bunch of data points. In our case we are going to have a bunch of samples.</p>
+<p>So we need a way to create a sample, and then we need to do that a bunch of times. Let’s get started.</p>
+<div class="cell" data-execution_count="1">
+<pre class="apl cell-code"><code>]box on -style=max</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre class="language-APL">┌→────────────────┐
+│Was ON -style=max│
+└─────────────────┘
+</pre>
+</div>
+</div>
+<section id="create-1-sample" class="level2">
+<h2 class="anchored" data-anchor-id="create-1-sample">Create 1 Sample</h2>
+<p>Let’s start with creating a sample</p>
+<ul>
+<li>Create some data for us to sample</li>
+<li>Get 5 random numbers between 1 and 10 (no duplicate numbers)</li>
+</ul>
+<div class="cell" data-execution_count="2">
+<pre class="apl cell-code"><code>⎕←V ← 5?10</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre class="language-APL">┌→─────────┐
+│4 3 10 1 5│
+└~─────────┘
+</pre>
+</div>
+</div>
+<p>Next we need to get a random sample of indexes from our data <code>V</code>. We can do that in 3 steps: 1. Get the total number of elements in our data array with <code>≢V</code> (tally the Vector) 1. Create an array of the size of the sample we want and fill it with <code>≢V</code> using <code>10⍴≢V</code>. Create an array of dimension 10 with containing the tally of the vector. APL will broadcase to make all elements equal to <code>≢V</code> automatically. 1. <code>?</code> will roll a die for each element between 1 and the value of the element. This gives us random index locations for each sample we want.</p>
+<p>Put that all together and we have code that:</p>
+<ul>
+<li>Get random sample of indexes</li>
+<li>Get 10 random numbers between 1 and ≢V (duplicates allowed)</li>
+</ul>
+<div class="cell" data-execution_count="3">
+<pre class="apl cell-code"><code>⎕←S←?10⍴≢V</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre class="language-APL">┌→──────────────────┐
+│3 2 2 2 2 5 1 2 4 2│
+└~──────────────────┘
+</pre>
+</div>
+</div>
+<p>Since that created random index locations, we can look those indexes up in our original vector <code>V</code> to get our random sample.</p>
+<div class="cell" data-execution_count="4">
+<pre class="apl cell-code"><code>V[S]</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre class="language-APL">┌→───────────────────┐
+│10 3 3 3 3 5 4 3 1 3│
+└~───────────────────┘
+</pre>
+</div>
+</div>
+<p>If we put that together we get a nice compact way of drawing a sample.</p>
+<div class="cell" data-execution_count="5">
+<pre class="apl cell-code"><code>V[?10 ⍴ ≢V]</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre class="language-APL">┌→───────────────────┐
+│3 10 3 3 1 4 3 4 3 3│
+└~───────────────────┘
+</pre>
+</div>
+</div>
+</section>
+<section id="create-sampling-distribution" class="level2">
+<h2 class="anchored" data-anchor-id="create-sampling-distribution">Create sampling distribution</h2>
+<p>We drew a sample, but really what we want to do is draw a whole bunch of samples. All we have to do is create a matrix of indices instead of a vector and the exact same approach works.</p>
+<p>This is the same as above, except instead of <code>10 ⍴</code> to create an array of shape 10, we use <code>5 10 ⍴</code> to create an array of shape 5 by 10.</p>
+<p>For convenience I store the shapes in a variable for later use.</p>
+<div class="cell" data-execution_count="6">
+<pre class="apl cell-code"><code>V[?(n←5) (ss←10) ⍴ ≢V]</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre class="language-APL">┌→──────────────────────────┐
+↓ 4 4  3  4  1  5  4 3  3 10│
+│ 1 3 10  5  3  4 10 1  4 10│
+│ 5 1 10 10  5  3  3 4  1  4│
+│10 5 10  1 10  3  1 4 10  1│
+│10 5  5  5  1 10  3 3  1 10│
+└~──────────────────────────┘
+</pre>
+</div>
+</div>
+</section>
+</section>
+<section id="calculate-statistics" class="level1">
+<h1>Calculate statistics</h1>
+<p>Now that we know how to calculate a sampling distribution we can calculate some statistics. I will start with confidence intervals, then move into p values.</p>
+<section id="confidence-intervals" class="level2">
+<h2 class="anchored" data-anchor-id="confidence-intervals">Confidence Intervals</h2>
+<p>Lets do a bigger sample and calculate our confidence interval using 10000 random numbers between 1 and 100.</p>
+<div class="cell" data-execution_count="7">
+<pre class="apl cell-code"><code>data ← ?10000/100 
+
+10↑data ⍝ look at first 10 values</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre class="language-APL">┌→───────────────────────────┐
+│50 3 15 43 93 60 96 29 71 58│
+└~───────────────────────────┘
+</pre>
+</div>
+</div>
+<p>Next we can calculate a sampling distribution and look a a few of them. We use the code from before but with 1000 pulls.</p>
+<div class="cell" data-execution_count="8">
+<pre class="apl cell-code"><code>sampling_distribution←data[? (n←1000) (ss←10) ⍴ ≢ data]
+5↑sampling_distribution</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre class="language-APL">┌→─────────────────────────────┐
+↓20 56 92 100 34 89 28 92 10 21│
+│34 95 89  69 35 81 25 25 80 87│
+│77 68 32  77 57 20 10 20 21 95│
+│37 73 19  79 11 88 13  1 90 68│
+│70 42 10  74 62 34 82 17  3 19│
+└~─────────────────────────────┘
+</pre>
+</div>
+</div>
+<p>We want to do a confidence interval on the mean so we need to calculate the mean of each of these samples.</p>
+<ul>
+<li><code>+/</code> Row-wise sum (trailing axis)</li>
+<li><code>ss÷⍨</code> divides each element by ss (ss defined when creating sampling distribution)</li>
+</ul>
+<div class="cell" data-execution_count="9">
+<pre class="apl cell-code"><code>sample_means ← ss÷⍨+/ sampling_distribution
+8↑sample_means</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre class="language-APL">┌→────────────────────────────────────┐
+│54.2 62 47.7 47.9 41.3 63.5 50.7 44.3│
+└~────────────────────────────────────┘
+</pre>
+</div>
+</div>
+<p>Now we calculate at 90% confidence interval on our sample mean. That means we are 90% confident our mean will land in the given interval range. This is easy to do because we have calculated the mean of a good sampling distribution so we just need to cut off the top and bottom 5% of values and 90% of the values landed in that range.</p>
+<ul>
+<li>⍋ sorts ascending, then cut off first 50 and take the first 900 of that</li>
+</ul>
+<div class="cell" data-execution_count="10">
+<pre class="apl cell-code"><code>order90 ← 900↑50↓⍋sample_means</code></pre>
+</div>
+<p>Get min and max of middle 90% of sample means, which is our 90% confidence interval. Because our data is sorted we can just get the first and last value.</p>
+<div class="cell" data-execution_count="11">
+<pre class="apl cell-code"><code>sample_means[⊣/order90]
+sample_means[⊢/order90]</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre class="language-APL">    
+36.2
+    
+</pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre class="language-APL">    
+65.5
+    
+</pre>
+</div>
+</div>
+<p>We know we are 90 percent confident that a mean based on a sample size of 10 will land in that range because we did that and found that to be true.</p>
+</section>
+<section id="p-values" class="level2">
+<h2 class="anchored" data-anchor-id="p-values">P values</h2>
+<p>Let’s say we have 2 sets of data and we want to know whether some statistics are different between them. We have 10,000 samples of our original data, and we ran an experiment and got 100 datapoints with our new process. We want to calculate a p value to see if it supports our hypothesis that it had a statistically significant impact.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Statistically significant impact does not necessarily mean practically significant. This test is doing the basic (are these 2 means different), but often that isn’t really that helpful of a question. Often we want to ask “are these 2 means different by at least X”. After reviewing the simple examples think through how you might be able to design that test via bootstrapping!</p>
+</div>
+</div>
+<section id="p-value-on-equal-means" class="level3">
+<h3 class="anchored" data-anchor-id="p-value-on-equal-means">P value on equal means</h3>
+<div class="cell" data-execution_count="12">
+<pre class="apl cell-code"><code>baseline ← 1-⍨2×⍨?10000/0
+experiment ← 0.5-⍨?100/0</code></pre>
+</div>
+<p>These should have roughly the same means so we should get a large p value and show the difference is not statistically significant</p>
+<p>Let’s run the test and see what we get. First let’s get our statistic from our experiment (mean).</p>
+<div class="cell" data-execution_count="13">
+<pre class="apl cell-code"><code>⎕←experiment_mean ← (+/experiment) ÷ ≢experiment</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre class="language-APL">             
+0.02131968282
+             
+</pre>
+</div>
+</div>
+<p>Now let’s create our sampling distribution on our baseline.</p>
+<div class="cell" data-execution_count="14">
+<pre class="apl cell-code"><code>sampling_distribution←baseline[? (n←1000) (ss←10) ⍴ ≢ baseline]</code></pre>
+</div>
+<p>Calculate the means of each.</p>
+<div class="cell" data-execution_count="15">
+<pre class="apl cell-code"><code>sampling_means ← ss ÷⍨ +/sampling_distribution</code></pre>
+</div>
+<p>We then calculate a p value by seeing what percentage of sample means our experiment mean is more extreme than. We can check this on both ends of the distribution and we would take the smaller one normally.</p>
+<div class="cell" data-execution_count="16">
+<pre class="apl cell-code"><code>n ÷⍨ +/ experiment_mean&gt;sampling_means
+n ÷⍨ +/ experiment_mean&lt;sampling_means</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<pre class="language-APL">     
+0.545
+     
+</pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<pre class="language-APL">     
+0.455
+     
+</pre>
+</div>
+</div>
+</section>
+<section id="p-value-on-different-means" class="level3">
+<h3 class="anchored" data-anchor-id="p-value-on-different-means">P value on different means</h3>
+<div class="cell" data-execution_count="17">
+<pre class="apl cell-code"><code>baseline ← ?10000/0
+experiment ← 0.2-⍨?100/0</code></pre>
+</div>
+<p>These should have different means so we should get a large p value and show the different is not practically significant</p>
+<p>Let’s run the test and see what we get. First let’s get our statistic from our experiment (mean).</p>
+<div class="cell" data-execution_count="18">
+<pre class="apl cell-code"><code>⎕←experiment_mean ← (+/experiment) ÷ ≢experiment</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<pre class="language-APL">           
+0.302065664
+           
+</pre>
+</div>
+</div>
+<p>Now let’s create our sampling distribution on our baseline.</p>
+<div class="cell" data-execution_count="19">
+<pre class="apl cell-code"><code>sampling_distribution← baseline[? (n←1000) (ss←10) ⍴ ≢ baseline]</code></pre>
+</div>
+<div class="cell" data-execution_count="20">
+<pre class="apl cell-code"><code>sampling_means ← ss ÷⍨ +/sampling_distribution</code></pre>
+</div>
+<p>We then calculate a p value by seeing what percentage of sample means our experiment mean is more extreme than. We can check this on both ends of the distribution, but we would take the smaller one. We can see our p value is quite small - it successfully detected that we likely have a different mean.</p>
+<div class="cell" data-execution_count="21">
+<pre class="apl cell-code"><code>n ÷⍨ +/ sampling_means &gt; experiment_mean
+n ÷⍨ +/ sampling_means &lt; experiment_mean</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="21">
+<pre class="language-APL">     
+0.993
+     
+</pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="21">
+<pre class="language-APL">     
+0.007
+     
+</pre>
+</div>
+</div>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
